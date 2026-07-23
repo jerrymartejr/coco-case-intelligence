@@ -1,0 +1,6 @@
+{"record_id": "qa_001", "received_ts": "2026-06-01 23:00:00", "raw_content": "QA review \u2014 agent A_LIAM. Customer Mika Tanaka. Billing dispute: duplicate transaction from a retry after timeout. Agent raised reversal. Email m.tanaka@example.com. Ref ORD_1002."}
+{"record_id": "qa_002", "received_ts": "2026-06-02 23:00:00", "raw_content": "QA review \u2014 agent A_MARE. Customer Nair, Sana. Refund SLA breach, stuck in review. Agent escalated to finance."}
+{"record_id": "qa_003", "received_ts": "2026-06-03 23:00:00", "raw_content": "QA review \u2014 agent A_LIAM. Customer Silva, Rui. Sync failure due to expired token. Agent walked customer through reauth. Email r.silva@example.com."}
+{"record_id": "qa_004", "received_ts": "2026-06-14 09:00:00", "raw_content": "QA review. Customer Noa Vance. Access issue: MFA lockout on new device. Agent performed identity check and reset."}
+{"record_id": "qa_005", "received_ts": "2026-06-30 09:00:00", "raw_content": "QA review. Customer Lee Dial. Customer reports non-receipt of a parcel showing delivered status. Agent opened carrier trace."}
+{"record_id": "qa_006", "received_ts": "2026-07-16 09:00:00", "raw_content": "QA review. Customer Bo Holt. Refund SLA breach, stuck in review. Agent escalated to finance."}

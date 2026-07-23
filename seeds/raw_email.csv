@@ -1,0 +1,57 @@
+record_id,raw_content,received_ts
+email_001,"From: Okafor, Joy <j.okafor@example.com>
+To: support@company.example.com
+Subject: Order Not Received
+Date: 2026-06-01 11:00:00
+
+I am writing because the package I was expecting was marked delivered three days ago, yet it has not arrived at my address. Please advise.
+
+Order reference: ORD_1001",2026-06-01 11:00:00
+email_002,"From: Becker, Luca <becker,@mailbox.example.com>
+To: support@company.example.com
+Subject: Login Locked
+Date: 2026-06-02 11:00:00
+
+I am unable to sign in. After entering my verification code the system reports my account is locked. Can you restore access?",2026-06-02 11:00:00
+email_003,"From: Sana Nair <sana@mailbox.example.com>
+To: support@company.example.com
+Subject: Refund Delay
+Date: 2026-06-02 21:00:00
+
+I requested a refund some time ago and it has still not appeared. This is well beyond the stated timeframe.",2026-06-02 21:00:00
+email_004,"From: Dana Owens <dana@mailbox.example.com>
+To: support@company.example.com
+Subject: Wrong Item
+Date: 2026-06-03 11:00:00
+
+The product I received does not match my order. A different item was shipped in its place. Please correct this.",2026-06-03 11:00:00
+email_005,"From: Haddad, Elias <haddad,@mailbox.example.com>
+To: support@company.example.com
+Subject: Re: TK13478 Order Not Received
+Date: 2026-06-04 09:00:00
+
+I am writing because the package I was expecting was marked delivered three days ago, yet it has not arrived at my address. Please advise.",2026-06-04 09:00:00
+email_006,"From: Nadia Petrova <nadia@mailbox.example.com>
+To: support@company.example.com
+Subject: Double Charge
+Date: 2026-06-04 23:00:00
+
+My statement shows two identical charges for one purchase. I would like the duplicate removed and a confirmation.",2026-06-04 23:00:00
+email_007,"From: Sam Quill <noise1@mailbox.example.com>
+To: support@company.example.com
+Subject: help
+Date: 2026-06-10 09:00:00
+
+My statement shows two identical charges for one purchase. I would like the duplicate removed and a confirmation.",2026-06-10 09:00:00
+email_008,"From: Toni Crane <noise5@mailbox.example.com>
+To: support@company.example.com
+Subject: help
+Date: 2026-06-26 09:00:00
+
+The application is not synchronising. Information shown on my device is stale and does not reflect recent changes.",2026-06-26 09:00:00
+email_009,"From: Cy Gale <noise9@mailbox.example.com>
+To: support@company.example.com
+Subject: help
+Date: 2026-07-12 09:00:00
+
+The product I received does not match my order. A different item was shipped in its place. Please correct this.",2026-07-12 09:00:00

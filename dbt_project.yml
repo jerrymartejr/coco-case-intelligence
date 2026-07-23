@@ -1,0 +1,42 @@
+name: 'case_intelligence'
+version: '1.0.0'
+config-version: 2
+
+profile: 'case_intelligence'
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+test-paths: ["tests"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  case_intelligence:
+    staging:
+      # Materialize as tables: staging runs Cortex AI SQL, so we want the LLM
+      # calls to execute once at build time, not on every downstream query.
+      +materialized: table
+    intermediate:
+      +materialized: table
+    marts:
+      +materialized: table
+
+seeds:
+  case_intelligence:
+    +schema: raw
+    orders:
+      +column_types:
+        value: float
+    csat_scores:
+      +column_types:
+        score: int
+    agent_daily_metrics:
+      +column_types:
+        aht: float
+        fcr: float
+        occupancy: float
+        avg_csat: float

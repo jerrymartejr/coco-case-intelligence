@@ -1,0 +1,12 @@
+{#
+  Use the custom schema name as-is (RAW, STAGING, INTERMEDIATE, MARTS) instead of
+  dbt's default "<target_schema>_<custom>" concatenation. Keeps schema names clean.
+#}
+{% macro generate_schema_name(custom_schema_name, node) -%}
+    {%- set default_schema = target.schema -%}
+    {%- if custom_schema_name is none -%}
+        {{ default_schema }}
+    {%- else -%}
+        {{ custom_schema_name | trim | upper }}
+    {%- endif -%}
+{%- endmacro %}

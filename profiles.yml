@@ -1,0 +1,17 @@
+# dbt profile for the personal Snowflake trial (key-pair auth, headless).
+# The private key lives outside the repo at ~/.snowflake/keys/ and is gitignored by location.
+# Teammates: generate your own key pair and register it, or swap in your own auth here.
+case_intelligence:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: KBGKENW-MB74068
+      user: JERRYMARTEJR
+      private_key_path: /Users/jerrymartejr/.snowflake/keys/coco_trial_rsa_key.p8
+      role: ACCOUNTADMIN
+      database: CASE_INTEL
+      warehouse: COMPUTE_WH
+      schema: ANALYTICS
+      threads: 4
+      client_session_keep_alive: false

@@ -1,0 +1,133 @@
+{
+  "cases": [
+    {
+      "case_id": "CASE_001",
+      "tier": "A",
+      "customer_id": "CUST_001",
+      "issue": "order_not_received",
+      "root_cause": "Carrier marked delivered but parcel never arrived (lost in transit).",
+      "resolution": "Reshipped with express tracking; refunded shipping.",
+      "resolved": true,
+      "record_ids": [
+        "chat_001",
+        "email_001",
+        "csat_001"
+      ],
+      "revenue_at_risk": 0.0
+    },
+    {
+      "case_id": "CASE_002",
+      "tier": "A",
+      "customer_id": "CUST_002",
+      "issue": "double_charge",
+      "root_cause": "Payment retry fired twice after a gateway timeout.",
+      "resolution": "Reversed the duplicate charge; confirmed single settlement.",
+      "resolved": true,
+      "record_ids": [
+        "chat_002",
+        "qa_001"
+      ],
+      "revenue_at_risk": 0.0
+    },
+    {
+      "case_id": "CASE_003",
+      "tier": "B",
+      "customer_id": "CUST_003",
+      "issue": "login_locked",
+      "root_cause": "Account auto-locked after failed MFA sync on a new device.",
+      "resolution": "Reset MFA and unlocked the account.",
+      "resolved": true,
+      "record_ids": [
+        "chat_003",
+        "email_002"
+      ],
+      "revenue_at_risk": 0.0
+    },
+    {
+      "case_id": "CASE_004",
+      "tier": "B",
+      "customer_id": "CUST_004",
+      "issue": "refund_delay",
+      "root_cause": "Refund stuck in manual review queue past SLA.",
+      "resolution": "Escalated and released the refund same day.",
+      "resolved": true,
+      "record_ids": [
+        "email_003",
+        "qa_002",
+        "csat_002"
+      ],
+      "revenue_at_risk": 0.0
+    },
+    {
+      "case_id": "CASE_005",
+      "tier": "B",
+      "customer_id": "CUST_005",
+      "issue": "wrong_item",
+      "root_cause": "Warehouse pick error: adjacent SKU shipped.",
+      "resolution": "Sent correct item; provided prepaid return label.",
+      "resolved": false,
+      "record_ids": [
+        "chat_004",
+        "email_004"
+      ],
+      "revenue_at_risk": 312.75
+    },
+    {
+      "case_id": "CASE_006",
+      "tier": "A",
+      "customer_id": "CUST_006",
+      "issue": "app_sync_fail",
+      "root_cause": "Sync token expired; client failed to refresh silently.",
+      "resolution": "Forced token refresh; data reconciled.",
+      "resolved": true,
+      "record_ids": [
+        "chat_005",
+        "qa_003"
+      ],
+      "revenue_at_risk": 0.0
+    },
+    {
+      "case_id": "CASE_007",
+      "tier": "C",
+      "customer_id": "CUST_007",
+      "issue": "order_not_received",
+      "root_cause": "Carrier marked delivered but parcel never arrived (lost in transit).",
+      "resolution": "Reshipped with express tracking; refunded shipping.",
+      "resolved": true,
+      "record_ids": [
+        "email_005",
+        "csat_003"
+      ],
+      "revenue_at_risk": 0.0
+    },
+    {
+      "case_id": "CASE_008",
+      "tier": "B",
+      "customer_id": "CUST_008",
+      "issue": "double_charge",
+      "root_cause": "Payment retry fired twice after a gateway timeout.",
+      "resolution": "Reversed the duplicate charge; confirmed single settlement.",
+      "resolved": false,
+      "record_ids": [
+        "chat_006",
+        "email_006",
+        "csat_004"
+      ],
+      "revenue_at_risk": 420.0
+    }
+  ],
+  "noise_record_ids": [
+    "chat_007",
+    "email_007",
+    "qa_004",
+    "csat_005",
+    "chat_008",
+    "email_008",
+    "qa_005",
+    "csat_006",
+    "chat_009",
+    "email_009",
+    "qa_006",
+    "csat_007"
+  ]
+}

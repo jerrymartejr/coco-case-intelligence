@@ -1,0 +1,40 @@
+version: 2
+
+models:
+  - name: fct_case_fact
+    description: "Stage 3 core table. One row per resolved case with AI-synthesised fields."
+    columns:
+      - name: case_id
+        description: "Primary key, generated in Stage 2 identity resolution."
+        tests:
+          - unique
+          - not_null
+      - name: resolved
+        tests:
+          - not_null
+
+  - name: fct_case_enriched
+    description: "Stage 4. Case facts fused with structured metrics. One row per case."
+    columns:
+      - name: case_id
+        tests:
+          - unique
+          - not_null
+          - relationships:
+              to: ref('fct_case_fact')
+              field: case_id
+
+  - name: agg_root_cause_daily
+    description: "Stage 5 rollup: root cause x day."
+    columns:
+      - name: case_count
+        tests:
+          - not_null
+
+  - name: agg_agent_performance
+    description: "Stage 5 rollup: per agent."
+    columns:
+      - name: agent_id
+        tests:
+          - unique
+          - not_null

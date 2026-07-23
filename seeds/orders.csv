@@ -1,0 +1,7 @@
+order_id,customer_id,customer_name,email,value,placed_ts,status
+ORD_1001,CUST_001,Joy Okafor,j.okafor@example.com,240.0,2026-05-29 09:00:00,lost
+ORD_1002,CUST_002,Mika Tanaka,m.tanaka@example.com,89.5,2026-05-29 21:00:00,completed
+ORD_1003,CUST_004,Sana Nair,s.nair@example.com,156.0,2026-05-30 21:00:00,completed
+ORD_1004,CUST_005,Dana Owens,d.owens@example.com,312.75,2026-05-31 09:00:00,completed
+ORD_1005,CUST_007,Elias Haddad,e.haddad@example.com,74.2,2026-06-01 09:00:00,lost
+ORD_1006,CUST_008,Nadia Petrova,n.petrova@example.com,420.0,2026-06-01 21:00:00,completed

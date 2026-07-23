@@ -1,0 +1,7 @@
+record_id,raw_content,received_ts
+qa_001,QA review — agent A_LIAM. Customer Mika Tanaka. Billing dispute: duplicate transaction from a retry after timeout. Agent raised reversal. Email m.tanaka@example.com. Ref ORD_1002.,2026-06-01 23:00:00
+qa_002,"QA review — agent A_MARE. Customer Nair, Sana. Refund SLA breach, stuck in review. Agent escalated to finance.",2026-06-02 23:00:00
+qa_003,"QA review — agent A_LIAM. Customer Silva, Rui. Sync failure due to expired token. Agent walked customer through reauth. Email r.silva@example.com.",2026-06-03 23:00:00
+qa_004,QA review. Customer Noa Vance. Access issue: MFA lockout on new device. Agent performed identity check and reset.,2026-06-14 09:00:00
+qa_005,QA review. Customer Lee Dial. Customer reports non-receipt of a parcel showing delivered status. Agent opened carrier trace.,2026-06-30 09:00:00
+qa_006,"QA review. Customer Bo Holt. Refund SLA breach, stuck in review. Agent escalated to finance.",2026-07-16 09:00:00

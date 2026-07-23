@@ -60,6 +60,30 @@ streamlit run app/streamlit_app.py                 # the demo UI (optional)
 Auth: dbt uses key-pair auth against the Snowflake trial (see `profiles.yml`). Cortex/CoCo
 use the `coco_trial` connection in `~/.snowflake/connections.toml`.
 
+## Talking to your data through CoCo (the agentic layer)
+
+The four CoCo Agent Skills in `coco/skills/` turn CoCo into a natural-language front door
+over the marts. Register them once (machine-local):
+
+```bash
+bash scripts/register_skills.sh
+```
+
+Then open CoCo in the repo and ask in plain English:
+
+```bash
+cortex -c coco_trial
+```
+
+- **ask_case_intelligence** — "How many cases are unresolved and what's the total revenue at risk?"
+- **diagnose_top_drivers** — "What's the biggest driver of revenue at risk, and why?"
+- **recommend_action** — "Recommend a concrete action for the top driver."
+- **deliver_action** — "Draft the message to send the owning team" (posts via MCP if Slack/ticketing is configured, otherwise returns the ready-to-send message).
+
+These have been tested end to end: CoCo writes SQL over the marts, grounds every number,
+chains diagnose → recommend → deliver, and falls back cleanly when no delivery integration
+is present.
+
 ## Swapping in real data
 
 Everything is built against the contract in `AGENTS.md`, not against specific files. To use

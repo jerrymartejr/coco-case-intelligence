@@ -340,6 +340,16 @@ def main():
     with open(GROUND_TRUTH, "w") as f:
         json.dump({"cases": gt_cases, "noise_record_ids": noise_ids}, f, indent=2)
 
+    # Ground-truth map as a seed so linkage accuracy is a first-class, tested artifact.
+    gt_map = []
+    for c in gt_cases:
+        for r in c["record_ids"]:
+            gt_map.append({"record_id": r, "true_case_id": c["case_id"], "tier": c["tier"], "is_noise": "false"})
+    for r in noise_ids:
+        gt_map.append({"record_id": r, "true_case_id": "NOISE_" + r, "tier": "noise", "is_noise": "true"})
+    write_csv(os.path.join(SEEDS_DIR, "ground_truth_map.csv"), gt_map,
+              ["record_id", "true_case_id", "tier", "is_noise"])
+
     total = sum(len(v) for v in records.values())
     print(f"unstructured records: {total} (chat={len(records['chat'])}, email={len(records['email'])}, "
           f"qa={len(records['qa'])}, csat={len(records['csat'])})")

@@ -26,12 +26,19 @@ Each line follows this format:
 
 The `raw_content` value is a JSON string. This mirrors raw ingestion patterns where the first load captures the source payload as text before downstream parsing.
 
+## Link Ground Truth
+
+Every `raw_content` payload includes `case_id`. This is the true case label for scoring linkage quality. It should be stripped from model or matching inputs before Stage 2 record linking, otherwise linking becomes a direct keyed join.
+
+The visible linkage clues are intentionally limited to fields such as customer name, customer email, order reference, timestamps, product area, and issue text. QA notes include customer name, customer email, and order reference so they remain linkable after `case_id` is hidden.
+
 ## Suggested Use Cases
 
 - Load unstructured text into Snowflake for search, classification, or summarization.
 - Build a retrieval augmented generation prototype over mixed support content.
 - Detect recurring friction points across chat, survey, JSON, and QA notes.
 - Parse `raw_content` later using `PARSE_JSON` or equivalent warehouse logic.
+- Score Stage 2 record linking against the hidden `case_id` labels.
 
 ## Data Note
 
@@ -42,5 +49,11 @@ All examples are synthetic and contain no real customer information.
 Run this from the project root:
 
 ```powershell
-python scripts\generate_unstructured_customer_support_dataset.py --records-per-source 10000
+python scripts\generate_unstructured_customer_support_dataset.py --records-per-source 10000 --output-dir data\unstructured_customer_support
+```
+
+For a 500-record demo set, use 125 records per source:
+
+```powershell
+python scripts\generate_unstructured_customer_support_dataset.py --records-per-source 125 --output-dir data\unstructured_customer_support_demo
 ```

@@ -29,11 +29,13 @@ glorified join.
 
 ## Measured result (on synthetic data with a ground-truth key)
 
-Stage 2 identity resolution, scored against `data/synthetic/ground_truth.json`:
+Stage 2 identity resolution over **518 records / 170 cases / 48 customers**, scored against
+`data/synthetic/ground_truth.json`:
 
-- **8/8** planted cases fully linked (including the keyless "semantic-only" tier)
+- **170/170** planted cases fully linked — Tier A 53/53, Tier B 103/103 (the keyless hero
+  tier), Tier C 14/14
 - **0** false merges (perfect precision)
-- **12/12** noise records correctly isolated
+- **55/55** noise records correctly isolated
 
 These are enforced as dbt tests: `assert_cases_fully_linked` (recall) and
 `assert_no_case_contamination` (precision). `dbt build` fails if either regresses.
@@ -42,7 +44,8 @@ These are enforced as dbt tests: `assert_cases_fully_linked` (recall) and
 
 We generate both halves of the data so the pipeline runs end to end today; real data swaps
 in later at the same schemas (see below). `scripts/generate_synthetic_data.py` is
-deterministic and produces three difficulty tiers:
+deterministic and produces **518 records across 170 cases and 48 customers** in three
+difficulty tiers:
 
 - **Tier A** entity overlap (shared email / order ref)
 - **Tier B** semantic-only, the hero: no shared key, linkable by fuzzy name + issue semantics + time

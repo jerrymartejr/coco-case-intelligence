@@ -4,7 +4,9 @@ one case_id, then assign each case a customer identity.
 
 Approach (per the CoCo review):
   1. Deterministic pass: edges between records that share a hard signal
-     (same email, same order_ref, or both resolving to the same customer via orders).
+     (same email, same order_ref, or both resolving to the same customer via orders)
+     AND fall inside the same link window. The window matters: a returning customer is
+     not one endless case, so a hard identifier only fuses records from the same episode.
   2. Semantic pass (the keyless / thesis tier): for record pairs close in time that
      share a fuzzy name token, add an edge when their issue-text embeddings are highly
      similar (cosine >= threshold). Embeddings are computed once, then compared in-memory.
@@ -22,7 +24,20 @@ import json
 from snowflake.snowpark.functions import call_function, col, lit
 from snowflake.snowpark.types import StructType, StructField, StringType
 
-SIM_THRESHOLD = 0.82
+# Similarity FLOOR, not a separator. Measured on the current corpus (518 records,
+# 170 planted cases), embedding the extracted issue_text:
+#   within-case pairs        min 0.651, p05 0.743   (same issue across channel registers)
+#   different-issue pairs    p95 0.808, p99 0.847   (different case, different problem)
+# Those distributions overlap, so no cutoff separates them: raising the floor to 0.82
+# drops 48 of 170 true cases, and lowering it far enough to catch them admits unrelated
+# content. Cosine alone therefore cannot decide a link on this text. What does the
+# separating work is the pairing of a shared surname token with the time window below;
+# the floor's job is only to reject pairs whose content is plainly unrelated. Chosen at
+# 0.62 to sit clear of the 0.675 worst-case connectivity bottleneck, so ordinary
+# variation in Stage 1's extraction between builds cannot break linkage.
+# Tried and rejected: embedding raw_content instead (channel formatting dominates the
+# vector, within-case min collapses to 0.241) and issue_text + resolution_text (worse).
+SIM_FLOOR = 0.62
 TIME_WINDOW_HOURS = 72
 EMBED_MODEL = "snowflake-arctic-embed-m-v1.5"
 
@@ -111,10 +126,22 @@ def model(dbt, session):
 
     uf = _UF(ids)
 
-    # 1. deterministic edges
+    def _within_window(a, b):
+        """A case is a bounded episode. Two records only belong to the same one if they
+        are close in time, however strong the identifier they share."""
+        ta, tb = ts[a], ts[b]
+        if ta is None or tb is None:
+            return True
+        return abs((ta - tb).total_seconds()) <= TIME_WINDOW_HOURS * 3600
+
+    # 1. deterministic edges, gated by the link window. Without the gate a customer who
+    # contacts support twice in a quarter collapses into a single case: the shared email
+    # (or the shared resolved customer_id) would bridge two unrelated episodes.
     for i in range(len(ids)):
         for j in range(i + 1, len(ids)):
             a, b = ids[i], ids[j]
+            if not _within_window(a, b):
+                continue
             if email[a] and email[a] == email[b]:
                 uf.union(a, b); continue
             if oref[a] and oref[a] == oref[b]:
@@ -122,7 +149,11 @@ def model(dbt, session):
             if key_cid[a] and key_cid[a] == key_cid[b]:
                 uf.union(a, b); continue
 
-    # 2. semantic edges: keyless linking (name-token overlap + issue similarity + time)
+    # 2. semantic edges: keyless linking. All three signals are required together, which
+    # is what AGENTS.md's Tier B describes: a fuzzy name token, temporal proximity, and
+    # issue content that is not unrelated. The name token is never dropped -- same-issue
+    # pairs from DIFFERENT customers sit at a median cosine of 0.897, so content alone
+    # would happily merge two strangers with the same complaint.
     for i in range(len(ids)):
         for j in range(i + 1, len(ids)):
             a, b = ids[i], ids[j]
@@ -134,7 +165,7 @@ def model(dbt, session):
             if ta is not None and tb is not None:
                 if abs((ta - tb).total_seconds()) > TIME_WINDOW_HOURS * 3600:
                     continue
-            if _cosine(emb[a], emb[b]) >= SIM_THRESHOLD:
+            if _cosine(emb[a], emb[b]) >= SIM_FLOOR:
                 uf.union(a, b)
 
     # 3. components -> stable case ids

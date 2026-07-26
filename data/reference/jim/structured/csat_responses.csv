@@ -1,0 +1,1649 @@
+survey_id,interaction_id,rating,comment
+SURV225102,INT0000006,1,The issue wasn't fixed.
+SURV592644,INT0000009,1,The issue wasn't fixed.
+SURV452661,INT0000013,1,The issue wasn't fixed.
+SURV457861,INT0000024,5,"Quick and easy, thanks!"
+SURV626281,INT0000025,4,"Quick and easy, thanks!"
+SURV328839,INT0000031,5,"Quick and easy, thanks!"
+SURV158622,INT0000036,4,Took a while but got sorted eventually.
+SURV666945,INT0000038,4,Took a while but got sorted eventually.
+SURV914720,INT0000042,4,Took a while but got sorted eventually.
+SURV645113,INT0000049,4,Took a while but got sorted eventually.
+SURV274150,INT0000050,3,Took a while but got sorted eventually.
+SURV242524,INT0000055,1,The issue wasn't fixed.
+SURV461859,INT0000057,1,The issue wasn't fixed.
+SURV881923,INT0000061,4,"Quick and easy, thanks!"
+SURV236765,INT0000062,5,"Quick and easy, thanks!"
+SURV927652,INT0000078,4,"Quick and easy, thanks!"
+SURV379140,INT0000086,4,Took a while but got sorted eventually.
+SURV653080,INT0000089,4,"Quick and easy, thanks!"
+SURV692182,INT0000111,1,The issue wasn't fixed.
+SURV154337,INT0000112,2,The issue wasn't fixed.
+SURV263643,INT0000134,5,"Quick and easy, thanks!"
+SURV337970,INT0000137,2,The issue wasn't fixed.
+SURV407857,INT0000152,1,The issue wasn't fixed.
+SURV555111,INT0000156,2,The issue wasn't fixed.
+SURV438538,INT0000163,4,"Quick and easy, thanks!"
+SURV742837,INT0000176,5,"Quick and easy, thanks!"
+SURV650261,INT0000191,1,The issue wasn't fixed.
+SURV601407,INT0000202,5,"Quick and easy, thanks!"
+SURV777593,INT0000205,4,Took a while but got sorted eventually.
+SURV154006,INT0000206,1,The issue wasn't fixed.
+SURV850406,INT0000230,1,The issue wasn't fixed.
+SURV679519,INT0000246,5,"Quick and easy, thanks!"
+SURV301446,INT0000247,5,"Quick and easy, thanks!"
+SURV408178,INT0000261,4,"Quick and easy, thanks!"
+SURV120988,INT0000275,1,The issue wasn't fixed.
+SURV128273,INT0000277,4,"Quick and easy, thanks!"
+SURV873759,INT0000281,2,The issue wasn't fixed.
+SURV127202,INT0000282,1,The issue wasn't fixed.
+SURV117965,INT0000285,5,"Quick and easy, thanks!"
+SURV659646,INT0000292,2,The issue wasn't fixed.
+SURV668534,INT0000304,1,The issue wasn't fixed.
+SURV312730,INT0000306,5,"Quick and easy, thanks!"
+SURV792359,INT0000320,4,Took a while but got sorted eventually.
+SURV379169,INT0000321,5,"Quick and easy, thanks!"
+SURV980475,INT0000323,2,The issue wasn't fixed.
+SURV178616,INT0000326,1,The issue wasn't fixed.
+SURV218018,INT0000340,4,Took a while but got sorted eventually.
+SURV995682,INT0000343,4,Took a while but got sorted eventually.
+SURV552197,INT0000350,1,The issue wasn't fixed.
+SURV653454,INT0000364,3,Took a while but got sorted eventually.
+SURV855642,INT0000370,1,The issue wasn't fixed.
+SURV131026,INT0000378,1,The issue wasn't fixed.
+SURV669754,INT0000384,1,The issue wasn't fixed.
+SURV610219,INT0000390,4,"Quick and easy, thanks!"
+SURV637393,INT0000391,5,"Quick and easy, thanks!"
+SURV931816,INT0000392,5,"Quick and easy, thanks!"
+SURV553532,INT0000394,5,"Quick and easy, thanks!"
+SURV217217,INT0000396,5,"Quick and easy, thanks!"
+SURV625468,INT0000417,1,The issue wasn't fixed.
+SURV808586,INT0000424,5,"Quick and easy, thanks!"
+SURV368395,INT0000428,4,"Quick and easy, thanks!"
+SURV833494,INT0000432,4,Took a while but got sorted eventually.
+SURV355007,INT0000439,4,Took a while but got sorted eventually.
+SURV986679,INT0000440,5,"Quick and easy, thanks!"
+SURV550062,INT0000451,3,Took a while but got sorted eventually.
+SURV114582,INT0000456,4,"Quick and easy, thanks!"
+SURV990007,INT0000470,1,The issue wasn't fixed.
+SURV293024,INT0000474,1,The issue wasn't fixed.
+SURV246442,INT0000480,4,"Quick and easy, thanks!"
+SURV428056,INT0000485,1,The issue wasn't fixed.
+SURV614895,INT0000509,2,The issue wasn't fixed.
+SURV454429,INT0000510,1,The issue wasn't fixed.
+SURV707194,INT0000511,1,The issue wasn't fixed.
+SURV918695,INT0000527,1,The issue wasn't fixed.
+SURV401807,INT0000533,1,The issue wasn't fixed.
+SURV981304,INT0000536,1,The issue wasn't fixed.
+SURV955096,INT0000537,2,The issue wasn't fixed.
+SURV820156,INT0000543,1,The issue wasn't fixed.
+SURV378433,INT0000549,5,"Quick and easy, thanks!"
+SURV725145,INT0000552,5,"Quick and easy, thanks!"
+SURV998436,INT0000553,1,The issue wasn't fixed.
+SURV159649,INT0000554,1,The issue wasn't fixed.
+SURV548097,INT0000562,5,"Quick and easy, thanks!"
+SURV649439,INT0000564,1,The issue wasn't fixed.
+SURV353536,INT0000569,2,The issue wasn't fixed.
+SURV684006,INT0000572,4,"Quick and easy, thanks!"
+SURV292106,INT0000580,2,The issue wasn't fixed.
+SURV164002,INT0000582,4,"Quick and easy, thanks!"
+SURV771202,INT0000583,5,"Quick and easy, thanks!"
+SURV131028,INT0000593,5,"Quick and easy, thanks!"
+SURV206143,INT0000596,2,The issue wasn't fixed.
+SURV320004,INT0000599,4,"Quick and easy, thanks!"
+SURV532924,INT0000600,5,"Quick and easy, thanks!"
+SURV208026,INT0000604,5,"Quick and easy, thanks!"
+SURV239832,INT0000610,4,Took a while but got sorted eventually.
+SURV812692,INT0000615,3,Took a while but got sorted eventually.
+SURV978192,INT0000616,4,Took a while but got sorted eventually.
+SURV664862,INT0000626,1,The issue wasn't fixed.
+SURV887685,INT0000632,5,"Quick and easy, thanks!"
+SURV784455,INT0000635,5,"Quick and easy, thanks!"
+SURV970954,INT0000643,1,The issue wasn't fixed.
+SURV325018,INT0000648,5,"Quick and easy, thanks!"
+SURV621684,INT0000662,1,The issue wasn't fixed.
+SURV347405,INT0000664,1,The issue wasn't fixed.
+SURV482391,INT0000667,2,The issue wasn't fixed.
+SURV340109,INT0000669,5,"Quick and easy, thanks!"
+SURV709487,INT0000674,4,Took a while but got sorted eventually.
+SURV760584,INT0000677,2,The issue wasn't fixed.
+SURV342999,INT0000678,1,The issue wasn't fixed.
+SURV580812,INT0000680,1,The issue wasn't fixed.
+SURV537672,INT0000697,1,The issue wasn't fixed.
+SURV989002,INT0000698,2,The issue wasn't fixed.
+SURV531775,INT0000702,3,Took a while but got sorted eventually.
+SURV952061,INT0000703,3,Took a while but got sorted eventually.
+SURV917921,INT0000705,4,Took a while but got sorted eventually.
+SURV364973,INT0000706,3,Took a while but got sorted eventually.
+SURV273168,INT0000710,5,"Quick and easy, thanks!"
+SURV961142,INT0000712,2,The issue wasn't fixed.
+SURV291270,INT0000713,2,The issue wasn't fixed.
+SURV712660,INT0000714,1,The issue wasn't fixed.
+SURV651278,INT0000718,3,Took a while but got sorted eventually.
+SURV553237,INT0000721,2,The issue wasn't fixed.
+SURV434472,INT0000724,1,The issue wasn't fixed.
+SURV935976,INT0000728,3,Took a while but got sorted eventually.
+SURV182442,INT0000731,1,The issue wasn't fixed.
+SURV966512,INT0000734,3,Took a while but got sorted eventually.
+SURV249156,INT0000736,4,"Quick and easy, thanks!"
+SURV695438,INT0000740,5,"Quick and easy, thanks!"
+SURV656594,INT0000746,4,"Quick and easy, thanks!"
+SURV733760,INT0000761,5,"Quick and easy, thanks!"
+SURV516211,INT0000780,5,"Quick and easy, thanks!"
+SURV917514,INT0000787,4,"Quick and easy, thanks!"
+SURV819243,INT0000798,5,"Quick and easy, thanks!"
+SURV860320,INT0000800,1,The issue wasn't fixed.
+SURV544164,INT0000801,1,The issue wasn't fixed.
+SURV309457,INT0000806,2,The issue wasn't fixed.
+SURV778892,INT0000829,2,The issue wasn't fixed.
+SURV348632,INT0000830,1,The issue wasn't fixed.
+SURV893303,INT0000831,2,The issue wasn't fixed.
+SURV748116,INT0000842,1,The issue wasn't fixed.
+SURV866490,INT0000849,4,Took a while but got sorted eventually.
+SURV268461,INT0000851,4,Took a while but got sorted eventually.
+SURV607960,INT0000854,2,The issue wasn't fixed.
+SURV819026,INT0000859,5,"Quick and easy, thanks!"
+SURV467266,INT0000861,5,"Quick and easy, thanks!"
+SURV194164,INT0000869,4,Took a while but got sorted eventually.
+SURV372477,INT0000870,4,Took a while but got sorted eventually.
+SURV653584,INT0000881,5,"Quick and easy, thanks!"
+SURV159414,INT0000887,1,The issue wasn't fixed.
+SURV281860,INT0000889,4,Took a while but got sorted eventually.
+SURV754306,INT0000890,4,Took a while but got sorted eventually.
+SURV762985,INT0000894,5,"Quick and easy, thanks!"
+SURV562471,INT0000899,2,The issue wasn't fixed.
+SURV227523,INT0000900,3,Took a while but got sorted eventually.
+SURV973258,INT0000901,4,Took a while but got sorted eventually.
+SURV378064,INT0000902,5,"Quick and easy, thanks!"
+SURV801490,INT0000909,4,Took a while but got sorted eventually.
+SURV262866,INT0000913,5,"Quick and easy, thanks!"
+SURV218974,INT0000916,1,The issue wasn't fixed.
+SURV562247,INT0000919,1,The issue wasn't fixed.
+SURV407572,INT0000925,1,The issue wasn't fixed.
+SURV876684,INT0000926,2,The issue wasn't fixed.
+SURV420732,INT0000927,2,The issue wasn't fixed.
+SURV421208,INT0000946,1,The issue wasn't fixed.
+SURV677380,INT0000951,2,The issue wasn't fixed.
+SURV660969,INT0000966,5,"Quick and easy, thanks!"
+SURV280457,INT0000970,4,Took a while but got sorted eventually.
+SURV963101,INT0000973,5,"Quick and easy, thanks!"
+SURV615983,INT0000985,5,"Quick and easy, thanks!"
+SURV645954,INT0000986,4,Took a while but got sorted eventually.
+SURV236670,INT0000993,3,Took a while but got sorted eventually.
+SURV586286,INT0000996,4,"Quick and easy, thanks!"
+SURV990865,INT0000998,3,Took a while but got sorted eventually.
+SURV850271,INT0000999,4,Took a while but got sorted eventually.
+SURV857106,INT0001005,4,Took a while but got sorted eventually.
+SURV280059,INT0001015,4,"Quick and easy, thanks!"
+SURV612799,INT0001032,1,The issue wasn't fixed.
+SURV153004,INT0001033,3,Took a while but got sorted eventually.
+SURV210207,INT0001034,4,Took a while but got sorted eventually.
+SURV794116,INT0001037,2,The issue wasn't fixed.
+SURV337805,INT0001038,2,The issue wasn't fixed.
+SURV563051,INT0001044,5,"Quick and easy, thanks!"
+SURV859212,INT0001045,1,The issue wasn't fixed.
+SURV435373,INT0001048,2,The issue wasn't fixed.
+SURV858365,INT0001052,1,The issue wasn't fixed.
+SURV346151,INT0001054,1,The issue wasn't fixed.
+SURV601671,INT0001058,1,The issue wasn't fixed.
+SURV584019,INT0001060,2,The issue wasn't fixed.
+SURV979745,INT0001065,1,The issue wasn't fixed.
+SURV467932,INT0001066,2,The issue wasn't fixed.
+SURV321956,INT0001069,2,The issue wasn't fixed.
+SURV218864,INT0001070,2,The issue wasn't fixed.
+SURV426501,INT0001071,2,The issue wasn't fixed.
+SURV393231,INT0001075,3,Took a while but got sorted eventually.
+SURV386855,INT0001079,1,The issue wasn't fixed.
+SURV513989,INT0001082,5,"Quick and easy, thanks!"
+SURV395529,INT0001084,5,"Quick and easy, thanks!"
+SURV687024,INT0001088,1,The issue wasn't fixed.
+SURV968197,INT0001106,5,"Quick and easy, thanks!"
+SURV129168,INT0001109,2,The issue wasn't fixed.
+SURV192107,INT0001119,4,"Quick and easy, thanks!"
+SURV137290,INT0001122,1,The issue wasn't fixed.
+SURV141098,INT0001133,1,The issue wasn't fixed.
+SURV620354,INT0001143,4,"Quick and easy, thanks!"
+SURV142230,INT0001146,2,The issue wasn't fixed.
+SURV166063,INT0001148,5,"Quick and easy, thanks!"
+SURV432109,INT0001151,1,The issue wasn't fixed.
+SURV492716,INT0001152,2,The issue wasn't fixed.
+SURV700084,INT0001154,4,Took a while but got sorted eventually.
+SURV539875,INT0001168,1,The issue wasn't fixed.
+SURV533452,INT0001175,1,The issue wasn't fixed.
+SURV535274,INT0001184,1,The issue wasn't fixed.
+SURV684728,INT0001188,1,The issue wasn't fixed.
+SURV146254,INT0001191,4,"Quick and easy, thanks!"
+SURV767085,INT0001197,4,Took a while but got sorted eventually.
+SURV198414,INT0001198,2,The issue wasn't fixed.
+SURV272852,INT0001199,1,The issue wasn't fixed.
+SURV252549,INT0001202,1,The issue wasn't fixed.
+SURV478570,INT0001206,4,"Quick and easy, thanks!"
+SURV490124,INT0001210,1,The issue wasn't fixed.
+SURV330569,INT0001212,1,The issue wasn't fixed.
+SURV699772,INT0001217,5,"Quick and easy, thanks!"
+SURV409860,INT0001222,5,"Quick and easy, thanks!"
+SURV796365,INT0001224,3,Took a while but got sorted eventually.
+SURV583989,INT0001244,2,The issue wasn't fixed.
+SURV388990,INT0001257,4,Took a while but got sorted eventually.
+SURV852612,INT0001258,4,Took a while but got sorted eventually.
+SURV830175,INT0001259,1,The issue wasn't fixed.
+SURV964416,INT0001261,1,The issue wasn't fixed.
+SURV251122,INT0001262,4,"Quick and easy, thanks!"
+SURV495062,INT0001264,5,"Quick and easy, thanks!"
+SURV713434,INT0001285,4,"Quick and easy, thanks!"
+SURV249755,INT0001286,4,Took a while but got sorted eventually.
+SURV319010,INT0001296,1,The issue wasn't fixed.
+SURV707217,INT0001300,2,The issue wasn't fixed.
+SURV329876,INT0001306,1,The issue wasn't fixed.
+SURV210250,INT0001308,1,The issue wasn't fixed.
+SURV916310,INT0001315,5,"Quick and easy, thanks!"
+SURV515231,INT0001322,5,"Quick and easy, thanks!"
+SURV667594,INT0001325,5,"Quick and easy, thanks!"
+SURV483089,INT0001333,5,"Quick and easy, thanks!"
+SURV613069,INT0001334,4,"Quick and easy, thanks!"
+SURV331247,INT0001345,2,The issue wasn't fixed.
+SURV379702,INT0001348,5,"Quick and easy, thanks!"
+SURV218120,INT0001351,4,Took a while but got sorted eventually.
+SURV953807,INT0001352,4,Took a while but got sorted eventually.
+SURV417201,INT0001366,3,Took a while but got sorted eventually.
+SURV225738,INT0001372,4,"Quick and easy, thanks!"
+SURV467360,INT0001385,3,Took a while but got sorted eventually.
+SURV259414,INT0001395,5,"Quick and easy, thanks!"
+SURV296759,INT0001397,4,"Quick and easy, thanks!"
+SURV788858,INT0001405,5,"Quick and easy, thanks!"
+SURV723179,INT0001407,5,"Quick and easy, thanks!"
+SURV594036,INT0001409,4,"Quick and easy, thanks!"
+SURV753310,INT0001412,4,"Quick and easy, thanks!"
+SURV201041,INT0001414,1,The issue wasn't fixed.
+SURV434662,INT0001421,4,"Quick and easy, thanks!"
+SURV972609,INT0001427,5,"Quick and easy, thanks!"
+SURV804615,INT0001429,3,Took a while but got sorted eventually.
+SURV756876,INT0001430,5,"Quick and easy, thanks!"
+SURV944273,INT0001437,1,The issue wasn't fixed.
+SURV914041,INT0001445,1,The issue wasn't fixed.
+SURV306136,INT0001448,3,Took a while but got sorted eventually.
+SURV877549,INT0001452,5,"Quick and easy, thanks!"
+SURV280190,INT0001454,5,"Quick and easy, thanks!"
+SURV638308,INT0001457,3,Took a while but got sorted eventually.
+SURV203788,INT0001461,5,"Quick and easy, thanks!"
+SURV701831,INT0001462,4,"Quick and easy, thanks!"
+SURV516387,INT0001474,4,"Quick and easy, thanks!"
+SURV886450,INT0001478,4,"Quick and easy, thanks!"
+SURV962961,INT0001509,4,"Quick and easy, thanks!"
+SURV868381,INT0001516,3,Took a while but got sorted eventually.
+SURV852209,INT0001518,5,"Quick and easy, thanks!"
+SURV871704,INT0001528,5,"Quick and easy, thanks!"
+SURV104925,INT0001529,5,"Quick and easy, thanks!"
+SURV711958,INT0001554,4,Took a while but got sorted eventually.
+SURV403802,INT0001557,3,Took a while but got sorted eventually.
+SURV135277,INT0001558,4,Took a while but got sorted eventually.
+SURV282909,INT0001572,2,The issue wasn't fixed.
+SURV626306,INT0001579,5,"Quick and easy, thanks!"
+SURV529097,INT0001582,1,The issue wasn't fixed.
+SURV236778,INT0001597,1,The issue wasn't fixed.
+SURV634493,INT0001629,1,The issue wasn't fixed.
+SURV923562,INT0001638,4,"Quick and easy, thanks!"
+SURV294030,INT0001644,4,"Quick and easy, thanks!"
+SURV453467,INT0001647,5,"Quick and easy, thanks!"
+SURV708186,INT0001652,4,"Quick and easy, thanks!"
+SURV974811,INT0001658,5,"Quick and easy, thanks!"
+SURV898191,INT0001661,2,The issue wasn't fixed.
+SURV618911,INT0001662,1,The issue wasn't fixed.
+SURV882956,INT0001678,5,"Quick and easy, thanks!"
+SURV706993,INT0001681,4,Took a while but got sorted eventually.
+SURV729287,INT0001689,1,The issue wasn't fixed.
+SURV700185,INT0001691,1,The issue wasn't fixed.
+SURV326900,INT0001695,5,"Quick and easy, thanks!"
+SURV525124,INT0001710,5,"Quick and easy, thanks!"
+SURV848713,INT0001711,4,"Quick and easy, thanks!"
+SURV807738,INT0001742,1,The issue wasn't fixed.
+SURV555099,INT0001745,3,Took a while but got sorted eventually.
+SURV287683,INT0001752,2,The issue wasn't fixed.
+SURV287644,INT0001753,4,Took a while but got sorted eventually.
+SURV875497,INT0001755,4,Took a while but got sorted eventually.
+SURV318247,INT0001767,5,"Quick and easy, thanks!"
+SURV142606,INT0001785,5,"Quick and easy, thanks!"
+SURV787173,INT0001797,5,"Quick and easy, thanks!"
+SURV660769,INT0001807,2,The issue wasn't fixed.
+SURV483426,INT0001814,5,"Quick and easy, thanks!"
+SURV478915,INT0001823,3,Took a while but got sorted eventually.
+SURV417130,INT0001836,1,The issue wasn't fixed.
+SURV380050,INT0001841,1,The issue wasn't fixed.
+SURV946421,INT0001848,1,The issue wasn't fixed.
+SURV138205,INT0001855,1,The issue wasn't fixed.
+SURV232405,INT0001858,3,Took a while but got sorted eventually.
+SURV565006,INT0001862,5,"Quick and easy, thanks!"
+SURV591918,INT0001866,5,"Quick and easy, thanks!"
+SURV377388,INT0001872,1,The issue wasn't fixed.
+SURV485074,INT0001873,1,The issue wasn't fixed.
+SURV175147,INT0001879,5,"Quick and easy, thanks!"
+SURV199786,INT0001883,5,"Quick and easy, thanks!"
+SURV428622,INT0001892,3,Took a while but got sorted eventually.
+SURV270304,INT0001895,4,"Quick and easy, thanks!"
+SURV644824,INT0001903,4,"Quick and easy, thanks!"
+SURV662014,INT0001909,1,The issue wasn't fixed.
+SURV489485,INT0001913,1,The issue wasn't fixed.
+SURV202670,INT0001915,1,The issue wasn't fixed.
+SURV426624,INT0001920,1,The issue wasn't fixed.
+SURV374401,INT0001935,4,Took a while but got sorted eventually.
+SURV803315,INT0001938,1,The issue wasn't fixed.
+SURV377955,INT0001946,2,The issue wasn't fixed.
+SURV696793,INT0001957,4,Took a while but got sorted eventually.
+SURV116858,INT0001970,5,"Quick and easy, thanks!"
+SURV567495,INT0001982,1,The issue wasn't fixed.
+SURV625842,INT0001986,5,"Quick and easy, thanks!"
+SURV468683,INT0002005,4,"Quick and easy, thanks!"
+SURV907150,INT0002013,4,"Quick and easy, thanks!"
+SURV242914,INT0002028,5,"Quick and easy, thanks!"
+SURV647612,INT0002029,3,Took a while but got sorted eventually.
+SURV130916,INT0002032,3,Took a while but got sorted eventually.
+SURV700585,INT0002042,4,Took a while but got sorted eventually.
+SURV628898,INT0002044,5,"Quick and easy, thanks!"
+SURV846003,INT0002053,2,The issue wasn't fixed.
+SURV608922,INT0002076,4,"Quick and easy, thanks!"
+SURV867736,INT0002095,2,The issue wasn't fixed.
+SURV479835,INT0002100,5,"Quick and easy, thanks!"
+SURV331106,INT0002103,5,"Quick and easy, thanks!"
+SURV627425,INT0002105,5,"Quick and easy, thanks!"
+SURV246294,INT0002137,4,Took a while but got sorted eventually.
+SURV540830,INT0002139,1,The issue wasn't fixed.
+SURV850214,INT0002154,1,The issue wasn't fixed.
+SURV728830,INT0002156,1,The issue wasn't fixed.
+SURV105640,INT0002175,5,"Quick and easy, thanks!"
+SURV953313,INT0002185,3,Took a while but got sorted eventually.
+SURV372914,INT0002186,3,Took a while but got sorted eventually.
+SURV857069,INT0002188,2,The issue wasn't fixed.
+SURV412752,INT0002189,1,The issue wasn't fixed.
+SURV772232,INT0002192,5,"Quick and easy, thanks!"
+SURV611261,INT0002201,1,The issue wasn't fixed.
+SURV544649,INT0002203,1,The issue wasn't fixed.
+SURV138445,INT0002206,1,The issue wasn't fixed.
+SURV370268,INT0002211,3,Took a while but got sorted eventually.
+SURV131404,INT0002214,4,Took a while but got sorted eventually.
+SURV886002,INT0002236,1,The issue wasn't fixed.
+SURV167275,INT0002237,4,Took a while but got sorted eventually.
+SURV961035,INT0002249,4,"Quick and easy, thanks!"
+SURV788894,INT0002251,4,Took a while but got sorted eventually.
+SURV558201,INT0002252,1,The issue wasn't fixed.
+SURV108367,INT0002255,1,The issue wasn't fixed.
+SURV525517,INT0002259,3,Took a while but got sorted eventually.
+SURV857849,INT0002268,3,Took a while but got sorted eventually.
+SURV450867,INT0002270,5,"Quick and easy, thanks!"
+SURV878019,INT0002275,5,"Quick and easy, thanks!"
+SURV591286,INT0002276,1,The issue wasn't fixed.
+SURV316375,INT0002278,5,"Quick and easy, thanks!"
+SURV188343,INT0002282,5,"Quick and easy, thanks!"
+SURV856603,INT0002288,3,Took a while but got sorted eventually.
+SURV173706,INT0002294,2,The issue wasn't fixed.
+SURV806799,INT0002295,1,The issue wasn't fixed.
+SURV487121,INT0002301,1,The issue wasn't fixed.
+SURV368098,INT0002302,4,Took a while but got sorted eventually.
+SURV184133,INT0002311,2,The issue wasn't fixed.
+SURV226901,INT0002312,2,The issue wasn't fixed.
+SURV181558,INT0002313,2,The issue wasn't fixed.
+SURV517974,INT0002323,5,"Quick and easy, thanks!"
+SURV492393,INT0002325,5,"Quick and easy, thanks!"
+SURV995208,INT0002331,5,"Quick and easy, thanks!"
+SURV331350,INT0002375,5,"Quick and easy, thanks!"
+SURV380659,INT0002380,1,The issue wasn't fixed.
+SURV474763,INT0002392,4,"Quick and easy, thanks!"
+SURV653267,INT0002393,5,"Quick and easy, thanks!"
+SURV568855,INT0002394,1,The issue wasn't fixed.
+SURV232531,INT0002404,4,"Quick and easy, thanks!"
+SURV448763,INT0002416,5,"Quick and easy, thanks!"
+SURV344767,INT0002428,3,Took a while but got sorted eventually.
+SURV932179,INT0002430,1,The issue wasn't fixed.
+SURV240863,INT0002431,1,The issue wasn't fixed.
+SURV803012,INT0002433,1,The issue wasn't fixed.
+SURV480500,INT0002465,1,The issue wasn't fixed.
+SURV993381,INT0002473,5,"Quick and easy, thanks!"
+SURV111174,INT0002474,5,"Quick and easy, thanks!"
+SURV683533,INT0002481,2,The issue wasn't fixed.
+SURV746626,INT0002496,2,The issue wasn't fixed.
+SURV309061,INT0002502,1,The issue wasn't fixed.
+SURV538174,INT0002511,4,Took a while but got sorted eventually.
+SURV986022,INT0002518,1,The issue wasn't fixed.
+SURV922027,INT0002519,1,The issue wasn't fixed.
+SURV646906,INT0002522,4,"Quick and easy, thanks!"
+SURV141604,INT0002529,2,The issue wasn't fixed.
+SURV774601,INT0002543,1,The issue wasn't fixed.
+SURV980813,INT0002558,2,The issue wasn't fixed.
+SURV667328,INT0002571,4,Took a while but got sorted eventually.
+SURV945475,INT0002574,2,The issue wasn't fixed.
+SURV221580,INT0002581,5,"Quick and easy, thanks!"
+SURV944819,INT0002585,2,The issue wasn't fixed.
+SURV443977,INT0002597,4,Took a while but got sorted eventually.
+SURV963103,INT0002606,4,"Quick and easy, thanks!"
+SURV837776,INT0002607,3,Took a while but got sorted eventually.
+SURV763567,INT0002623,3,Took a while but got sorted eventually.
+SURV454782,INT0002629,2,The issue wasn't fixed.
+SURV446621,INT0002632,4,Took a while but got sorted eventually.
+SURV744290,INT0002638,1,The issue wasn't fixed.
+SURV296619,INT0002640,5,"Quick and easy, thanks!"
+SURV995510,INT0002657,4,"Quick and easy, thanks!"
+SURV482392,INT0002660,1,The issue wasn't fixed.
+SURV399654,INT0002663,5,"Quick and easy, thanks!"
+SURV424947,INT0002664,4,"Quick and easy, thanks!"
+SURV291386,INT0002669,4,Took a while but got sorted eventually.
+SURV759144,INT0002671,4,"Quick and easy, thanks!"
+SURV735864,INT0002673,5,"Quick and easy, thanks!"
+SURV204139,INT0002683,3,Took a while but got sorted eventually.
+SURV946762,INT0002687,1,The issue wasn't fixed.
+SURV500756,INT0002692,5,"Quick and easy, thanks!"
+SURV231367,INT0002698,1,The issue wasn't fixed.
+SURV828334,INT0002700,4,"Quick and easy, thanks!"
+SURV608862,INT0002709,5,"Quick and easy, thanks!"
+SURV803333,INT0002710,3,Took a while but got sorted eventually.
+SURV823449,INT0002715,5,"Quick and easy, thanks!"
+SURV286446,INT0002716,5,"Quick and easy, thanks!"
+SURV483791,INT0002728,1,The issue wasn't fixed.
+SURV944761,INT0002734,4,"Quick and easy, thanks!"
+SURV953601,INT0002746,2,The issue wasn't fixed.
+SURV443201,INT0002749,1,The issue wasn't fixed.
+SURV825102,INT0002752,1,The issue wasn't fixed.
+SURV791177,INT0002769,4,Took a while but got sorted eventually.
+SURV658333,INT0002772,1,The issue wasn't fixed.
+SURV397255,INT0002774,5,"Quick and easy, thanks!"
+SURV589775,INT0002776,1,The issue wasn't fixed.
+SURV532788,INT0002783,3,Took a while but got sorted eventually.
+SURV541373,INT0002787,1,The issue wasn't fixed.
+SURV966042,INT0002790,1,The issue wasn't fixed.
+SURV151939,INT0002795,5,"Quick and easy, thanks!"
+SURV191282,INT0002800,4,Took a while but got sorted eventually.
+SURV691273,INT0002804,4,Took a while but got sorted eventually.
+SURV900917,INT0002807,1,The issue wasn't fixed.
+SURV228505,INT0002812,5,"Quick and easy, thanks!"
+SURV999367,INT0002813,4,"Quick and easy, thanks!"
+SURV955874,INT0002821,5,"Quick and easy, thanks!"
+SURV227704,INT0002832,4,Took a while but got sorted eventually.
+SURV872447,INT0002834,1,The issue wasn't fixed.
+SURV992167,INT0002836,2,The issue wasn't fixed.
+SURV904250,INT0002839,5,"Quick and easy, thanks!"
+SURV629710,INT0002842,2,The issue wasn't fixed.
+SURV774626,INT0002845,4,"Quick and easy, thanks!"
+SURV774016,INT0002849,1,The issue wasn't fixed.
+SURV453873,INT0002860,2,The issue wasn't fixed.
+SURV585214,INT0002865,2,The issue wasn't fixed.
+SURV625148,INT0002869,1,The issue wasn't fixed.
+SURV351237,INT0002870,1,The issue wasn't fixed.
+SURV316524,INT0002876,4,Took a while but got sorted eventually.
+SURV721189,INT0002878,4,"Quick and easy, thanks!"
+SURV925787,INT0002880,1,The issue wasn't fixed.
+SURV842416,INT0002885,1,The issue wasn't fixed.
+SURV596231,INT0002897,1,The issue wasn't fixed.
+SURV136754,INT0002909,1,The issue wasn't fixed.
+SURV868836,INT0002910,3,Took a while but got sorted eventually.
+SURV670991,INT0002913,2,The issue wasn't fixed.
+SURV213041,INT0002917,4,"Quick and easy, thanks!"
+SURV793107,INT0002919,2,The issue wasn't fixed.
+SURV373731,INT0002931,1,The issue wasn't fixed.
+SURV853026,INT0002935,5,"Quick and easy, thanks!"
+SURV447362,INT0002938,4,"Quick and easy, thanks!"
+SURV177464,INT0002939,5,"Quick and easy, thanks!"
+SURV842028,INT0002942,1,The issue wasn't fixed.
+SURV770249,INT0002943,1,The issue wasn't fixed.
+SURV599216,INT0002945,1,The issue wasn't fixed.
+SURV772930,INT0002949,5,"Quick and easy, thanks!"
+SURV306774,INT0002950,5,"Quick and easy, thanks!"
+SURV271811,INT0002952,3,Took a while but got sorted eventually.
+SURV884574,INT0002955,1,The issue wasn't fixed.
+SURV868075,INT0002965,2,The issue wasn't fixed.
+SURV740671,INT0002966,4,Took a while but got sorted eventually.
+SURV939454,INT0002970,5,"Quick and easy, thanks!"
+SURV285086,INT0002977,3,Took a while but got sorted eventually.
+SURV946293,INT0002986,2,The issue wasn't fixed.
+SURV366279,INT0002992,4,"Quick and easy, thanks!"
+SURV820116,INT0003002,4,"Quick and easy, thanks!"
+SURV826949,INT0003004,4,"Quick and easy, thanks!"
+SURV504377,INT0003006,3,Took a while but got sorted eventually.
+SURV903806,INT0003011,5,"Quick and easy, thanks!"
+SURV604359,INT0003014,5,"Quick and easy, thanks!"
+SURV165195,INT0003018,5,"Quick and easy, thanks!"
+SURV290966,INT0003022,5,"Quick and easy, thanks!"
+SURV866606,INT0003026,1,The issue wasn't fixed.
+SURV159114,INT0003034,1,The issue wasn't fixed.
+SURV290836,INT0003054,4,"Quick and easy, thanks!"
+SURV866971,INT0003055,4,"Quick and easy, thanks!"
+SURV854182,INT0003059,5,"Quick and easy, thanks!"
+SURV911463,INT0003067,1,The issue wasn't fixed.
+SURV968053,INT0003070,4,Took a while but got sorted eventually.
+SURV395795,INT0003080,1,The issue wasn't fixed.
+SURV811376,INT0003081,5,"Quick and easy, thanks!"
+SURV839780,INT0003084,1,The issue wasn't fixed.
+SURV274650,INT0003112,3,Took a while but got sorted eventually.
+SURV490303,INT0003113,4,"Quick and easy, thanks!"
+SURV138866,INT0003121,5,"Quick and easy, thanks!"
+SURV487536,INT0003129,2,The issue wasn't fixed.
+SURV901842,INT0003143,2,The issue wasn't fixed.
+SURV422711,INT0003145,1,The issue wasn't fixed.
+SURV639759,INT0003149,5,"Quick and easy, thanks!"
+SURV489917,INT0003165,4,"Quick and easy, thanks!"
+SURV426895,INT0003173,3,Took a while but got sorted eventually.
+SURV579309,INT0003188,4,"Quick and easy, thanks!"
+SURV935637,INT0003190,4,"Quick and easy, thanks!"
+SURV287614,INT0003211,2,The issue wasn't fixed.
+SURV638557,INT0003214,4,Took a while but got sorted eventually.
+SURV526433,INT0003222,4,"Quick and easy, thanks!"
+SURV252591,INT0003223,1,The issue wasn't fixed.
+SURV929257,INT0003231,5,"Quick and easy, thanks!"
+SURV976180,INT0003233,4,"Quick and easy, thanks!"
+SURV163899,INT0003248,1,The issue wasn't fixed.
+SURV714506,INT0003261,1,The issue wasn't fixed.
+SURV596675,INT0003284,2,The issue wasn't fixed.
+SURV802878,INT0003288,2,The issue wasn't fixed.
+SURV213533,INT0003292,1,The issue wasn't fixed.
+SURV957559,INT0003300,1,The issue wasn't fixed.
+SURV262927,INT0003304,5,"Quick and easy, thanks!"
+SURV230871,INT0003306,5,"Quick and easy, thanks!"
+SURV717238,INT0003307,5,"Quick and easy, thanks!"
+SURV947533,INT0003313,5,"Quick and easy, thanks!"
+SURV190103,INT0003323,4,"Quick and easy, thanks!"
+SURV921916,INT0003326,3,Took a while but got sorted eventually.
+SURV302521,INT0003329,1,The issue wasn't fixed.
+SURV645553,INT0003341,2,The issue wasn't fixed.
+SURV830946,INT0003348,3,Took a while but got sorted eventually.
+SURV206529,INT0003354,1,The issue wasn't fixed.
+SURV535056,INT0003372,4,"Quick and easy, thanks!"
+SURV917186,INT0003378,3,Took a while but got sorted eventually.
+SURV502971,INT0003379,5,"Quick and easy, thanks!"
+SURV492504,INT0003384,1,The issue wasn't fixed.
+SURV287822,INT0003395,5,"Quick and easy, thanks!"
+SURV453934,INT0003397,2,The issue wasn't fixed.
+SURV296636,INT0003398,1,The issue wasn't fixed.
+SURV609253,INT0003400,1,The issue wasn't fixed.
+SURV824301,INT0003407,5,"Quick and easy, thanks!"
+SURV475341,INT0003408,4,"Quick and easy, thanks!"
+SURV932649,INT0003409,4,Took a while but got sorted eventually.
+SURV686777,INT0003428,1,The issue wasn't fixed.
+SURV556288,INT0003444,1,The issue wasn't fixed.
+SURV330460,INT0003448,5,"Quick and easy, thanks!"
+SURV248225,INT0003452,4,Took a while but got sorted eventually.
+SURV141222,INT0003454,3,Took a while but got sorted eventually.
+SURV613965,INT0003455,3,Took a while but got sorted eventually.
+SURV553196,INT0003458,5,"Quick and easy, thanks!"
+SURV190490,INT0003464,1,The issue wasn't fixed.
+SURV621487,INT0003465,1,The issue wasn't fixed.
+SURV725924,INT0003476,1,The issue wasn't fixed.
+SURV124691,INT0003479,3,Took a while but got sorted eventually.
+SURV256713,INT0003497,5,"Quick and easy, thanks!"
+SURV500374,INT0003498,3,Took a while but got sorted eventually.
+SURV257814,INT0003512,1,The issue wasn't fixed.
+SURV335275,INT0003514,5,"Quick and easy, thanks!"
+SURV894104,INT0003523,1,The issue wasn't fixed.
+SURV997964,INT0003524,2,The issue wasn't fixed.
+SURV457977,INT0003537,5,"Quick and easy, thanks!"
+SURV956275,INT0003539,1,The issue wasn't fixed.
+SURV930972,INT0003540,2,The issue wasn't fixed.
+SURV149584,INT0003547,1,The issue wasn't fixed.
+SURV768527,INT0003556,1,The issue wasn't fixed.
+SURV288082,INT0003562,5,"Quick and easy, thanks!"
+SURV825362,INT0003564,2,The issue wasn't fixed.
+SURV148694,INT0003571,4,Took a while but got sorted eventually.
+SURV357289,INT0003589,1,The issue wasn't fixed.
+SURV634182,INT0003605,1,The issue wasn't fixed.
+SURV823820,INT0003610,5,"Quick and easy, thanks!"
+SURV163949,INT0003616,1,The issue wasn't fixed.
+SURV266812,INT0003622,5,"Quick and easy, thanks!"
+SURV526183,INT0003643,3,Took a while but got sorted eventually.
+SURV284162,INT0003647,1,The issue wasn't fixed.
+SURV110214,INT0003648,1,The issue wasn't fixed.
+SURV458991,INT0003649,1,The issue wasn't fixed.
+SURV688780,INT0003653,1,The issue wasn't fixed.
+SURV300509,INT0003659,4,"Quick and easy, thanks!"
+SURV717254,INT0003660,4,Took a while but got sorted eventually.
+SURV763838,INT0003679,5,"Quick and easy, thanks!"
+SURV777879,INT0003690,1,The issue wasn't fixed.
+SURV455724,INT0003696,4,"Quick and easy, thanks!"
+SURV634018,INT0003699,5,"Quick and easy, thanks!"
+SURV890880,INT0003708,5,"Quick and easy, thanks!"
+SURV990268,INT0003717,4,"Quick and easy, thanks!"
+SURV929336,INT0003718,5,"Quick and easy, thanks!"
+SURV139498,INT0003723,4,Took a while but got sorted eventually.
+SURV760599,INT0003756,3,Took a while but got sorted eventually.
+SURV713735,INT0003766,2,The issue wasn't fixed.
+SURV461555,INT0003768,3,Took a while but got sorted eventually.
+SURV900737,INT0003775,5,"Quick and easy, thanks!"
+SURV818143,INT0003785,5,"Quick and easy, thanks!"
+SURV844980,INT0003786,4,"Quick and easy, thanks!"
+SURV958608,INT0003799,5,"Quick and easy, thanks!"
+SURV257355,INT0003810,1,The issue wasn't fixed.
+SURV919996,INT0003812,1,The issue wasn't fixed.
+SURV872877,INT0003814,2,The issue wasn't fixed.
+SURV400095,INT0003836,2,The issue wasn't fixed.
+SURV115959,INT0003841,3,Took a while but got sorted eventually.
+SURV859353,INT0003848,1,The issue wasn't fixed.
+SURV661607,INT0003853,5,"Quick and easy, thanks!"
+SURV958095,INT0003858,3,Took a while but got sorted eventually.
+SURV542590,INT0003874,1,The issue wasn't fixed.
+SURV207838,INT0003882,5,"Quick and easy, thanks!"
+SURV458599,INT0003883,3,Took a while but got sorted eventually.
+SURV491570,INT0003885,4,"Quick and easy, thanks!"
+SURV346740,INT0003886,5,"Quick and easy, thanks!"
+SURV371483,INT0003888,4,Took a while but got sorted eventually.
+SURV240527,INT0003890,5,"Quick and easy, thanks!"
+SURV796084,INT0003896,2,The issue wasn't fixed.
+SURV243406,INT0003898,3,Took a while but got sorted eventually.
+SURV618199,INT0003902,2,The issue wasn't fixed.
+SURV684883,INT0003910,5,"Quick and easy, thanks!"
+SURV159147,INT0003925,1,The issue wasn't fixed.
+SURV223356,INT0003934,2,The issue wasn't fixed.
+SURV472065,INT0003953,4,Took a while but got sorted eventually.
+SURV831506,INT0003956,4,"Quick and easy, thanks!"
+SURV108324,INT0003959,5,"Quick and easy, thanks!"
+SURV429602,INT0003962,4,"Quick and easy, thanks!"
+SURV187497,INT0003965,1,The issue wasn't fixed.
+SURV668972,INT0003967,3,Took a while but got sorted eventually.
+SURV221303,INT0003976,1,The issue wasn't fixed.
+SURV606152,INT0003980,2,The issue wasn't fixed.
+SURV793663,INT0003981,4,Took a while but got sorted eventually.
+SURV474853,INT0003984,4,Took a while but got sorted eventually.
+SURV615595,INT0003996,5,"Quick and easy, thanks!"
+SURV462262,INT0003997,4,"Quick and easy, thanks!"
+SURV419231,INT0003998,4,"Quick and easy, thanks!"
+SURV654136,INT0003999,3,Took a while but got sorted eventually.
+SURV525554,INT0004006,2,The issue wasn't fixed.
+SURV882195,INT0004007,4,Took a while but got sorted eventually.
+SURV941316,INT0004009,5,"Quick and easy, thanks!"
+SURV914089,INT0004011,5,"Quick and easy, thanks!"
+SURV107893,INT0004012,4,"Quick and easy, thanks!"
+SURV395786,INT0004021,5,"Quick and easy, thanks!"
+SURV269222,INT0004022,4,Took a while but got sorted eventually.
+SURV401544,INT0004024,1,The issue wasn't fixed.
+SURV147213,INT0004027,1,The issue wasn't fixed.
+SURV783785,INT0004029,1,The issue wasn't fixed.
+SURV486257,INT0004036,5,"Quick and easy, thanks!"
+SURV124469,INT0004042,2,The issue wasn't fixed.
+SURV676871,INT0004044,4,"Quick and easy, thanks!"
+SURV536772,INT0004059,5,"Quick and easy, thanks!"
+SURV872597,INT0004068,1,The issue wasn't fixed.
+SURV474566,INT0004072,2,The issue wasn't fixed.
+SURV828116,INT0004078,4,Took a while but got sorted eventually.
+SURV919023,INT0004083,4,"Quick and easy, thanks!"
+SURV695214,INT0004099,1,The issue wasn't fixed.
+SURV986576,INT0004114,2,The issue wasn't fixed.
+SURV213173,INT0004115,5,"Quick and easy, thanks!"
+SURV172881,INT0004116,1,The issue wasn't fixed.
+SURV494051,INT0004123,4,"Quick and easy, thanks!"
+SURV202632,INT0004131,4,Took a while but got sorted eventually.
+SURV920667,INT0004133,4,Took a while but got sorted eventually.
+SURV253154,INT0004136,4,Took a while but got sorted eventually.
+SURV707066,INT0004151,1,The issue wasn't fixed.
+SURV474235,INT0004159,1,The issue wasn't fixed.
+SURV450127,INT0004175,3,Took a while but got sorted eventually.
+SURV702356,INT0004185,4,"Quick and easy, thanks!"
+SURV319896,INT0004210,1,The issue wasn't fixed.
+SURV659310,INT0004212,2,The issue wasn't fixed.
+SURV249888,INT0004244,3,Took a while but got sorted eventually.
+SURV395058,INT0004251,5,"Quick and easy, thanks!"
+SURV195337,INT0004253,2,The issue wasn't fixed.
+SURV867382,INT0004259,2,The issue wasn't fixed.
+SURV508006,INT0004264,5,"Quick and easy, thanks!"
+SURV811253,INT0004267,5,"Quick and easy, thanks!"
+SURV290415,INT0004278,1,The issue wasn't fixed.
+SURV355492,INT0004295,5,"Quick and easy, thanks!"
+SURV170443,INT0004297,4,Took a while but got sorted eventually.
+SURV341952,INT0004305,1,The issue wasn't fixed.
+SURV530146,INT0004307,1,The issue wasn't fixed.
+SURV605904,INT0004313,5,"Quick and easy, thanks!"
+SURV881273,INT0004316,3,Took a while but got sorted eventually.
+SURV314221,INT0004317,3,Took a while but got sorted eventually.
+SURV149439,INT0004320,2,The issue wasn't fixed.
+SURV773141,INT0004321,4,Took a while but got sorted eventually.
+SURV633182,INT0004325,1,The issue wasn't fixed.
+SURV453140,INT0004327,5,"Quick and easy, thanks!"
+SURV114779,INT0004337,3,Took a while but got sorted eventually.
+SURV657856,INT0004347,2,The issue wasn't fixed.
+SURV639994,INT0004349,1,The issue wasn't fixed.
+SURV950250,INT0004364,4,Took a while but got sorted eventually.
+SURV434539,INT0004372,4,Took a while but got sorted eventually.
+SURV324119,INT0004373,5,"Quick and easy, thanks!"
+SURV628770,INT0004377,3,Took a while but got sorted eventually.
+SURV374671,INT0004382,4,"Quick and easy, thanks!"
+SURV553657,INT0004383,4,Took a while but got sorted eventually.
+SURV706710,INT0004409,4,"Quick and easy, thanks!"
+SURV528578,INT0004412,4,"Quick and easy, thanks!"
+SURV478043,INT0004419,4,Took a while but got sorted eventually.
+SURV320848,INT0004429,1,The issue wasn't fixed.
+SURV993295,INT0004432,1,The issue wasn't fixed.
+SURV325011,INT0004433,1,The issue wasn't fixed.
+SURV613279,INT0004444,4,"Quick and easy, thanks!"
+SURV821786,INT0004445,4,Took a while but got sorted eventually.
+SURV490067,INT0004452,5,"Quick and easy, thanks!"
+SURV925340,INT0004467,1,The issue wasn't fixed.
+SURV571812,INT0004476,4,Took a while but got sorted eventually.
+SURV687631,INT0004486,5,"Quick and easy, thanks!"
+SURV886964,INT0004492,4,"Quick and easy, thanks!"
+SURV202944,INT0004496,3,Took a while but got sorted eventually.
+SURV524179,INT0004498,3,Took a while but got sorted eventually.
+SURV561947,INT0004501,1,The issue wasn't fixed.
+SURV920160,INT0004504,5,"Quick and easy, thanks!"
+SURV237430,INT0004505,3,Took a while but got sorted eventually.
+SURV304492,INT0004511,4,Took a while but got sorted eventually.
+SURV896621,INT0004514,5,"Quick and easy, thanks!"
+SURV394700,INT0004521,4,Took a while but got sorted eventually.
+SURV980191,INT0004523,1,The issue wasn't fixed.
+SURV460788,INT0004524,4,Took a while but got sorted eventually.
+SURV302684,INT0004526,4,"Quick and easy, thanks!"
+SURV907020,INT0004527,4,"Quick and easy, thanks!"
+SURV865973,INT0004532,4,Took a while but got sorted eventually.
+SURV813142,INT0004543,5,"Quick and easy, thanks!"
+SURV977703,INT0004545,5,"Quick and easy, thanks!"
+SURV918053,INT0004548,4,Took a while but got sorted eventually.
+SURV419950,INT0004549,4,Took a while but got sorted eventually.
+SURV433928,INT0004551,4,"Quick and easy, thanks!"
+SURV580704,INT0004560,4,"Quick and easy, thanks!"
+SURV863485,INT0004566,2,The issue wasn't fixed.
+SURV419853,INT0004571,5,"Quick and easy, thanks!"
+SURV805353,INT0004576,1,The issue wasn't fixed.
+SURV678410,INT0004578,5,"Quick and easy, thanks!"
+SURV137064,INT0004581,1,The issue wasn't fixed.
+SURV649910,INT0004584,2,The issue wasn't fixed.
+SURV833940,INT0004586,5,"Quick and easy, thanks!"
+SURV373913,INT0004596,1,The issue wasn't fixed.
+SURV898145,INT0004598,2,The issue wasn't fixed.
+SURV331483,INT0004599,2,The issue wasn't fixed.
+SURV943042,INT0004618,5,"Quick and easy, thanks!"
+SURV584430,INT0004625,5,"Quick and easy, thanks!"
+SURV298961,INT0004629,5,"Quick and easy, thanks!"
+SURV425699,INT0004639,1,The issue wasn't fixed.
+SURV278493,INT0004644,1,The issue wasn't fixed.
+SURV457179,INT0004645,4,Took a while but got sorted eventually.
+SURV966560,INT0004647,1,The issue wasn't fixed.
+SURV342334,INT0004667,5,"Quick and easy, thanks!"
+SURV379385,INT0004668,4,Took a while but got sorted eventually.
+SURV739325,INT0004673,2,The issue wasn't fixed.
+SURV948083,INT0004676,3,Took a while but got sorted eventually.
+SURV161854,INT0004677,4,Took a while but got sorted eventually.
+SURV681774,INT0004689,5,"Quick and easy, thanks!"
+SURV204922,INT0004690,2,The issue wasn't fixed.
+SURV782399,INT0004692,2,The issue wasn't fixed.
+SURV736119,INT0004693,5,"Quick and easy, thanks!"
+SURV725070,INT0004695,4,"Quick and easy, thanks!"
+SURV405289,INT0004696,5,"Quick and easy, thanks!"
+SURV185491,INT0004717,2,The issue wasn't fixed.
+SURV728147,INT0004721,5,"Quick and easy, thanks!"
+SURV552680,INT0004724,4,Took a while but got sorted eventually.
+SURV586696,INT0004738,2,The issue wasn't fixed.
+SURV771959,INT0004742,1,The issue wasn't fixed.
+SURV788829,INT0004749,1,The issue wasn't fixed.
+SURV938712,INT0004751,5,"Quick and easy, thanks!"
+SURV602505,INT0004755,1,The issue wasn't fixed.
+SURV180927,INT0004759,2,The issue wasn't fixed.
+SURV159385,INT0004769,2,The issue wasn't fixed.
+SURV693372,INT0004787,5,"Quick and easy, thanks!"
+SURV279850,INT0004792,3,Took a while but got sorted eventually.
+SURV421462,INT0004796,1,The issue wasn't fixed.
+SURV757501,INT0004801,5,"Quick and easy, thanks!"
+SURV374150,INT0004813,4,Took a while but got sorted eventually.
+SURV340384,INT0004822,5,"Quick and easy, thanks!"
+SURV801556,INT0004828,5,"Quick and easy, thanks!"
+SURV229804,INT0004846,1,The issue wasn't fixed.
+SURV255577,INT0004847,2,The issue wasn't fixed.
+SURV733310,INT0004848,2,The issue wasn't fixed.
+SURV128906,INT0004855,3,Took a while but got sorted eventually.
+SURV256182,INT0004857,3,Took a while but got sorted eventually.
+SURV227977,INT0004858,4,Took a while but got sorted eventually.
+SURV162096,INT0004861,4,"Quick and easy, thanks!"
+SURV394908,INT0004863,4,"Quick and easy, thanks!"
+SURV402380,INT0004868,3,Took a while but got sorted eventually.
+SURV747148,INT0004870,3,Took a while but got sorted eventually.
+SURV454076,INT0004873,1,The issue wasn't fixed.
+SURV192352,INT0004899,2,The issue wasn't fixed.
+SURV261620,INT0004909,4,Took a while but got sorted eventually.
+SURV384751,INT0004935,1,The issue wasn't fixed.
+SURV411417,INT0004951,1,The issue wasn't fixed.
+SURV932977,INT0004953,4,"Quick and easy, thanks!"
+SURV268633,INT0004955,4,Took a while but got sorted eventually.
+SURV150949,INT0004972,5,"Quick and easy, thanks!"
+SURV829171,INT0004975,4,"Quick and easy, thanks!"
+SURV534675,INT0004980,3,Took a while but got sorted eventually.
+SURV824008,INT0004989,4,Took a while but got sorted eventually.
+SURV670416,INT0004990,4,Took a while but got sorted eventually.
+SURV535841,INT0005012,2,The issue wasn't fixed.
+SURV215713,INT0005013,2,The issue wasn't fixed.
+SURV419675,INT0005046,3,Took a while but got sorted eventually.
+SURV319235,INT0005051,5,"Quick and easy, thanks!"
+SURV986601,INT0005059,1,The issue wasn't fixed.
+SURV639271,INT0005086,4,"Quick and easy, thanks!"
+SURV115361,INT0005106,3,Took a while but got sorted eventually.
+SURV570434,INT0005119,5,"Quick and easy, thanks!"
+SURV325958,INT0005132,1,The issue wasn't fixed.
+SURV681288,INT0005135,4,"Quick and easy, thanks!"
+SURV235322,INT0005151,2,The issue wasn't fixed.
+SURV493258,INT0005159,2,The issue wasn't fixed.
+SURV428809,INT0005160,4,Took a while but got sorted eventually.
+SURV557033,INT0005163,1,The issue wasn't fixed.
+SURV190646,INT0005167,1,The issue wasn't fixed.
+SURV980212,INT0005168,1,The issue wasn't fixed.
+SURV214095,INT0005172,4,"Quick and easy, thanks!"
+SURV748698,INT0005179,4,"Quick and easy, thanks!"
+SURV826275,INT0005194,5,"Quick and easy, thanks!"
+SURV716066,INT0005206,4,"Quick and easy, thanks!"
+SURV282655,INT0005208,4,"Quick and easy, thanks!"
+SURV328463,INT0005210,5,"Quick and easy, thanks!"
+SURV227074,INT0005213,2,The issue wasn't fixed.
+SURV479076,INT0005223,1,The issue wasn't fixed.
+SURV955407,INT0005236,1,The issue wasn't fixed.
+SURV372759,INT0005238,3,Took a while but got sorted eventually.
+SURV609988,INT0005244,5,"Quick and easy, thanks!"
+SURV507980,INT0005254,4,"Quick and easy, thanks!"
+SURV157509,INT0005255,5,"Quick and easy, thanks!"
+SURV175807,INT0005265,5,"Quick and easy, thanks!"
+SURV536841,INT0005270,4,"Quick and easy, thanks!"
+SURV165310,INT0005275,4,"Quick and easy, thanks!"
+SURV421650,INT0005282,3,Took a while but got sorted eventually.
+SURV252672,INT0005284,3,Took a while but got sorted eventually.
+SURV462253,INT0005290,1,The issue wasn't fixed.
+SURV960096,INT0005296,4,Took a while but got sorted eventually.
+SURV252859,INT0005297,3,Took a while but got sorted eventually.
+SURV487452,INT0005298,4,"Quick and easy, thanks!"
+SURV802916,INT0005312,3,Took a while but got sorted eventually.
+SURV800165,INT0005325,3,Took a while but got sorted eventually.
+SURV587547,INT0005333,5,"Quick and easy, thanks!"
+SURV104849,INT0005352,4,Took a while but got sorted eventually.
+SURV647335,INT0005354,4,"Quick and easy, thanks!"
+SURV746222,INT0005355,4,"Quick and easy, thanks!"
+SURV942366,INT0005376,5,"Quick and easy, thanks!"
+SURV739272,INT0005379,4,"Quick and easy, thanks!"
+SURV840911,INT0005397,5,"Quick and easy, thanks!"
+SURV681846,INT0005401,1,The issue wasn't fixed.
+SURV155711,INT0005410,4,Took a while but got sorted eventually.
+SURV323011,INT0005417,3,Took a while but got sorted eventually.
+SURV629565,INT0005425,4,Took a while but got sorted eventually.
+SURV942470,INT0005432,5,"Quick and easy, thanks!"
+SURV289709,INT0005434,5,"Quick and easy, thanks!"
+SURV932170,INT0005438,1,The issue wasn't fixed.
+SURV991006,INT0005439,4,"Quick and easy, thanks!"
+SURV834999,INT0005453,5,"Quick and easy, thanks!"
+SURV465644,INT0005474,5,"Quick and easy, thanks!"
+SURV594894,INT0005477,1,The issue wasn't fixed.
+SURV918912,INT0005480,5,"Quick and easy, thanks!"
+SURV287409,INT0005489,3,Took a while but got sorted eventually.
+SURV313074,INT0005498,4,Took a while but got sorted eventually.
+SURV488630,INT0005521,5,"Quick and easy, thanks!"
+SURV550634,INT0005525,4,Took a while but got sorted eventually.
+SURV449879,INT0005529,1,The issue wasn't fixed.
+SURV922061,INT0005532,5,"Quick and easy, thanks!"
+SURV154877,INT0005533,4,"Quick and easy, thanks!"
+SURV652289,INT0005539,5,"Quick and easy, thanks!"
+SURV795784,INT0005541,3,Took a while but got sorted eventually.
+SURV186505,INT0005546,1,The issue wasn't fixed.
+SURV943248,INT0005547,2,The issue wasn't fixed.
+SURV886626,INT0005559,5,"Quick and easy, thanks!"
+SURV757717,INT0005565,5,"Quick and easy, thanks!"
+SURV190359,INT0005572,5,"Quick and easy, thanks!"
+SURV323802,INT0005575,3,Took a while but got sorted eventually.
+SURV309381,INT0005576,4,Took a while but got sorted eventually.
+SURV376727,INT0005589,4,Took a while but got sorted eventually.
+SURV502060,INT0005606,1,The issue wasn't fixed.
+SURV493611,INT0005608,2,The issue wasn't fixed.
+SURV587118,INT0005609,2,The issue wasn't fixed.
+SURV737399,INT0005623,5,"Quick and easy, thanks!"
+SURV767651,INT0005639,5,"Quick and easy, thanks!"
+SURV724407,INT0005642,5,"Quick and easy, thanks!"
+SURV326912,INT0005647,4,Took a while but got sorted eventually.
+SURV704331,INT0005658,5,"Quick and easy, thanks!"
+SURV560225,INT0005660,1,The issue wasn't fixed.
+SURV845454,INT0005667,2,The issue wasn't fixed.
+SURV114760,INT0005684,3,Took a while but got sorted eventually.
+SURV931691,INT0005694,4,"Quick and easy, thanks!"
+SURV218577,INT0005696,3,Took a while but got sorted eventually.
+SURV783119,INT0005697,5,"Quick and easy, thanks!"
+SURV144725,INT0005701,5,"Quick and easy, thanks!"
+SURV574116,INT0005704,1,The issue wasn't fixed.
+SURV219361,INT0005721,1,The issue wasn't fixed.
+SURV630027,INT0005750,5,"Quick and easy, thanks!"
+SURV570492,INT0005751,5,"Quick and easy, thanks!"
+SURV929708,INT0005753,4,"Quick and easy, thanks!"
+SURV576316,INT0005754,2,The issue wasn't fixed.
+SURV455241,INT0005764,4,"Quick and easy, thanks!"
+SURV946735,INT0005801,4,Took a while but got sorted eventually.
+SURV749197,INT0005803,5,"Quick and easy, thanks!"
+SURV757510,INT0005808,2,The issue wasn't fixed.
+SURV345268,INT0005809,1,The issue wasn't fixed.
+SURV378084,INT0005813,1,The issue wasn't fixed.
+SURV429885,INT0005822,5,"Quick and easy, thanks!"
+SURV415117,INT0005825,5,"Quick and easy, thanks!"
+SURV878638,INT0005827,1,The issue wasn't fixed.
+SURV639430,INT0005828,1,The issue wasn't fixed.
+SURV160357,INT0005836,4,Took a while but got sorted eventually.
+SURV827541,INT0005847,4,Took a while but got sorted eventually.
+SURV990718,INT0005862,5,"Quick and easy, thanks!"
+SURV774452,INT0005870,3,Took a while but got sorted eventually.
+SURV670985,INT0005871,3,Took a while but got sorted eventually.
+SURV469031,INT0005877,2,The issue wasn't fixed.
+SURV354641,INT0005883,1,The issue wasn't fixed.
+SURV781651,INT0005886,1,The issue wasn't fixed.
+SURV483287,INT0005887,5,"Quick and easy, thanks!"
+SURV143136,INT0005888,5,"Quick and easy, thanks!"
+SURV315622,INT0005901,2,The issue wasn't fixed.
+SURV343874,INT0005909,2,The issue wasn't fixed.
+SURV490112,INT0005918,1,The issue wasn't fixed.
+SURV660252,INT0005922,2,The issue wasn't fixed.
+SURV203376,INT0005923,2,The issue wasn't fixed.
+SURV571857,INT0005941,2,The issue wasn't fixed.
+SURV222291,INT0005943,4,Took a while but got sorted eventually.
+SURV945714,INT0005951,1,The issue wasn't fixed.
+SURV758271,INT0005953,1,The issue wasn't fixed.
+SURV953026,INT0005954,2,The issue wasn't fixed.
+SURV605161,INT0005959,2,The issue wasn't fixed.
+SURV761977,INT0005961,4,Took a while but got sorted eventually.
+SURV905932,INT0005974,3,Took a while but got sorted eventually.
+SURV714898,INT0005981,5,"Quick and easy, thanks!"
+SURV396088,INT0005985,5,"Quick and easy, thanks!"
+SURV168904,INT0005989,4,"Quick and easy, thanks!"
+SURV679537,INT0005993,4,"Quick and easy, thanks!"
+SURV673538,INT0006008,5,"Quick and easy, thanks!"
+SURV932869,INT0006018,1,The issue wasn't fixed.
+SURV940611,INT0006028,1,The issue wasn't fixed.
+SURV404000,INT0006034,5,"Quick and easy, thanks!"
+SURV964922,INT0006037,5,"Quick and easy, thanks!"
+SURV334494,INT0006039,1,The issue wasn't fixed.
+SURV892104,INT0006043,5,"Quick and easy, thanks!"
+SURV717356,INT0006055,4,"Quick and easy, thanks!"
+SURV785347,INT0006056,5,"Quick and easy, thanks!"
+SURV277104,INT0006060,4,"Quick and easy, thanks!"
+SURV867583,INT0006068,3,Took a while but got sorted eventually.
+SURV743402,INT0006073,4,"Quick and easy, thanks!"
+SURV480870,INT0006079,1,The issue wasn't fixed.
+SURV616022,INT0006094,1,The issue wasn't fixed.
+SURV952583,INT0006112,3,Took a while but got sorted eventually.
+SURV653837,INT0006120,2,The issue wasn't fixed.
+SURV445375,INT0006152,3,Took a while but got sorted eventually.
+SURV139822,INT0006157,1,The issue wasn't fixed.
+SURV427435,INT0006174,2,The issue wasn't fixed.
+SURV437556,INT0006175,4,Took a while but got sorted eventually.
+SURV233188,INT0006182,4,"Quick and easy, thanks!"
+SURV177449,INT0006212,4,Took a while but got sorted eventually.
+SURV869374,INT0006217,5,"Quick and easy, thanks!"
+SURV811947,INT0006222,5,"Quick and easy, thanks!"
+SURV553354,INT0006223,4,"Quick and easy, thanks!"
+SURV435653,INT0006230,1,The issue wasn't fixed.
+SURV850074,INT0006241,4,Took a while but got sorted eventually.
+SURV170155,INT0006245,2,The issue wasn't fixed.
+SURV108909,INT0006249,2,The issue wasn't fixed.
+SURV430755,INT0006253,4,"Quick and easy, thanks!"
+SURV498888,INT0006255,5,"Quick and easy, thanks!"
+SURV344173,INT0006260,5,"Quick and easy, thanks!"
+SURV585995,INT0006261,5,"Quick and easy, thanks!"
+SURV570565,INT0006267,4,Took a while but got sorted eventually.
+SURV826406,INT0006273,5,"Quick and easy, thanks!"
+SURV898952,INT0006282,5,"Quick and easy, thanks!"
+SURV534750,INT0006284,5,"Quick and easy, thanks!"
+SURV450940,INT0006291,5,"Quick and easy, thanks!"
+SURV506054,INT0006297,1,The issue wasn't fixed.
+SURV186648,INT0006325,2,The issue wasn't fixed.
+SURV489992,INT0006337,4,"Quick and easy, thanks!"
+SURV703617,INT0006340,1,The issue wasn't fixed.
+SURV171242,INT0006350,1,The issue wasn't fixed.
+SURV838261,INT0006351,5,"Quick and easy, thanks!"
+SURV161907,INT0006357,1,The issue wasn't fixed.
+SURV915050,INT0006360,4,"Quick and easy, thanks!"
+SURV201121,INT0006375,4,Took a while but got sorted eventually.
+SURV131951,INT0006378,5,"Quick and easy, thanks!"
+SURV421333,INT0006383,5,"Quick and easy, thanks!"
+SURV926335,INT0006385,4,"Quick and easy, thanks!"
+SURV378173,INT0006386,1,The issue wasn't fixed.
+SURV624117,INT0006400,3,Took a while but got sorted eventually.
+SURV467488,INT0006403,5,"Quick and easy, thanks!"
+SURV903407,INT0006410,4,Took a while but got sorted eventually.
+SURV107945,INT0006432,1,The issue wasn't fixed.
+SURV232697,INT0006434,2,The issue wasn't fixed.
+SURV115347,INT0006444,5,"Quick and easy, thanks!"
+SURV773961,INT0006451,4,"Quick and easy, thanks!"
+SURV935706,INT0006463,2,The issue wasn't fixed.
+SURV358515,INT0006472,5,"Quick and easy, thanks!"
+SURV428094,INT0006474,1,The issue wasn't fixed.
+SURV616213,INT0006477,4,"Quick and easy, thanks!"
+SURV459898,INT0006478,5,"Quick and easy, thanks!"
+SURV181686,INT0006482,3,Took a while but got sorted eventually.
+SURV234286,INT0006484,4,Took a while but got sorted eventually.
+SURV113724,INT0006489,1,The issue wasn't fixed.
+SURV674511,INT0006490,1,The issue wasn't fixed.
+SURV764600,INT0006491,1,The issue wasn't fixed.
+SURV735928,INT0006493,3,Took a while but got sorted eventually.
+SURV386568,INT0006503,3,Took a while but got sorted eventually.
+SURV328428,INT0006514,1,The issue wasn't fixed.
+SURV323638,INT0006526,1,The issue wasn't fixed.
+SURV959725,INT0006535,5,"Quick and easy, thanks!"
+SURV345675,INT0006536,5,"Quick and easy, thanks!"
+SURV732796,INT0006547,4,Took a while but got sorted eventually.
+SURV279883,INT0006551,5,"Quick and easy, thanks!"
+SURV609006,INT0006558,4,"Quick and easy, thanks!"
+SURV737099,INT0006565,1,The issue wasn't fixed.
+SURV661346,INT0006574,5,"Quick and easy, thanks!"
+SURV143197,INT0006576,4,"Quick and easy, thanks!"
+SURV587111,INT0006605,5,"Quick and easy, thanks!"
+SURV526865,INT0006607,3,Took a while but got sorted eventually.
+SURV266605,INT0006608,3,Took a while but got sorted eventually.
+SURV634825,INT0006618,5,"Quick and easy, thanks!"
+SURV451366,INT0006620,5,"Quick and easy, thanks!"
+SURV442020,INT0006626,1,The issue wasn't fixed.
+SURV416791,INT0006640,2,The issue wasn't fixed.
+SURV286649,INT0006647,4,Took a while but got sorted eventually.
+SURV291055,INT0006656,5,"Quick and easy, thanks!"
+SURV674715,INT0006696,5,"Quick and easy, thanks!"
+SURV364875,INT0006701,5,"Quick and easy, thanks!"
+SURV421999,INT0006705,5,"Quick and easy, thanks!"
+SURV614677,INT0006718,3,Took a while but got sorted eventually.
+SURV246116,INT0006725,1,The issue wasn't fixed.
+SURV716397,INT0006727,2,The issue wasn't fixed.
+SURV252526,INT0006733,1,The issue wasn't fixed.
+SURV294978,INT0006734,4,Took a while but got sorted eventually.
+SURV235929,INT0006735,3,Took a while but got sorted eventually.
+SURV747315,INT0006737,4,Took a while but got sorted eventually.
+SURV174080,INT0006757,2,The issue wasn't fixed.
+SURV722258,INT0006759,2,The issue wasn't fixed.
+SURV501621,INT0006793,3,Took a while but got sorted eventually.
+SURV702617,INT0006798,1,The issue wasn't fixed.
+SURV939222,INT0006799,4,"Quick and easy, thanks!"
+SURV584529,INT0006808,5,"Quick and easy, thanks!"
+SURV322024,INT0006810,5,"Quick and easy, thanks!"
+SURV659866,INT0006818,1,The issue wasn't fixed.
+SURV176358,INT0006846,1,The issue wasn't fixed.
+SURV761240,INT0006850,1,The issue wasn't fixed.
+SURV338141,INT0006851,1,The issue wasn't fixed.
+SURV183177,INT0006853,4,Took a while but got sorted eventually.
+SURV857274,INT0006854,2,The issue wasn't fixed.
+SURV560146,INT0006865,5,"Quick and easy, thanks!"
+SURV106627,INT0006866,5,"Quick and easy, thanks!"
+SURV162886,INT0006880,4,"Quick and easy, thanks!"
+SURV684347,INT0006887,4,Took a while but got sorted eventually.
+SURV284307,INT0006912,4,"Quick and easy, thanks!"
+SURV335932,INT0006914,2,The issue wasn't fixed.
+SURV293797,INT0006917,5,"Quick and easy, thanks!"
+SURV824388,INT0006920,3,Took a while but got sorted eventually.
+SURV628020,INT0006923,5,"Quick and easy, thanks!"
+SURV622569,INT0006924,3,Took a while but got sorted eventually.
+SURV695698,INT0006932,2,The issue wasn't fixed.
+SURV473781,INT0006939,4,"Quick and easy, thanks!"
+SURV771433,INT0006947,4,"Quick and easy, thanks!"
+SURV938216,INT0006950,2,The issue wasn't fixed.
+SURV388245,INT0006951,1,The issue wasn't fixed.
+SURV782755,INT0006953,2,The issue wasn't fixed.
+SURV477577,INT0006955,4,Took a while but got sorted eventually.
+SURV338839,INT0006971,2,The issue wasn't fixed.
+SURV347474,INT0006982,5,"Quick and easy, thanks!"
+SURV498675,INT0006991,3,Took a while but got sorted eventually.
+SURV239453,INT0006992,4,"Quick and easy, thanks!"
+SURV118105,INT0006997,4,Took a while but got sorted eventually.
+SURV522963,INT0006998,3,Took a while but got sorted eventually.
+SURV472530,INT0007003,3,Took a while but got sorted eventually.
+SURV299493,INT0007012,4,"Quick and easy, thanks!"
+SURV494611,INT0007016,5,"Quick and easy, thanks!"
+SURV742737,INT0007032,3,Took a while but got sorted eventually.
+SURV118757,INT0007041,4,"Quick and easy, thanks!"
+SURV881332,INT0007046,1,The issue wasn't fixed.
+SURV218767,INT0007048,1,The issue wasn't fixed.
+SURV366786,INT0007063,1,The issue wasn't fixed.
+SURV279040,INT0007085,5,"Quick and easy, thanks!"
+SURV480317,INT0007087,4,Took a while but got sorted eventually.
+SURV168866,INT0007089,4,Took a while but got sorted eventually.
+SURV658377,INT0007092,5,"Quick and easy, thanks!"
+SURV869470,INT0007107,1,The issue wasn't fixed.
+SURV638536,INT0007114,4,"Quick and easy, thanks!"
+SURV361420,INT0007119,1,The issue wasn't fixed.
+SURV953221,INT0007120,2,The issue wasn't fixed.
+SURV873313,INT0007121,4,Took a while but got sorted eventually.
+SURV236797,INT0007124,4,"Quick and easy, thanks!"
+SURV920628,INT0007159,5,"Quick and easy, thanks!"
+SURV441426,INT0007160,5,"Quick and easy, thanks!"
+SURV243138,INT0007167,1,The issue wasn't fixed.
+SURV915956,INT0007171,5,"Quick and easy, thanks!"
+SURV291342,INT0007174,4,"Quick and easy, thanks!"
+SURV308170,INT0007178,5,"Quick and easy, thanks!"
+SURV848494,INT0007180,5,"Quick and easy, thanks!"
+SURV616582,INT0007184,3,Took a while but got sorted eventually.
+SURV555087,INT0007190,1,The issue wasn't fixed.
+SURV285236,INT0007203,4,Took a while but got sorted eventually.
+SURV278426,INT0007208,1,The issue wasn't fixed.
+SURV139403,INT0007216,5,"Quick and easy, thanks!"
+SURV771382,INT0007217,5,"Quick and easy, thanks!"
+SURV139005,INT0007228,1,The issue wasn't fixed.
+SURV407682,INT0007233,1,The issue wasn't fixed.
+SURV932469,INT0007242,1,The issue wasn't fixed.
+SURV255627,INT0007248,4,"Quick and easy, thanks!"
+SURV571721,INT0007250,5,"Quick and easy, thanks!"
+SURV910490,INT0007252,1,The issue wasn't fixed.
+SURV458419,INT0007255,5,"Quick and easy, thanks!"
+SURV506658,INT0007268,4,Took a while but got sorted eventually.
+SURV714649,INT0007269,3,Took a while but got sorted eventually.
+SURV556888,INT0007271,3,Took a while but got sorted eventually.
+SURV920195,INT0007272,2,The issue wasn't fixed.
+SURV732990,INT0007286,5,"Quick and easy, thanks!"
+SURV746191,INT0007287,4,"Quick and easy, thanks!"
+SURV895064,INT0007289,4,"Quick and easy, thanks!"
+SURV392968,INT0007295,4,"Quick and easy, thanks!"
+SURV450216,INT0007301,2,The issue wasn't fixed.
+SURV512522,INT0007309,2,The issue wasn't fixed.
+SURV456098,INT0007315,4,"Quick and easy, thanks!"
+SURV923485,INT0007325,5,"Quick and easy, thanks!"
+SURV753652,INT0007334,3,Took a while but got sorted eventually.
+SURV320255,INT0007340,4,"Quick and easy, thanks!"
+SURV226390,INT0007346,5,"Quick and easy, thanks!"
+SURV838415,INT0007347,5,"Quick and easy, thanks!"
+SURV701812,INT0007349,4,Took a while but got sorted eventually.
+SURV239094,INT0007360,3,Took a while but got sorted eventually.
+SURV938337,INT0007363,5,"Quick and easy, thanks!"
+SURV594007,INT0007369,5,"Quick and easy, thanks!"
+SURV708708,INT0007377,5,"Quick and easy, thanks!"
+SURV281417,INT0007390,5,"Quick and easy, thanks!"
+SURV458906,INT0007397,3,Took a while but got sorted eventually.
+SURV914262,INT0007398,5,"Quick and easy, thanks!"
+SURV343522,INT0007400,4,Took a while but got sorted eventually.
+SURV132614,INT0007414,4,Took a while but got sorted eventually.
+SURV496037,INT0007422,4,"Quick and easy, thanks!"
+SURV128972,INT0007426,4,Took a while but got sorted eventually.
+SURV835348,INT0007437,3,Took a while but got sorted eventually.
+SURV394095,INT0007449,4,Took a while but got sorted eventually.
+SURV771620,INT0007452,1,The issue wasn't fixed.
+SURV587941,INT0007458,5,"Quick and easy, thanks!"
+SURV662492,INT0007471,4,"Quick and easy, thanks!"
+SURV161355,INT0007472,5,"Quick and easy, thanks!"
+SURV567834,INT0007475,4,"Quick and easy, thanks!"
+SURV565519,INT0007498,1,The issue wasn't fixed.
+SURV146332,INT0007501,4,Took a while but got sorted eventually.
+SURV929019,INT0007503,4,Took a while but got sorted eventually.
+SURV576024,INT0007511,1,The issue wasn't fixed.
+SURV295085,INT0007519,3,Took a while but got sorted eventually.
+SURV557847,INT0007527,3,Took a while but got sorted eventually.
+SURV480583,INT0007543,5,"Quick and easy, thanks!"
+SURV765116,INT0007547,2,The issue wasn't fixed.
+SURV207495,INT0007552,1,The issue wasn't fixed.
+SURV839339,INT0007556,5,"Quick and easy, thanks!"
+SURV170687,INT0007596,5,"Quick and easy, thanks!"
+SURV846070,INT0007598,1,The issue wasn't fixed.
+SURV771140,INT0007614,1,The issue wasn't fixed.
+SURV837063,INT0007631,5,"Quick and easy, thanks!"
+SURV266260,INT0007632,3,Took a while but got sorted eventually.
+SURV843247,INT0007636,2,The issue wasn't fixed.
+SURV454424,INT0007642,4,Took a while but got sorted eventually.
+SURV776220,INT0007646,1,The issue wasn't fixed.
+SURV387553,INT0007653,1,The issue wasn't fixed.
+SURV531745,INT0007659,2,The issue wasn't fixed.
+SURV417025,INT0007672,5,"Quick and easy, thanks!"
+SURV267626,INT0007688,4,"Quick and easy, thanks!"
+SURV163192,INT0007696,2,The issue wasn't fixed.
+SURV140535,INT0007701,4,"Quick and easy, thanks!"
+SURV732453,INT0007708,1,The issue wasn't fixed.
+SURV432541,INT0007713,5,"Quick and easy, thanks!"
+SURV913307,INT0007716,5,"Quick and easy, thanks!"
+SURV809478,INT0007721,4,Took a while but got sorted eventually.
+SURV667440,INT0007732,3,Took a while but got sorted eventually.
+SURV497534,INT0007739,5,"Quick and easy, thanks!"
+SURV994206,INT0007745,3,Took a while but got sorted eventually.
+SURV168234,INT0007746,1,The issue wasn't fixed.
+SURV117021,INT0007749,4,"Quick and easy, thanks!"
+SURV886985,INT0007755,3,Took a while but got sorted eventually.
+SURV787885,INT0007757,1,The issue wasn't fixed.
+SURV660535,INT0007768,4,Took a while but got sorted eventually.
+SURV494989,INT0007770,5,"Quick and easy, thanks!"
+SURV905827,INT0007794,3,Took a while but got sorted eventually.
+SURV680656,INT0007804,4,"Quick and easy, thanks!"
+SURV554061,INT0007806,1,The issue wasn't fixed.
+SURV183085,INT0007828,3,Took a while but got sorted eventually.
+SURV616912,INT0007838,3,Took a while but got sorted eventually.
+SURV491971,INT0007845,1,The issue wasn't fixed.
+SURV290032,INT0007850,1,The issue wasn't fixed.
+SURV469839,INT0007855,1,The issue wasn't fixed.
+SURV931245,INT0007862,4,"Quick and easy, thanks!"
+SURV862918,INT0007863,4,"Quick and easy, thanks!"
+SURV851860,INT0007867,4,"Quick and easy, thanks!"
+SURV924193,INT0007868,2,The issue wasn't fixed.
+SURV663314,INT0007872,1,The issue wasn't fixed.
+SURV744678,INT0007877,1,The issue wasn't fixed.
+SURV385222,INT0007881,4,Took a while but got sorted eventually.
+SURV488495,INT0007888,4,"Quick and easy, thanks!"
+SURV766673,INT0007894,4,Took a while but got sorted eventually.
+SURV182897,INT0007895,5,"Quick and easy, thanks!"
+SURV359909,INT0007898,1,The issue wasn't fixed.
+SURV318878,INT0007899,4,"Quick and easy, thanks!"
+SURV320234,INT0007901,5,"Quick and easy, thanks!"
+SURV731994,INT0007914,3,Took a while but got sorted eventually.
+SURV107857,INT0007928,4,Took a while but got sorted eventually.
+SURV426204,INT0007929,4,Took a while but got sorted eventually.
+SURV609635,INT0007941,4,"Quick and easy, thanks!"
+SURV789985,INT0007942,3,Took a while but got sorted eventually.
+SURV111807,INT0007962,4,"Quick and easy, thanks!"
+SURV313467,INT0007963,5,"Quick and easy, thanks!"
+SURV986473,INT0007967,2,The issue wasn't fixed.
+SURV338136,INT0007972,4,Took a while but got sorted eventually.
+SURV200414,INT0007984,5,"Quick and easy, thanks!"
+SURV227169,INT0007990,5,"Quick and easy, thanks!"
+SURV647336,INT0008001,5,"Quick and easy, thanks!"
+SURV494934,INT0008007,5,"Quick and easy, thanks!"
+SURV246089,INT0008008,4,"Quick and easy, thanks!"
+SURV915879,INT0008013,1,The issue wasn't fixed.
+SURV685339,INT0008031,1,The issue wasn't fixed.
+SURV343629,INT0008037,3,Took a while but got sorted eventually.
+SURV127567,INT0008041,4,"Quick and easy, thanks!"
+SURV841600,INT0008049,1,The issue wasn't fixed.
+SURV385506,INT0008052,5,"Quick and easy, thanks!"
+SURV255012,INT0008053,5,"Quick and easy, thanks!"
+SURV344682,INT0008072,2,The issue wasn't fixed.
+SURV532059,INT0008073,1,The issue wasn't fixed.
+SURV112228,INT0008074,1,The issue wasn't fixed.
+SURV663245,INT0008077,2,The issue wasn't fixed.
+SURV950799,INT0008080,4,Took a while but got sorted eventually.
+SURV302922,INT0008082,4,Took a while but got sorted eventually.
+SURV447838,INT0008085,2,The issue wasn't fixed.
+SURV289586,INT0008086,2,The issue wasn't fixed.
+SURV563088,INT0008087,2,The issue wasn't fixed.
+SURV257506,INT0008088,4,Took a while but got sorted eventually.
+SURV895214,INT0008091,4,Took a while but got sorted eventually.
+SURV256521,INT0008094,5,"Quick and easy, thanks!"
+SURV490725,INT0008098,3,Took a while but got sorted eventually.
+SURV912455,INT0008099,4,Took a while but got sorted eventually.
+SURV952271,INT0008126,4,"Quick and easy, thanks!"
+SURV392063,INT0008127,4,"Quick and easy, thanks!"
+SURV822096,INT0008130,5,"Quick and easy, thanks!"
+SURV396316,INT0008136,5,"Quick and easy, thanks!"
+SURV574361,INT0008144,5,"Quick and easy, thanks!"
+SURV277671,INT0008149,1,The issue wasn't fixed.
+SURV101975,INT0008156,2,The issue wasn't fixed.
+SURV642312,INT0008170,1,The issue wasn't fixed.
+SURV298054,INT0008184,1,The issue wasn't fixed.
+SURV243027,INT0008187,2,The issue wasn't fixed.
+SURV589751,INT0008197,1,The issue wasn't fixed.
+SURV733562,INT0008208,5,"Quick and easy, thanks!"
+SURV188918,INT0008211,4,"Quick and easy, thanks!"
+SURV513023,INT0008225,1,The issue wasn't fixed.
+SURV484702,INT0008245,5,"Quick and easy, thanks!"
+SURV656325,INT0008246,1,The issue wasn't fixed.
+SURV765604,INT0008248,2,The issue wasn't fixed.
+SURV123465,INT0008256,5,"Quick and easy, thanks!"
+SURV437172,INT0008257,1,The issue wasn't fixed.
+SURV973673,INT0008272,1,The issue wasn't fixed.
+SURV163063,INT0008287,4,"Quick and easy, thanks!"
+SURV802146,INT0008293,2,The issue wasn't fixed.
+SURV491673,INT0008307,2,The issue wasn't fixed.
+SURV277229,INT0008317,4,Took a while but got sorted eventually.
+SURV802875,INT0008324,4,"Quick and easy, thanks!"
+SURV675575,INT0008326,5,"Quick and easy, thanks!"
+SURV978906,INT0008332,4,"Quick and easy, thanks!"
+SURV466719,INT0008333,4,"Quick and easy, thanks!"
+SURV990685,INT0008334,4,Took a while but got sorted eventually.
+SURV342442,INT0008335,3,Took a while but got sorted eventually.
+SURV177733,INT0008338,5,"Quick and easy, thanks!"
+SURV117874,INT0008345,5,"Quick and easy, thanks!"
+SURV261641,INT0008348,4,Took a while but got sorted eventually.
+SURV997249,INT0008353,4,Took a while but got sorted eventually.
+SURV141803,INT0008354,4,Took a while but got sorted eventually.
+SURV343870,INT0008357,4,Took a while but got sorted eventually.
+SURV643520,INT0008362,4,"Quick and easy, thanks!"
+SURV365100,INT0008363,4,Took a while but got sorted eventually.
+SURV975147,INT0008370,1,The issue wasn't fixed.
+SURV203616,INT0008375,5,"Quick and easy, thanks!"
+SURV756126,INT0008377,4,"Quick and easy, thanks!"
+SURV347684,INT0008380,3,Took a while but got sorted eventually.
+SURV729627,INT0008389,4,"Quick and easy, thanks!"
+SURV185178,INT0008392,4,"Quick and easy, thanks!"
+SURV707376,INT0008394,5,"Quick and easy, thanks!"
+SURV941614,INT0008400,2,The issue wasn't fixed.
+SURV219048,INT0008401,4,Took a while but got sorted eventually.
+SURV978588,INT0008417,5,"Quick and easy, thanks!"
+SURV684705,INT0008422,1,The issue wasn't fixed.
+SURV569830,INT0008425,3,Took a while but got sorted eventually.
+SURV136445,INT0008426,4,Took a while but got sorted eventually.
+SURV811674,INT0008427,5,"Quick and easy, thanks!"
+SURV551976,INT0008435,5,"Quick and easy, thanks!"
+SURV423404,INT0008438,5,"Quick and easy, thanks!"
+SURV752022,INT0008441,3,Took a while but got sorted eventually.
+SURV932566,INT0008443,1,The issue wasn't fixed.
+SURV801403,INT0008450,1,The issue wasn't fixed.
+SURV345310,INT0008467,5,"Quick and easy, thanks!"
+SURV189337,INT0008471,4,Took a while but got sorted eventually.
+SURV661555,INT0008481,4,"Quick and easy, thanks!"
+SURV767480,INT0008484,5,"Quick and easy, thanks!"
+SURV671224,INT0008490,4,Took a while but got sorted eventually.
+SURV617937,INT0008495,2,The issue wasn't fixed.
+SURV828976,INT0008513,5,"Quick and easy, thanks!"
+SURV249653,INT0008514,2,The issue wasn't fixed.
+SURV586101,INT0008516,2,The issue wasn't fixed.
+SURV456611,INT0008534,5,"Quick and easy, thanks!"
+SURV574467,INT0008539,3,Took a while but got sorted eventually.
+SURV451078,INT0008540,5,"Quick and easy, thanks!"
+SURV131786,INT0008545,1,The issue wasn't fixed.
+SURV927488,INT0008552,1,The issue wasn't fixed.
+SURV232956,INT0008560,4,"Quick and easy, thanks!"
+SURV277254,INT0008566,4,"Quick and easy, thanks!"
+SURV343611,INT0008573,4,Took a while but got sorted eventually.
+SURV112715,INT0008574,4,Took a while but got sorted eventually.
+SURV787243,INT0008584,1,The issue wasn't fixed.
+SURV956155,INT0008585,1,The issue wasn't fixed.
+SURV210745,INT0008594,3,Took a while but got sorted eventually.
+SURV179215,INT0008613,4,Took a while but got sorted eventually.
+SURV730089,INT0008627,4,Took a while but got sorted eventually.
+SURV745474,INT0008629,4,Took a while but got sorted eventually.
+SURV750748,INT0008641,5,"Quick and easy, thanks!"
+SURV364281,INT0008649,2,The issue wasn't fixed.
+SURV285769,INT0008654,2,The issue wasn't fixed.
+SURV592222,INT0008683,3,Took a while but got sorted eventually.
+SURV514375,INT0008694,2,The issue wasn't fixed.
+SURV768387,INT0008704,4,"Quick and easy, thanks!"
+SURV132086,INT0008705,2,The issue wasn't fixed.
+SURV741269,INT0008713,4,"Quick and easy, thanks!"
+SURV685273,INT0008717,5,"Quick and easy, thanks!"
+SURV925370,INT0008721,4,"Quick and easy, thanks!"
+SURV839108,INT0008731,2,The issue wasn't fixed.
+SURV386891,INT0008750,5,"Quick and easy, thanks!"
+SURV378615,INT0008751,3,Took a while but got sorted eventually.
+SURV407937,INT0008757,3,Took a while but got sorted eventually.
+SURV432065,INT0008759,4,"Quick and easy, thanks!"
+SURV127507,INT0008760,5,"Quick and easy, thanks!"
+SURV698546,INT0008765,3,Took a while but got sorted eventually.
+SURV632079,INT0008777,5,"Quick and easy, thanks!"
+SURV935949,INT0008789,1,The issue wasn't fixed.
+SURV836884,INT0008791,1,The issue wasn't fixed.
+SURV229142,INT0008796,5,"Quick and easy, thanks!"
+SURV101043,INT0008797,5,"Quick and easy, thanks!"
+SURV873560,INT0008811,5,"Quick and easy, thanks!"
+SURV877227,INT0008820,4,"Quick and easy, thanks!"
+SURV207132,INT0008827,4,"Quick and easy, thanks!"
+SURV338126,INT0008834,1,The issue wasn't fixed.
+SURV521186,INT0008845,4,"Quick and easy, thanks!"
+SURV812147,INT0008849,2,The issue wasn't fixed.
+SURV541999,INT0008863,5,"Quick and easy, thanks!"
+SURV219781,INT0008866,1,The issue wasn't fixed.
+SURV667308,INT0008874,5,"Quick and easy, thanks!"
+SURV994223,INT0008880,1,The issue wasn't fixed.
+SURV960255,INT0008888,5,"Quick and easy, thanks!"
+SURV158418,INT0008889,5,"Quick and easy, thanks!"
+SURV357080,INT0008900,1,The issue wasn't fixed.
+SURV476414,INT0008906,4,Took a while but got sorted eventually.
+SURV395487,INT0008907,4,Took a while but got sorted eventually.
+SURV928384,INT0008912,4,Took a while but got sorted eventually.
+SURV383457,INT0008915,5,"Quick and easy, thanks!"
+SURV806245,INT0008916,5,"Quick and easy, thanks!"
+SURV817788,INT0008924,1,The issue wasn't fixed.
+SURV735793,INT0008950,4,"Quick and easy, thanks!"
+SURV950401,INT0008952,3,Took a while but got sorted eventually.
+SURV145579,INT0008953,4,Took a while but got sorted eventually.
+SURV618109,INT0008958,5,"Quick and easy, thanks!"
+SURV184804,INT0008985,4,Took a while but got sorted eventually.
+SURV231292,INT0008988,4,"Quick and easy, thanks!"
+SURV139399,INT0009005,4,"Quick and easy, thanks!"
+SURV618013,INT0009020,1,The issue wasn't fixed.
+SURV512827,INT0009026,5,"Quick and easy, thanks!"
+SURV142730,INT0009030,5,"Quick and easy, thanks!"
+SURV233511,INT0009032,5,"Quick and easy, thanks!"
+SURV551056,INT0009042,4,Took a while but got sorted eventually.
+SURV498305,INT0009046,5,"Quick and easy, thanks!"
+SURV806143,INT0009064,2,The issue wasn't fixed.
+SURV177130,INT0009076,3,Took a while but got sorted eventually.
+SURV608288,INT0009084,3,Took a while but got sorted eventually.
+SURV103534,INT0009105,2,The issue wasn't fixed.
+SURV328969,INT0009114,4,Took a while but got sorted eventually.
+SURV850434,INT0009115,5,"Quick and easy, thanks!"
+SURV900773,INT0009124,2,The issue wasn't fixed.
+SURV350435,INT0009125,1,The issue wasn't fixed.
+SURV309400,INT0009130,5,"Quick and easy, thanks!"
+SURV659858,INT0009149,4,Took a while but got sorted eventually.
+SURV659172,INT0009150,3,Took a while but got sorted eventually.
+SURV274022,INT0009157,4,"Quick and easy, thanks!"
+SURV137309,INT0009158,4,"Quick and easy, thanks!"
+SURV902421,INT0009165,5,"Quick and easy, thanks!"
+SURV485625,INT0009168,4,Took a while but got sorted eventually.
+SURV478964,INT0009171,4,"Quick and easy, thanks!"
+SURV878038,INT0009211,3,Took a while but got sorted eventually.
+SURV330590,INT0009224,1,The issue wasn't fixed.
+SURV148441,INT0009228,1,The issue wasn't fixed.
+SURV629129,INT0009261,3,Took a while but got sorted eventually.
+SURV638442,INT0009262,5,"Quick and easy, thanks!"
+SURV315286,INT0009272,5,"Quick and easy, thanks!"
+SURV114781,INT0009301,1,The issue wasn't fixed.
+SURV437765,INT0009329,4,"Quick and easy, thanks!"
+SURV391566,INT0009333,3,Took a while but got sorted eventually.
+SURV443287,INT0009336,1,The issue wasn't fixed.
+SURV973414,INT0009356,2,The issue wasn't fixed.
+SURV520804,INT0009371,2,The issue wasn't fixed.
+SURV500524,INT0009374,2,The issue wasn't fixed.
+SURV117145,INT0009379,2,The issue wasn't fixed.
+SURV181288,INT0009398,4,Took a while but got sorted eventually.
+SURV201598,INT0009404,1,The issue wasn't fixed.
+SURV177758,INT0009409,2,The issue wasn't fixed.
+SURV304731,INT0009411,5,"Quick and easy, thanks!"
+SURV422416,INT0009423,1,The issue wasn't fixed.
+SURV831992,INT0009427,1,The issue wasn't fixed.
+SURV250993,INT0009441,1,The issue wasn't fixed.
+SURV106759,INT0009442,1,The issue wasn't fixed.
+SURV182552,INT0009454,5,"Quick and easy, thanks!"
+SURV767087,INT0009458,4,"Quick and easy, thanks!"
+SURV105391,INT0009492,4,Took a while but got sorted eventually.
+SURV187215,INT0009504,3,Took a while but got sorted eventually.
+SURV978147,INT0009507,1,The issue wasn't fixed.
+SURV367886,INT0009508,1,The issue wasn't fixed.
+SURV575921,INT0009531,4,"Quick and easy, thanks!"
+SURV520775,INT0009538,1,The issue wasn't fixed.
+SURV666289,INT0009550,5,"Quick and easy, thanks!"
+SURV278275,INT0009553,5,"Quick and easy, thanks!"
+SURV909935,INT0009555,5,"Quick and easy, thanks!"
+SURV862384,INT0009562,1,The issue wasn't fixed.
+SURV823483,INT0009564,4,"Quick and easy, thanks!"
+SURV325602,INT0009567,1,The issue wasn't fixed.
+SURV536247,INT0009568,1,The issue wasn't fixed.
+SURV766199,INT0009571,4,Took a while but got sorted eventually.
+SURV994328,INT0009587,4,"Quick and easy, thanks!"
+SURV161809,INT0009604,5,"Quick and easy, thanks!"
+SURV355545,INT0009612,1,The issue wasn't fixed.
+SURV916862,INT0009614,5,"Quick and easy, thanks!"
+SURV427149,INT0009615,5,"Quick and easy, thanks!"
+SURV675531,INT0009617,5,"Quick and easy, thanks!"
+SURV222149,INT0009622,4,"Quick and easy, thanks!"
+SURV992821,INT0009623,3,Took a while but got sorted eventually.
+SURV900628,INT0009626,5,"Quick and easy, thanks!"
+SURV847957,INT0009635,4,Took a while but got sorted eventually.
+SURV921210,INT0009636,1,The issue wasn't fixed.
+SURV328307,INT0009655,5,"Quick and easy, thanks!"
+SURV619840,INT0009659,2,The issue wasn't fixed.
+SURV102663,INT0009669,5,"Quick and easy, thanks!"
+SURV798155,INT0009678,1,The issue wasn't fixed.
+SURV972833,INT0009682,1,The issue wasn't fixed.
+SURV778237,INT0009684,1,The issue wasn't fixed.
+SURV712917,INT0009696,2,The issue wasn't fixed.
+SURV373487,INT0009718,1,The issue wasn't fixed.
+SURV164808,INT0009722,5,"Quick and easy, thanks!"
+SURV997178,INT0009723,5,"Quick and easy, thanks!"
+SURV679549,INT0009743,1,The issue wasn't fixed.
+SURV199676,INT0009746,2,The issue wasn't fixed.
+SURV264535,INT0009755,1,The issue wasn't fixed.
+SURV844026,INT0009757,3,Took a while but got sorted eventually.
+SURV640853,INT0009759,1,The issue wasn't fixed.
+SURV521678,INT0009761,1,The issue wasn't fixed.
+SURV420147,INT0009773,1,The issue wasn't fixed.
+SURV427709,INT0009777,5,"Quick and easy, thanks!"
+SURV519325,INT0009785,4,Took a while but got sorted eventually.
+SURV773729,INT0009795,5,"Quick and easy, thanks!"
+SURV177406,INT0009797,4,"Quick and easy, thanks!"
+SURV824775,INT0009803,3,Took a while but got sorted eventually.
+SURV338744,INT0009804,3,Took a while but got sorted eventually.
+SURV254004,INT0009814,1,The issue wasn't fixed.
+SURV907054,INT0009817,2,The issue wasn't fixed.
+SURV966304,INT0009825,5,"Quick and easy, thanks!"
+SURV427935,INT0009827,4,Took a while but got sorted eventually.
+SURV144662,INT0009856,1,The issue wasn't fixed.
+SURV612733,INT0009858,1,The issue wasn't fixed.
+SURV807797,INT0009876,4,"Quick and easy, thanks!"
+SURV606816,INT0009878,1,The issue wasn't fixed.
+SURV379626,INT0009890,1,The issue wasn't fixed.
+SURV845094,INT0009891,5,"Quick and easy, thanks!"
+SURV122183,INT0009895,2,The issue wasn't fixed.
+SURV803565,INT0009898,4,Took a while but got sorted eventually.
+SURV923500,INT0009902,4,Took a while but got sorted eventually.
+SURV613765,INT0009912,2,The issue wasn't fixed.
+SURV498655,INT0009916,4,"Quick and easy, thanks!"
+SURV444209,INT0009919,2,The issue wasn't fixed.
+SURV585966,INT0009925,1,The issue wasn't fixed.
+SURV154741,INT0009954,5,"Quick and easy, thanks!"
+SURV421346,INT0009966,5,"Quick and easy, thanks!"
+SURV697537,INT0009968,5,"Quick and easy, thanks!"
+SURV722813,INT0009973,5,"Quick and easy, thanks!"
+SURV338945,INT0009978,4,Took a while but got sorted eventually.
+SURV687440,INT0009984,5,"Quick and easy, thanks!"
+SURV153957,INT0009988,5,"Quick and easy, thanks!"
+SURV217444,INT0009996,3,Took a while but got sorted eventually.
+SURV825914,INT0010004,1,The issue wasn't fixed.
+SURV425939,INT0010010,5,"Quick and easy, thanks!"
+SURV179452,INT0010014,2,The issue wasn't fixed.
+SURV775627,INT0010024,4,"Quick and easy, thanks!"
+SURV184818,INT0010030,1,The issue wasn't fixed.
+SURV929480,INT0010039,1,The issue wasn't fixed.
+SURV604219,INT0010040,2,The issue wasn't fixed.
+SURV600282,INT0010047,1,The issue wasn't fixed.
+SURV882577,INT0010051,1,The issue wasn't fixed.
+SURV719241,INT0010058,1,The issue wasn't fixed.
+SURV410219,INT0010068,5,"Quick and easy, thanks!"
+SURV733349,INT0010070,4,"Quick and easy, thanks!"
+SURV804460,INT0010073,2,The issue wasn't fixed.
+SURV987665,INT0010082,2,The issue wasn't fixed.
+SURV475930,INT0010085,1,The issue wasn't fixed.
+SURV468665,INT0010095,2,The issue wasn't fixed.
+SURV502989,INT0010100,5,"Quick and easy, thanks!"
+SURV452525,INT0010113,2,The issue wasn't fixed.
+SURV596923,INT0010118,1,The issue wasn't fixed.
+SURV536171,INT0010132,1,The issue wasn't fixed.
+SURV533308,INT0010133,2,The issue wasn't fixed.
+SURV847134,INT0010141,5,"Quick and easy, thanks!"
+SURV314175,INT0010150,4,Took a while but got sorted eventually.
+SURV766671,INT0010169,2,The issue wasn't fixed.
+SURV539846,INT0010174,1,The issue wasn't fixed.
+SURV443955,INT0010178,1,The issue wasn't fixed.
+SURV345597,INT0010181,4,Took a while but got sorted eventually.
+SURV501001,INT0010183,2,The issue wasn't fixed.
+SURV690180,INT0010185,3,Took a while but got sorted eventually.
+SURV836228,INT0010189,2,The issue wasn't fixed.
+SURV659987,INT0010193,5,"Quick and easy, thanks!"
+SURV994320,INT0010194,5,"Quick and easy, thanks!"
+SURV155728,INT0010207,2,The issue wasn't fixed.
+SURV406547,INT0010230,5,"Quick and easy, thanks!"
+SURV219057,INT0010235,4,"Quick and easy, thanks!"
+SURV624569,INT0010246,5,"Quick and easy, thanks!"
+SURV700122,INT0010247,1,The issue wasn't fixed.
+SURV728111,INT0010252,5,"Quick and easy, thanks!"
+SURV297799,INT0010258,4,"Quick and easy, thanks!"
+SURV754314,INT0010262,4,Took a while but got sorted eventually.
+SURV793677,INT0010263,5,"Quick and easy, thanks!"
+SURV580795,INT0010270,4,"Quick and easy, thanks!"
+SURV673143,INT0010271,5,"Quick and easy, thanks!"
+SURV199546,INT0010275,1,The issue wasn't fixed.
+SURV513021,INT0010277,2,The issue wasn't fixed.
+SURV198823,INT0010278,4,"Quick and easy, thanks!"
+SURV783845,INT0010284,4,"Quick and easy, thanks!"
+SURV243801,INT0010286,2,The issue wasn't fixed.
+SURV520648,INT0010299,1,The issue wasn't fixed.
+SURV947568,INT0010302,5,"Quick and easy, thanks!"
+SURV925429,INT0010303,4,"Quick and easy, thanks!"
+SURV734783,INT0010317,4,"Quick and easy, thanks!"
+SURV573379,INT0010322,3,Took a while but got sorted eventually.
+SURV962424,INT0010325,2,The issue wasn't fixed.
+SURV229040,INT0010328,1,The issue wasn't fixed.
+SURV408087,INT0010332,3,Took a while but got sorted eventually.
+SURV166283,INT0010343,2,The issue wasn't fixed.
+SURV791700,INT0010346,3,Took a while but got sorted eventually.
+SURV138741,INT0010351,1,The issue wasn't fixed.
+SURV941656,INT0010359,5,"Quick and easy, thanks!"
+SURV686599,INT0010363,1,The issue wasn't fixed.
+SURV580750,INT0010374,1,The issue wasn't fixed.
+SURV262539,INT0010402,3,Took a while but got sorted eventually.
+SURV215152,INT0010427,1,The issue wasn't fixed.
+SURV718832,INT0010430,1,The issue wasn't fixed.
+SURV413408,INT0010432,5,"Quick and easy, thanks!"
+SURV208178,INT0010436,5,"Quick and easy, thanks!"
+SURV525534,INT0010443,3,Took a while but got sorted eventually.
+SURV202190,INT0010448,1,The issue wasn't fixed.
+SURV711527,INT0010451,4,"Quick and easy, thanks!"
+SURV498353,INT0010454,1,The issue wasn't fixed.
+SURV697980,INT0010456,2,The issue wasn't fixed.
+SURV216047,INT0010459,2,The issue wasn't fixed.
+SURV424754,INT0010460,2,The issue wasn't fixed.
+SURV468770,INT0010469,5,"Quick and easy, thanks!"
+SURV170470,INT0010483,1,The issue wasn't fixed.
+SURV242077,INT0010487,4,"Quick and easy, thanks!"
+SURV807862,INT0010492,4,Took a while but got sorted eventually.
+SURV932665,INT0010506,3,Took a while but got sorted eventually.
+SURV857690,INT0010524,2,The issue wasn't fixed.
+SURV909061,INT0010526,4,Took a while but got sorted eventually.
+SURV150145,INT0010529,1,The issue wasn't fixed.
+SURV856151,INT0010538,4,"Quick and easy, thanks!"
+SURV472059,INT0010542,5,"Quick and easy, thanks!"
+SURV765358,INT0010544,5,"Quick and easy, thanks!"
+SURV500735,INT0010545,4,"Quick and easy, thanks!"
+SURV673378,INT0010555,4,Took a while but got sorted eventually.
+SURV608282,INT0010557,5,"Quick and easy, thanks!"
+SURV105864,INT0010560,5,"Quick and easy, thanks!"
+SURV927788,INT0010564,5,"Quick and easy, thanks!"
+SURV616291,INT0010566,4,"Quick and easy, thanks!"
+SURV178107,INT0010577,2,The issue wasn't fixed.
+SURV211886,INT0010587,4,"Quick and easy, thanks!"
+SURV517027,INT0010602,5,"Quick and easy, thanks!"
+SURV949580,INT0010603,4,Took a while but got sorted eventually.
+SURV755795,INT0010604,1,The issue wasn't fixed.
+SURV512219,INT0010607,5,"Quick and easy, thanks!"
+SURV687823,INT0010610,4,Took a while but got sorted eventually.
+SURV765643,INT0010624,5,"Quick and easy, thanks!"
+SURV210739,INT0010631,2,The issue wasn't fixed.
+SURV850577,INT0010632,5,"Quick and easy, thanks!"
+SURV489906,INT0010635,4,"Quick and easy, thanks!"
+SURV406331,INT0010636,3,Took a while but got sorted eventually.
+SURV414786,INT0010641,5,"Quick and easy, thanks!"
+SURV368498,INT0010653,4,Took a while but got sorted eventually.
+SURV594356,INT0010664,5,"Quick and easy, thanks!"
+SURV173189,INT0010670,5,"Quick and easy, thanks!"
+SURV839175,INT0010679,1,The issue wasn't fixed.
+SURV353318,INT0010686,2,The issue wasn't fixed.
+SURV346199,INT0010687,2,The issue wasn't fixed.
+SURV708762,INT0010690,1,The issue wasn't fixed.
+SURV244934,INT0010697,5,"Quick and easy, thanks!"
+SURV877044,INT0010703,1,The issue wasn't fixed.
+SURV635754,INT0010724,2,The issue wasn't fixed.
+SURV838775,INT0010733,3,Took a while but got sorted eventually.
+SURV793284,INT0010742,1,The issue wasn't fixed.
+SURV138661,INT0010763,4,"Quick and easy, thanks!"
+SURV615469,INT0010774,3,Took a while but got sorted eventually.
+SURV543422,INT0010779,4,"Quick and easy, thanks!"
+SURV863739,INT0010782,4,Took a while but got sorted eventually.
+SURV421104,INT0010784,4,Took a while but got sorted eventually.
+SURV894077,INT0010798,5,"Quick and easy, thanks!"
+SURV497783,INT0010799,1,The issue wasn't fixed.
+SURV568167,INT0010802,2,The issue wasn't fixed.
+SURV460763,INT0010817,1,The issue wasn't fixed.
+SURV221363,INT0010821,1,The issue wasn't fixed.
+SURV384969,INT0010828,2,The issue wasn't fixed.
+SURV570960,INT0010837,1,The issue wasn't fixed.
+SURV917928,INT0010844,4,Took a while but got sorted eventually.
+SURV251837,INT0010845,4,Took a while but got sorted eventually.
+SURV659710,INT0010849,1,The issue wasn't fixed.
+SURV696183,INT0010858,1,The issue wasn't fixed.
+SURV898788,INT0010875,5,"Quick and easy, thanks!"
+SURV514593,INT0010894,4,"Quick and easy, thanks!"
+SURV985909,INT0010895,5,"Quick and easy, thanks!"
+SURV406980,INT0010903,3,Took a while but got sorted eventually.
+SURV408293,INT0010934,4,"Quick and easy, thanks!"
+SURV643751,INT0010938,2,The issue wasn't fixed.
+SURV239544,INT0010954,1,The issue wasn't fixed.
+SURV226256,INT0010957,4,Took a while but got sorted eventually.
+SURV764931,INT0010972,4,Took a while but got sorted eventually.
+SURV816441,INT0010973,3,Took a while but got sorted eventually.
+SURV593436,INT0010978,4,"Quick and easy, thanks!"
+SURV944994,INT0010980,1,The issue wasn't fixed.
+SURV811659,INT0010985,2,The issue wasn't fixed.
+SURV898902,INT0010986,3,Took a while but got sorted eventually.
+SURV100472,INT0010991,5,"Quick and easy, thanks!"
+SURV887930,INT0010994,4,"Quick and easy, thanks!"
+SURV431759,INT0010998,3,Took a while but got sorted eventually.
+SURV695955,INT0011006,1,The issue wasn't fixed.
+SURV945680,INT0011007,2,The issue wasn't fixed.
+SURV636183,INT0011020,5,"Quick and easy, thanks!"
+SURV735557,INT0011024,2,The issue wasn't fixed.
+SURV570522,INT0011032,4,"Quick and easy, thanks!"
+SURV789635,INT0011036,4,"Quick and easy, thanks!"
+SURV652185,INT0011050,4,Took a while but got sorted eventually.
+SURV725621,INT0011055,4,"Quick and easy, thanks!"
+SURV966058,INT0011057,3,Took a while but got sorted eventually.
+SURV344314,INT0011077,3,Took a while but got sorted eventually.
+SURV527045,INT0011092,2,The issue wasn't fixed.
+SURV470835,INT0011097,5,"Quick and easy, thanks!"
+SURV877916,INT0011101,5,"Quick and easy, thanks!"
+SURV547260,INT0011107,1,The issue wasn't fixed.
+SURV338648,INT0011114,4,"Quick and easy, thanks!"
+SURV531184,INT0011122,4,Took a while but got sorted eventually.

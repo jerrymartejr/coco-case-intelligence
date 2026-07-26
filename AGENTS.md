@@ -80,11 +80,22 @@ keyless linking worked. It is evidence for the demo, never an input the pipeline
 
 ## Stage decisions (post CoCo review, 2026-07-23)
 
-1. Stage 1 normalize: `AI_EXTRACT` (array-of-keys syntax, not typed objects) + `AI_COMPLETE`.
+1. Stage 1 normalize: `AI_COMPLETE` returning structured JSON. (`AI_EXTRACT` was the original
+   plan; its return shape was fiddlier to depend on, so it is not used.)
 2. Stage 2 resolve: dbt **Python (Snowpark)** model. Deterministic entity pass first
-   (email/order_ref), then `EMBED_TEXT_768` + cosine similarity (>=0.85) for the keyless tier,
-   then Union-Find connected components. **Precompute embeddings once.** Cortex Search is NOT
+   (email/order_ref/resolved customer), then `EMBED_TEXT_768` for the keyless tier, then
+   Union-Find connected components. **Precompute embeddings once.** Cortex Search is NOT
    used here (it is a runtime retrieval service) — it belongs in Stage 5 NL Q&A.
+   Two properties of the link rule matter, both measured on the current corpus:
+   - **The deterministic pass is time-gated** (`TIME_WINDOW_HOURS = 72`). A case is a bounded
+     episode, so a shared email or a shared resolved customer only links records inside the
+     same window. Without the gate a returning customer's separate cases fuse into one.
+   - **`SIM_FLOOR = 0.62` is a relevance floor, not a separator.** Within-case pairs and
+     different-issue pairs overlap in cosine (within-case min 0.651; different-issue p95
+     0.808), so no cutoff separates them. The **surname token plus the 72h window do the
+     separating**; the floor only rejects plainly unrelated content. Identity and time are
+     the primary signals, not semantic similarity — and the name token is never dropped,
+     since same-issue pairs from different customers sit at a median cosine of 0.897.
 3. Stage 3 synthesize: one `AI_COMPLETE` per case returning **structured JSON** (wrap in
    `TRY_PARSE_JSON`), not `AI_AGG`. Keep one `AI_AGG` for a Stage 5 rollup summary where it fits.
 4. Stage 4 enrich: plain SQL join to the structured seeds.

@@ -53,15 +53,30 @@ difficulty tiers:
 
 ## Run it
 
+**First time on a new machine or account, follow [`docs/SETUP.md`](docs/SETUP.md).** It
+covers the Snowflake objects, the Anaconda terms step needed by the Stage 2 Python model,
+key-pair auth, the environment variables, and the regional Cortex caveat. About 30 minutes.
+
+Once set up:
+
 ```bash
-python3 scripts/generate_synthetic_data.py         # regenerate synthetic data + ground truth
-dbt deps
-dbt build                                          # seed -> run -> test, one command
+source .venv/bin/activate
+dbt deps --profiles-dir .
+dbt build --profiles-dir .                         # seed -> run -> test, one command
 streamlit run app/streamlit_app.py                 # the demo UI (optional)
 ```
 
-Auth: dbt uses key-pair auth against the Snowflake trial (see `profiles.yml`). Cortex/CoCo
-use the `coco_trial` connection in `~/.snowflake/connections.toml`.
+The data is committed, so you only need the generator if you want to regenerate it (it is
+deterministic and produces identical output):
+
+```bash
+python3 scripts/generate_synthetic_data.py
+dbt build --profiles-dir . --full-refresh
+```
+
+Auth: dbt uses key-pair auth, configured through environment variables in `profiles.yml`.
+Cortex/CoCo use a named connection in `~/.snowflake/connections.toml`. A full build makes
+roughly 1,270 Cortex calls, so it is cheap but not free.
 
 ## Talking to your data through CoCo (the agentic layer)
 

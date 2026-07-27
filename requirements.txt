@@ -1,0 +1,11 @@
+# Pipeline dependencies. Python 3.12 (3.13 is not supported by dbt-snowflake 1.12).
+#
+#   python3.12 -m venv .venv && source .venv/bin/activate
+#   pip install -r requirements.txt
+#
+# The Streamlit demo has its own extras in app/requirements.txt.
+dbt-core==1.12.0
+dbt-snowflake==1.12.0
+
+# Pulled in by dbt-snowflake; pinned so the key-pair auth path is reproducible.
+snowflake-connector-python>=4.7,<5

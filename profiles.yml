@@ -1,17 +1,26 @@
-# dbt profile for the personal Snowflake trial (key-pair auth, headless).
-# The private key lives outside the repo at ~/.snowflake/keys/ and is gitignored by location.
-# Teammates: generate your own key pair and register it, or swap in your own auth here.
+# dbt profile for Case Intelligence.
+#
+# Everything is read from environment variables so this file works for anyone. The
+# defaults are the original author's trial account, which only he holds a key for, so
+# set at least SNOWFLAKE_ACCOUNT, SNOWFLAKE_USER and SNOWFLAKE_PRIVATE_KEY_PATH before
+# running. See docs/SETUP.md.
+#
+#   export SNOWFLAKE_ACCOUNT=ABCDEFG-XY12345
+#   export SNOWFLAKE_USER=YOURUSER
+#   export SNOWFLAKE_PRIVATE_KEY_PATH=~/.snowflake/keys/case_intel_rsa_key.p8
+#
+# The private key itself never lives in this repo.
 case_intelligence:
   target: dev
   outputs:
     dev:
       type: snowflake
-      account: KBGKENW-MB74068
-      user: JERRYMARTEJR
-      private_key_path: /Users/jerrymartejr/.snowflake/keys/coco_trial_rsa_key.p8
-      role: ACCOUNTADMIN
-      database: CASE_INTEL
-      warehouse: COMPUTE_WH
-      schema: ANALYTICS
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT', 'KBGKENW-MB74068') }}"
+      user: "{{ env_var('SNOWFLAKE_USER', 'JERRYMARTEJR') }}"
+      private_key_path: "{{ env_var('SNOWFLAKE_PRIVATE_KEY_PATH', '/Users/jerrymartejr/.snowflake/keys/coco_trial_rsa_key.p8') }}"
+      role: "{{ env_var('SNOWFLAKE_ROLE', 'ACCOUNTADMIN') }}"
+      database: "{{ env_var('SNOWFLAKE_DATABASE', 'CASE_INTEL') }}"
+      warehouse: "{{ env_var('SNOWFLAKE_WAREHOUSE', 'COMPUTE_WH') }}"
+      schema: "{{ env_var('SNOWFLAKE_SCHEMA', 'ANALYTICS') }}"
       threads: 4
       client_session_keep_alive: false

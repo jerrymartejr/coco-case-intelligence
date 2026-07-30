@@ -25,11 +25,21 @@ models:
               field: case_id
 
   - name: agg_root_cause_daily
-    description: "Stage 5 rollup: root cause x day."
+    description: "Stage 5 rollup: root-cause category x day. Grouped on the controlled
+      vocabulary, never the free-text root_cause, so one driver cannot split across wordings."
     columns:
       - name: case_count
         tests:
           - not_null
+      - name: root_cause_category
+        description: "Controlled vocabulary assigned in Stage 3; off-list values forced to Other."
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Delivery failure', 'Fulfilment error', 'Billing error', 'Refund delay',
+                       'Payment processing failure', 'Account access', 'Product defect',
+                       'Returns or warranty policy', 'Subscription management',
+                       'Customer record error', 'Service handling', 'Other']
 
   - name: agg_agent_performance
     description: "Stage 5 rollup: per agent."

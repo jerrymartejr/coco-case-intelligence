@@ -11,10 +11,13 @@ grounded in the actual rows.
 ## Data
 Query `CASE_INTEL.ANALYTICS`:
 - `fct_case_enriched` — one row per case: `case_id, customer_id, issue, resolved, root_cause,
-  resolution_path, sentiment, channels, record_count, agents_involved, first_ts, last_ts,
-  revenue_at_risk, csat_score, fcr, aht`.
-- `agg_root_cause_daily` — `root_cause, case_date, case_count, revenue_at_risk, avg_csat,
-  avg_hours_to_resolve, unresolved_count`.
+  root_cause_category, resolution_path, sentiment, channels, record_count, agents_involved,
+  first_ts, last_ts, revenue_at_risk, csat_score, fcr, aht`.
+  `root_cause` is free text specific to the case; `root_cause_category` is one of a fixed
+  vocabulary. ALWAYS group and count on `root_cause_category` — grouping on the free-text
+  `root_cause` splits one driver across several wordings and gives a wrong ranking.
+- `agg_root_cause_daily` — `root_cause_category, case_date, case_count, revenue_at_risk,
+  avg_csat, avg_hours_to_resolve, unresolved_count, example_root_cause`.
 - `agg_agent_performance` — `agent_id, cases_handled, resolution_rate, positive_cases, negative_cases`.
 
 ## How to answer
@@ -24,6 +27,7 @@ Query `CASE_INTEL.ANALYTICS`:
 4. If the question is ambiguous, state the assumption you made.
 
 ## Examples
-- "Which root cause is costing us the most this week?" -> sum `revenue_at_risk` by `root_cause`.
+- "Which root cause is costing us the most this week?" -> sum `revenue_at_risk` by
+  `root_cause_category`.
 - "How many cases are still unresolved?" -> `count(*) where not resolved` on `fct_case_enriched`.
 - "Who has the best resolution rate?" -> order `agg_agent_performance` by `resolution_rate`.

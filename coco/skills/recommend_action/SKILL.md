@@ -13,13 +13,14 @@ A root cause (from `diagnose_top_drivers`) or a question implying one.
 ## Steps
 1. Gather the evidence for the driver:
    ```sql
-   select case_id, customer_id, issue, resolved, revenue_at_risk, csat_score, agents_involved
+   select case_id, customer_id, issue, root_cause, resolved, revenue_at_risk, csat_score, agents_involved
    from CASE_INTEL.ANALYTICS.fct_case_enriched
-   where root_cause = :root_cause
+   where root_cause_category = :root_cause_category
    order by revenue_at_risk desc;
    ```
 2. Produce a recommendation with EXACTLY these parts:
-   - **Problem** — the root cause, in one line.
+   - **Problem** — the driver category plus what is actually going wrong underneath it,
+     taken from the per-case `root_cause` values, in one line.
    - **Impact** — total revenue at risk, number of cases, number unresolved, CSAT.
    - **Owning team** — infer from the root cause (billing -> Payments; delivery -> Logistics;
      login/MFA -> Identity; sync -> Platform; refund -> Finance Ops; wrong item -> Fulfilment).

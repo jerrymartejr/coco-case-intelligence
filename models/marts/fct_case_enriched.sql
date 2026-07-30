@@ -95,6 +95,7 @@ select
     cf.timeline,
     cf.resolved,
     cf.root_cause,
+    cf.root_cause_category,
     cf.resolution_path,
     cf.sentiment,
     -- Money is only "at risk" while the case is open, and only the order this case is

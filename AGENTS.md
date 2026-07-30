@@ -36,7 +36,8 @@ at the **same schemas** and we rerun. No model changes.
 | first_ts/last_ts | TIMESTAMP | case open/close window                              | Stage 3      |
 | timeline         | STRING    | ordered what-happened narrative                     | Stage 3      |
 | resolved         | BOOLEAN   | was it resolved                                     | Stage 3      |
-| root_cause       | STRING    | synthesised root cause                              | Stage 3      |
+| root_cause       | STRING    | synthesised root cause, free text, specific to the case | Stage 3  |
+| root_cause_category | STRING | one of a fixed vocabulary — **group and count on this**, not on the free text | Stage 3 |
 | resolution_path  | STRING    | how it was fixed                                    | Stage 3      |
 | sentiment        | STRING    | overall sentiment (neg/neutral/pos)                 | Stage 3      |
 | revenue_at_risk  | NUMBER    | joined from orders                                  | Stage 4      |
@@ -98,6 +99,13 @@ keyless linking worked. It is evidence for the demo, never an input the pipeline
      since same-issue pairs from different customers sit at a median cosine of 0.897.
 3. Stage 3 synthesize: one `AI_COMPLETE` per case returning **structured JSON** (wrap in
    `TRY_PARSE_JSON`), not `AI_AGG`. Keep one `AI_AGG` for a Stage 5 rollup summary where it fits.
+   Cause is emitted twice on purpose: `root_cause` free text for reading one case, and
+   `root_cause_category` from a fixed twelve-item vocabulary for counting many. Free text alone
+   does not aggregate — it produced 139 distinct causes across 225 cases, splitting single
+   drivers across wordings and distorting every ranking built on it. Anything the model returns
+   outside the vocabulary is forced to `Other` in SQL. The list is generic support-domain
+   language, not tailored to our synthetic issues, so it survives real data; extend it in
+   `models/marts/fct_case_fact.sql` and the rollups follow.
 4. Stage 4 enrich: plain SQL join to the structured seeds.
 5. Stage 5: Streamlit (case explorer, root-cause rollup, recommended action). MCP/Slack
    delivery is a stretch, not core.

@@ -45,13 +45,13 @@ c4.metric("Revenue at risk", f"${cases['REVENUE_AT_RISK'].fillna(0).sum():,.0f}"
 # --- Root-cause rollup ---
 st.subheader("Revenue at risk by root cause")
 drivers = q(f"""
-    select root_cause,
+    select root_cause_category as root_cause,
            sum(revenue_at_risk) as revenue_at_risk,
            sum(case_count) as cases,
            sum(unresolved_count) as unresolved,
            round(avg(avg_csat),2) as avg_csat
     from {DB}.agg_root_cause_daily
-    group by root_cause
+    group by root_cause_category
     order by revenue_at_risk desc
 """)
 if not drivers.empty:
@@ -67,15 +67,15 @@ if not drivers.empty:
     rec = q(f"""
         with d as (
             select
-                root_cause,
+                root_cause_category as root_cause,
                 count(*)                                        as case_count,
                 sum(case when not resolved then 1 else 0 end)   as unresolved,
                 sum(coalesce(revenue_at_risk, 0))               as revenue_at_risk,
                 round(avg(csat_score), 1)                       as avg_csat,
                 listagg(case_id, ', ')                          as case_ids
             from {DB}.fct_case_enriched
-            where root_cause = '{top}'
-            group by root_cause
+            where root_cause_category = '{top}'
+            group by root_cause_category
         )
         select snowflake.cortex.ai_complete('mistral-large2',
             'You are a support operations analyst. Write a short recommended action with exactly these '

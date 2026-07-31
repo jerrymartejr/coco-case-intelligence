@@ -1,24 +1,66 @@
 """
 Case Intelligence — demo UI.
 
-Runs locally (Snowpark session from the `coco_trial` connection) or as a Streamlit-in-
-Snowflake app (active session). Surfaces the case-intelligence marts: KPIs, a root-cause
+Runs as a Streamlit-in-Snowflake app (active session) or locally against the same
+key-pair credentials dbt uses. Surfaces the case-intelligence marts: KPIs, a root-cause
 rollup, a case explorer, and an inline recommended action generated with Cortex.
+
+Local auth reads the same environment variables as profiles.yml (see docs/SETUP.md), so
+one setup serves both. Set SNOWFLAKE_CONNECTION to use a named connections.toml entry
+instead — but note that a connection authenticating with OAUTH_AUTHORIZATION_CODE (what
+the `cortex` CLI creates for itself) cannot be reused here: the CLI holds that token, and
+Snowpark will try to start its own browser flow and fail on a missing client_id.
 """
+
+import os
 
 import streamlit as st
 
-DB = "CASE_INTEL.ANALYTICS"
+DB = os.environ.get("CASE_INTEL_SCHEMA", "CASE_INTEL.ANALYTICS")
+
+
+def _private_key_der(path):
+    """Snowpark wants the key as DER bytes, not a PEM path."""
+    from cryptography.hazmat.primitives import serialization
+
+    with open(os.path.expanduser(path), "rb") as fh:
+        key = serialization.load_pem_private_key(fh.read(), password=None)
+    return key.private_bytes(
+        encoding=serialization.Encoding.DER,
+        format=serialization.PrivateFormat.PKCS8,
+        encryption_algorithm=serialization.NoEncryption(),
+    )
 
 
 @st.cache_resource
 def get_session():
+    # 1. Running inside Snowflake: the session already exists.
     try:
         from snowflake.snowpark.context import get_active_session
         return get_active_session()
     except Exception:
-        from snowflake.snowpark import Session
-        return Session.builder.config("connection_name", "coco_trial").create()
+        pass
+
+    from snowflake.snowpark import Session
+
+    # 2. An explicitly named connection, if the user asked for one.
+    named = os.environ.get("SNOWFLAKE_CONNECTION")
+    if named:
+        return Session.builder.config("connection_name", named).create()
+
+    # 3. Otherwise the same key pair dbt authenticates with.
+    key_path = os.environ.get(
+        "SNOWFLAKE_PRIVATE_KEY_PATH", "~/.snowflake/keys/coco_trial_rsa_key.p8"
+    )
+    return Session.builder.configs({
+        "account": os.environ.get("SNOWFLAKE_ACCOUNT", "KBGKENW-MB74068"),
+        "user": os.environ.get("SNOWFLAKE_USER", "JERRYMARTEJR"),
+        "private_key": _private_key_der(key_path),
+        "role": os.environ.get("SNOWFLAKE_ROLE", "ACCOUNTADMIN"),
+        "database": os.environ.get("SNOWFLAKE_DATABASE", "CASE_INTEL"),
+        "schema": os.environ.get("SNOWFLAKE_SCHEMA", "ANALYTICS"),
+        "warehouse": os.environ.get("SNOWFLAKE_WAREHOUSE", "COMPUTE_WH"),
+    }).create()
 
 
 session = get_session()

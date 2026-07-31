@@ -1,6 +1,11 @@
 ---
 name: ask_case_intelligence
-description: Answer a natural-language question about support cases by writing and running SQL over the case-intelligence marts, then giving a grounded answer with the numbers.
+description: >-
+  Answer ANY question about support cases, unresolved cases, revenue at risk, CSAT,
+  root causes, agents or customers. Use this whenever the user asks how many, how much,
+  which, or what about cases or the case data. ALWAYS query CASE_INTEL.ANALYTICS.FCT_CASE_ENRICHED
+  (the Stage 4 table that has revenue_at_risk, csat_score, fcr and aht) or the agg_* rollups
+  — never FCT_CASE_FACT, which lacks the business metrics. Answers are grounded in real rows.
 ---
 
 # ask_case_intelligence

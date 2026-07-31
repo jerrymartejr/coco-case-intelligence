@@ -1,6 +1,10 @@
 ---
 name: diagnose_top_drivers
-description: Scan the root-cause rollup, identify the biggest driver(s) of revenue at risk and poor CSAT, and explain why with the supporting cases.
+description: >-
+  Find the biggest driver of revenue at risk or poor CSAT and explain why. Use this whenever
+  the user asks what is the biggest/top driver, what is costing us most, what is hurting,
+  why is revenue at risk, or what should we look at first. Reads agg_root_cause_daily grouped
+  on root_cause_category, then pulls the supporting cases from FCT_CASE_ENRICHED.
 ---
 
 # diagnose_top_drivers

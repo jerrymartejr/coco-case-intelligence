@@ -23,6 +23,8 @@ after it proves the idea for real. Slides explain, the screen proves.
 - [ ] The deck full-screened in one browser tab; the live app loaded in another
       (https://coco-case-intelligence.streamlit.app — recording the deployed URL is a
       judge-visible touch; load it now so the cold start is behind you).
+- [ ] Cursor open with the four raw files as tabs (see Shot 2), word wrap on, font
+      zoomed for 1080p.
 - [ ] One PDF open in a viewer: `data/synthetic/documents/esc_0003.pdf`, minimized.
 - [ ] Screen recorder capturing screen + mic. One take per shot is fine; Filmora joins
       them.
@@ -46,12 +48,13 @@ But nothing in the data connects them, so every number a support leader sees is 
 
 ## Shot 2 · The mess — INPUT (~30s)
 
-**Show:** in T1, the two head commands, then bring up the PDF.
+**Show:** Cursor, with the four raw files open as tabs, word wrap on, font zoomed.
+Click through a tab as you name each format, then bring up the PDF:
 
-```bash
-head -c 400 data/synthetic/unstructured/chat.ndjson
-head -6 seeds/raw_email.csv
-```
+- `data/synthetic/unstructured/chat.ndjson`
+- `data/synthetic/unstructured/email.ndjson`
+- `data/synthetic/unstructured/qa_notes.ndjson`
+- `data/synthetic/unstructured/csat.ndjson`
 
 **Say:** "Five formats. A chat transcript, an email with headers, a QA note, a CSAT
 survey, and this — a real PDF escalation form, sitting in a Snowflake stage as a binary

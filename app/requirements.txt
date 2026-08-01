@@ -1,3 +1,6 @@
 streamlit>=1.30
 snowflake-snowpark-python>=1.14
 pandas>=2.0
+# Key-pair auth: pulled in transitively by the connector, pinned here because the
+# deployed app depends on it directly.
+cryptography>=42.0

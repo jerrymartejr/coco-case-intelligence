@@ -13,7 +13,7 @@ inside the models. You need your own Snowflake account because the build spends 
 | Requirement | Notes |
 |---|---|
 | Snowflake account with Cortex | A free trial works. Pick a region where Cortex is available (see step 2). |
-| `ACCOUNTADMIN` on that account | Needed for the setup SQL and to register your key. |
+| `ACCOUNTADMIN` on that account | Needed for the one-time setup SQL and to register your key. Nothing after step 3 runs as `ACCOUNTADMIN`. |
 | Python **3.12** | 3.13 is not supported by dbt-snowflake 1.12. |
 | `git` | To clone. |
 
@@ -61,7 +61,30 @@ build cannot work without them.
 
 ---
 
-## 3. Accept the Anaconda terms
+## 3. Create the roles
+
+Still as `ACCOUNTADMIN`, run [`sql/01_least_privilege.sql`](../sql/01_least_privilege.sql).
+It creates two roles and one service user, and it is the last thing you run as account
+admin:
+
+| principal | what it is for | what it can do |
+|---|---|---|
+| `CASE_INTEL_ROLE` | the build: dbt, the PDF uploader, CoCo | create and replace objects in the two schemas, call Cortex |
+| `CASE_INTEL_APP_ROLE` | the deployed Streamlit app | `SELECT` on `ANALYTICS` and one Cortex function. No writes, no `RAW` |
+| `CASE_INTEL_APP_SVC` | the app's service user, key-pair only | holds `CASE_INTEL_APP_ROLE` and nothing else |
+
+Two lines in that file are commented out because they need your values: granting
+`CASE_INTEL_ROLE` to your own user, and registering the service user's public key. Do the
+first now; the second only matters if you deploy the app.
+
+Running the pipeline as account admin works, and it is what a hurry would do. The reason
+not to is that `dbt build` and a public web app then share the single credential that can
+delete everything in the account — and one of those two is pasted into a hosting
+provider's secret store.
+
+---
+
+## 4. Accept the Anaconda terms
 
 Stage 2 (`models/intermediate/int_linkage_graph.py`) is a dbt **Python** model, which
 Snowflake runs as a Snowpark stored procedure. Snowpark pulls its packages from
@@ -76,7 +99,7 @@ you can hit this quite far into the build.
 
 ---
 
-## 4. Generate a key pair and register it
+## 5. Generate a key pair and register it
 
 dbt authenticates headlessly with a key pair, so there is no browser prompt mid-build.
 
@@ -102,9 +125,14 @@ alter user <YOUR_USER> set rsa_public_key='<PASTE_THE_ONE_LINE_KEY>';
 
 Keep the private key outside the repo. It is not gitignored by name, only by location.
 
+`-nocrypt` writes the key unencrypted, which is what lets dbt read it mid-build without
+stopping for a passphrase. That is a local-development trade-off: anyone who can read the
+file can authenticate as you. To harden it, drop `-nocrypt`, and set
+`SNOWFLAKE_PRIVATE_KEY_PASSPHRASE` alongside `SNOWFLAKE_PRIVATE_KEY_PATH`.
+
 ---
 
-## 5. Point the project at your account
+## 6. Point the project at your account
 
 `profiles.yml` reads everything from environment variables and has **no defaults** for the
 three that identify your account, so a missing variable fails loudly instead of quietly
@@ -116,8 +144,9 @@ cp .env.example .env
 source .env
 ```
 
-Optional overrides, only if you changed them in step 2: `SNOWFLAKE_ROLE`,
-`SNOWFLAKE_DATABASE`, `SNOWFLAKE_WAREHOUSE`, `SNOWFLAKE_SCHEMA`.
+`SNOWFLAKE_ROLE` defaults to `CASE_INTEL_ROLE` from step 3. The other optional overrides
+(`SNOWFLAKE_DATABASE`, `SNOWFLAKE_WAREHOUSE`, `SNOWFLAKE_SCHEMA`) only matter if you
+changed them in step 2.
 
 `.env` is gitignored. Re-`source` it in each new terminal, or add it to your shell profile.
 Then confirm:
@@ -130,7 +159,7 @@ You want `Connection test: [OK connection ok]`. Do not continue until you get it
 
 ---
 
-## 6. Build it
+## 7. Build it
 
 ```bash
 source .env                                 # the variables from step 5
@@ -173,7 +202,7 @@ select * from case_intel.analytics.agg_linkage_accuracy;
 
 ---
 
-## 7. The Streamlit demo (optional)
+## 8. The Streamlit demo (optional)
 
 ```bash
 pip install -r app/requirements.txt
@@ -182,9 +211,9 @@ streamlit run app/streamlit_app.py
 
 ---
 
-## 8. CoCo Agent Skills (optional)
+## 9. CoCo Agent Skills (optional)
 
-The five skills in `coco/skills/` turn CoCo into a natural-language front door over the
+The six skills in `coco/skills/` turn CoCo into a natural-language front door over the
 finished tables. One of them, `search_case_records`, retrieves the underlying records with
 the Cortex Search service that `dbt build` creates, so questions can be answered from what
 customers actually wrote rather than only from aggregates. They need the Cortex CLI installed and a named connection.
@@ -204,7 +233,7 @@ authenticator = "externalbrowser"   # opens a browser once; or use a PAT instead
 database = "CASE_INTEL"
 schema = "ANALYTICS"
 warehouse = "COMPUTE_WH"
-role = "ACCOUNTADMIN"
+role = "CASE_INTEL_ROLE"
 ```
 
 **Register the skills** (machine-local, so everyone does this once):
@@ -217,7 +246,8 @@ cortex -c case_intel
 Then ask in plain English, for example *"How many cases are unresolved and what is the
 total revenue at risk?"* or *"What is the biggest driver of revenue at risk, and why?"*
 
-> The README examples use a connection named `coco_trial`. Use whatever you named yours.
+> If you already have a connection under a different name, use that name instead — the
+> README and this file both assume `case_intel`.
 
 ---
 
@@ -229,7 +259,7 @@ total revenue at risk?"* or *"What is the biggest driver of revenue at risk, and
 | `PARSE_DOCUMENT` errors on the stage | The stage must use server-side encryption (`SNOWFLAKE_SSE`). The uploader creates it correctly; if you made it by hand, recreate it. |
 | `250001 Could not connect` / JWT or token errors | The public key never got registered, or `SNOWFLAKE_USER` does not match the user you ran `alter user` on. Redo step 4. |
 | `Object 'CASE_INTEL.RAW.X' does not exist` | Setup SQL was not run, or you are pointed at a different database. Redo step 2, check `SNOWFLAKE_DATABASE`. |
-| Python model `int_case_assignments` fails, SQL models are fine | Anaconda terms not accepted. Step 3. |
+| Python model `int_linkage_graph` fails, SQL models are fine | Anaconda terms not accepted. Step 4. |
 | `unknown model` / `not available in region` from Cortex | The model is not enabled where your account lives. Either recreate the trial in a supported region, or substitute with one variable: `dbt build --profiles-dir . --vars '{cortex_text_model: llama3.1-70b}'` (also try `snowflake-arctic`). The embedding model is `cortex_embed_model` (try `e5-base-v2`, but note the code assumes 768 dimensions). Both default in `dbt_project.yml`. Export `CASE_INTEL_TEXT_MODEL` so the Streamlit app matches. Rebuild fully afterwards. |
 | `invalid identifier` right after changing a seed | Seed column sets changed. Use `dbt build --full-refresh`. |
 | `assert_cases_fully_linked` fails | Stage 2 linked fewer records than the ground truth says it should. Usually means a Cortex model substitution changed the embedding behaviour. See the `SIM_FLOOR` note in `models/intermediate/int_linkage_graph.py`, which documents the measured similarity distributions and why the floor sits at 0.62. |

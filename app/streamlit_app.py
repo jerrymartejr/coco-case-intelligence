@@ -76,7 +76,7 @@ def get_session():
         "account": os.environ["SNOWFLAKE_ACCOUNT"],
         "user": os.environ["SNOWFLAKE_USER"],
         "private_key": _private_key_der(os.environ["SNOWFLAKE_PRIVATE_KEY_PATH"]),
-        "role": os.environ.get("SNOWFLAKE_ROLE", "ACCOUNTADMIN"),
+        "role": os.environ.get("SNOWFLAKE_ROLE", "CASE_INTEL_APP_ROLE"),
         "database": os.environ.get("SNOWFLAKE_DATABASE", "CASE_INTEL"),
         "schema": os.environ.get("SNOWFLAKE_SCHEMA", "ANALYTICS"),
         "warehouse": os.environ.get("SNOWFLAKE_WAREHOUSE", "COMPUTE_WH"),

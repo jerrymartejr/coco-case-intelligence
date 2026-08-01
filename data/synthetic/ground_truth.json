@@ -3,6 +3,7 @@
     {
       "case_id": "CASE_001",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_043",
       "issue": "warranty_misstatement",
       "root_cause": "Conflicting coverage guidance given on the accessory warranty period.",
@@ -17,6 +18,7 @@
     {
       "case_id": "CASE_002",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_021",
       "issue": "app_sync_fail",
       "root_cause": "Sync token expired; client failed to refresh silently.",
@@ -31,6 +33,7 @@
     {
       "case_id": "CASE_003",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_018",
       "issue": "wrong_item",
       "root_cause": "Warehouse pick error: adjacent SKU shipped.",
@@ -46,6 +49,7 @@
     {
       "case_id": "CASE_004",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_042",
       "issue": "wrong_item",
       "root_cause": "Warehouse pick error: adjacent SKU shipped.",
@@ -61,6 +65,7 @@
     {
       "case_id": "CASE_005",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_013",
       "issue": "mfa_device_change",
       "root_cause": "Trusted-device binding never migrated after the handset swap.",
@@ -77,6 +82,7 @@
     {
       "case_id": "CASE_006",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_026",
       "issue": "mfa_device_change",
       "root_cause": "Trusted-device binding never migrated after the handset swap.",
@@ -92,6 +98,7 @@
     {
       "case_id": "CASE_007",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_024",
       "issue": "return_policy_exception",
       "root_cause": "Multi-unit order arrived part-damaged; policy only handles whole-order returns.",
@@ -106,6 +113,7 @@
     {
       "case_id": "CASE_008",
       "tier": "C",
+      "shape": "standard",
       "customer_id": "CUST_035",
       "issue": "refund_delay",
       "root_cause": "Refund stuck in manual review queue past SLA.",
@@ -121,6 +129,7 @@
     {
       "case_id": "CASE_009",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_030",
       "issue": "app_crash_order_history",
       "root_cause": "Regression in the order-history view introduced by the latest release.",
@@ -137,6 +146,7 @@
     {
       "case_id": "CASE_010",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_039",
       "issue": "app_crash_order_history",
       "root_cause": "Regression in the order-history view introduced by the latest release.",
@@ -151,6 +161,7 @@
     {
       "case_id": "CASE_011",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_037",
       "issue": "return_policy_exception",
       "root_cause": "Multi-unit order arrived part-damaged; policy only handles whole-order returns.",
@@ -168,6 +179,7 @@
     {
       "case_id": "CASE_012",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_025",
       "issue": "warranty_misstatement",
       "root_cause": "Conflicting coverage guidance given on the accessory warranty period.",
@@ -183,6 +195,7 @@
     {
       "case_id": "CASE_013",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_038",
       "issue": "mfa_device_change",
       "root_cause": "Trusted-device binding never migrated after the handset swap.",
@@ -198,6 +211,7 @@
     {
       "case_id": "CASE_014",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_048",
       "issue": "wrong_item",
       "root_cause": "Warehouse pick error: adjacent SKU shipped.",
@@ -213,6 +227,7 @@
     {
       "case_id": "CASE_015",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_020",
       "issue": "app_crash_order_history",
       "root_cause": "Regression in the order-history view introduced by the latest release.",
@@ -228,6 +243,7 @@
     {
       "case_id": "CASE_016",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_004",
       "issue": "app_crash_order_history",
       "root_cause": "Regression in the order-history view introduced by the latest release.",
@@ -242,6 +258,7 @@
     {
       "case_id": "CASE_017",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_044",
       "issue": "mfa_device_change",
       "root_cause": "Trusted-device binding never migrated after the handset swap.",
@@ -258,6 +275,7 @@
     {
       "case_id": "CASE_018",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_047",
       "issue": "mfa_device_change",
       "root_cause": "Trusted-device binding never migrated after the handset swap.",
@@ -272,6 +290,7 @@
     {
       "case_id": "CASE_019",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_019",
       "issue": "return_policy_exception",
       "root_cause": "Multi-unit order arrived part-damaged; policy only handles whole-order returns.",
@@ -286,6 +305,7 @@
     {
       "case_id": "CASE_020",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_009",
       "issue": "double_charge",
       "root_cause": "Payment retry fired twice after a gateway timeout.",
@@ -300,6 +320,7 @@
     {
       "case_id": "CASE_021",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_033",
       "issue": "payment_auth_mismatch",
       "root_cause": "Authorisation captured while the order service recorded a failure.",
@@ -314,6 +335,7 @@
     {
       "case_id": "CASE_022",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_022",
       "issue": "wrong_item",
       "root_cause": "Warehouse pick error: adjacent SKU shipped.",
@@ -329,6 +351,7 @@
     {
       "case_id": "CASE_023",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_003",
       "issue": "mfa_device_change",
       "root_cause": "Trusted-device binding never migrated after the handset swap.",
@@ -345,6 +368,7 @@
     {
       "case_id": "CASE_024",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_015",
       "issue": "double_charge",
       "root_cause": "Payment retry fired twice after a gateway timeout.",
@@ -359,6 +383,7 @@
     {
       "case_id": "CASE_025",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_034",
       "issue": "app_crash_order_history",
       "root_cause": "Regression in the order-history view introduced by the latest release.",
@@ -373,6 +398,7 @@
     {
       "case_id": "CASE_026",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_028",
       "issue": "double_charge",
       "root_cause": "Payment retry fired twice after a gateway timeout.",
@@ -389,6 +415,7 @@
     {
       "case_id": "CASE_027",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_023",
       "issue": "cancellation_not_confirmed",
       "root_cause": "Cancellation processed but the confirmation email never generated.",
@@ -405,6 +432,7 @@
     {
       "case_id": "CASE_028",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_032",
       "issue": "refund_delay",
       "root_cause": "Refund stuck in manual review queue past SLA.",
@@ -421,6 +449,7 @@
     {
       "case_id": "CASE_029",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_008",
       "issue": "login_locked",
       "root_cause": "Account auto-locked after failed MFA sync on a new device.",
@@ -436,6 +465,7 @@
     {
       "case_id": "CASE_030",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_002",
       "issue": "app_crash_order_history",
       "root_cause": "Regression in the order-history view introduced by the latest release.",
@@ -452,6 +482,7 @@
     {
       "case_id": "CASE_031",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_010",
       "issue": "double_charge",
       "root_cause": "Payment retry fired twice after a gateway timeout.",
@@ -467,6 +498,7 @@
     {
       "case_id": "CASE_032",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_031",
       "issue": "payment_auth_mismatch",
       "root_cause": "Authorisation captured while the order service recorded a failure.",
@@ -483,6 +515,7 @@
     {
       "case_id": "CASE_033",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_029",
       "issue": "cancellation_not_confirmed",
       "root_cause": "Cancellation processed but the confirmation email never generated.",
@@ -498,6 +531,7 @@
     {
       "case_id": "CASE_034",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_027",
       "issue": "mfa_device_change",
       "root_cause": "Trusted-device binding never migrated after the handset swap.",
@@ -512,6 +546,7 @@
     {
       "case_id": "CASE_035",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_001",
       "issue": "app_sync_fail",
       "root_cause": "Sync token expired; client failed to refresh silently.",
@@ -527,6 +562,7 @@
     {
       "case_id": "CASE_036",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_045",
       "issue": "payment_auth_mismatch",
       "root_cause": "Authorisation captured while the order service recorded a failure.",
@@ -541,6 +577,7 @@
     {
       "case_id": "CASE_037",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_005",
       "issue": "app_sync_fail",
       "root_cause": "Sync token expired; client failed to refresh silently.",
@@ -556,6 +593,7 @@
     {
       "case_id": "CASE_038",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_036",
       "issue": "double_charge",
       "root_cause": "Payment retry fired twice after a gateway timeout.",
@@ -570,6 +608,7 @@
     {
       "case_id": "CASE_039",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_012",
       "issue": "app_crash_order_history",
       "root_cause": "Regression in the order-history view introduced by the latest release.",
@@ -585,6 +624,7 @@
     {
       "case_id": "CASE_040",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_016",
       "issue": "app_sync_fail",
       "root_cause": "Sync token expired; client failed to refresh silently.",
@@ -601,6 +641,7 @@
     {
       "case_id": "CASE_041",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_011",
       "issue": "refund_delay",
       "root_cause": "Refund stuck in manual review queue past SLA.",
@@ -615,6 +656,7 @@
     {
       "case_id": "CASE_042",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_006",
       "issue": "address_update_failed",
       "root_cause": "Address edit saved to the profile but not propagated to the open order.",
@@ -630,6 +672,7 @@
     {
       "case_id": "CASE_043",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_017",
       "issue": "warranty_misstatement",
       "root_cause": "Conflicting coverage guidance given on the accessory warranty period.",
@@ -644,6 +687,7 @@
     {
       "case_id": "CASE_044",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_046",
       "issue": "warranty_misstatement",
       "root_cause": "Conflicting coverage guidance given on the accessory warranty period.",
@@ -659,6 +703,7 @@
     {
       "case_id": "CASE_045",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_041",
       "issue": "order_not_received",
       "root_cause": "Carrier marked delivered but parcel never arrived (lost in transit).",
@@ -674,6 +719,7 @@
     {
       "case_id": "CASE_046",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_014",
       "issue": "mfa_device_change",
       "root_cause": "Trusted-device binding never migrated after the handset swap.",
@@ -689,6 +735,7 @@
     {
       "case_id": "CASE_047",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_007",
       "issue": "cancellation_not_confirmed",
       "root_cause": "Cancellation processed but the confirmation email never generated.",
@@ -704,6 +751,7 @@
     {
       "case_id": "CASE_048",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_040",
       "issue": "address_update_failed",
       "root_cause": "Address edit saved to the profile but not propagated to the open order.",
@@ -719,6 +767,7 @@
     {
       "case_id": "CASE_049",
       "tier": "C",
+      "shape": "standard",
       "customer_id": "CUST_005",
       "issue": "double_charge",
       "root_cause": "Payment retry fired twice after a gateway timeout.",
@@ -734,6 +783,7 @@
     {
       "case_id": "CASE_050",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_014",
       "issue": "login_locked",
       "root_cause": "Account auto-locked after failed MFA sync on a new device.",
@@ -750,6 +800,7 @@
     {
       "case_id": "CASE_051",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_013",
       "issue": "warranty_misstatement",
       "root_cause": "Conflicting coverage guidance given on the accessory warranty period.",
@@ -765,6 +816,7 @@
     {
       "case_id": "CASE_052",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_025",
       "issue": "order_not_received",
       "root_cause": "Carrier marked delivered but parcel never arrived (lost in transit).",
@@ -780,6 +832,7 @@
     {
       "case_id": "CASE_053",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_024",
       "issue": "app_sync_fail",
       "root_cause": "Sync token expired; client failed to refresh silently.",
@@ -795,6 +848,7 @@
     {
       "case_id": "CASE_054",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_043",
       "issue": "app_crash_order_history",
       "root_cause": "Regression in the order-history view introduced by the latest release.",
@@ -810,6 +864,7 @@
     {
       "case_id": "CASE_055",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_004",
       "issue": "cancellation_not_confirmed",
       "root_cause": "Cancellation processed but the confirmation email never generated.",
@@ -825,6 +880,7 @@
     {
       "case_id": "CASE_056",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_046",
       "issue": "return_policy_exception",
       "root_cause": "Multi-unit order arrived part-damaged; policy only handles whole-order returns.",
@@ -840,6 +896,7 @@
     {
       "case_id": "CASE_057",
       "tier": "C",
+      "shape": "standard",
       "customer_id": "CUST_012",
       "issue": "refund_delay",
       "root_cause": "Refund stuck in manual review queue past SLA.",
@@ -855,6 +912,7 @@
     {
       "case_id": "CASE_058",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_041",
       "issue": "mfa_device_change",
       "root_cause": "Trusted-device binding never migrated after the handset swap.",
@@ -869,6 +927,7 @@
     {
       "case_id": "CASE_059",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_031",
       "issue": "return_policy_exception",
       "root_cause": "Multi-unit order arrived part-damaged; policy only handles whole-order returns.",
@@ -885,6 +944,7 @@
     {
       "case_id": "CASE_060",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_011",
       "issue": "order_not_received",
       "root_cause": "Carrier marked delivered but parcel never arrived (lost in transit).",
@@ -900,6 +960,7 @@
     {
       "case_id": "CASE_061",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_007",
       "issue": "return_policy_exception",
       "root_cause": "Multi-unit order arrived part-damaged; policy only handles whole-order returns.",
@@ -914,6 +975,7 @@
     {
       "case_id": "CASE_062",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_010",
       "issue": "login_locked",
       "root_cause": "Account auto-locked after failed MFA sync on a new device.",
@@ -928,6 +990,7 @@
     {
       "case_id": "CASE_063",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_037",
       "issue": "warranty_misstatement",
       "root_cause": "Conflicting coverage guidance given on the accessory warranty period.",
@@ -942,6 +1005,7 @@
     {
       "case_id": "CASE_064",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_023",
       "issue": "address_update_failed",
       "root_cause": "Address edit saved to the profile but not propagated to the open order.",
@@ -958,6 +1022,7 @@
     {
       "case_id": "CASE_065",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_015",
       "issue": "warranty_misstatement",
       "root_cause": "Conflicting coverage guidance given on the accessory warranty period.",
@@ -973,6 +1038,7 @@
     {
       "case_id": "CASE_066",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_034",
       "issue": "login_locked",
       "root_cause": "Account auto-locked after failed MFA sync on a new device.",
@@ -989,6 +1055,7 @@
     {
       "case_id": "CASE_067",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_016",
       "issue": "handoff_repetition",
       "root_cause": "Prior troubleshooting notes not carried across the transfer.",
@@ -1003,6 +1070,7 @@
     {
       "case_id": "CASE_068",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_040",
       "issue": "app_crash_order_history",
       "root_cause": "Regression in the order-history view introduced by the latest release.",
@@ -1019,6 +1087,7 @@
     {
       "case_id": "CASE_069",
       "tier": "C",
+      "shape": "standard",
       "customer_id": "CUST_042",
       "issue": "cancellation_not_confirmed",
       "root_cause": "Cancellation processed but the confirmation email never generated.",
@@ -1033,6 +1102,7 @@
     {
       "case_id": "CASE_070",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_044",
       "issue": "refund_delay",
       "root_cause": "Refund stuck in manual review queue past SLA.",
@@ -1048,6 +1118,7 @@
     {
       "case_id": "CASE_071",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_009",
       "issue": "app_crash_order_history",
       "root_cause": "Regression in the order-history view introduced by the latest release.",
@@ -1065,6 +1136,7 @@
     {
       "case_id": "CASE_072",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_048",
       "issue": "mfa_device_change",
       "root_cause": "Trusted-device binding never migrated after the handset swap.",
@@ -1079,6 +1151,7 @@
     {
       "case_id": "CASE_073",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_001",
       "issue": "payment_auth_mismatch",
       "root_cause": "Authorisation captured while the order service recorded a failure.",
@@ -1093,6 +1166,7 @@
     {
       "case_id": "CASE_074",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_039",
       "issue": "wrong_item",
       "root_cause": "Warehouse pick error: adjacent SKU shipped.",
@@ -1108,6 +1182,7 @@
     {
       "case_id": "CASE_075",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_019",
       "issue": "app_sync_fail",
       "root_cause": "Sync token expired; client failed to refresh silently.",
@@ -1123,6 +1198,7 @@
     {
       "case_id": "CASE_076",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_036",
       "issue": "mfa_device_change",
       "root_cause": "Trusted-device binding never migrated after the handset swap.",
@@ -1139,6 +1215,7 @@
     {
       "case_id": "CASE_077",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_027",
       "issue": "return_policy_exception",
       "root_cause": "Multi-unit order arrived part-damaged; policy only handles whole-order returns.",
@@ -1155,6 +1232,7 @@
     {
       "case_id": "CASE_078",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_022",
       "issue": "return_policy_exception",
       "root_cause": "Multi-unit order arrived part-damaged; policy only handles whole-order returns.",
@@ -1170,6 +1248,7 @@
     {
       "case_id": "CASE_079",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_008",
       "issue": "warranty_misstatement",
       "root_cause": "Conflicting coverage guidance given on the accessory warranty period.",
@@ -1185,6 +1264,7 @@
     {
       "case_id": "CASE_080",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_038",
       "issue": "app_sync_fail",
       "root_cause": "Sync token expired; client failed to refresh silently.",
@@ -1199,6 +1279,7 @@
     {
       "case_id": "CASE_081",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_002",
       "issue": "address_update_failed",
       "root_cause": "Address edit saved to the profile but not propagated to the open order.",
@@ -1213,6 +1294,7 @@
     {
       "case_id": "CASE_082",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_017",
       "issue": "wrong_item",
       "root_cause": "Warehouse pick error: adjacent SKU shipped.",
@@ -1229,6 +1311,7 @@
     {
       "case_id": "CASE_083",
       "tier": "C",
+      "shape": "standard",
       "customer_id": "CUST_021",
       "issue": "refund_delay",
       "root_cause": "Refund stuck in manual review queue past SLA.",
@@ -1245,6 +1328,7 @@
     {
       "case_id": "CASE_084",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_028",
       "issue": "warranty_misstatement",
       "root_cause": "Conflicting coverage guidance given on the accessory warranty period.",
@@ -1259,6 +1343,7 @@
     {
       "case_id": "CASE_085",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_003",
       "issue": "wrong_item",
       "root_cause": "Warehouse pick error: adjacent SKU shipped.",
@@ -1273,6 +1358,7 @@
     {
       "case_id": "CASE_086",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_006",
       "issue": "mfa_device_change",
       "root_cause": "Trusted-device binding never migrated after the handset swap.",
@@ -1287,6 +1373,7 @@
     {
       "case_id": "CASE_087",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_029",
       "issue": "login_locked",
       "root_cause": "Account auto-locked after failed MFA sync on a new device.",
@@ -1303,6 +1390,7 @@
     {
       "case_id": "CASE_088",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_032",
       "issue": "order_not_received",
       "root_cause": "Carrier marked delivered but parcel never arrived (lost in transit).",
@@ -1318,6 +1406,7 @@
     {
       "case_id": "CASE_089",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_035",
       "issue": "double_charge",
       "root_cause": "Payment retry fired twice after a gateway timeout.",
@@ -1333,6 +1422,7 @@
     {
       "case_id": "CASE_090",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_033",
       "issue": "app_sync_fail",
       "root_cause": "Sync token expired; client failed to refresh silently.",
@@ -1347,6 +1437,7 @@
     {
       "case_id": "CASE_091",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_018",
       "issue": "return_policy_exception",
       "root_cause": "Multi-unit order arrived part-damaged; policy only handles whole-order returns.",
@@ -1362,6 +1453,7 @@
     {
       "case_id": "CASE_092",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_026",
       "issue": "handoff_repetition",
       "root_cause": "Prior troubleshooting notes not carried across the transfer.",
@@ -1376,6 +1468,7 @@
     {
       "case_id": "CASE_093",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_047",
       "issue": "cancellation_not_confirmed",
       "root_cause": "Cancellation processed but the confirmation email never generated.",
@@ -1390,6 +1483,7 @@
     {
       "case_id": "CASE_094",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_020",
       "issue": "payment_auth_mismatch",
       "root_cause": "Authorisation captured while the order service recorded a failure.",
@@ -1404,6 +1498,7 @@
     {
       "case_id": "CASE_095",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_045",
       "issue": "app_sync_fail",
       "root_cause": "Sync token expired; client failed to refresh silently.",
@@ -1418,6 +1513,7 @@
     {
       "case_id": "CASE_096",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_030",
       "issue": "payment_auth_mismatch",
       "root_cause": "Authorisation captured while the order service recorded a failure.",
@@ -1433,6 +1529,7 @@
     {
       "case_id": "CASE_097",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_011",
       "issue": "handoff_repetition",
       "root_cause": "Prior troubleshooting notes not carried across the transfer.",
@@ -1448,6 +1545,7 @@
     {
       "case_id": "CASE_098",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_029",
       "issue": "payment_auth_mismatch",
       "root_cause": "Authorisation captured while the order service recorded a failure.",
@@ -1465,6 +1563,7 @@
     {
       "case_id": "CASE_099",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_048",
       "issue": "order_not_received",
       "root_cause": "Carrier marked delivered but parcel never arrived (lost in transit).",
@@ -1481,6 +1580,7 @@
     {
       "case_id": "CASE_100",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_024",
       "issue": "warranty_misstatement",
       "root_cause": "Conflicting coverage guidance given on the accessory warranty period.",
@@ -1496,6 +1596,7 @@
     {
       "case_id": "CASE_101",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_041",
       "issue": "return_policy_exception",
       "root_cause": "Multi-unit order arrived part-damaged; policy only handles whole-order returns.",
@@ -1511,6 +1612,7 @@
     {
       "case_id": "CASE_102",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_010",
       "issue": "handoff_repetition",
       "root_cause": "Prior troubleshooting notes not carried across the transfer.",
@@ -1526,6 +1628,7 @@
     {
       "case_id": "CASE_103",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_039",
       "issue": "payment_auth_mismatch",
       "root_cause": "Authorisation captured while the order service recorded a failure.",
@@ -1540,6 +1643,7 @@
     {
       "case_id": "CASE_104",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_004",
       "issue": "refund_delay",
       "root_cause": "Refund stuck in manual review queue past SLA.",
@@ -1554,6 +1658,7 @@
     {
       "case_id": "CASE_105",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_046",
       "issue": "login_locked",
       "root_cause": "Account auto-locked after failed MFA sync on a new device.",
@@ -1569,6 +1674,7 @@
     {
       "case_id": "CASE_106",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_047",
       "issue": "app_crash_order_history",
       "root_cause": "Regression in the order-history view introduced by the latest release.",
@@ -1583,6 +1689,7 @@
     {
       "case_id": "CASE_107",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_013",
       "issue": "order_not_received",
       "root_cause": "Carrier marked delivered but parcel never arrived (lost in transit).",
@@ -1597,6 +1704,7 @@
     {
       "case_id": "CASE_108",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_023",
       "issue": "refund_delay",
       "root_cause": "Refund stuck in manual review queue past SLA.",
@@ -1612,6 +1720,7 @@
     {
       "case_id": "CASE_109",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_035",
       "issue": "address_update_failed",
       "root_cause": "Address edit saved to the profile but not propagated to the open order.",
@@ -1628,6 +1737,7 @@
     {
       "case_id": "CASE_110",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_042",
       "issue": "address_update_failed",
       "root_cause": "Address edit saved to the profile but not propagated to the open order.",
@@ -1644,6 +1754,7 @@
     {
       "case_id": "CASE_111",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_031",
       "issue": "double_charge",
       "root_cause": "Payment retry fired twice after a gateway timeout.",
@@ -1660,6 +1771,7 @@
     {
       "case_id": "CASE_112",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_005",
       "issue": "order_not_received",
       "root_cause": "Carrier marked delivered but parcel never arrived (lost in transit).",
@@ -1675,6 +1787,7 @@
     {
       "case_id": "CASE_113",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_009",
       "issue": "login_locked",
       "root_cause": "Account auto-locked after failed MFA sync on a new device.",
@@ -1689,6 +1802,7 @@
     {
       "case_id": "CASE_114",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_025",
       "issue": "login_locked",
       "root_cause": "Account auto-locked after failed MFA sync on a new device.",
@@ -1705,6 +1819,7 @@
     {
       "case_id": "CASE_115",
       "tier": "C",
+      "shape": "standard",
       "customer_id": "CUST_034",
       "issue": "double_charge",
       "root_cause": "Payment retry fired twice after a gateway timeout.",
@@ -1721,6 +1836,7 @@
     {
       "case_id": "CASE_116",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_040",
       "issue": "mfa_device_change",
       "root_cause": "Trusted-device binding never migrated after the handset swap.",
@@ -1736,6 +1852,7 @@
     {
       "case_id": "CASE_117",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_016",
       "issue": "cancellation_not_confirmed",
       "root_cause": "Cancellation processed but the confirmation email never generated.",
@@ -1751,6 +1868,7 @@
     {
       "case_id": "CASE_118",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_020",
       "issue": "handoff_repetition",
       "root_cause": "Prior troubleshooting notes not carried across the transfer.",
@@ -1765,6 +1883,7 @@
     {
       "case_id": "CASE_119",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_012",
       "issue": "mfa_device_change",
       "root_cause": "Trusted-device binding never migrated after the handset swap.",
@@ -1782,6 +1901,7 @@
     {
       "case_id": "CASE_120",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_037",
       "issue": "refund_delay",
       "root_cause": "Refund stuck in manual review queue past SLA.",
@@ -1796,6 +1916,7 @@
     {
       "case_id": "CASE_121",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_007",
       "issue": "double_charge",
       "root_cause": "Payment retry fired twice after a gateway timeout.",
@@ -1811,6 +1932,7 @@
     {
       "case_id": "CASE_122",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_002",
       "issue": "login_locked",
       "root_cause": "Account auto-locked after failed MFA sync on a new device.",
@@ -1826,6 +1948,7 @@
     {
       "case_id": "CASE_123",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_014",
       "issue": "return_policy_exception",
       "root_cause": "Multi-unit order arrived part-damaged; policy only handles whole-order returns.",
@@ -1841,6 +1964,7 @@
     {
       "case_id": "CASE_124",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_015",
       "issue": "handoff_repetition",
       "root_cause": "Prior troubleshooting notes not carried across the transfer.",
@@ -1855,6 +1979,7 @@
     {
       "case_id": "CASE_125",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_018",
       "issue": "mfa_device_change",
       "root_cause": "Trusted-device binding never migrated after the handset swap.",
@@ -1869,6 +1994,7 @@
     {
       "case_id": "CASE_126",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_028",
       "issue": "wrong_item",
       "root_cause": "Warehouse pick error: adjacent SKU shipped.",
@@ -1883,6 +2009,7 @@
     {
       "case_id": "CASE_127",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_022",
       "issue": "handoff_repetition",
       "root_cause": "Prior troubleshooting notes not carried across the transfer.",
@@ -1898,6 +2025,7 @@
     {
       "case_id": "CASE_128",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_001",
       "issue": "app_crash_order_history",
       "root_cause": "Regression in the order-history view introduced by the latest release.",
@@ -1914,6 +2042,7 @@
     {
       "case_id": "CASE_129",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_033",
       "issue": "double_charge",
       "root_cause": "Payment retry fired twice after a gateway timeout.",
@@ -1929,6 +2058,7 @@
     {
       "case_id": "CASE_130",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_044",
       "issue": "double_charge",
       "root_cause": "Payment retry fired twice after a gateway timeout.",
@@ -1946,6 +2076,7 @@
     {
       "case_id": "CASE_131",
       "tier": "C",
+      "shape": "standard",
       "customer_id": "CUST_008",
       "issue": "order_not_received",
       "root_cause": "Carrier marked delivered but parcel never arrived (lost in transit).",
@@ -1960,6 +2091,7 @@
     {
       "case_id": "CASE_132",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_038",
       "issue": "cancellation_not_confirmed",
       "root_cause": "Cancellation processed but the confirmation email never generated.",
@@ -1974,6 +2106,7 @@
     {
       "case_id": "CASE_133",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_017",
       "issue": "payment_auth_mismatch",
       "root_cause": "Authorisation captured while the order service recorded a failure.",
@@ -1988,6 +2121,7 @@
     {
       "case_id": "CASE_134",
       "tier": "C",
+      "shape": "standard",
       "customer_id": "CUST_021",
       "issue": "cancellation_not_confirmed",
       "root_cause": "Cancellation processed but the confirmation email never generated.",
@@ -2003,6 +2137,7 @@
     {
       "case_id": "CASE_135",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_006",
       "issue": "handoff_repetition",
       "root_cause": "Prior troubleshooting notes not carried across the transfer.",
@@ -2017,6 +2152,7 @@
     {
       "case_id": "CASE_136",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_030",
       "issue": "wrong_item",
       "root_cause": "Warehouse pick error: adjacent SKU shipped.",
@@ -2032,6 +2168,7 @@
     {
       "case_id": "CASE_137",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_003",
       "issue": "app_sync_fail",
       "root_cause": "Sync token expired; client failed to refresh silently.",
@@ -2048,6 +2185,7 @@
     {
       "case_id": "CASE_138",
       "tier": "C",
+      "shape": "standard",
       "customer_id": "CUST_036",
       "issue": "return_policy_exception",
       "root_cause": "Multi-unit order arrived part-damaged; policy only handles whole-order returns.",
@@ -2064,6 +2202,7 @@
     {
       "case_id": "CASE_139",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_026",
       "issue": "app_sync_fail",
       "root_cause": "Sync token expired; client failed to refresh silently.",
@@ -2079,6 +2218,7 @@
     {
       "case_id": "CASE_140",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_043",
       "issue": "refund_delay",
       "root_cause": "Refund stuck in manual review queue past SLA.",
@@ -2095,6 +2235,7 @@
     {
       "case_id": "CASE_141",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_019",
       "issue": "double_charge",
       "root_cause": "Payment retry fired twice after a gateway timeout.",
@@ -2109,6 +2250,7 @@
     {
       "case_id": "CASE_142",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_032",
       "issue": "handoff_repetition",
       "root_cause": "Prior troubleshooting notes not carried across the transfer.",
@@ -2123,6 +2265,7 @@
     {
       "case_id": "CASE_143",
       "tier": "C",
+      "shape": "standard",
       "customer_id": "CUST_045",
       "issue": "warranty_misstatement",
       "root_cause": "Conflicting coverage guidance given on the accessory warranty period.",
@@ -2137,6 +2280,7 @@
     {
       "case_id": "CASE_144",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_027",
       "issue": "login_locked",
       "root_cause": "Account auto-locked after failed MFA sync on a new device.",
@@ -2152,6 +2296,7 @@
     {
       "case_id": "CASE_145",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_040",
       "issue": "return_policy_exception",
       "root_cause": "Multi-unit order arrived part-damaged; policy only handles whole-order returns.",
@@ -2168,6 +2313,7 @@
     {
       "case_id": "CASE_146",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_022",
       "issue": "app_sync_fail",
       "root_cause": "Sync token expired; client failed to refresh silently.",
@@ -2184,6 +2330,7 @@
     {
       "case_id": "CASE_147",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_012",
       "issue": "app_sync_fail",
       "root_cause": "Sync token expired; client failed to refresh silently.",
@@ -2201,6 +2348,7 @@
     {
       "case_id": "CASE_148",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_026",
       "issue": "address_update_failed",
       "root_cause": "Address edit saved to the profile but not propagated to the open order.",
@@ -2217,6 +2365,7 @@
     {
       "case_id": "CASE_149",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_002",
       "issue": "cancellation_not_confirmed",
       "root_cause": "Cancellation processed but the confirmation email never generated.",
@@ -2231,6 +2380,7 @@
     {
       "case_id": "CASE_150",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_047",
       "issue": "double_charge",
       "root_cause": "Payment retry fired twice after a gateway timeout.",
@@ -2245,6 +2395,7 @@
     {
       "case_id": "CASE_151",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_004",
       "issue": "double_charge",
       "root_cause": "Payment retry fired twice after a gateway timeout.",
@@ -2259,6 +2410,7 @@
     {
       "case_id": "CASE_152",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_039",
       "issue": "cancellation_not_confirmed",
       "root_cause": "Cancellation processed but the confirmation email never generated.",
@@ -2273,6 +2425,7 @@
     {
       "case_id": "CASE_153",
       "tier": "C",
+      "shape": "standard",
       "customer_id": "CUST_021",
       "issue": "double_charge",
       "root_cause": "Payment retry fired twice after a gateway timeout.",
@@ -2287,6 +2440,7 @@
     {
       "case_id": "CASE_154",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_048",
       "issue": "warranty_misstatement",
       "root_cause": "Conflicting coverage guidance given on the accessory warranty period.",
@@ -2301,6 +2455,7 @@
     {
       "case_id": "CASE_155",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_035",
       "issue": "login_locked",
       "root_cause": "Account auto-locked after failed MFA sync on a new device.",
@@ -2316,6 +2471,7 @@
     {
       "case_id": "CASE_156",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_029",
       "issue": "handoff_repetition",
       "root_cause": "Prior troubleshooting notes not carried across the transfer.",
@@ -2331,6 +2487,7 @@
     {
       "case_id": "CASE_157",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_044",
       "issue": "handoff_repetition",
       "root_cause": "Prior troubleshooting notes not carried across the transfer.",
@@ -2347,6 +2504,7 @@
     {
       "case_id": "CASE_158",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_025",
       "issue": "cancellation_not_confirmed",
       "root_cause": "Cancellation processed but the confirmation email never generated.",
@@ -2361,6 +2519,7 @@
     {
       "case_id": "CASE_159",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_023",
       "issue": "warranty_misstatement",
       "root_cause": "Conflicting coverage guidance given on the accessory warranty period.",
@@ -2376,6 +2535,7 @@
     {
       "case_id": "CASE_160",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_034",
       "issue": "refund_delay",
       "root_cause": "Refund stuck in manual review queue past SLA.",
@@ -2391,6 +2551,7 @@
     {
       "case_id": "CASE_161",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_038",
       "issue": "order_not_received",
       "root_cause": "Carrier marked delivered but parcel never arrived (lost in transit).",
@@ -2406,6 +2567,7 @@
     {
       "case_id": "CASE_162",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_041",
       "issue": "login_locked",
       "root_cause": "Account auto-locked after failed MFA sync on a new device.",
@@ -2421,6 +2583,7 @@
     {
       "case_id": "CASE_163",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_001",
       "issue": "mfa_device_change",
       "root_cause": "Trusted-device binding never migrated after the handset swap.",
@@ -2436,6 +2599,7 @@
     {
       "case_id": "CASE_164",
       "tier": "C",
+      "shape": "standard",
       "customer_id": "CUST_037",
       "issue": "app_sync_fail",
       "root_cause": "Sync token expired; client failed to refresh silently.",
@@ -2452,6 +2616,7 @@
     {
       "case_id": "CASE_165",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_028",
       "issue": "app_sync_fail",
       "root_cause": "Sync token expired; client failed to refresh silently.",
@@ -2468,6 +2633,7 @@
     {
       "case_id": "CASE_166",
       "tier": "B",
+      "shape": "standard",
       "customer_id": "CUST_011",
       "issue": "cancellation_not_confirmed",
       "root_cause": "Cancellation processed but the confirmation email never generated.",
@@ -2483,6 +2649,7 @@
     {
       "case_id": "CASE_167",
       "tier": "C",
+      "shape": "standard",
       "customer_id": "CUST_014",
       "issue": "refund_delay",
       "root_cause": "Refund stuck in manual review queue past SLA.",
@@ -2498,6 +2665,7 @@
     {
       "case_id": "CASE_168",
       "tier": "C",
+      "shape": "standard",
       "customer_id": "CUST_009",
       "issue": "refund_delay",
       "root_cause": "Refund stuck in manual review queue past SLA.",
@@ -2514,6 +2682,7 @@
     {
       "case_id": "CASE_169",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_003",
       "issue": "app_crash_order_history",
       "root_cause": "Regression in the order-history view introduced by the latest release.",
@@ -2528,6 +2697,7 @@
     {
       "case_id": "CASE_170",
       "tier": "A",
+      "shape": "standard",
       "customer_id": "CUST_005",
       "issue": "payment_auth_mismatch",
       "root_cause": "Authorisation captured while the order service recorded a failure.",
@@ -2538,6 +2708,350 @@
         "email_0110",
         "chat_0121",
         "esc_0038"
+      ],
+      "revenue_at_risk": 0.0
+    },
+    {
+      "case_id": "CASE_D001",
+      "tier": "D",
+      "shape": "collision_with_identity",
+      "customer_id": "CUST_049",
+      "issue": "order_not_received",
+      "root_cause": "Carrier marked delivered but parcel never arrived (lost in transit).",
+      "resolution": "Reshipped with express tracking; refunded shipping.",
+      "resolved": true,
+      "record_ids": [
+        "chat_0136",
+        "csat_0124"
+      ],
+      "revenue_at_risk": 0.0
+    },
+    {
+      "case_id": "CASE_D002",
+      "tier": "D",
+      "shape": "collision_with_identity",
+      "customer_id": "CUST_050",
+      "issue": "order_not_received",
+      "root_cause": "Carrier marked delivered but parcel never arrived (lost in transit).",
+      "resolution": "Reshipped with express tracking; refunded shipping.",
+      "resolved": true,
+      "record_ids": [
+        "qa_0137",
+        "chat_0137",
+        "esc_0039"
+      ],
+      "revenue_at_risk": 0.0
+    },
+    {
+      "case_id": "CASE_D003",
+      "tier": "D",
+      "shape": "collision_with_identity",
+      "customer_id": "CUST_051",
+      "issue": "double_charge",
+      "root_cause": "Payment retry fired twice after a gateway timeout.",
+      "resolution": "Reversed the duplicate charge; confirmed single settlement.",
+      "resolved": true,
+      "record_ids": [
+        "csat_0125",
+        "email_0125"
+      ],
+      "revenue_at_risk": 0.0
+    },
+    {
+      "case_id": "CASE_D004",
+      "tier": "D",
+      "shape": "collision_with_identity",
+      "customer_id": "CUST_052",
+      "issue": "double_charge",
+      "root_cause": "Payment retry fired twice after a gateway timeout.",
+      "resolution": "Reversed the duplicate charge; confirmed single settlement.",
+      "resolved": true,
+      "record_ids": [
+        "csat_0126",
+        "chat_0138",
+        "qa_0138"
+      ],
+      "revenue_at_risk": 0.0
+    },
+    {
+      "case_id": "CASE_D005",
+      "tier": "D",
+      "shape": "collision_with_identity",
+      "customer_id": "CUST_053",
+      "issue": "login_locked",
+      "root_cause": "Account auto-locked after failed MFA sync on a new device.",
+      "resolution": "Reset MFA and unlocked the account.",
+      "resolved": true,
+      "record_ids": [
+        "qa_0139",
+        "csat_0127"
+      ],
+      "revenue_at_risk": 0.0
+    },
+    {
+      "case_id": "CASE_D006",
+      "tier": "D",
+      "shape": "collision_with_identity",
+      "customer_id": "CUST_054",
+      "issue": "login_locked",
+      "root_cause": "Account auto-locked after failed MFA sync on a new device.",
+      "resolution": "Reset MFA and unlocked the account.",
+      "resolved": true,
+      "record_ids": [
+        "email_0126",
+        "qa_0140",
+        "csat_0128"
+      ],
+      "revenue_at_risk": 0.0
+    },
+    {
+      "case_id": "CASE_D007",
+      "tier": "D",
+      "shape": "collision_identity_corrupted",
+      "customer_id": "CUST_055",
+      "issue": "mfa_device_change",
+      "root_cause": "Trusted-device binding never migrated after the handset swap.",
+      "resolution": "Re-ran identity verification and rebound the trusted device.",
+      "resolved": false,
+      "record_ids": [
+        "csat_0129",
+        "email_0127"
+      ],
+      "revenue_at_risk": 379.88
+    },
+    {
+      "case_id": "CASE_D008",
+      "tier": "D",
+      "shape": "collision_identity_corrupted",
+      "customer_id": "CUST_056",
+      "issue": "mfa_device_change",
+      "root_cause": "Trusted-device binding never migrated after the handset swap.",
+      "resolution": "Re-ran identity verification and rebound the trusted device.",
+      "resolved": true,
+      "record_ids": [
+        "email_0128",
+        "csat_0130",
+        "qa_0141"
+      ],
+      "revenue_at_risk": 0.0
+    },
+    {
+      "case_id": "CASE_D009",
+      "tier": "D",
+      "shape": "collision_identity_corrupted",
+      "customer_id": "CUST_057",
+      "issue": "wrong_item",
+      "root_cause": "Warehouse pick error: adjacent SKU shipped.",
+      "resolution": "Sent correct item; provided prepaid return label.",
+      "resolved": true,
+      "record_ids": [
+        "chat_0139",
+        "qa_0142"
+      ],
+      "revenue_at_risk": 0.0
+    },
+    {
+      "case_id": "CASE_D010",
+      "tier": "D",
+      "shape": "collision_identity_corrupted",
+      "customer_id": "CUST_058",
+      "issue": "wrong_item",
+      "root_cause": "Warehouse pick error: adjacent SKU shipped.",
+      "resolution": "Sent correct item; provided prepaid return label.",
+      "resolved": true,
+      "record_ids": [
+        "qa_0143",
+        "email_0129",
+        "csat_0131"
+      ],
+      "revenue_at_risk": 0.0
+    },
+    {
+      "case_id": "CASE_D011",
+      "tier": "D",
+      "shape": "collision_keyless",
+      "customer_id": "CUST_059",
+      "issue": "return_policy_exception",
+      "root_cause": "Multi-unit order arrived part-damaged; policy only handles whole-order returns.",
+      "resolution": "Granted a partial replacement exception and issued a case number.",
+      "resolved": true,
+      "record_ids": [
+        "csat_0132",
+        "qa_0144"
+      ],
+      "revenue_at_risk": 0.0
+    },
+    {
+      "case_id": "CASE_D012",
+      "tier": "D",
+      "shape": "collision_keyless",
+      "customer_id": "CUST_060",
+      "issue": "app_crash_order_history",
+      "root_cause": "Regression in the order-history view introduced by the latest release.",
+      "resolution": "Logged a defect with engineering; supplied history by email in the interim.",
+      "resolved": true,
+      "record_ids": [
+        "qa_0145",
+        "email_0130",
+        "chat_0140"
+      ],
+      "revenue_at_risk": 0.0
+    },
+    {
+      "case_id": "CASE_D013",
+      "tier": "D",
+      "shape": "collision_keyless",
+      "customer_id": "CUST_061",
+      "issue": "refund_delay",
+      "root_cause": "Refund stuck in manual review queue past SLA.",
+      "resolution": "Escalated and released the refund same day.",
+      "resolved": true,
+      "record_ids": [
+        "chat_0141",
+        "qa_0146"
+      ],
+      "revenue_at_risk": 0.0
+    },
+    {
+      "case_id": "CASE_D014",
+      "tier": "D",
+      "shape": "collision_keyless",
+      "customer_id": "CUST_062",
+      "issue": "handoff_repetition",
+      "root_cause": "Prior troubleshooting notes not carried across the transfer.",
+      "resolution": "Consolidated the history onto one case and continued from existing logs.",
+      "resolved": false,
+      "record_ids": [
+        "qa_0147",
+        "csat_0133",
+        "chat_0142"
+      ],
+      "revenue_at_risk": 0.0
+    },
+    {
+      "case_id": "CASE_D015",
+      "tier": "D",
+      "shape": "collision_keyless",
+      "customer_id": "CUST_063",
+      "issue": "payment_auth_mismatch",
+      "root_cause": "Authorisation captured while the order service recorded a failure.",
+      "resolution": "Released the stale hold and re-placed the order at the original price.",
+      "resolved": false,
+      "record_ids": [
+        "csat_0134",
+        "qa_0148"
+      ],
+      "revenue_at_risk": 0.0
+    },
+    {
+      "case_id": "CASE_D016",
+      "tier": "D",
+      "shape": "collision_keyless",
+      "customer_id": "CUST_064",
+      "issue": "warranty_misstatement",
+      "root_cause": "Conflicting coverage guidance given on the accessory warranty period.",
+      "resolution": "Verified the correct term and corrected the case note.",
+      "resolved": false,
+      "record_ids": [
+        "qa_0149",
+        "email_0131",
+        "csat_0135"
+      ],
+      "revenue_at_risk": 0.0
+    },
+    {
+      "case_id": "CASE_D017",
+      "tier": "D",
+      "shape": "same_customer_in_window",
+      "customer_id": "CUST_065",
+      "issue": "order_not_received",
+      "root_cause": "Carrier marked delivered but parcel never arrived (lost in transit).",
+      "resolution": "Reshipped with express tracking; refunded shipping.",
+      "resolved": true,
+      "record_ids": [
+        "qa_0150",
+        "chat_0143",
+        "csat_0136"
+      ],
+      "revenue_at_risk": 0.0
+    },
+    {
+      "case_id": "CASE_D018",
+      "tier": "D",
+      "shape": "same_customer_in_window",
+      "customer_id": "CUST_065",
+      "issue": "payment_auth_mismatch",
+      "root_cause": "Authorisation captured while the order service recorded a failure.",
+      "resolution": "Released the stale hold and re-placed the order at the original price.",
+      "resolved": true,
+      "record_ids": [
+        "qa_0151",
+        "chat_0144"
+      ],
+      "revenue_at_risk": 0.0
+    },
+    {
+      "case_id": "CASE_D019",
+      "tier": "D",
+      "shape": "same_customer_in_window",
+      "customer_id": "CUST_066",
+      "issue": "double_charge",
+      "root_cause": "Payment retry fired twice after a gateway timeout.",
+      "resolution": "Reversed the duplicate charge; confirmed single settlement.",
+      "resolved": true,
+      "record_ids": [
+        "qa_0152",
+        "csat_0137",
+        "chat_0145",
+        "esc_0040"
+      ],
+      "revenue_at_risk": 0.0
+    },
+    {
+      "case_id": "CASE_D020",
+      "tier": "D",
+      "shape": "same_customer_in_window",
+      "customer_id": "CUST_066",
+      "issue": "address_update_failed",
+      "root_cause": "Address edit saved to the profile but not propagated to the open order.",
+      "resolution": "Intercepted the shipment and corrected the delivery address before dispatch.",
+      "resolved": true,
+      "record_ids": [
+        "qa_0153",
+        "email_0132"
+      ],
+      "revenue_at_risk": 0.0
+    },
+    {
+      "case_id": "CASE_D021",
+      "tier": "D",
+      "shape": "same_customer_in_window",
+      "customer_id": "CUST_067",
+      "issue": "login_locked",
+      "root_cause": "Account auto-locked after failed MFA sync on a new device.",
+      "resolution": "Reset MFA and unlocked the account.",
+      "resolved": true,
+      "record_ids": [
+        "chat_0146",
+        "qa_0154",
+        "csat_0138",
+        "esc_0041"
+      ],
+      "revenue_at_risk": 0.0
+    },
+    {
+      "case_id": "CASE_D022",
+      "tier": "D",
+      "shape": "same_customer_in_window",
+      "customer_id": "CUST_067",
+      "issue": "app_sync_fail",
+      "root_cause": "Sync token expired; client failed to refresh silently.",
+      "resolution": "Forced token refresh; data reconciled.",
+      "resolved": true,
+      "record_ids": [
+        "csat_0139",
+        "email_0133",
+        "chat_0147"
       ],
       "revenue_at_risk": 0.0
     }

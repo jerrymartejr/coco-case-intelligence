@@ -17,9 +17,9 @@ inside the models. You need your own Snowflake account because the build spends 
 | Python **3.12** | 3.13 is not supported by dbt-snowflake 1.12. |
 | `git` | To clone. |
 
-**Cost warning.** One full `dbt build` makes roughly **1,370 Cortex calls** at the current
-data scale (556 records through Stage 1, 556 embeddings in Stage 2, 225 case syntheses in
-Stage 3, plus 38 `PARSE_DOCUMENT` calls). That is small but not free, and it re-runs every
+**Cost warning.** One full `dbt build` makes roughly **1,500 Cortex calls** at the current
+data scale (614 records through Stage 1, 614 embeddings in Stage 2, 244 case syntheses in
+Stage 3, plus 41 `PARSE_DOCUMENT` calls). That is small but not free, and it re-runs every
 time. Do not put it in a loop. Parsing the PDFs is the slow part, roughly four minutes.
 The build also creates a Cortex Search service with a one-day target lag, which refreshes
 on its own schedule and costs a little compute; drop it with
@@ -63,7 +63,7 @@ build cannot work without them.
 
 ## 3. Accept the Anaconda terms
 
-Stage 2 (`models/intermediate/int_case_assignments.py`) is a dbt **Python** model, which
+Stage 2 (`models/intermediate/int_linkage_graph.py`) is a dbt **Python** model, which
 Snowflake runs as a Snowpark stored procedure. Snowpark pulls its packages from
 Snowflake's Anaconda channel, and an `ORGADMIN` has to accept those terms once per
 account before any Python model will run.
@@ -156,26 +156,19 @@ dbt build --profiles-dir . --full-refresh   # --full-refresh whenever seed colum
 ### What a correct run looks like
 
 ```
-Done. PASS=45 WARN=0 ERROR=0 SKIP=0 TOTAL=45
+Done. PASS=89 WARN=0 ERROR=0 SKIP=0 TOTAL=89
 ```
 
-The two tests that matter are `assert_cases_fully_linked` (recall) and
-`assert_no_case_contamination` (precision). They score Stage 2 against the hidden
-ground-truth key on every build. Current measured result:
+Four of those tests score Stage 2 against the hidden ground-truth key on every build:
+`assert_cases_fully_linked` (recall), `assert_no_case_contamination` (precision),
+`assert_noise_stays_isolated`, and `assert_tier_d_precision_holds` for the adversarial
+tier. Tiers A-C hold at 100% as a regression floor; tier D is measured, not assumed, and
+currently scores recall 0.955 / precision 0.789.
 
-- **170/170** cases fully linked — Tier A 53/53, Tier B 103/103, Tier C 14/14
-- **0** false merges
-- **55/55** noise records correctly isolated
-
-To see it yourself:
+To see the whole scoreboard yourself, per tier and per adversarial shape:
 
 ```sql
-select tier, count(distinct true_case_id) as cases,
-       count(distinct case when n > 1 then true_case_id end) as split
-from (select true_case_id, tier,
-             count(distinct pred_case_id) over (partition by true_case_id) as n
-      from case_intel.analytics.eval_case_linkage where is_noise = 'false')
-group by tier order by tier;
+select * from case_intel.analytics.agg_linkage_accuracy;
 ```
 
 ---
@@ -241,7 +234,7 @@ total revenue at risk?"* or *"What is the biggest driver of revenue at risk, and
 | `invalid identifier` right after changing a seed | Seed column sets changed. Use `dbt build --full-refresh`. |
 | `assert_cases_fully_linked` fails | Stage 2 linked fewer records than the ground truth says it should. Usually means a Cortex model substitution changed the embedding behaviour. See the `SIM_FLOOR` note in `models/intermediate/int_linkage_graph.py`, which documents the measured similarity distributions and why the floor sits at 0.62. |
 | `ModuleNotFoundError: pandas` inside a Python model | The Snowpark sandbox has no pandas. Use `.collect()`, not `.to_pandas()`. Already handled in this repo; only relevant if you add a Python model. |
-| Build is slow or credits drop fast | Expected: about 1,270 Cortex calls per full build. Use `--select` to build a subset while developing. |
+| Build is slow or credits drop fast | Expected: about 1,500 Cortex calls per full build. Use `--select` to build a subset while developing. |
 
 ---
 

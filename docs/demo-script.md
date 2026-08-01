@@ -20,7 +20,7 @@ only the first ninety seconds should already have seen the hard thing working.
 - [ ] Terminal font large enough to read at 1080p.
 
 **Numbers as of the pinned build** — say these, but check the screen: 614 records,
-192 planted cases, 244 resolved cases, 41 PDFs.
+192 planted cases, 244 cases produced by the resolver, 41 PDFs.
 
 ---
 

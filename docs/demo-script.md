@@ -38,9 +38,9 @@ wall.)
 
 **Show:** deck slide 1.
 
-**Say:** "A support leader can't see that five contacts across five systems are one
-angry customer and one order at risk — because the unit everyone reasons in, the *case*,
-doesn't exist in the data."
+**Say:** "One customer with one problem contacts support five times, in five different
+systems. Together, those five records are one *case*: the full story of that problem.
+But nothing in the data connects them, so every number a support leader sees is wrong."
 
 ---
 

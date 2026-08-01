@@ -2,32 +2,80 @@
 
 **Snowflake CoCo Hackathon 2026 · Track 2 (Unstructured Data Intelligence)**
 
-Turn a pile of unstructured customer-support records that share **no common key** into a
-tested, queryable, **actionable** case-intelligence table, and an agent that reasons and
-acts on top of it.
+🔗 **Live demo:** <!-- TODO: paste the Streamlit Community Cloud URL here after deploying (see docs/demo-script.md step 0) -->
 
-## The idea
+A support leader cannot see that five contacts across five systems are one angry customer
+and one order at risk. The chat, the email, the QA note, the survey and the PDF escalation
+form describe the same problem in different words, and **not one of them carries an
+identifier the others share**. Every count, every driver and every escalation built on top
+of that pile is wrong, because the unit everyone reasons in — the *case* — does not exist
+in the data.
 
-Support interactions for one problem arrive across channels (chat, email, QA notes, CSAT,
-and PDF escalation forms) in different words, with **different or missing identifiers**. The hard, valuable part is
-linking them into a single *case* without a shared key. That is the product here, not a
-glorified join.
+This system infers it. `case_id` appears in **no source record**: it is worked out from
+who the records name, what they mean, and when they arrived. Ask one question and the
+answer spans five formats and a binary file without you knowing where it came from — but
+behind that single surface is a graph of inferred relationships, and every edge in it can
+be shown.
 
-- **dbt** owns the deterministic, tested backbone (Stages 1-4 + rollups).
-- **Cortex AI SQL** runs inside the dbt models (AI_COMPLETE, EMBED_TEXT_768).
-- **Cortex Search** indexes every raw record so questions can be answered from the source text.
-- **CoCo Agent Skills + Streamlit** own the agentic layer (Stage 5): search, ask, diagnose, recommend, act.
+```mermaid
+flowchart LR
+    subgraph raw["Five formats, no shared key"]
+        C["💬 chat JSON"]
+        E["✉️ email + headers"]
+        Q["📝 QA notes"]
+        S["⭐ CSAT JSON"]
+        P["📄 PDF forms<br/><i>binary, in a stage</i>"]
+    end
 
-## Pipeline
+    C & E & Q & S --> N
+    P -->|"PARSE_DOCUMENT"| N
 
-| Stage | Model(s) | What it does | Cortex |
-|-------|----------|--------------|--------|
-| 1 normalize | `stg_chat/email/qa_notes/csat/documents` -> `stg_records` | every format, text and binary, -> one common schema | PARSE_DOCUMENT, AI_COMPLETE |
-| 2 resolve | `int_record_entities` -> `int_case_assignments` (Snowpark) -> `int_case_records` | link keyless records into a `case_id`: deterministic entity pass, then embedding similarity + Union-Find | EMBED_TEXT_768 |
-| 3 synthesize | `fct_case_fact` | collapse each case into one fact row (issue, timeline, resolved, root cause, sentiment) | AI_COMPLETE |
-| 4 enrich | `fct_case_enriched` | join structured metrics (revenue at risk, CSAT, FCR, AHT) | SQL |
-| 5 retrieve | `search_corpus` -> `CASE_RECORD_SEARCH` | index every raw record so questions can be answered from what customers actually wrote | Cortex Search |
-| 5 act | `agg_*`, `coco/skills/`, `app/` | rollups, NL query, diagnose driver, recommend + deliver action | AI_COMPLETE |
+    N["<b>Understand each record</b><br/>one common schema<br/><i>AI_COMPLETE</i>"]
+    R["<b>Infer the relationships</b><br/>identity + time + meaning<br/>→ a case, and the edges<br/>that justify it<br/><i>EMBED_TEXT_768</i>"]
+    Y["<b>Reason over the case</b><br/>issue, timeline, root cause<br/><i>AI_COMPLETE</i>"]
+    F["<b>Fuse structured data</b><br/>orders, CSAT, agent metrics"]
+    X["<b>Context-aware retrieval</b><br/>record grain, case attached<br/><i>Cortex Search</i>"]
+    A["<b>Ask anything</b><br/>6 CoCo skills · Streamlit"]
+
+    N --> R --> Y --> F --> X --> A
+    R -.->|"the graph, kept"| X
+
+    style R fill:#1f6feb,color:#fff
+    style A fill:#238636,color:#fff
+```
+
+## What it actually understands
+
+**Cross-document reasoning, not document search.** Records that share no key are resolved
+into one case using three signals together — a fuzzy name, proximity in time, and what the
+complaint *means*. The relationships are inferred, then **kept**: `int_case_edges` holds
+every link with the evidence behind it, so a case can always be taken apart and justified.
+
+Here is a real one from the current build, `CASE_G007` — five records, five formats, no
+identifier anywhere:
+
+```
+email_0005  ↔ chat_0007   semantic   cosine 0.877   17.3h apart
+email_0005  ↔ esc_0003    semantic   cosine 0.789    3.9h apart     ← a PDF
+csat_0009   ↔ esc_0003    semantic   cosine 0.792    1.7h apart
+chat_0007   ↔ qa_0009     semantic   cosine 0.712    9.0h apart
+```
+
+A binary escalation form tied to a chat message by nothing but a surname, the meaning of
+the complaint, and a few hours. Ask CoCo *"why are these one case?"* and it narrates
+exactly that.
+
+**This is not a RAG demo.** Retrieval exists, but it is the last step rather than the
+trick: every hit from Cortex Search arrives carrying its resolved `case_id` and everything
+Stages 3 and 4 derived about that case — root cause, resolution state, revenue at risk. So
+retrieval and analysis join in one step, and the interesting answer ("these five messages
+are actually three cases") is one the index alone could never give.
+
+**Structured data is evidence, not decoration.** Orders and CSAT are not just joined on at
+the end for enrichment. When two different customers share a surname, contact support the
+same afternoon, about the same issue, nothing in the text can separate them — the order is
+what proves they are two people. That case is measured below, and it is where the fusion
+earns its place.
 
 ## Measured result
 
@@ -75,6 +123,28 @@ Four of these are build gates, not claims: `assert_cases_fully_linked`,
 `assert_no_case_contamination`, `assert_noise_stays_isolated` and
 `assert_tier_d_precision_holds`. `dbt build` fails if any regresses.
 
+## How it is built
+
+The mechanics, once the argument above is made. dbt owns a deterministic, tested backbone;
+Cortex AI SQL runs *inside* the models, so there is no orchestration layer shuttling data
+to an LLM and back.
+
+| Stage | Model(s) | What it does | Cortex |
+|---|---|---|---|
+| 1 normalize | `stg_chat` / `email` / `qa_notes` / `csat` / `documents` → `stg_records` | every format, text and binary, into one common schema | PARSE_DOCUMENT, AI_COMPLETE |
+| 2 resolve | `int_record_entities` + `int_record_embeddings` → `int_linkage_graph` (Snowpark) → `int_case_assignments`, `int_case_edges` | infer which records are one case, and keep the edges that prove it | EMBED_TEXT_768 |
+| 3 synthesize | `fct_case_fact` | collapse each case into one row: issue, timeline, resolved, root cause, sentiment | AI_COMPLETE |
+| 4 enrich | `fct_case_enriched` | attach the order, survey and agent metrics belonging to *that* case | SQL |
+| 5 retrieve | `search_corpus` → `CASE_RECORD_SEARCH` | index every raw record, with its case and derived attributes attached | Cortex Search |
+| 6 act | `agg_*`, `coco/skills/`, `app/` | rollups, natural-language Q&A, evidence, drivers, recommend, deliver | AI_COMPLETE |
+
+Stage 2 is the one worth reading. It is a dbt **Python** model that returns the linkage
+graph — assignments *and* edges — as one relation, because a Python model can only return
+one. Embeddings are computed once in their own model and read twice. Candidate pairs come
+from inverted indexes on the gate keys rather than a full pairwise scan, which on this
+corpus is roughly 3,000 comparisons instead of 188,191. The rules, and the two that were
+measured and rejected, are documented in [`AGENTS.md`](AGENTS.md).
+
 ## Synthetic data
 
 We generate both halves of the data so the pipeline runs end to end today; real data swaps
@@ -107,7 +177,7 @@ source .venv/bin/activate && source .env          # credentials, see docs/SETUP.
 dbt deps --profiles-dir .
 python3 scripts/upload_documents.py               # PDFs -> Snowflake stage (once)
 dbt build --profiles-dir .                        # seed -> run -> test, one command
-streamlit run app/streamlit_app.py                # the demo UI (optional)
+streamlit run app/streamlit_app.py                # the demo UI: case anatomy first
 ```
 
 The data is committed, so you only need the generator if you want to regenerate it (it is
@@ -124,29 +194,29 @@ roughly 1,500 Cortex calls, so it is cheap but not free.
 
 ## Talking to your data through CoCo (the agentic layer)
 
-The four CoCo Agent Skills in `coco/skills/` turn CoCo into a natural-language front door
-over the marts. Register them once (machine-local):
+The six CoCo Agent Skills in `coco/skills/` are the single surface the whole thing is
+experienced through. Register them once (machine-local):
 
 ```bash
 bash scripts/register_skills.sh
+cortex -c case_intel
 ```
 
-Then open CoCo in the repo and ask in plain English:
+Then ask in plain English. The order below is the order they matter in:
 
-```bash
-cortex -c coco_trial
-```
+| Skill | Ask it |
+|---|---|
+| **search_case_records** | *"What are customers actually saying about damaged items in multi-unit orders?"* Retrieves the real records across all five formats with Cortex Search, then answers from their own words. |
+| **ask_case_intelligence** | *"How many cases are unresolved and what is the total revenue at risk?"* |
+| **explain_case_linkage** | *"Why are the records in CASE_G007 one case? Show me the evidence."* Narrates the actual edges: which signal, what similarity, how many hours apart, and whether the case was fully keyless. |
+| **diagnose_top_drivers** | *"What is the biggest driver of revenue at risk, and why?"* |
+| **recommend_action** | *"Recommend a concrete action for the top driver."* |
+| **deliver_action** | *"Draft the message to send the owning team."* Posts via MCP if Slack or ticketing is configured; otherwise returns the ready-to-send message. |
 
-- **ask_case_intelligence** — "How many cases are unresolved and what's the total revenue at risk?"
-- **search_case_records** — "What are customers actually saying about the app crashing?" Retrieves the real
-  records across all five formats with Cortex Search, then answers from their own words.
-- **diagnose_top_drivers** — "What's the biggest driver of revenue at risk, and why?"
-- **recommend_action** — "Recommend a concrete action for the top driver."
-- **deliver_action** — "Draft the message to send the owning team" (posts via MCP if Slack/ticketing is configured, otherwise returns the ready-to-send message).
-
-These have been tested end to end: CoCo writes SQL over the marts, grounds every number,
-chains diagnose → recommend → deliver, and falls back cleanly when no delivery integration
-is present.
+All six have been tested end to end against the live warehouse: CoCo writes its own SQL
+over the marts, grounds every number it states, and chains search → explain → diagnose →
+recommend → deliver. Note that CoCo's SQL tool needs browser or PAT auth on its connection,
+not the key pair dbt uses — see [`docs/SETUP.md`](docs/SETUP.md) §9.
 
 ## Swapping in real data
 
@@ -169,6 +239,11 @@ pytest              # unit tests, no Snowflake connection needed
 CI runs the same three steps plus a `dbt parse` on every push, and re-runs the generator to
 prove the committed corpus is still reproducible from it. Nothing in CI needs credentials.
 The accuracy tests that do need a warehouse run inside `dbt build`.
+
+## Demo
+
+[`docs/demo-script.md`](docs/demo-script.md) is a four-minute shot list with the exact
+prompts to type and the answer shape to expect from each.
 
 ## Known limitations
 

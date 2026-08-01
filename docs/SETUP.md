@@ -279,5 +279,6 @@ total revenue at risk?"* or *"What is the biggest driver of revenue at risk, and
 - [`AGENTS.md`](../AGENTS.md) — the contract: case-fact schema, source schemas, difficulty
   tiers, and the Stage-by-Stage decisions with their rationale
 - [`README.md`](../README.md) — what the project is and the measured results
+- [`docs/demo-script.md`](demo-script.md) — the four-minute demo, prompt by prompt
 - [`docs/realism-report.md`](realism-report.md) — the analysis of the teammate reference
   datasets and which patterns were harvested into the generator

@@ -114,7 +114,8 @@ keyless linking worked. It is evidence for the demo, never an input the pipeline
    relation, projected apart by `int_case_assignments` and `int_case_edges`; a dbt Python
    model can only return one relation, and the edges are the evidence the thesis rests on.
    Candidate pairs come from inverted indexes on the gate keys rather than a full pairwise
-   scan (188,191 pairs down to 2,970 on the current corpus, same link set by construction).
+   scan: roughly 3,000 candidates against the 188,191 pairs a full scan over 614 records
+   would visit, and the same link set by construction.
    Five properties of the link rule matter, all measured on the current corpus:
    - **The deterministic pass is time-gated** (`TIME_WINDOW_HOURS = 72`). A case is a bounded
      episode, so a shared email or a shared resolved customer only links records inside the

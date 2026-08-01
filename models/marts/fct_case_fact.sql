@@ -21,12 +21,19 @@ with case_records as (
         array_agg(distinct agent_id)                  as agents_involved,
         min(occurred_ts)                              as first_ts,
         max(occurred_ts)                              as last_ts,
-        listagg(
+        -- What Stage 3 reads. Bounded twice, because this is the one place in the
+        -- pipeline where an unbounded amount of text is assembled and handed to a model:
+        -- per record so one runaway extraction cannot crowd out the rest of the case,
+        -- and overall so a large case cannot exceed the model's context or LISTAGG's own
+        -- limit and lose its tail without saying so. Nothing in this corpus comes close;
+        -- the guard is there for the case that does.
+        left(listagg(
             '[' || channel || ' @ ' || to_varchar(occurred_ts) || '] '
-            || coalesce(issue_text, '')
-            || case when resolution_text is not null then ' -> ' || resolution_text else '' end,
+            || left(coalesce(issue_text, ''), 800)
+            || case when resolution_text is not null
+                    then ' -> ' || left(resolution_text, 500) else '' end,
             '\n'
-        ) within group (order by occurred_ts)         as records_blob
+        ) within group (order by occurred_ts), 24000) as records_blob
     from {{ ref('int_case_records') }}
     group by case_id
 ),
@@ -40,7 +47,7 @@ synthesised as (
         first_ts,
         last_ts,
         try_parse_json(regexp_replace(
-            ai_complete('mistral-large2',
+            ai_complete('{{ var("cortex_text_model") }}',
                 'You summarize a single customer-support CASE assembled from multiple records. '
                 || 'Return ONLY a JSON object (no prose, no markdown, no code fences) with EXACTLY these keys: '
                 || 'issue, timeline, resolved, root_cause, root_cause_category, resolution_path, sentiment. '

@@ -24,6 +24,13 @@ DB = os.environ.get("CASE_INTEL_SCHEMA", "CASE_INTEL.ANALYTICS")
 if not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*(\.[A-Za-z_][A-Za-z0-9_]*)*", DB):
     raise ValueError(f"CASE_INTEL_SCHEMA is not a valid Snowflake identifier: {DB!r}")
 
+# The Cortex text model, mirroring the `cortex_text_model` dbt variable so a regional
+# substitution reaches the app too. Validated the same way the schema is, because it is
+# interpolated into SQL rather than bound.
+TEXT_MODEL = os.environ.get("CASE_INTEL_TEXT_MODEL", "mistral-large2")
+if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]*", TEXT_MODEL):
+    raise ValueError(f"CASE_INTEL_TEXT_MODEL is not a valid Cortex model name: {TEXT_MODEL!r}")
+
 
 def _private_key_der(path):
     """Snowpark wants the key as DER bytes, not a PEM path."""
@@ -134,7 +141,7 @@ if not drivers.empty:
             where root_cause_category = ?
             group by root_cause_category
         )
-        select snowflake.cortex.ai_complete('mistral-large2',
+        select snowflake.cortex.ai_complete('{TEXT_MODEL}',
             'You are a support operations analyst. Write a short recommended action with exactly these '
             || 'sections: Problem, Impact, Owning team, Ask, Affected cases. Use ONLY the figures given '
             || 'below verbatim. Do NOT invent, multiply, or estimate any numbers.' || chr(10)

@@ -6,8 +6,12 @@
   does not null the row.
 
   Returns a VARIANT. Downstream models read ex:field::type.
+
+  The model name defaults to the `cortex_text_model` project variable rather than to a
+  literal, so a regional substitution is one flag on one command.
 #}
-{% macro extract_common_fields(raw_col, model='mistral-large2') %}
+{% macro extract_common_fields(raw_col, model=none) %}
+  {%- set model = model or var('cortex_text_model') -%}
   try_parse_json(
     regexp_replace(
       ai_complete('{{ model }}',

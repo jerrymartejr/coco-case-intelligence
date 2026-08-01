@@ -2,5 +2,9 @@ streamlit>=1.30
 snowflake-snowpark-python>=1.14
 pandas>=2.0
 # Key-pair auth: pulled in transitively by the connector, pinned here because the
-# deployed app depends on it directly.
-cryptography>=42.0
+# deployed app depends on it directly. Capped below 46 because cryptography 46
+# removed OpenSSL bindings (lib.GEN_EMAIL among them) that the pyOpenSSL the
+# connector resolves still references: the pair imports fine separately and
+# crashes together, which is exactly what hosted deployment hit.
+cryptography>=42.0,<46
+pyOpenSSL>=24.3

@@ -21,6 +21,9 @@ inside the models. You need your own Snowflake account because the build spends 
 data scale (556 records through Stage 1, 556 embeddings in Stage 2, 225 case syntheses in
 Stage 3, plus 38 `PARSE_DOCUMENT` calls). That is small but not free, and it re-runs every
 time. Do not put it in a loop. Parsing the PDFs is the slow part, roughly four minutes.
+The build also creates a Cortex Search service with a one-day target lag, which refreshes
+on its own schedule and costs a little compute; drop it with
+`drop cortex search service case_intel.analytics.case_record_search` when you are done.
 If you only want to see the code work, `dbt build --select stg_chat` is far cheaper.
 
 ---
@@ -153,7 +156,7 @@ dbt build --profiles-dir . --full-refresh   # --full-refresh whenever seed colum
 ### What a correct run looks like
 
 ```
-Done. PASS=44 WARN=0 ERROR=0 SKIP=0 TOTAL=44
+Done. PASS=45 WARN=0 ERROR=0 SKIP=0 TOTAL=45
 ```
 
 The two tests that matter are `assert_cases_fully_linked` (recall) and
@@ -188,8 +191,10 @@ streamlit run app/streamlit_app.py
 
 ## 8. CoCo Agent Skills (optional)
 
-The four skills in `coco/skills/` turn CoCo into a natural-language front door over the
-finished tables. They need the Cortex CLI installed and a named connection.
+The five skills in `coco/skills/` turn CoCo into a natural-language front door over the
+finished tables. One of them, `search_case_records`, retrieves the underlying records with
+the Cortex Search service that `dbt build` creates, so questions can be answered from what
+customers actually wrote rather than only from aggregates. They need the Cortex CLI installed and a named connection.
 
 **Install the CLI.** Snowflake publishes an install script at
 `https://ai.snowflake.com/static/cc-scripts/install.sh`. If you would rather not pipe a

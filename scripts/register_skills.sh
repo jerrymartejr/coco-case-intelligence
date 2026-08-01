@@ -3,7 +3,7 @@
 # Skill registration is machine-local, so each teammate runs this once.
 set -euo pipefail
 DIR="$(cd "$(dirname "$0")/.." && pwd)"
-for s in ask_case_intelligence diagnose_top_drivers recommend_action deliver_action; do
+for s in ask_case_intelligence search_case_records diagnose_top_drivers recommend_action deliver_action; do
   cortex skill add "$DIR/coco/skills/$s"
 done
 echo "---"

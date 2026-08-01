@@ -111,8 +111,14 @@ keyless linking worked. It is evidence for the demo, never an input the pipeline
    language, not tailored to our synthetic issues, so it survives real data; extend it in
    `models/marts/fct_case_fact.sql` and the rollups follow.
 4. Stage 4 enrich: plain SQL join to the structured seeds.
-5. Stage 5: Streamlit (case explorer, root-cause rollup, recommended action). MCP/Slack
-   delivery is a stretch, not core.
+5. Stage 5: retrieval + agents. `search_corpus` is a RECORD-grain mart, and a post-hook
+   creates the `CASE_RECORD_SEARCH` Cortex Search service over it. This is where Cortex
+   Search always belonged: linking records at build time is a batch problem and uses
+   embeddings directly (Stage 2), while answering a question about them later is a runtime
+   retrieval problem. Every hit carries its case_id and the case's derived attributes, so
+   retrieval and analysis join in one step. Five CoCo skills sit on top: search (retrieval),
+   ask (aggregates), diagnose, recommend, deliver. Streamlit shows the same visually.
+   MCP/Slack delivery is a stretch, not core.
 
 ## Known limitations (state in README)
 

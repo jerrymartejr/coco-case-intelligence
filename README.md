@@ -15,7 +15,8 @@ glorified join.
 
 - **dbt** owns the deterministic, tested backbone (Stages 1-4 + rollups).
 - **Cortex AI SQL** runs inside the dbt models (AI_COMPLETE, EMBED_TEXT_768).
-- **CoCo Agent Skills + Streamlit** own the agentic layer (Stage 5): ask, diagnose, recommend, act.
+- **Cortex Search** indexes every raw record so questions can be answered from the source text.
+- **CoCo Agent Skills + Streamlit** own the agentic layer (Stage 5): search, ask, diagnose, recommend, act.
 
 ## Pipeline
 
@@ -25,6 +26,7 @@ glorified join.
 | 2 resolve | `int_record_entities` -> `int_case_assignments` (Snowpark) -> `int_case_records` | link keyless records into a `case_id`: deterministic entity pass, then embedding similarity + Union-Find | EMBED_TEXT_768 |
 | 3 synthesize | `fct_case_fact` | collapse each case into one fact row (issue, timeline, resolved, root cause, sentiment) | AI_COMPLETE |
 | 4 enrich | `fct_case_enriched` | join structured metrics (revenue at risk, CSAT, FCR, AHT) | SQL |
+| 5 retrieve | `search_corpus` -> `CASE_RECORD_SEARCH` | index every raw record so questions can be answered from what customers actually wrote | Cortex Search |
 | 5 act | `agg_*`, `coco/skills/`, `app/` | rollups, NL query, diagnose driver, recommend + deliver action | AI_COMPLETE |
 
 ## Measured result (on synthetic data with a ground-truth key)
@@ -103,6 +105,8 @@ cortex -c coco_trial
 ```
 
 - **ask_case_intelligence** — "How many cases are unresolved and what's the total revenue at risk?"
+- **search_case_records** — "What are customers actually saying about the app crashing?" Retrieves the real
+  records across all five formats with Cortex Search, then answers from their own words.
 - **diagnose_top_drivers** — "What's the biggest driver of revenue at risk, and why?"
 - **recommend_action** — "Recommend a concrete action for the top driver."
 - **deliver_action** — "Draft the message to send the owning team" (posts via MCP if Slack/ticketing is configured, otherwise returns the ready-to-send message).

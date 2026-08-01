@@ -148,7 +148,8 @@ breaks, and all of it queryable in plain English through CoCo. The whole pipelin
 
 **Show:** the repo URL and the live app URL on screen.
 
-<!-- TODO: paste the deployed Streamlit URL here once it is live, and read it out. -->
+Live app: **https://coco-case-intelligence.streamlit.app** · Repo:
+**https://github.com/jerrymartejr/coco-case-intelligence** — read both out.
 
 ---
 

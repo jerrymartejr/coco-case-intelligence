@@ -2,7 +2,7 @@
 
 **Snowflake CoCo Hackathon 2026 · Track 2 (Unstructured Data Intelligence)**
 
-🔗 **Live demo:** <!-- TODO: paste the Streamlit Community Cloud URL here after deploying (see docs/demo-script.md step 0) -->
+🔗 **Live demo:** https://coco-case-intelligence.streamlit.app
 
 A support leader cannot see that five contacts across five systems are one angry customer
 and one order at risk. The chat, the email, the QA note, the survey and the PDF escalation

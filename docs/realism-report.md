@@ -8,8 +8,8 @@ Sources: `origin/develop/fsdc-unstructured-data` (Francis, 4 NDJSON files, 40,00
 `origin/faker_synthetic_data` / PR #1 (Jim, 6 CSV + 3 JSON, 11,137 interactions + 1,600 customers).
 Measured 2026-07-26.
 
-Guardrails this report is written against: our synthetic run stays the pinned proof (8/8 plus the two
-linkage asserts), and any entity-pool expansion stays small and name-controlled. Nothing below should
+Guardrails this report is written against: our synthetic run stays the pinned proof (now 170/170 cases linked,
+plus the two linkage asserts), and any entity-pool expansion stays small and name-controlled. Nothing below should
 be read as a recommendation to adopt a pool at Jim's scale. See the last section.
 
 ---

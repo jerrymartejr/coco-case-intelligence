@@ -14,14 +14,32 @@ Credentials come from the same environment variables as profiles.yml. See docs/S
 """
 
 import os
+import re
 import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
 DOCUMENTS = REPO / "data" / "synthetic" / "documents"
-STAGE = "CASE_INTEL.RAW.DOCUMENTS"
 
 REQUIRED = ("SNOWFLAKE_ACCOUNT", "SNOWFLAKE_USER", "SNOWFLAKE_PRIVATE_KEY_PATH")
+
+
+def stage_name():
+    """The stage to upload into, in whichever database this run is pointed at.
+
+    This follows SNOWFLAKE_DATABASE rather than naming a database outright. It used to be
+    the literal CASE_INTEL.RAW.DOCUMENTS, which meant pointing the rest of the project at
+    a second database still sent the PDFs here -- and since the upload clears the stage
+    first, running it against a scratch database would have emptied and rewritten the
+    real one.
+
+    The database is an SQL identifier and cannot be a bind parameter, so it is validated
+    against a strict pattern instead.
+    """
+    database = os.environ.get("SNOWFLAKE_DATABASE", "CASE_INTEL")
+    if not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_$]*", database):
+        sys.exit(f"SNOWFLAKE_DATABASE is not a valid Snowflake identifier: {database!r}")
+    return f"{database}.RAW.DOCUMENTS"
 
 
 def _connect():
@@ -59,28 +77,29 @@ def main():
     if not pdfs:
         sys.exit(f"No PDFs in {DOCUMENTS}. Run scripts/generate_synthetic_data.py first.")
 
+    stage = stage_name()
     con = _connect()
     cur = con.cursor()
 
     # Server-side encryption, not client-side: PARSE_DOCUMENT cannot read a stage whose
     # files are encrypted with a client-side key.
     cur.execute(
-        f"create stage if not exists {STAGE} "
+        f"create stage if not exists {stage} "
         "directory = (enable = true) encryption = (type = 'SNOWFLAKE_SSE')"
     )
 
     # Clear first so a regenerated corpus never leaves orphaned documents behind that
     # would show up as extra, unscored records.
-    cur.execute(f"remove @{STAGE}")
+    cur.execute(f"remove @{stage}")
 
     for pdf in pdfs:
-        cur.execute(f"put file://{pdf} @{STAGE} auto_compress=false overwrite=true")
+        cur.execute(f"put file://{pdf} @{stage} auto_compress=false overwrite=true")
 
-    cur.execute(f"alter stage {STAGE} refresh")
-    cur.execute(f"select count(*) from directory(@{STAGE})")
+    cur.execute(f"alter stage {stage} refresh")
+    cur.execute(f"select count(*) from directory(@{stage})")
     staged = cur.fetchone()[0]
 
-    print(f"uploaded {len(pdfs)} PDFs to @{STAGE}; directory table reports {staged}")
+    print(f"uploaded {len(pdfs)} PDFs to @{stage}; directory table reports {staged}")
     if staged != len(pdfs):
         sys.exit(f"stage holds {staged} files but {len(pdfs)} were uploaded")
 

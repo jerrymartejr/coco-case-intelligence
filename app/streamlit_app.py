@@ -127,7 +127,10 @@ def get_session():
 st.title("🧩 Case Intelligence")
 st.caption(
     "Five formats, no shared key. The case ids below exist in none of the source records — "
-    "they are inferred from what the records mean, who they name, and when they arrived."
+    "they are inferred from what the records mean, who they name, and when they arrived. "
+    "This page is the evidence view; the conversational interface is **CoCo**, through the "
+    "six agent skills in [the repo](https://github.com/jerrymartejr/coco-case-intelligence) "
+    "— ask it *\"why are these records one case?\"* and it narrates the same edges shown here."
 )
 
 try:

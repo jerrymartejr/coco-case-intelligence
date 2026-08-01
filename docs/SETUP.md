@@ -236,6 +236,12 @@ warehouse = "COMPUTE_WH"
 role = "CASE_INTEL_ROLE"
 ```
 
+**Use browser or PAT auth here, not a key pair.** dbt and the Streamlit app authenticate
+with the key pair from step 5, but CoCo's SQL tool could not authenticate with one in
+testing: the skills fire and write correct SQL, then fail to execute it. Browser auth
+works. Run `cortex -c case_intel` once and complete the login before you need it in front
+of an audience.
+
 **Register the skills** (machine-local, so everyone does this once):
 
 ```bash

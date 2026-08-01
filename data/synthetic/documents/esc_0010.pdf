@@ -1,0 +1,54 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 857 >>
+stream
+BT /F1 11 Tf 54 760 Td 15 TL
+(CUSTOMER ESCALATION FORM) Tj T*
+(Support Operations - internal use only) Tj T*
+() Tj T*
+(Reference: ESC-0010) Tj T*
+(Date raised: 2026-05-16 21:31:49) Tj T*
+(Raised by: A_MARE \(Retention, Davao\)) Tj T*
+() Tj T*
+(Customer name: Tanaka, Mika) Tj T*
+(Product area: mobile_app) Tj T*
+() Tj T*
+(Summary of complaint) Tj T*
+(--------------------) Tj T*
+(The application terminates whenever the order-history view is opened. The) Tj T*
+(fault is reproducible and began after the most recent release. The customer) Tj T*
+(cannot retrieve any record of past purchases in the app.) Tj T*
+() Tj T*
+(Requested action) Tj T*
+(----------------) Tj T*
+(Raise a defect with engineering against the order-history view and supply the customer's history by email in the interim.) Tj T*
+() Tj T*
+(Authorised by: Support Operations Lead) Tj T*
+ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000000311 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+1219
+%%EOF

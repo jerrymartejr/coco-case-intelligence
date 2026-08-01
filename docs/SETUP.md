@@ -17,9 +17,10 @@ inside the models. You need your own Snowflake account because the build spends 
 | Python **3.12** | 3.13 is not supported by dbt-snowflake 1.12. |
 | `git` | To clone. |
 
-**Cost warning.** One full `dbt build` makes roughly **1,270 Cortex calls** at the current
-data scale (518 records through Stage 1, 518 embeddings in Stage 2, 225 case syntheses in
-Stage 3). That is small but not free, and it re-runs every time. Do not put it in a loop.
+**Cost warning.** One full `dbt build` makes roughly **1,370 Cortex calls** at the current
+data scale (556 records through Stage 1, 556 embeddings in Stage 2, 225 case syntheses in
+Stage 3, plus 38 `PARSE_DOCUMENT` calls). That is small but not free, and it re-runs every
+time. Do not put it in a loop. Parsing the PDFs is the slow part, roughly four minutes.
 If you only want to see the code work, `dbt build --select stg_chat` is far cheaper.
 
 ---
@@ -102,21 +103,21 @@ Keep the private key outside the repo. It is not gitignored by name, only by loc
 
 ## 5. Point the project at your account
 
-`profiles.yml` reads everything from environment variables, with the original author's
-account as the default. Set at least these three, or you will be trying to connect to an
-account you have no key for:
+`profiles.yml` reads everything from environment variables and has **no defaults** for the
+three that identify your account, so a missing variable fails loudly instead of quietly
+pointing at somebody else's warehouse.
 
 ```bash
-export SNOWFLAKE_ACCOUNT=ABCDEFG-XY12345          # Snowsight: account name / locator
-export SNOWFLAKE_USER=YOURUSER
-export SNOWFLAKE_PRIVATE_KEY_PATH=~/.snowflake/keys/case_intel_rsa_key.p8
+cp .env.example .env
+# edit .env with your account, user and private key path
+source .env
 ```
 
 Optional overrides, only if you changed them in step 2: `SNOWFLAKE_ROLE`,
 `SNOWFLAKE_DATABASE`, `SNOWFLAKE_WAREHOUSE`, `SNOWFLAKE_SCHEMA`.
 
-Put those exports in your shell profile or a local `.env` you source, so they survive a
-new terminal. Then confirm:
+`.env` is gitignored. Re-`source` it in each new terminal, or add it to your shell profile.
+Then confirm:
 
 ```bash
 dbt debug --profiles-dir .
@@ -129,11 +130,18 @@ You want `Connection test: [OK connection ok]`. Do not continue until you get it
 ## 6. Build it
 
 ```bash
+source .env                                 # the variables from step 5
 dbt deps --profiles-dir .                   # installs dbt_utils
-dbt build --profiles-dir .                  # seed -> run 16 models -> 17 tests
+python3 scripts/upload_documents.py         # PDFs -> the RAW.DOCUMENTS stage
+dbt build --profiles-dir .                  # seed -> run models -> tests
 ```
 
-Takes about a minute. The data is already committed, so you do **not** need to run the
+`upload_documents.py` is needed because one of the five sources is a real binary format.
+The PDF escalation forms cannot be dbt seeds, so they are PUT into a Snowflake stage with a
+directory table and read back by `stg_documents` with Cortex `PARSE_DOCUMENT`. Re-run it
+whenever you regenerate the corpus.
+
+Takes about five minutes, most of it parsing the PDFs. The data is already committed, so you do **not** need to run the
 generator first. If you want to regenerate it (it is deterministic, so you get identical
 output):
 
@@ -145,7 +153,7 @@ dbt build --profiles-dir . --full-refresh   # --full-refresh whenever seed colum
 ### What a correct run looks like
 
 ```
-Done. PASS=41 WARN=0 ERROR=0 SKIP=0 TOTAL=41
+Done. PASS=44 WARN=0 ERROR=0 SKIP=0 TOTAL=44
 ```
 
 The two tests that matter are `assert_cases_fully_linked` (recall) and
@@ -219,6 +227,8 @@ total revenue at risk?"* or *"What is the biggest driver of revenue at risk, and
 
 | Symptom | Cause and fix |
 |---|---|
+| `stg_documents` returns 0 rows | The stage is empty. Run `python3 scripts/upload_documents.py`. |
+| `PARSE_DOCUMENT` errors on the stage | The stage must use server-side encryption (`SNOWFLAKE_SSE`). The uploader creates it correctly; if you made it by hand, recreate it. |
 | `250001 Could not connect` / JWT or token errors | The public key never got registered, or `SNOWFLAKE_USER` does not match the user you ran `alter user` on. Redo step 4. |
 | `Object 'CASE_INTEL.RAW.X' does not exist` | Setup SQL was not run, or you are pointed at a different database. Redo step 2, check `SNOWFLAKE_DATABASE`. |
 | Python model `int_case_assignments` fails, SQL models are fine | Anaconda terms not accepted. Step 3. |

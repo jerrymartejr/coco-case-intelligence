@@ -69,7 +69,8 @@
       "record_ids": [
         "email_0002",
         "chat_0004",
-        "qa_0004"
+        "qa_0004",
+        "esc_0001"
       ],
       "revenue_at_risk": 0.0
     },
@@ -112,7 +113,8 @@
       "resolved": true,
       "record_ids": [
         "csat_0006",
-        "qa_0007"
+        "qa_0007",
+        "esc_0002"
       ],
       "revenue_at_risk": 0.0
     },
@@ -158,7 +160,8 @@
         "email_0005",
         "csat_0009",
         "qa_0009",
-        "chat_0007"
+        "chat_0007",
+        "esc_0003"
       ],
       "revenue_at_risk": 883.25
     },
@@ -172,7 +175,8 @@
       "resolved": true,
       "record_ids": [
         "csat_0010",
-        "chat_0008"
+        "chat_0008",
+        "esc_0004"
       ],
       "revenue_at_risk": 0.0
     },
@@ -201,7 +205,8 @@
       "resolved": true,
       "record_ids": [
         "email_0006",
-        "qa_0011"
+        "qa_0011",
+        "esc_0005"
       ],
       "revenue_at_risk": 0.0
     },
@@ -245,7 +250,8 @@
       "record_ids": [
         "chat_0012",
         "csat_0013",
-        "email_0009"
+        "email_0009",
+        "esc_0006"
       ],
       "revenue_at_risk": 0.0
     },
@@ -375,7 +381,8 @@
       "record_ids": [
         "chat_0017",
         "email_0015",
-        "csat_0018"
+        "csat_0018",
+        "esc_0007"
       ],
       "revenue_at_risk": 0.0
     },
@@ -390,7 +397,8 @@
       "record_ids": [
         "chat_0018",
         "qa_0018",
-        "email_0016"
+        "email_0016",
+        "esc_0008"
       ],
       "revenue_at_risk": 0.0
     },
@@ -405,7 +413,8 @@
       "record_ids": [
         "chat_0019",
         "csat_0019",
-        "qa_0019"
+        "qa_0019",
+        "esc_0009"
       ],
       "revenue_at_risk": 0.0
     },
@@ -435,7 +444,8 @@
       "record_ids": [
         "qa_0021",
         "chat_0021",
-        "csat_0020"
+        "csat_0020",
+        "esc_0010"
       ],
       "revenue_at_risk": 0.0
     },
@@ -732,7 +742,8 @@
       "record_ids": [
         "chat_0036",
         "csat_0030",
-        "qa_0036"
+        "qa_0036",
+        "esc_0011"
       ],
       "revenue_at_risk": 0.0
     },
@@ -866,7 +877,8 @@
       "record_ids": [
         "chat_0044",
         "csat_0036",
-        "email_0042"
+        "email_0042",
+        "esc_0012"
       ],
       "revenue_at_risk": 0.0
     },
@@ -1028,7 +1040,8 @@
       "resolved": true,
       "record_ids": [
         "qa_0049",
-        "csat_0046"
+        "csat_0046",
+        "esc_0013"
       ],
       "revenue_at_risk": 0.0
     },
@@ -1044,7 +1057,8 @@
         "email_0047",
         "csat_0047",
         "qa_0050",
-        "chat_0052"
+        "chat_0052",
+        "esc_0014"
       ],
       "revenue_at_risk": 411.59
     },
@@ -1101,7 +1115,8 @@
       "resolved": true,
       "record_ids": [
         "chat_0056",
-        "csat_0049"
+        "csat_0049",
+        "esc_0015"
       ],
       "revenue_at_risk": 0.0
     },
@@ -1116,7 +1131,8 @@
       "record_ids": [
         "qa_0052",
         "csat_0050",
-        "email_0050"
+        "email_0050",
+        "esc_0016"
       ],
       "revenue_at_risk": 0.0
     },
@@ -1131,7 +1147,8 @@
       "record_ids": [
         "csat_0051",
         "qa_0053",
-        "email_0051"
+        "email_0051",
+        "esc_0017"
       ],
       "revenue_at_risk": 0.0
     },
@@ -1160,7 +1177,8 @@
       "resolved": true,
       "record_ids": [
         "qa_0055",
-        "email_0053"
+        "email_0053",
+        "esc_0018"
       ],
       "revenue_at_risk": 0.0
     },
@@ -1439,7 +1457,8 @@
         "csat_0066",
         "email_0062",
         "chat_0071",
-        "qa_0068"
+        "qa_0068",
+        "esc_0019"
       ],
       "revenue_at_risk": 0.0
     },
@@ -1454,7 +1473,8 @@
       "record_ids": [
         "csat_0067",
         "qa_0069",
-        "email_0063"
+        "email_0063",
+        "esc_0020"
       ],
       "revenue_at_risk": 39.0
     },
@@ -1541,7 +1561,8 @@
       "resolved": true,
       "record_ids": [
         "qa_0073",
-        "csat_0071"
+        "csat_0071",
+        "esc_0021"
       ],
       "revenue_at_risk": 0.0
     },
@@ -1615,7 +1636,8 @@
       "record_ids": [
         "csat_0075",
         "email_0070",
-        "chat_0078"
+        "chat_0078",
+        "esc_0022"
       ],
       "revenue_at_risk": 22.92
     },
@@ -1630,7 +1652,8 @@
       "record_ids": [
         "chat_0079",
         "email_0071",
-        "csat_0076"
+        "csat_0076",
+        "esc_0023"
       ],
       "revenue_at_risk": 586.6
     },
@@ -1751,7 +1774,8 @@
         "csat_0082",
         "chat_0086",
         "email_0077",
-        "qa_0082"
+        "qa_0082",
+        "esc_0024"
       ],
       "revenue_at_risk": 71.76
     },
@@ -1779,7 +1803,8 @@
       "resolved": true,
       "record_ids": [
         "qa_0084",
-        "email_0079"
+        "email_0079",
+        "esc_0025"
       ],
       "revenue_at_risk": 0.0
     },
@@ -1793,7 +1818,8 @@
       "resolved": true,
       "record_ids": [
         "qa_0085",
-        "email_0080"
+        "email_0080",
+        "esc_0026"
       ],
       "revenue_at_risk": 0.0
     },
@@ -1864,7 +1890,8 @@
       "resolved": true,
       "record_ids": [
         "csat_0086",
-        "qa_0087"
+        "qa_0087",
+        "esc_0027"
       ],
       "revenue_at_risk": 0.0
     },
@@ -1911,7 +1938,8 @@
         "email_0086",
         "csat_0089",
         "qa_0090",
-        "chat_0090"
+        "chat_0090",
+        "esc_0028"
       ],
       "revenue_at_risk": 0.0
     },
@@ -1967,7 +1995,8 @@
       "resolved": true,
       "record_ids": [
         "chat_0091",
-        "qa_0092"
+        "qa_0092",
+        "esc_0029"
       ],
       "revenue_at_risk": 0.0
     },
@@ -2011,7 +2040,8 @@
       "record_ids": [
         "email_0091",
         "qa_0094",
-        "chat_0093"
+        "chat_0093",
+        "esc_0030"
       ],
       "revenue_at_risk": 0.0
     },
@@ -2146,7 +2176,8 @@
       "record_ids": [
         "chat_0099",
         "qa_0102",
-        "email_0097"
+        "email_0097",
+        "esc_0031"
       ],
       "revenue_at_risk": 0.0
     },
@@ -2162,7 +2193,8 @@
         "chat_0100",
         "csat_0101",
         "qa_0103",
-        "email_0098"
+        "email_0098",
+        "esc_0032"
       ],
       "revenue_at_risk": 0.0
     },
@@ -2307,7 +2339,8 @@
       "record_ids": [
         "csat_0106",
         "chat_0110",
-        "qa_0110"
+        "qa_0110",
+        "esc_0033"
       ],
       "revenue_at_risk": 0.0
     },
@@ -2335,7 +2368,8 @@
       "resolved": true,
       "record_ids": [
         "email_0102",
-        "qa_0112"
+        "qa_0112",
+        "esc_0034"
       ],
       "revenue_at_risk": 0.0
     },
@@ -2349,7 +2383,8 @@
       "resolved": false,
       "record_ids": [
         "chat_0111",
-        "email_0103"
+        "email_0103",
+        "esc_0035"
       ],
       "revenue_at_risk": 438.54
     },
@@ -2409,7 +2444,8 @@
       "record_ids": [
         "qa_0116",
         "email_0106",
-        "chat_0115"
+        "chat_0115",
+        "esc_0036"
       ],
       "revenue_at_risk": 0.0
     },
@@ -2424,7 +2460,8 @@
       "record_ids": [
         "email_0107",
         "chat_0116",
-        "qa_0117"
+        "qa_0117",
+        "esc_0037"
       ],
       "revenue_at_risk": 415.78
     },
@@ -2499,7 +2536,8 @@
       "record_ids": [
         "qa_0122",
         "email_0110",
-        "chat_0121"
+        "chat_0121",
+        "esc_0038"
       ],
       "revenue_at_risk": 0.0
     }

@@ -1,19 +1,19 @@
 record_id,raw_content,received_ts
 email_0001,"From: L. Novak <lena.novak697@outlook.com>
 To: support@company.example.com
-Subject: Following up again
-Date: 2026-05-05 17:22:03
+Subject: Incorrect product shipped
+Date: 2026-05-05 20:30:50
 
-I chatted about this yesterday and it's still not fixed. The replacement you sent is wrong as well, so I now have two items I did not order.
+What arrived is not what I purchased. A different product entirely was packed against my order. This matters because I still need the item I actually paid for. Please dispatch the correct one and tell me how to send this back.
 
-Order reference: ORD_1003",2026-05-05 17:22:03
+Order reference: ORD_1003",2026-05-05 20:30:50
 email_0002,"From: Odile Rahman <rahman.0002@mailbox.example.com>
 To: support@company.example.com
 Subject: Verification codes going to my old handset
 Date: 2026-05-06 09:00:02
 
 Since replacing my handset the one-time codes continue to be delivered to the device I no longer own. This matters because I cannot complete verification on the phone I actually hold. Please run whatever identity checks you need and move the trusted device across.",2026-05-06 09:00:02
-email_0003,"From: Mbeki, Thandi <mbeki.0003@mailbox.example.com>
+email_0003,"From: T. Mbeki <mbeki.0003@mailbox.example.com>
 To: support@company.example.com
 Subject: Verification codes going to my old handset
 Date: 2026-05-06 20:00:14
@@ -21,11 +21,11 @@ Date: 2026-05-06 20:00:14
 Since replacing my handset the one-time codes continue to be delivered to the device I no longer own. This matters because I cannot complete verification on the phone I actually hold. Please run whatever identity checks you need and move the trusted device across.",2026-05-06 20:00:14
 email_0004,"From: Andersen, Freya <andersen.0004@mailbox.example.com>
 To: support@company.example.com
-Subject: App closes when opening order history
-Date: 2026-05-08 04:24:52
+Subject: Following up again
+Date: 2026-05-08 03:25:09
 
-Since the most recent update the application closes itself whenever I open my order history. This matters because that screen is the only place I can check what I have purchased. Please raise this with your engineers rather than sending me through another reinstall.",2026-05-08 04:24:52
-email_0005,"From: V. Sokolov <sokolov.0005@mailbox.example.com>
+I was told this was resolved but it clearly isn't. The order history screen is still killing the app, and the latest update changed nothing.",2026-05-08 03:25:09
+email_0005,"From: Sokolov, Viktor <sokolov.0005@mailbox.example.com>
 To: support@company.example.com
 Subject: Partial return request for damaged units
 Date: 2026-05-08 22:24:17
@@ -37,53 +37,53 @@ Subject: Incorrect product shipped
 Date: 2026-05-10 04:59:56
 
 What arrived is not what I purchased. A different product entirely was packed against my order. This matters because I still need the item I actually paid for. Please dispatch the correct one and tell me how to send this back.",2026-05-10 04:59:56
-email_0007,"From: Amara Nwosu <jules.nwosu128@gmail.com>
+email_0007,"From: Jules Nwosu <jules.nwosu128@gmail.com>
 To: support@company.example.com
-Subject: App closes when opening order history
-Date: 2026-05-10 17:27:30
+Subject: Following up again
+Date: 2026-05-10 16:47:09
 
-Since the most recent update the application closes itself whenever I open my order history. This matters because that screen is the only place I can check what I have purchased. Please raise this with your engineers rather than sending me through another reinstall.
+This is the second time I'm reaching out about the same issue. The order history screen is still killing the app, and the latest update changed nothing.
 
-Order reference: ORD_1013",2026-05-10 17:27:30
-email_0008,"From: Sana Nair <nair.0008@mailbox.example.com>
+Order reference: ORD_1013",2026-05-10 16:47:09
+email_0008,"From: S. Nair <nair.0008@mailbox.example.com>
 To: support@company.example.com
 Subject: App closes when opening order history
 Date: 2026-05-10 22:22:52
 
 Since the most recent update the application closes itself whenever I open my order history. This matters because that screen is the only place I can check what I have purchased. Please raise this with your engineers rather than sending me through another reinstall.",2026-05-10 22:22:52
-email_0009,"From: E. Brandt <brandt.0009@mailbox.example.com>
+email_0009,"From: Brandt, Elke <brandt.0009@mailbox.example.com>
 To: support@company.example.com
 Subject: Verification codes going to my old handset
-Date: 2026-05-11 11:57:25
+Date: 2026-05-11 12:06:53
 
-Since replacing my handset the one-time codes continue to be delivered to the device I no longer own. This matters because I cannot complete verification on the phone I actually hold. Please run whatever identity checks you need and move the trusted device across.",2026-05-11 11:57:25
+Since replacing my handset the one-time codes continue to be delivered to the device I no longer own. This matters because I cannot complete verification on the phone I actually hold. Please run whatever identity checks you need and move the trusted device across.",2026-05-11 12:06:53
 email_0010,"From: Tobias Lindgren <tobias.lindgren851@outlook.com>
 To: support@company.example.com
 Subject: Following up again
-Date: 2026-05-11 23:16:09
+Date: 2026-05-11 23:24:00
 
-I was told this was resolved but it clearly isn't. The codes are still landing on the old handset even after you said the device had been switched over.
+I called about this already, following up again. The codes are still landing on the old handset even after you said the device had been switched over.
 
-Order reference: ORD_1015",2026-05-11 23:16:09
-email_0011,"From: Kobayashi, Hana <kobayashi.0011@mailbox.example.com>
+Order reference: ORD_1015",2026-05-11 23:24:00
+email_0011,"From: Hana Kobayashi <kobayashi.0011@mailbox.example.com>
 To: support@company.example.com
 Subject: Card charged but order shows payment failed
-Date: 2026-05-13 03:39:00
+Date: 2026-05-13 04:33:38
 
-My card shows a completed charge while your order page insists the payment did not go through. This matters because I have neither the order nor the money. Please establish which state is authoritative and either release the hold or complete the order.",2026-05-13 03:39:00
-email_0012,"From: S. Lindqvist <lindqvist.0012@mailbox.example.com>
+My card shows a completed charge while your order page insists the payment did not go through. This matters because I have neither the order nor the money. Please establish which state is authoritative and either release the hold or complete the order.",2026-05-13 04:33:38
+email_0012,"From: Signe Lindqvist <lindqvist.0012@mailbox.example.com>
 To: support@company.example.com
 Subject: Following up again
-Date: 2026-05-13 09:01:39
+Date: 2026-05-13 10:28:46
 
-This is the second time I'm reaching out about the same issue. The replacement you sent is wrong as well, so I now have two items I did not order.",2026-05-13 09:01:39
-email_0013,"From: Luca Becker <becker.0013@mailbox.example.com>
+This is the second time I'm reaching out about the same issue. The replacement you sent is wrong as well, so I now have two items I did not order.",2026-05-13 10:28:46
+email_0013,"From: L. Becker <becker.0013@mailbox.example.com>
 To: support@company.example.com
 Subject: Following up again
-Date: 2026-05-13 22:30:37
+Date: 2026-05-14 00:01:03
 
-I chatted about this yesterday and it's still not fixed. The codes are still landing on the old handset even after you said the device had been switched over.",2026-05-13 22:30:37
-email_0014,"From: Halvorsen, Ingrid <halvorsen.0014@mailbox.example.com>
+This is the second time I'm reaching out about the same issue. The codes are still landing on the old handset even after you said the device had been switched over.",2026-05-14 00:01:03
+email_0014,"From: Ingrid Halvorsen <halvorsen.0014@mailbox.example.com>
 To: support@company.example.com
 Subject: Duplicate debit on a single order
 Date: 2026-05-14 02:45:52
@@ -91,25 +91,25 @@ Date: 2026-05-14 02:45:52
 My statement shows two identical debits against a single purchase. This matters because it has taken my available balance below what I planned for this month. Please reverse the second one and confirm in writing that only one payment stands.",2026-05-14 02:45:52
 email_0015,"From: C. Duarte <duarte.0015@mailbox.example.com>
 To: support@company.example.com
-Subject: Duplicate debit on a single order
-Date: 2026-05-15 02:09:03
+Subject: Following up again
+Date: 2026-05-15 03:22:48
 
-My statement shows two identical debits against a single purchase. This matters because it has taken my available balance below what I planned for this month. Please reverse the second one and confirm in writing that only one payment stands.",2026-05-15 02:09:03
-email_0016,"From: H. Farouk <farouk.0016@mailbox.example.com>
+I was told this was resolved but it clearly isn't. That second debit I flagged is still sitting on my card and nobody has reversed anything.",2026-05-15 03:22:48
+email_0016,"From: Farouk, Hassan <farouk.0016@mailbox.example.com>
 To: support@company.example.com
 Subject: Following up again
-Date: 2026-05-15 17:46:22
+Date: 2026-05-16 00:21:41
 
-I chatted about this yesterday and it's still not fixed. Still nothing in writing about the cancellation, and the renewal date is coming up.",2026-05-15 17:46:22
-email_0017,"From: Nadia Petrova <ludo.petrova650@yahoo.com>
+I called about this already, following up again. Still nothing in writing about the cancellation, and the renewal date is coming up.",2026-05-16 00:21:41
+email_0017,"From: N. Petrova <ludo.petrova650@yahoo.com>
 To: support@company.example.com
-Subject: Following up again
-Date: 2026-05-16 13:52:43
+Subject: Account locked after verification
+Date: 2026-05-16 10:29:29
 
-I called about this already, following up again. I am locked out again after your reset, so whatever was done the first time did not hold.
+I am unable to sign in. Each time I submit my verification code the system reports that my account has been locked. This matters because I cannot reach anything in my account while this stands. Please restore access and explain what triggered the lock.
 
-Order reference: ORD_1023",2026-05-16 13:52:43
-email_0018,"From: M. Santos <miguel.santos443@yahoo.com>
+Order reference: ORD_1023",2026-05-16 10:29:29
+email_0018,"From: Miguel Santos <miguel.santos443@yahoo.com>
 To: support@company.example.com
 Subject: Duplicate debit on a single order
 Date: 2026-05-17 01:06:16
@@ -117,31 +117,31 @@ Date: 2026-05-17 01:06:16
 My statement shows two identical debits against a single purchase. This matters because it has taken my available balance below what I planned for this month. Please reverse the second one and confirm in writing that only one payment stands.
 
 Order reference: ORD_1025",2026-05-17 01:06:16
-email_0019,"From: Norris Bellini <bellini.0019@mailbox.example.com>
+email_0019,"From: Bellini, Marco <bellini.0019@mailbox.example.com>
 To: support@company.example.com
 Subject: Card charged but order shows payment failed
-Date: 2026-05-17 23:37:30
+Date: 2026-05-17 20:19:55
 
-My card shows a completed charge while your order page insists the payment did not go through. This matters because I have neither the order nor the money. Please establish which state is authoritative and either release the hold or complete the order.",2026-05-17 23:37:30
-email_0020,"From: Reinhardt, Jonas <reinhardt.0020@mailbox.example.com>
+My card shows a completed charge while your order page insists the payment did not go through. This matters because I have neither the order nor the money. Please establish which state is authoritative and either release the hold or complete the order.",2026-05-17 20:19:55
+email_0020,"From: J. Reinhardt <reinhardt.0020@mailbox.example.com>
 To: support@company.example.com
 Subject: Verification codes going to my old handset
 Date: 2026-05-18 08:10:53
 
 Since replacing my handset the one-time codes continue to be delivered to the device I no longer own. This matters because I cannot complete verification on the phone I actually hold. Please run whatever identity checks you need and move the trusted device across.",2026-05-18 08:10:53
-email_0021,"From: Joy Okafor <okafor.0021@mailbox.example.com>
+email_0021,"From: Emmett Okafor <okafor.0021@mailbox.example.com>
 To: support@company.example.com
-Subject: Application no longer synchronising
-Date: 2026-05-19 02:23:14
+Subject: Following up again
+Date: 2026-05-18 23:00:12
 
-The application has stopped synchronising and what it displays no longer reflects recent activity on my account. This matters because I am making decisions from stale figures. Please force whatever refresh is needed and confirm the data has reconciled.",2026-05-19 02:23:14
-email_0022,"From: D. Owens <owens.0022@mailbox.example.com>
+This is the second time I'm reaching out about the same issue. The app has drifted out of date again, so the refresh you ran has not held.",2026-05-18 23:00:12
+email_0022,"From: Fionn Owens <owens.0022@mailbox.example.com>
 To: support@company.example.com
-Subject: Application no longer synchronising
-Date: 2026-05-19 14:27:26
+Subject: Following up again
+Date: 2026-05-19 16:30:02
 
-The application has stopped synchronising and what it displays no longer reflects recent activity on my account. This matters because I am making decisions from stale figures. Please force whatever refresh is needed and confirm the data has reconciled.",2026-05-19 14:27:26
-email_0023,"From: Lorne Alcantara <alcantara.0023@mailbox.example.com>
+This is the second time I'm reaching out about the same issue. The app has drifted out of date again, so the refresh you ran has not held.",2026-05-19 16:30:02
+email_0023,"From: R. Alcantara <alcantara.0023@mailbox.example.com>
 To: support@company.example.com
 Subject: Duplicate debit on a single order
 Date: 2026-05-20 02:23:22
@@ -150,28 +150,28 @@ My statement shows two identical debits against a single purchase. This matters 
 email_0024,"From: N. Lim <lim.0024@mailbox.example.com>
 To: support@company.example.com
 Subject: App closes when opening order history
-Date: 2026-05-20 17:51:12
+Date: 2026-05-20 21:50:47
 
-Since the most recent update the application closes itself whenever I open my order history. This matters because that screen is the only place I can check what I have purchased. Please raise this with your engineers rather than sending me through another reinstall.",2026-05-20 17:51:12
-email_0025,"From: Mensah, Kofi <mensah.0025@mailbox.example.com>
+Since the most recent update the application closes itself whenever I open my order history. This matters because that screen is the only place I can check what I have purchased. Please raise this with your engineers rather than sending me through another reinstall.",2026-05-20 21:50:47
+email_0025,"From: K. Mensah <mensah.0025@mailbox.example.com>
 To: support@company.example.com
-Subject: Application no longer synchronising
-Date: 2026-05-21 04:53:44
+Subject: Following up again
+Date: 2026-05-21 02:59:07
 
-The application has stopped synchronising and what it displays no longer reflects recent activity on my account. This matters because I am making decisions from stale figures. Please force whatever refresh is needed and confirm the data has reconciled.",2026-05-21 04:53:44
-email_0026,"From: P. Kulkarni <kulkarni.0026@mailbox.example.com>
+This is the second time I'm reaching out about the same issue. The app has drifted out of date again, so the refresh you ran has not held.",2026-05-21 02:59:07
+email_0026,"From: Priya Kulkarni <kulkarni.0026@mailbox.example.com>
 To: support@company.example.com
 Subject: Refund still outstanding past the stated window
 Date: 2026-05-21 04:02:50
 
 A refund I was promised has still not reached my account well past the window you quoted. This matters because I am out of pocket for goods you already have back. Please confirm where the payment is and give me an escalation route if it has stalled.",2026-05-21 04:02:50
-email_0027,"From: R. Silva <rui.silva234@hotmail.com>
+email_0027,"From: Rui Silva <rui.silva234@hotmail.com>
 To: support@company.example.com
-Subject: Delivery address change not applied
-Date: 2026-05-22 05:59:02
+Subject: Following up again
+Date: 2026-05-22 02:38:48
 
-I amended my delivery address during checkout, yet the confirmation I received still lists my previous one. This matters because the order will otherwise ship somewhere I no longer live. Please hold the dispatch and correct the address before it leaves you.",2026-05-22 05:59:02
-email_0028,"From: Yuki Watanabe <watanabe.0028@mailbox.example.com>
+I was told this was resolved but it clearly isn't. The confirmation still shows the old address, so the correction you logged has not taken effect.",2026-05-22 02:38:48
+email_0028,"From: Watanabe, Yuki <watanabe.0028@mailbox.example.com>
 To: support@company.example.com
 Subject: Conflicting warranty terms quoted
 Date: 2026-05-22 00:00:09
@@ -180,10 +180,10 @@ I have been given two different answers about how long my accessory is covered f
 email_0029,"From: Greta Fujimoto <fujimoto.0029@mailbox.example.com>
 To: support@company.example.com
 Subject: Following up again
-Date: 2026-05-22 19:04:02
+Date: 2026-05-22 12:56:32
 
-This is the second time I'm reaching out about the same issue. I have had a third different warranty length quoted, so the file still has not been corrected.",2026-05-22 19:04:02
-email_0030,"From: D. Esposito <esposito.0030@mailbox.example.com>
+I called about this already, following up again. I have had a third different warranty length quoted, so the file still has not been corrected.",2026-05-22 12:56:32
+email_0030,"From: Dario Esposito <esposito.0030@mailbox.example.com>
 To: support@company.example.com
 Subject: Parcel marked delivered but never arrived
 Date: 2026-05-22 22:01:02
@@ -192,20 +192,20 @@ I am writing because the package I was expecting was marked delivered three days
 email_0031,"From: Vogel, Tomas <tomas.vogel87@outlook.com>
 To: support@company.example.com
 Subject: Verification codes going to my old handset
-Date: 2026-05-23 12:14:45
+Date: 2026-05-23 09:51:37
 
 Since replacing my handset the one-time codes continue to be delivered to the device I no longer own. This matters because I cannot complete verification on the phone I actually hold. Please run whatever identity checks you need and move the trusted device across.
 
-Order reference: ORD_1034",2026-05-23 12:14:45
-email_0032,"From: Elias Haddad <elias.haddad21@outlook.com>
+Order reference: ORD_1034",2026-05-23 09:51:37
+email_0032,"From: E. Haddad <elias.haddad21@outlook.com>
 To: support@company.example.com
 Subject: Following up again
-Date: 2026-05-23 23:28:17
+Date: 2026-05-24 03:47:40
 
-I chatted about this yesterday and it's still not fixed. Still nothing in writing about the cancellation, and the renewal date is coming up.
+This is the second time I'm reaching out about the same issue. Still nothing in writing about the cancellation, and the renewal date is coming up.
 
-Order reference: ORD_1035",2026-05-23 23:28:17
-email_0033,"From: Marta Kowalczyk <marta.kowalczyk22@outlok.com>
+Order reference: ORD_1035",2026-05-24 03:47:40
+email_0033,"From: Kowalczyk, Marta <marta.kowalczyk22@outlok.com>
 To: support@company.example.com
 Subject: Delivery address change not applied
 Date: 2026-05-24 01:00:20
@@ -213,19 +213,19 @@ Date: 2026-05-24 01:00:20
 I amended my delivery address during checkout, yet the confirmation I received still lists my previous one. This matters because the order will otherwise ship somewhere I no longer live. Please hold the dispatch and correct the address before it leaves you.
 
 Order reference: ORD_1036",2026-05-24 01:00:20
-email_0034,"From: Fionn Owens <owens.0034@mailbox.example.com>
+email_0034,"From: Dana Owens <owens.0034@mailbox.example.com>
 To: support@company.example.com
-Subject: Re: TK21539 Duplicate debit on a single order
+Subject: Re: TK11671 Duplicate debit on a single order
 Date: 2026-06-03 09:26:15
 
 My statement shows two identical debits against a single purchase. This matters because it has taken my available balance below what I planned for this month. Please reverse the second one and confirm in writing that only one payment stands.",2026-06-03 09:26:15
-email_0035,"From: A. Rahman <rahman.0035@mailbox.example.com>
+email_0035,"From: Rahman, Aisha <rahman.0035@mailbox.example.com>
 To: support@company.example.com
 Subject: Following up again
-Date: 2026-05-25 14:31:21
+Date: 2026-05-25 12:07:33
 
-I chatted about this yesterday and it's still not fixed. I have had a third different warranty length quoted, so the file still has not been corrected.",2026-05-25 14:31:21
-email_0036,"From: Oskar Dvorak <dvorak.0036@mailbox.example.com>
+I chatted about this yesterday and it's still not fixed. I have had a third different warranty length quoted, so the file still has not been corrected.",2026-05-25 12:07:33
+email_0036,"From: O. Dvorak <dvorak.0036@mailbox.example.com>
 To: support@company.example.com
 Subject: Parcel marked delivered but never arrived
 Date: 2026-05-25 18:27:21
@@ -234,46 +234,46 @@ I am writing because the package I was expecting was marked delivered three days
 email_0037,"From: Villanueva, Bea <villanueva.0037@mailbox.example.com>
 To: support@company.example.com
 Subject: Application no longer synchronising
-Date: 2026-05-26 05:40:48
+Date: 2026-05-26 05:27:08
 
-The application has stopped synchronising and what it displays no longer reflects recent activity on my account. This matters because I am making decisions from stale figures. Please force whatever refresh is needed and confirm the data has reconciled.",2026-05-26 05:40:48
-email_0038,"From: Nair, Sana <mabel.nair756@gmail.com>
+The application has stopped synchronising and what it displays no longer reflects recent activity on my account. This matters because I am making decisions from stale figures. Please force whatever refresh is needed and confirm the data has reconciled.",2026-05-26 05:27:08
+email_0038,"From: Mabel Nair <mabel.nair756@gmail.com>
 To: support@company.example.com
 Subject: No confirmation received for my cancellation
-Date: 2026-05-27 08:47:29
+Date: 2026-05-27 07:51:38
 
-I cancelled my subscription but no confirmation has ever reached me. This matters because without it I have no way of knowing whether I will be billed again next cycle. Please confirm the current status and send written confirmation.",2026-05-27 08:47:29
+I cancelled my subscription but no confirmation has ever reached me. This matters because without it I have no way of knowing whether I will be billed again next cycle. Please confirm the current status and send written confirmation.",2026-05-27 07:51:38
 email_0039,"From: A. Fujimoto <fujimoto.0039@mailbox.example.com>
 To: support@company.example.com
 Subject: Partial return request for damaged units
-Date: 2026-06-06 15:25:58
+Date: 2026-06-06 13:25:33
 
-Two units in my consignment arrived damaged while the remainder are already deployed on site. This matters because returning the full order would strip out equipment that is working. Please authorise a partial replacement rather than a whole-order return.",2026-06-06 15:25:58
-email_0040,"From: Lim, Noah <lim.0040@mailbox.example.com>
+Two units in my consignment arrived damaged while the remainder are already deployed on site. This matters because returning the full order would strip out equipment that is working. Please authorise a partial replacement rather than a whole-order return.",2026-06-06 13:25:33
+email_0040,"From: Noah Lim <lim.0040@mailbox.example.com>
 To: support@company.example.com
-Subject: Re: TK97690 Following up again
-Date: 2026-06-06 22:54:24
+Subject: Re: TK75333 Following up again
+Date: 2026-06-07 01:55:21
 
-I was told this was resolved but it clearly isn't. Two weeks on from your escalation and the refund still has not landed.",2026-06-06 22:54:24
-email_0041,"From: D. Esposito <esposito.0041@mailbox.example.com>
+I chatted about this yesterday and it's still not fixed. Two weeks on from your escalation and the refund still has not landed.",2026-06-07 01:55:21
+email_0041,"From: Esposito, Dario <esposito.0041@mailbox.example.com>
+To: support@company.example.com
+Subject: Verification codes going to my old handset
+Date: 2026-06-07 07:11:45
+
+Since replacing my handset the one-time codes continue to be delivered to the device I no longer own. This matters because I cannot complete verification on the phone I actually hold. Please run whatever identity checks you need and move the trusted device across.",2026-06-07 07:11:45
+email_0042,"From: Norris Bellini <bellini.0042@mailbox.example.com>
 To: support@company.example.com
 Subject: Following up again
-Date: 2026-06-07 10:11:55
+Date: 2026-05-28 22:40:24
 
-I was told this was resolved but it clearly isn't. The codes are still landing on the old handset even after you said the device had been switched over.",2026-06-07 10:11:55
-email_0042,"From: Bellini, Marco <bellini.0042@mailbox.example.com>
-To: support@company.example.com
-Subject: Partial return request for damaged units
-Date: 2026-05-28 20:56:17
-
-Two units in my consignment arrived damaged while the remainder are already deployed on site. This matters because returning the full order would strip out equipment that is working. Please authorise a partial replacement rather than a whole-order return.",2026-05-28 20:56:17
-email_0043,"From: Elias Haddad <haddad.0043@mailbox.example.com>
+I called about this already, following up again. Still no exception number for the partial return, and the damaged units are sitting here.",2026-05-28 22:40:24
+email_0043,"From: E. Haddad <haddad.0043@mailbox.example.com>
 To: support@company.example.com
 Subject: Partial return request for damaged units
 Date: 2026-06-08 13:29:05
 
 Two units in my consignment arrived damaged while the remainder are already deployed on site. This matters because returning the full order would strip out equipment that is working. Please authorise a partial replacement rather than a whole-order return.",2026-06-08 13:29:05
-email_0044,"From: Farouk, Hassan <hassan.farouk176@yahoo.com>
+email_0044,"From: H. Farouk <hassan.farouk176@yahoo.com>
 To: support@company.example.com
 Subject: Delivery address change not applied
 Date: 2026-05-30 18:12:43
@@ -281,107 +281,107 @@ Date: 2026-05-30 18:12:43
 I amended my delivery address during checkout, yet the confirmation I received still lists my previous one. This matters because the order will otherwise ship somewhere I no longer live. Please hold the dispatch and correct the address before it leaves you.
 
 Order reference: ORD_1048",2026-05-30 18:12:43
-email_0045,"From: Teodora Ionescu <ionescu.0045@mailbox.example.com>
+email_0045,"From: Ionescu, Teodora <ionescu.0045@mailbox.example.com>
 To: support@company.example.com
-Subject: Account locked after verification
-Date: 2026-06-01 00:21:30
+Subject: Following up again
+Date: 2026-06-01 07:36:02
 
-I am unable to sign in. Each time I submit my verification code the system reports that my account has been locked. This matters because I cannot reach anything in my account while this stands. Please restore access and explain what triggered the lock.",2026-06-01 00:21:30
-email_0046,"From: M. Kowalczyk <marta.kowalczyk22@outlok.com>
+This is the second time I'm reaching out about the same issue. I am locked out again after your reset, so whatever was done the first time did not hold.",2026-06-01 07:36:02
+email_0046,"From: Kowalczyk, Marta <marta.kowalczyk22@outlok.com>
 To: support@company.example.com
-Subject: App closes when opening order history
-Date: 2026-06-11 20:37:47
+Subject: Following up again
+Date: 2026-06-11 21:38:28
 
-Since the most recent update the application closes itself whenever I open my order history. This matters because that screen is the only place I can check what I have purchased. Please raise this with your engineers rather than sending me through another reinstall.
+This is the second time I'm reaching out about the same issue. The order history screen is still killing the app, and the latest update changed nothing.
 
-Order reference: ORD_1052",2026-06-11 20:37:47
-email_0047,"From: Grace Chen <chen.0047@mailbox.example.com>
+Order reference: ORD_1052",2026-06-11 21:38:28
+email_0047,"From: Chen, Grace <chen.0047@mailbox.example.com>
 To: support@company.example.com
 Subject: App closes when opening order history
 Date: 2026-06-02 16:17:16
 
 Since the most recent update the application closes itself whenever I open my order history. This matters because that screen is the only place I can check what I have purchased. Please raise this with your engineers rather than sending me through another reinstall.",2026-06-02 16:17:16
-email_0048,"From: Carmen Delgado <carmen.delgado620@gmail.com>
+email_0048,"From: Delgado, Carmen <carmen.delgado620@gmail.com>
 To: support@company.example.com
 Subject: Verification codes going to my old handset
-Date: 2026-06-03 03:26:54
+Date: 2026-06-03 02:22:58
 
-Since replacing my handset the one-time codes continue to be delivered to the device I no longer own. This matters because I cannot complete verification on the phone I actually hold. Please run whatever identity checks you need and move the trusted device across.",2026-06-03 03:26:54
-email_0049,"From: J. Okafor <emmett.okafor213@yahoo.com>
+Since replacing my handset the one-time codes continue to be delivered to the device I no longer own. This matters because I cannot complete verification on the phone I actually hold. Please run whatever identity checks you need and move the trusted device across.",2026-06-03 02:22:58
+email_0049,"From: Emmett Okafor <emmett.okafor213@yahoo.com>
 To: support@company.example.com
 Subject: Card charged but order shows payment failed
-Date: 2026-06-03 15:20:28
+Date: 2026-06-03 12:54:28
 
 My card shows a completed charge while your order page insists the payment did not go through. This matters because I have neither the order nor the money. Please establish which state is authoritative and either release the hold or complete the order.
 
-Order reference: ORD_1056",2026-06-03 15:20:28
-email_0050,"From: R. Alcantara <alcantara.0050@mailbox.example.com>
+Order reference: ORD_1056",2026-06-03 12:54:28
+email_0050,"From: Alcantara, Rosa <alcantara.0050@mailbox.example.com>
 To: support@company.example.com
-Subject: Verification codes going to my old handset
-Date: 2026-06-04 19:22:03
+Subject: Following up again
+Date: 2026-06-04 22:18:23
 
-Since replacing my handset the one-time codes continue to be delivered to the device I no longer own. This matters because I cannot complete verification on the phone I actually hold. Please run whatever identity checks you need and move the trusted device across.",2026-06-04 19:22:03
-email_0051,"From: J. Reinhardt <reinhardt.0051@mailbox.example.com>
+This is the second time I'm reaching out about the same issue. The codes are still landing on the old handset even after you said the device had been switched over.",2026-06-04 22:18:23
+email_0051,"From: Reinhardt, Jonas <reinhardt.0051@mailbox.example.com>
 To: support@company.example.com
 Subject: Partial return request for damaged units
-Date: 2026-06-05 13:15:26
+Date: 2026-06-05 10:10:25
 
-Two units in my consignment arrived damaged while the remainder are already deployed on site. This matters because returning the full order would strip out equipment that is working. Please authorise a partial replacement rather than a whole-order return.",2026-06-05 13:15:26
-email_0052,"From: Signe Lindqvist <lindqvist.0052@mailbox.example.com>
+Two units in my consignment arrived damaged while the remainder are already deployed on site. This matters because returning the full order would strip out equipment that is working. Please authorise a partial replacement rather than a whole-order return.",2026-06-05 10:10:25
+email_0052,"From: Lindqvist, Signe <lindqvist.0052@mailbox.example.com>
 To: support@company.example.com
 Subject: Partial return request for damaged units
 Date: 2026-06-05 11:23:53
 
 Two units in my consignment arrived damaged while the remainder are already deployed on site. This matters because returning the full order would strip out equipment that is working. Please authorise a partial replacement rather than a whole-order return.",2026-06-05 11:23:53
-email_0053,"From: Ludo Petrova <ludo.petrova650@yahoo.com>
+email_0053,"From: Petrova, Nadia <ludo.petrova650@yahoo.com>
 To: support@company.example.com
 Subject: Conflicting warranty terms quoted
-Date: 2026-06-05 22:12:03
+Date: 2026-06-05 20:46:10
 
 I have been given two different answers about how long my accessory is covered for. This matters because I am deciding whether to repair or replace on the strength of that answer. Please confirm the correct term and correct whatever is recorded on my file.
 
-Order reference: ORD_1060",2026-06-05 22:12:03
-email_0054,"From: Yuki Watanabe <yuki.watanabe262@hotmail.com>
+Order reference: ORD_1060",2026-06-05 20:46:10
+email_0054,"From: Watanabe, Yuki <yuki.watanabe262@hotmail.com>
 To: support@company.example.com
-Subject: Following up again
-Date: 2026-06-07 06:02:06
+Subject: Incorrect product shipped
+Date: 2026-06-07 02:59:04
 
-I called about this already, following up again. The replacement you sent is wrong as well, so I now have two items I did not order.
+What arrived is not what I purchased. A different product entirely was packed against my order. This matters because I still need the item I actually paid for. Please dispatch the correct one and tell me how to send this back.
 
-Order reference: ORD_1061",2026-06-07 06:02:06
-email_0055,"From: Ravi Chandran <chandran.0055@mailbox.example.com>
+Order reference: ORD_1061",2026-06-07 02:59:04
+email_0055,"From: Chandran, Ravi <chandran.0055@mailbox.example.com>
 To: support@company.example.com
-Subject: Re: TK86544 Refund still outstanding past the stated window
+Subject: Re: TK86568 Refund still outstanding past the stated window
 Date: 2026-06-07 14:34:54
 
 A refund I was promised has still not reached my account well past the window you quoted. This matters because I am out of pocket for goods you already have back. Please confirm where the payment is and give me an escalation route if it has stalled.",2026-06-07 14:34:54
-email_0056,"From: Camila Duarte <camila.duarte571@yahoo.com>
+email_0056,"From: C. Duarte <camila.duarte571@yahoo.com>
 To: support@company.example.com
 Subject: Conflicting warranty terms quoted
 Date: 2026-06-08 00:41:06
 
 I have been given two different answers about how long my accessory is covered for. This matters because I am deciding whether to repair or replace on the strength of that answer. Please confirm the correct term and correct whatever is recorded on my file.",2026-06-08 00:41:06
-email_0057,"From: Arjun Sethi <sethi.0057@mailbox.example.com>
+email_0057,"From: A. Sethi <sethi.0057@mailbox.example.com>
 To: support@company.example.com
 Subject: Following up again
-Date: 2026-06-09 09:25:51
+Date: 2026-06-09 10:00:42
 
-I was told this was resolved but it clearly isn't. I am locked out again after your reset, so whatever was done the first time did not hold.",2026-06-09 09:25:51
-email_0058,"From: Ouali, Zineb <zineb.ouali928@hotmail.com>
+This is the second time I'm reaching out about the same issue. I am locked out again after your reset, so whatever was done the first time did not hold.",2026-06-09 10:00:42
+email_0058,"From: Z. Ouali <zineb.ouali928@hotmail.com>
 To: support@company.example.com
 Subject: Following up again
-Date: 2026-06-09 20:04:21
+Date: 2026-06-09 17:51:18
 
-I called about this already, following up again. The parcel that supposedly arrived last week is still nowhere, and nobody has been back to me about the trace.
+I was told this was resolved but it clearly isn't. The parcel that supposedly arrived last week is still nowhere, and nobody has been back to me about the trace.
 
-Order reference: ORD_1065",2026-06-09 20:04:21
-email_0059,"From: Novak, Lena <novak.0059@mailbox.example.com>
+Order reference: ORD_1065",2026-06-09 17:51:18
+email_0059,"From: L. Novak <novak.0059@mailbox.example.com>
 To: support@company.example.com
-Subject: Following up again
-Date: 2026-06-11 07:09:33
+Subject: Partial return request for damaged units
+Date: 2026-06-11 04:43:04
 
-I chatted about this yesterday and it's still not fixed. Still no exception number for the partial return, and the damaged units are sitting here.",2026-06-11 07:09:33
-email_0060,"From: T. Mbeki <mbeki.0060@mailbox.example.com>
+Two units in my consignment arrived damaged while the remainder are already deployed on site. This matters because returning the full order would strip out equipment that is working. Please authorise a partial replacement rather than a whole-order return.",2026-06-11 04:43:04
+email_0060,"From: Mbeki, Thandi <mbeki.0060@mailbox.example.com>
 To: support@company.example.com
 Subject: Repeating the same history after every transfer
 Date: 2026-06-11 06:18:17
@@ -393,30 +393,30 @@ Subject: No confirmation received for my cancellation
 Date: 2026-06-11 16:35:05
 
 I cancelled my subscription but no confirmation has ever reached me. This matters because without it I have no way of knowing whether I will be billed again next cycle. Please confirm the current status and send written confirmation.",2026-06-11 16:35:05
-email_0062,"From: Arjun Sethi <sethi.0062@mailbox.example.com>
-To: support@company.example.com
-Subject: Card charged but order shows payment failed
-Date: 2026-06-23 20:20:48
-
-My card shows a completed charge while your order page insists the payment did not go through. This matters because I have neither the order nor the money. Please establish which state is authoritative and either release the hold or complete the order.",2026-06-23 20:20:48
-email_0063,"From: Delgado, Carmen <delgado.0063@mailbox.example.com>
+email_0062,"From: A. Sethi <sethi.0062@mailbox.example.com>
 To: support@company.example.com
 Subject: Following up again
-Date: 2026-06-14 08:55:12
+Date: 2026-06-23 20:21:56
 
-I was told this was resolved but it clearly isn't. The parcel that supposedly arrived last week is still nowhere, and nobody has been back to me about the trace.",2026-06-14 08:55:12
+I chatted about this yesterday and it's still not fixed. The hold you said you would release is still showing against my card and the order never went through.",2026-06-23 20:21:56
+email_0063,"From: Carmen Delgado <delgado.0063@mailbox.example.com>
+To: support@company.example.com
+Subject: Following up again
+Date: 2026-06-14 11:01:04
+
+I was told this was resolved but it clearly isn't. The parcel that supposedly arrived last week is still nowhere, and nobody has been back to me about the trace.",2026-06-14 11:01:04
 email_0064,"From: Dario Esposito <esposito.0064@mailbox.example.com>
 To: support@company.example.com
-Subject: Partial return request for damaged units
-Date: 2026-06-25 03:49:49
+Subject: Following up again
+Date: 2026-06-25 06:49:54
 
-Two units in my consignment arrived damaged while the remainder are already deployed on site. This matters because returning the full order would strip out equipment that is working. Please authorise a partial replacement rather than a whole-order return.",2026-06-25 03:49:49
-email_0065,"From: Santos, Miguel <santos.0065@mailbox.example.com>
+I chatted about this yesterday and it's still not fixed. Still no exception number for the partial return, and the damaged units are sitting here.",2026-06-25 06:49:54
+email_0065,"From: M. Santos <santos.0065@mailbox.example.com>
 To: support@company.example.com
 Subject: Repeating the same history after every transfer
-Date: 2026-06-15 19:04:59
+Date: 2026-06-15 18:51:38
 
-Each transfer has required me to repeat the same diagnostic history from the beginning. This matters because the effort is entirely avoidable and nothing has moved forward. Please read the notes already on file and continue from the engineering logs that exist.",2026-06-15 19:04:59
+Each transfer has required me to repeat the same diagnostic history from the beginning. This matters because the effort is entirely avoidable and nothing has moved forward. Please read the notes already on file and continue from the engineering logs that exist.",2026-06-15 18:51:38
 email_0066,"From: Adeyemi, Femi <femi.adeyemi394@outlook.com>
 To: support@company.example.com
 Subject: Card charged but order shows payment failed
@@ -425,7 +425,7 @@ Date: 2026-06-15 18:00:30
 My card shows a completed charge while your order page insists the payment did not go through. This matters because I have neither the order nor the money. Please establish which state is authoritative and either release the hold or complete the order.
 
 Order reference: ORD_1075",2026-06-15 18:00:30
-email_0067,"From: Lindgren, Tobias <tobias.lindgren851@outlook.com>
+email_0067,"From: T. Lindgren <tobias.lindgren851@outlook.com>
 To: support@company.example.com
 Subject: App closes when opening order history
 Date: 2026-06-27 00:33:33
@@ -433,11 +433,11 @@ Date: 2026-06-27 00:33:33
 Since the most recent update the application closes itself whenever I open my order history. This matters because that screen is the only place I can check what I have purchased. Please raise this with your engineers rather than sending me through another reinstall.",2026-06-27 00:33:33
 email_0068,"From: Hassan Farouk <farouk.0068@mailbox.example.com>
 To: support@company.example.com
-Subject: Following up again
-Date: 2026-06-17 23:22:46
+Subject: Refund still outstanding past the stated window
+Date: 2026-06-17 23:57:27
 
-This is the second time I'm reaching out about the same issue. Two weeks on from your escalation and the refund still has not landed.",2026-06-17 23:22:46
-email_0069,"From: Cetin, Ismail <ismail.cetin39@hotmail.com>
+A refund I was promised has still not reached my account well past the window you quoted. This matters because I am out of pocket for goods you already have back. Please confirm where the payment is and give me an escalation route if it has stalled.",2026-06-17 23:57:27
+email_0069,"From: I. Cetin <ismail.cetin39@hotmail.com>
 To: support@company.example.com
 Subject: Delivery address change not applied
 Date: 2026-06-28 04:24:35
@@ -445,101 +445,101 @@ Date: 2026-06-28 04:24:35
 I amended my delivery address during checkout, yet the confirmation I received still lists my previous one. This matters because the order will otherwise ship somewhere I no longer live. Please hold the dispatch and correct the address before it leaves you.
 
 Order reference: ORD_1080",2026-06-28 04:24:35
-email_0070,"From: Rufus Khalil <khalil.0070@mailbox.example.com>
-To: support@company.example.com
-Subject: Delivery address change not applied
-Date: 2026-06-18 16:05:40
-
-I amended my delivery address during checkout, yet the confirmation I received still lists my previous one. This matters because the order will otherwise ship somewhere I no longer live. Please hold the dispatch and correct the address before it leaves you.",2026-06-18 16:05:40
-email_0071,"From: Norris Bellini <bellini.0071@mailbox.example.com>
+email_0070,"From: Khalil, Nour <khalil.0070@mailbox.example.com>
 To: support@company.example.com
 Subject: Following up again
-Date: 2026-06-19 05:23:15
+Date: 2026-06-18 15:32:18
 
-I was told this was resolved but it clearly isn't. That second debit I flagged is still sitting on my card and nobody has reversed anything.",2026-06-19 05:23:15
-email_0072,"From: D. Owens <fionn.owens975@hotmail.com>
+I called about this already, following up again. The confirmation still shows the old address, so the correction you logged has not taken effect.",2026-06-18 15:32:18
+email_0071,"From: M. Bellini <bellini.0071@mailbox.example.com>
+To: support@company.example.com
+Subject: Following up again
+Date: 2026-06-19 06:30:37
+
+I called about this already, following up again. That second debit I flagged is still sitting on my card and nobody has reversed anything.",2026-06-19 06:30:37
+email_0072,"From: Fionn Owens <fionn.owens975@hotmail.com>
 To: support@company.example.com
 Subject: Parcel marked delivered but never arrived
-Date: 2026-06-19 20:13:03
+Date: 2026-06-19 23:38:10
 
 I am writing because the package I was expecting was marked delivered three days ago, yet it has not arrived at my address. This matters because I paid for a shipment I have never seen. Please open a carrier trace and tell me whether it can be replaced.
 
-Order reference: ORD_1083",2026-06-19 20:13:03
+Order reference: ORD_1083",2026-06-19 23:38:10
 email_0073,"From: Chen, Grace <chen.0073@mailbox.example.com>
 To: support@company.example.com
 Subject: Following up again
-Date: 2026-06-19 20:17:42
+Date: 2026-06-19 22:01:41
 
-This is the second time I'm reaching out about the same issue. I am locked out again after your reset, so whatever was done the first time did not hold.",2026-06-19 20:17:42
-email_0074,"From: O. Dvorak <dvorak.0074@mailbox.example.com>
+I was told this was resolved but it clearly isn't. I am locked out again after your reset, so whatever was done the first time did not hold.",2026-06-19 22:01:41
+email_0074,"From: Dvorak, Oskar <dvorak.0074@mailbox.example.com>
 To: support@company.example.com
 Subject: Following up again
-Date: 2026-06-20 15:37:22
+Date: 2026-06-20 10:17:56
 
-This is the second time I'm reaching out about the same issue. I am locked out again after your reset, so whatever was done the first time did not hold.",2026-06-20 15:37:22
-email_0075,"From: Teodora Ionescu <ionescu.0075@mailbox.example.com>
+I was told this was resolved but it clearly isn't. I am locked out again after your reset, so whatever was done the first time did not hold.",2026-06-20 10:17:56
+email_0075,"From: T. Ionescu <ionescu.0075@mailbox.example.com>
 To: support@company.example.com
-Subject: Re: TK81267 Duplicate debit on a single order
+Subject: Re: TK75374 Duplicate debit on a single order
 Date: 2026-06-20 16:51:39
 
 My statement shows two identical debits against a single purchase. This matters because it has taken my available balance below what I planned for this month. Please reverse the second one and confirm in writing that only one payment stands.",2026-06-20 16:51:39
 email_0076,"From: Kowalczyk, Marta <kowalczyk.0076@mailbox.example.com>
 To: support@company.example.com
 Subject: Verification codes going to my old handset
-Date: 2026-07-01 06:12:00
+Date: 2026-07-01 11:26:28
 
-Since replacing my handset the one-time codes continue to be delivered to the device I no longer own. This matters because I cannot complete verification on the phone I actually hold. Please run whatever identity checks you need and move the trusted device across.",2026-07-01 06:12:00
+Since replacing my handset the one-time codes continue to be delivered to the device I no longer own. This matters because I cannot complete verification on the phone I actually hold. Please run whatever identity checks you need and move the trusted device across.",2026-07-01 11:26:28
 email_0077,"From: Noah Lim <lim.0077@mailbox.example.com>
 To: support@company.example.com
-Subject: Following up again
-Date: 2026-06-22 16:06:32
+Subject: Verification codes going to my old handset
+Date: 2026-06-22 14:52:50
 
-I called about this already, following up again. The codes are still landing on the old handset even after you said the device had been switched over.",2026-06-22 16:06:32
+Since replacing my handset the one-time codes continue to be delivered to the device I no longer own. This matters because I cannot complete verification on the phone I actually hold. Please run whatever identity checks you need and move the trusted device across.",2026-06-22 14:52:50
 email_0078,"From: V. Sokolov <sokolov.0078@mailbox.example.com>
 To: support@company.example.com
-Subject: Following up again
-Date: 2026-06-22 23:41:04
+Subject: Refund still outstanding past the stated window
+Date: 2026-06-23 00:47:52
 
-I was told this was resolved but it clearly isn't. Two weeks on from your escalation and the refund still has not landed.",2026-06-22 23:41:04
-email_0079,"From: E. Haddad <haddad.0079@mailbox.example.com>
+A refund I was promised has still not reached my account well past the window you quoted. This matters because I am out of pocket for goods you already have back. Please confirm where the payment is and give me an escalation route if it has stalled.",2026-06-23 00:47:52
+email_0079,"From: Haddad, Elias <haddad.0079@mailbox.example.com>
 To: support@company.example.com
-Subject: Following up again
-Date: 2026-06-23 05:56:44
+Subject: Duplicate debit on a single order
+Date: 2026-06-23 05:53:29
 
-This is the second time I'm reaching out about the same issue. That second debit I flagged is still sitting on my card and nobody has reversed anything.",2026-06-23 05:56:44
+My statement shows two identical debits against a single purchase. This matters because it has taken my available balance below what I planned for this month. Please reverse the second one and confirm in writing that only one payment stands.",2026-06-23 05:53:29
 email_0080,"From: Mika Tanaka <tanaka.0080@mailbox.example.com>
 To: support@company.example.com
-Subject: Account locked after verification
-Date: 2026-06-23 17:23:53
+Subject: Following up again
+Date: 2026-06-23 17:55:53
 
-I am unable to sign in. Each time I submit my verification code the system reports that my account has been locked. This matters because I cannot reach anything in my account while this stands. Please restore access and explain what triggered the lock.",2026-06-23 17:23:53
-email_0081,"From: Vogel, Tomas <vogel.0081@mailbox.example.com>
+I called about this already, following up again. I am locked out again after your reset, so whatever was done the first time did not hold.",2026-06-23 17:55:53
+email_0081,"From: T. Vogel <vogel.0081@mailbox.example.com>
 To: support@company.example.com
 Subject: Partial return request for damaged units
 Date: 2026-06-23 22:03:25
 
 Two units in my consignment arrived damaged while the remainder are already deployed on site. This matters because returning the full order would strip out equipment that is working. Please authorise a partial replacement rather than a whole-order return.",2026-06-23 22:03:25
-email_0082,"From: L. Novak <lena.novak697@outlook.com>
-To: support@company.example.com
-Subject: Verification codes going to my old handset
-Date: 2026-06-25 01:33:36
-
-Since replacing my handset the one-time codes continue to be delivered to the device I no longer own. This matters because I cannot complete verification on the phone I actually hold. Please run whatever identity checks you need and move the trusted device across.
-
-Order reference: ORD_1094",2026-06-25 01:33:36
-email_0083,"From: Duarte, Camila <duarte.0083@mailbox.example.com>
-To: support@company.example.com
-Subject: Incorrect product shipped
-Date: 2026-06-25 12:22:12
-
-What arrived is not what I purchased. A different product entirely was packed against my order. This matters because I still need the item I actually paid for. Please dispatch the correct one and tell me how to send this back.",2026-06-25 12:22:12
-email_0084,"From: Okafor, Joy <okafor.0084@mailbox.example.com>
+email_0082,"From: Novak, Lena <lena.novak697@outlook.com>
 To: support@company.example.com
 Subject: Following up again
-Date: 2026-06-26 11:52:33
+Date: 2026-06-25 01:07:47
 
-I called about this already, following up again. The order history screen is still killing the app, and the latest update changed nothing.",2026-06-26 11:52:33
-email_0085,"From: Hana Kobayashi <hana.kobayashi563@yahoo.com>
+This is the second time I'm reaching out about the same issue. The codes are still landing on the old handset even after you said the device had been switched over.
+
+Order reference: ORD_1094",2026-06-25 01:07:47
+email_0083,"From: Camila Duarte <duarte.0083@mailbox.example.com>
+To: support@company.example.com
+Subject: Following up again
+Date: 2026-06-25 09:18:12
+
+I chatted about this yesterday and it's still not fixed. The replacement you sent is wrong as well, so I now have two items I did not order.",2026-06-25 09:18:12
+email_0084,"From: Emmett Okafor <okafor.0084@mailbox.example.com>
+To: support@company.example.com
+Subject: App closes when opening order history
+Date: 2026-06-26 09:47:10
+
+Since the most recent update the application closes itself whenever I open my order history. This matters because that screen is the only place I can check what I have purchased. Please raise this with your engineers rather than sending me through another reinstall.",2026-06-26 09:47:10
+email_0085,"From: Kobayashi, Hana <hana.kobayashi563@yahoo.com>
 To: support@company.example.com
 Subject: Duplicate debit on a single order
 Date: 2026-06-26 08:29:13
@@ -563,47 +563,47 @@ Date: 2026-06-27 19:01:11
 I cancelled my subscription but no confirmation has ever reached me. This matters because without it I have no way of knowing whether I will be billed again next cycle. Please confirm the current status and send written confirmation.",2026-06-27 19:01:11
 email_0088,"From: Y. Watanabe <watanabe.0088@mailbox.example.com>
 To: support@company.example.com
-Subject: Following up again
-Date: 2026-06-28 03:05:26
+Subject: Card charged but order shows payment failed
+Date: 2026-06-28 03:36:27
 
-I was told this was resolved but it clearly isn't. The hold you said you would release is still showing against my card and the order never went through.",2026-06-28 03:05:26
-email_0089,"From: Rui Silva <silva.0089@mailbox.example.com>
+My card shows a completed charge while your order page insists the payment did not go through. This matters because I have neither the order nor the money. Please establish which state is authoritative and either release the hold or complete the order.",2026-06-28 03:36:27
+email_0089,"From: R. Silva <silva.0089@mailbox.example.com>
 To: support@company.example.com
 Subject: Following up again
-Date: 2026-06-29 02:19:15
+Date: 2026-06-29 01:18:42
 
-I chatted about this yesterday and it's still not fixed. I have now repeated this to a fourth person, so the notes still are not travelling with the case.",2026-06-29 02:19:15
-email_0090,"From: Andersen, Freya <andersen.0090@mailbox.example.com>
+I was told this was resolved but it clearly isn't. I have now repeated this to a fourth person, so the notes still are not travelling with the case.",2026-06-29 01:18:42
+email_0090,"From: Freya Andersen <andersen.0090@mailbox.example.com>
 To: support@company.example.com
 Subject: Incorrect product shipped
 Date: 2026-06-29 09:13:17
 
 What arrived is not what I purchased. A different product entirely was packed against my order. This matters because I still need the item I actually paid for. Please dispatch the correct one and tell me how to send this back.",2026-06-29 09:13:17
-email_0091,"From: Becker, Luca <becker.0091@mailbox.example.com>
+email_0091,"From: Bertie Becker <becker.0091@mailbox.example.com>
 To: support@company.example.com
 Subject: Application no longer synchronising
 Date: 2026-06-29 17:25:33
 
 The application has stopped synchronising and what it displays no longer reflects recent activity on my account. This matters because I am making decisions from stale figures. Please force whatever refresh is needed and confirm the data has reconciled.",2026-06-29 17:25:33
-email_0092,"From: Lorne Alcantara <alcantara.0092@mailbox.example.com>
+email_0092,"From: Rosa Alcantara <alcantara.0092@mailbox.example.com>
 To: support@company.example.com
-Subject: Re: TK99074 Following up again
-Date: 2026-06-30 08:05:52
+Subject: Re: TK46087 Partial return request for damaged units
+Date: 2026-06-30 07:40:07
 
-I was told this was resolved but it clearly isn't. Still no exception number for the partial return, and the damaged units are sitting here.",2026-06-30 08:05:52
-email_0093,"From: Prakash, Sunil <sunil.prakash497@hotmail.com>
+Two units in my consignment arrived damaged while the remainder are already deployed on site. This matters because returning the full order would strip out equipment that is working. Please authorise a partial replacement rather than a whole-order return.",2026-06-30 07:40:07
+email_0093,"From: Sunil Prakash <sunil.prakash497@hotmail.com>
 To: support@company.example.com
 Subject: Refund still outstanding past the stated window
 Date: 2026-06-30 23:48:15
 
 A refund I was promised has still not reached my account well past the window you quoted. This matters because I am out of pocket for goods you already have back. Please confirm where the payment is and give me an escalation route if it has stalled.",2026-06-30 23:48:15
-email_0094,"From: Ouali, Zineb <ouali.0094@mailbox.example.com>
+email_0094,"From: Zineb Ouali <ouali.0094@mailbox.example.com>
 To: support@company.example.com
-Subject: Following up again
-Date: 2026-07-01 21:27:11
+Subject: Repeating the same history after every transfer
+Date: 2026-07-02 00:44:26
 
-I chatted about this yesterday and it's still not fixed. I have now repeated this to a fourth person, so the notes still are not travelling with the case.",2026-07-01 21:27:11
-email_0095,"From: J. Reinhardt <jonas.reinhardt137@outlook.com>
+Each transfer has required me to repeat the same diagnostic history from the beginning. This matters because the effort is entirely avoidable and nothing has moved forward. Please read the notes already on file and continue from the engineering logs that exist.",2026-07-02 00:44:26
+email_0095,"From: Reinhardt, Jonas <jonas.reinhardt137@outlook.com>
 To: support@company.example.com
 Subject: Account locked after verification
 Date: 2026-07-02 12:50:47
@@ -613,22 +613,22 @@ I am unable to sign in. Each time I submit my verification code the system repor
 Order reference: ORD_1106",2026-07-02 12:50:47
 email_0096,"From: Kowalczyk, Marta <kowalczyk.0096@mailbox.example.com>
 To: support@company.example.com
-Subject: Following up again
-Date: 2026-07-13 04:43:35
+Subject: Partial return request for damaged units
+Date: 2026-07-13 05:55:34
 
-I was told this was resolved but it clearly isn't. Still no exception number for the partial return, and the damaged units are sitting here.",2026-07-13 04:43:35
+Two units in my consignment arrived damaged while the remainder are already deployed on site. This matters because returning the full order would strip out equipment that is working. Please authorise a partial replacement rather than a whole-order return.",2026-07-13 05:55:34
 email_0097,"From: S. Lindqvist <lindqvist.0097@mailbox.example.com>
 To: support@company.example.com
 Subject: Following up again
-Date: 2026-07-13 19:56:01
+Date: 2026-07-13 16:04:10
 
-I chatted about this yesterday and it's still not fixed. The app has drifted out of date again, so the refresh you ran has not held.",2026-07-13 19:56:01
+I called about this already, following up again. The app has drifted out of date again, so the refresh you ran has not held.",2026-07-13 16:04:10
 email_0098,"From: N. Lim <lim.0098@mailbox.example.com>
 To: support@company.example.com
 Subject: Application no longer synchronising
-Date: 2026-07-04 05:08:53
+Date: 2026-07-04 02:50:19
 
-The application has stopped synchronising and what it displays no longer reflects recent activity on my account. This matters because I am making decisions from stale figures. Please force whatever refresh is needed and confirm the data has reconciled.",2026-07-04 05:08:53
+The application has stopped synchronising and what it displays no longer reflects recent activity on my account. This matters because I am making decisions from stale figures. Please force whatever refresh is needed and confirm the data has reconciled.",2026-07-04 02:50:19
 email_0099,"From: Mbeki, Thandi <thandi.mbeki128@outlook.com>
 To: support@company.example.com
 Subject: Delivery address change not applied
@@ -641,7 +641,7 @@ Subject: No confirmation received for my cancellation
 Date: 2026-07-04 15:07:50
 
 I cancelled my subscription but no confirmation has ever reached me. This matters because without it I have no way of knowing whether I will be billed again next cycle. Please confirm the current status and send written confirmation.",2026-07-04 15:07:50
-email_0101,"From: Arjun Sethi <sethi.0101@mailbox.example.com>
+email_0101,"From: A. Sethi <sethi.0101@mailbox.example.com>
 To: support@company.example.com
 Subject: Repeating the same history after every transfer
 Date: 2026-07-07 11:27:53
@@ -656,134 +656,134 @@ I have been given two different answers about how long my accessory is covered f
 email_0103,"From: T. Ionescu <ionescu.0103@mailbox.example.com>
 To: support@company.example.com
 Subject: Refund still outstanding past the stated window
-Date: 2026-07-09 07:45:36
+Date: 2026-07-09 07:32:37
 
-A refund I was promised has still not reached my account well past the window you quoted. This matters because I am out of pocket for goods you already have back. Please confirm where the payment is and give me an escalation route if it has stalled.",2026-07-09 07:45:36
-email_0104,"From: Perry Moretti <moretti.0104@mailbox.example.com>
+A refund I was promised has still not reached my account well past the window you quoted. This matters because I am out of pocket for goods you already have back. Please confirm where the payment is and give me an escalation route if it has stalled.",2026-07-09 07:32:37
+email_0104,"From: C. Moretti <moretti.0104@mailbox.example.com>
 To: support@company.example.com
 Subject: Following up again
-Date: 2026-07-09 22:12:34
+Date: 2026-07-10 02:11:50
 
-I called about this already, following up again. The parcel that supposedly arrived last week is still nowhere, and nobody has been back to me about the trace.",2026-07-09 22:12:34
-email_0105,"From: Joy Okafor <okafor.0105@mailbox.example.com>
+I chatted about this yesterday and it's still not fixed. The parcel that supposedly arrived last week is still nowhere, and nobody has been back to me about the trace.",2026-07-10 02:11:50
+email_0105,"From: Emmett Okafor <okafor.0105@mailbox.example.com>
 To: support@company.example.com
 Subject: Verification codes going to my old handset
-Date: 2026-07-10 13:54:52
+Date: 2026-07-10 15:02:51
 
-Since replacing my handset the one-time codes continue to be delivered to the device I no longer own. This matters because I cannot complete verification on the phone I actually hold. Please run whatever identity checks you need and move the trusted device across.",2026-07-10 13:54:52
-email_0106,"From: Sokolov, Viktor <sokolov.0106@mailbox.example.com>
+Since replacing my handset the one-time codes continue to be delivered to the device I no longer own. This matters because I cannot complete verification on the phone I actually hold. Please run whatever identity checks you need and move the trusted device across.",2026-07-10 15:02:51
+email_0106,"From: V. Sokolov <sokolov.0106@mailbox.example.com>
 To: support@company.example.com
-Subject: Re: TK78920 Following up again
-Date: 2026-07-10 20:38:35
+Subject: Re: TK29073 Following up again
+Date: 2026-07-10 23:58:30
 
-I called about this already, following up again. The app has drifted out of date again, so the refresh you ran has not held.",2026-07-10 20:38:35
-email_0107,"From: C. Duarte <duarte.0107@mailbox.example.com>
+I was told this was resolved but it clearly isn't. The app has drifted out of date again, so the refresh you ran has not held.",2026-07-10 23:58:30
+email_0107,"From: Duarte, Camila <duarte.0107@mailbox.example.com>
 To: support@company.example.com
 Subject: Application no longer synchronising
 Date: 2026-07-11 05:48:25
 
 The application has stopped synchronising and what it displays no longer reflects recent activity on my account. This matters because I am making decisions from stale figures. Please force whatever refresh is needed and confirm the data has reconciled.",2026-07-11 05:48:25
-email_0108,"From: Tomas Vogel <vogel.0108@mailbox.example.com>
+email_0108,"From: T. Vogel <vogel.0108@mailbox.example.com>
 To: support@company.example.com
-Subject: Re: TK85571 Refund still outstanding past the stated window
-Date: 2026-07-12 05:07:16
+Subject: Re: TK42346 Refund still outstanding past the stated window
+Date: 2026-07-12 04:23:21
 
-A refund I was promised has still not reached my account well past the window you quoted. This matters because I am out of pocket for goods you already have back. Please confirm where the payment is and give me an escalation route if it has stalled.",2026-07-12 05:07:16
+A refund I was promised has still not reached my account well past the window you quoted. This matters because I am out of pocket for goods you already have back. Please confirm where the payment is and give me an escalation route if it has stalled.",2026-07-12 04:23:21
 email_0109,"From: Chen, Grace <chen.0109@mailbox.example.com>
 To: support@company.example.com
-Subject: Re: TK68066 Refund still outstanding past the stated window
-Date: 2026-07-12 19:09:00
+Subject: Re: TK78242 Refund still outstanding past the stated window
+Date: 2026-07-12 18:41:37
 
-A refund I was promised has still not reached my account well past the window you quoted. This matters because I am out of pocket for goods you already have back. Please confirm where the payment is and give me an escalation route if it has stalled.",2026-07-12 19:09:00
-email_0110,"From: Owens, Dana <fionn.owens975@hotmail.com>
+A refund I was promised has still not reached my account well past the window you quoted. This matters because I am out of pocket for goods you already have back. Please confirm where the payment is and give me an escalation route if it has stalled.",2026-07-12 18:41:37
+email_0110,"From: D. Owens <fionn.owens975@hotmail.com>
 To: support@company.example.com
 Subject: Card charged but order shows payment failed
-Date: 2026-07-13 11:16:55
+Date: 2026-07-13 09:50:21
 
 My card shows a completed charge while your order page insists the payment did not go through. This matters because I have neither the order nor the money. Please establish which state is authoritative and either release the hold or complete the order.
 
-Order reference: ORD_1126",2026-07-13 11:16:55
-email_0111,"From: Sam Quill <sam.quill151@outlook.com>
+Order reference: ORD_1126",2026-07-13 09:50:21
+email_0111,"From: Sam Quill <sam.quill470@outlook.com>
 To: support@company.example.com
 Subject: help needed
-Date: 2026-07-19 16:10:46
+Date: 2026-07-19 11:00:39
 
-My statement shows two identical debits against a single purchase. This matters because it has taken my available balance below what I planned for this month. Please reverse the second one and confirm in writing that only one payment stands.",2026-07-19 16:10:46
-email_0112,"From: Toni Crane <toni.crane89@outlook.com>
+My statement shows two identical debits against a single purchase. This matters because it has taken my available balance below what I planned for this month. Please reverse the second one and confirm in writing that only one payment stands.",2026-07-19 11:00:39
+email_0112,"From: Toni Crane <toni.crane589@yahoo.com>
 To: support@company.example.com
 Subject: help needed
-Date: 2026-07-23 01:59:10
+Date: 2026-07-22 15:30:45
 
-Two units in my consignment arrived damaged while the remainder are already deployed on site. This matters because returning the full order would strip out equipment that is working. Please authorise a partial replacement rather than a whole-order return.",2026-07-23 01:59:10
-email_0113,"From: Cy Gale <cy.gale400@gmail.com>
+Two units in my consignment arrived damaged while the remainder are already deployed on site. This matters because returning the full order would strip out equipment that is working. Please authorise a partial replacement rather than a whole-order return.",2026-07-22 15:30:45
+email_0113,"From: Cy Gale <cy.gale993@yahoo.com>
 To: support@company.example.com
 Subject: help needed
-Date: 2026-07-25 05:48:49
+Date: 2026-07-22 00:32:46
 
-The application has stopped synchronising and what it displays no longer reflects recent activity on my account. This matters because I am making decisions from stale figures. Please force whatever refresh is needed and confirm the data has reconciled.",2026-07-25 05:48:49
-email_0114,"From: Otto Kemp <otto.kemp806@hotmail.com>
+The application has stopped synchronising and what it displays no longer reflects recent activity on my account. This matters because I am making decisions from stale figures. Please force whatever refresh is needed and confirm the data has reconciled.",2026-07-22 00:32:46
+email_0114,"From: Otto Kemp <otto.kemp232@hotmail.com>
 To: support@company.example.com
 Subject: help needed
-Date: 2026-07-29 10:44:57
+Date: 2026-07-29 02:23:10
 
-I cancelled my subscription but no confirmation has ever reached me. This matters because without it I have no way of knowing whether I will be billed again next cycle. Please confirm the current status and send written confirmation.",2026-07-29 10:44:57
-email_0115,"From: Tess Orme <tess.orme759@hotmail.com>
+I cancelled my subscription but no confirmation has ever reached me. This matters because without it I have no way of knowing whether I will be billed again next cycle. Please confirm the current status and send written confirmation.",2026-07-29 02:23:10
+email_0115,"From: Tess Orme <tess.orme60@yahoo.com>
 To: support@company.example.com
 Subject: help needed
-Date: 2026-07-24 22:11:43
+Date: 2026-07-28 22:25:51
 
-Since replacing my handset the one-time codes continue to be delivered to the device I no longer own. This matters because I cannot complete verification on the phone I actually hold. Please run whatever identity checks you need and move the trusted device across.",2026-07-24 22:11:43
-email_0116,"From: Xan Turnbull <xan.turnbull60@hotmail.com>
+Since replacing my handset the one-time codes continue to be delivered to the device I no longer own. This matters because I cannot complete verification on the phone I actually hold. Please run whatever identity checks you need and move the trusted device across.",2026-07-28 22:25:51
+email_0116,"From: Xan Turnbull <xan.turnbull60@gmail.com>
 To: support@company.example.com
 Subject: help needed
-Date: 2026-07-30 05:38:08
+Date: 2026-07-28 11:04:51
 
-My card shows a completed charge while your order page insists the payment did not go through. This matters because I have neither the order nor the money. Please establish which state is authoritative and either release the hold or complete the order.",2026-07-30 05:38:08
-email_0117,"From: Ben Yardley <ben.yardley584@yahoo.com>
+My card shows a completed charge while your order page insists the payment did not go through. This matters because I have neither the order nor the money. Please establish which state is authoritative and either release the hold or complete the order.",2026-07-28 11:04:51
+email_0117,"From: Ben Yardley <ben.yardley777@outlook.com>
 To: support@company.example.com
 Subject: help needed
-Date: 2026-08-03 22:01:16
+Date: 2026-07-27 23:49:52
 
-Each transfer has required me to repeat the same diagnostic history from the beginning. This matters because the effort is entirely avoidable and nothing has moved forward. Please read the notes already on file and continue from the engineering logs that exist.",2026-08-03 22:01:16
-email_0118,"From: Finn Colton <finn.colton205@outlook.com>
+Each transfer has required me to repeat the same diagnostic history from the beginning. This matters because the effort is entirely avoidable and nothing has moved forward. Please read the notes already on file and continue from the engineering logs that exist.",2026-07-27 23:49:52
+email_0118,"From: Finn Colton <finn.colton147@gmail.com>
 To: support@company.example.com
 Subject: help needed
-Date: 2026-08-02 13:41:30
+Date: 2026-07-27 12:05:39
 
-My statement shows two identical debits against a single purchase. This matters because it has taken my available balance below what I planned for this month. Please reverse the second one and confirm in writing that only one payment stands.",2026-08-02 13:41:30
-email_0119,"From: Jai Garrick <jai.garrick55@yahoo.com>
+My statement shows two identical debits against a single purchase. This matters because it has taken my available balance below what I planned for this month. Please reverse the second one and confirm in writing that only one payment stands.",2026-07-27 12:05:39
+email_0119,"From: Jai Garrick <jai.garrick551@gmail.com>
 To: support@company.example.com
 Subject: help needed
-Date: 2026-08-08 09:38:40
+Date: 2026-08-07 09:42:21
 
-Two units in my consignment arrived damaged while the remainder are already deployed on site. This matters because returning the full order would strip out equipment that is working. Please authorise a partial replacement rather than a whole-order return.",2026-08-08 09:38:40
-email_0120,"From: Nia Kestrel <nia.kestrel24@outlook.com>
+Two units in my consignment arrived damaged while the remainder are already deployed on site. This matters because returning the full order would strip out equipment that is working. Please authorise a partial replacement rather than a whole-order return.",2026-08-07 09:42:21
+email_0120,"From: Nia Kestrel <nia.kestrel639@hotmail.com>
 To: support@company.example.com
 Subject: help needed
-Date: 2026-08-16 03:44:53
+Date: 2026-08-05 01:01:49
 
-The application has stopped synchronising and what it displays no longer reflects recent activity on my account. This matters because I am making decisions from stale figures. Please force whatever refresh is needed and confirm the data has reconciled.",2026-08-16 03:44:53
-email_0121,"From: Rain Ospina <rain.ospina778@outlook.com>
+The application has stopped synchronising and what it displays no longer reflects recent activity on my account. This matters because I am making decisions from stale figures. Please force whatever refresh is needed and confirm the data has reconciled.",2026-08-05 01:01:49
+email_0121,"From: Rain Ospina <rain.ospina486@gmail.com>
 To: support@company.example.com
 Subject: help needed
-Date: 2026-08-03 06:42:58
+Date: 2026-07-29 10:38:30
 
-I cancelled my subscription but no confirmation has ever reached me. This matters because without it I have no way of knowing whether I will be billed again next cycle. Please confirm the current status and send written confirmation.",2026-08-03 06:42:58
-email_0122,"From: Vito Stroud <vito.stroud818@outlook.com>
+I cancelled my subscription but no confirmation has ever reached me. This matters because without it I have no way of knowing whether I will be billed again next cycle. Please confirm the current status and send written confirmation.",2026-07-29 10:38:30
+email_0122,"From: Vito Stroud <vito.stroud716@outlook.com>
 To: support@company.example.com
 Subject: help needed
-Date: 2026-07-31 23:36:13
+Date: 2026-07-30 16:51:06
 
-Since replacing my handset the one-time codes continue to be delivered to the device I no longer own. This matters because I cannot complete verification on the phone I actually hold. Please run whatever identity checks you need and move the trusted device across.",2026-07-31 23:36:13
-email_0123,"From: Zoe Wexford <zoe.wexford405@yahoo.com>
+Since replacing my handset the one-time codes continue to be delivered to the device I no longer own. This matters because I cannot complete verification on the phone I actually hold. Please run whatever identity checks you need and move the trusted device across.",2026-07-30 16:51:06
+email_0123,"From: Zoe Wexford <zoe.wexford592@gmail.com>
 To: support@company.example.com
 Subject: help needed
-Date: 2026-08-08 18:23:10
+Date: 2026-08-10 03:54:30
 
-My card shows a completed charge while your order page insists the payment did not go through. This matters because I have neither the order nor the money. Please establish which state is authoritative and either release the hold or complete the order.",2026-08-08 18:23:10
-email_0124,"From: Dov Belmont <dov.belmont584@gmail.com>
+My card shows a completed charge while your order page insists the payment did not go through. This matters because I have neither the order nor the money. Please establish which state is authoritative and either release the hold or complete the order.",2026-08-10 03:54:30
+email_0124,"From: Dov Belmont <dov.belmont652@hotmail.com>
 To: support@company.example.com
 Subject: help needed
-Date: 2026-08-16 21:13:02
+Date: 2026-08-05 14:27:49
 
-Each transfer has required me to repeat the same diagnostic history from the beginning. This matters because the effort is entirely avoidable and nothing has moved forward. Please read the notes already on file and continue from the engineering logs that exist.",2026-08-16 21:13:02
+Each transfer has required me to repeat the same diagnostic history from the beginning. This matters because the effort is entirely avoidable and nothing has moved forward. Please read the notes already on file and continue from the engineering logs that exist.",2026-08-05 14:27:49

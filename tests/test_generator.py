@@ -41,10 +41,12 @@ def gen():
 @pytest.fixture(scope="module")
 def built(gen):
     """build() returns everything the generator would write, without touching disk."""
-    records, orders, csat, agent_metrics, gt_cases, noise_ids, customers, plan = gen.build()
+    (records, documents, orders, csat, agent_metrics, gt_cases,
+     noise_ids, customers, plan) = gen.build()
     return {
-        "records": records, "orders": orders, "csat": csat, "agent_metrics": agent_metrics,
-        "gt_cases": gt_cases, "noise_ids": noise_ids, "customers": customers, "plan": plan,
+        "records": records, "documents": documents, "orders": orders, "csat": csat,
+        "agent_metrics": agent_metrics, "gt_cases": gt_cases, "noise_ids": noise_ids,
+        "customers": customers, "plan": plan,
     }
 
 
@@ -59,8 +61,9 @@ def _tokens(text):
 def test_generator_is_deterministic():
     first = _load_generator().build()
     second = _load_generator().build()
-    assert first[4] == second[4], "ground-truth cases differ between runs"
-    assert first[5] == second[5], "noise record ids differ between runs"
+    assert first[5] == second[5], "ground-truth cases differ between runs"
+    assert first[6] == second[6], "noise record ids differ between runs"
+    assert first[1] == second[1], "PDF documents differ between runs"
     for channel in first[0]:
         assert first[0][channel] == second[0][channel], f"{channel} records differ between runs"
 
@@ -130,11 +133,12 @@ def test_records_within_a_case_are_tightly_clustered(built):
 
     by_case = {c["case_id"]: c["record_ids"] for c in built["gt_cases"]}
     stamps = {}
-    for channel_records in built["records"].values():
-        for record in channel_records:
-            stamps[record["record_id"]] = datetime.strptime(
-                record["received_ts"], "%Y-%m-%d %H:%M:%S"
-            ).replace(tzinfo=UTC)
+    everything = [r for channel in built["records"].values() for r in channel]
+    everything += built["documents"]
+    for record in everything:
+        stamps[record["record_id"]] = datetime.strptime(
+            record["received_ts"], "%Y-%m-%d %H:%M:%S"
+        ).replace(tzinfo=UTC)
 
     for case_id, record_ids in by_case.items():
         times = [stamps[r] for r in record_ids]
@@ -153,13 +157,14 @@ def test_all_three_difficulty_tiers_are_present(built):
 
 
 def test_every_record_is_accounted_for_in_ground_truth(built):
-    total = sum(len(v) for v in built["records"].values())
+    total = sum(len(v) for v in built["records"].values()) + len(built["documents"])
     planted = sum(len(c["record_ids"]) for c in built["gt_cases"])
     assert planted + len(built["noise_ids"]) == total
 
 
 def test_record_ids_are_unique(built):
     ids = [r["record_id"] for channel in built["records"].values() for r in channel]
+    ids += [d["record_id"] for d in built["documents"]]
     assert len(set(ids)) == len(ids)
 
 
@@ -167,7 +172,8 @@ def test_channel_texts_are_reworded_not_copied(gen):
     """If two channels share a string, the semantic pass is matching on string overlap
     rather than meaning, and the Tier B result would be an illusion."""
     for key, issue in gen.ISSUES.items():
-        texts = [issue["chat"], issue["email"], issue["qa"], issue["csat"], issue["restate"]]
+        texts = [issue["chat"], issue["email"], issue["qa"], issue["csat"],
+                 issue["restate"], issue["escalation"]]
         assert len(set(texts)) == len(texts), f"{key} reuses a channel text verbatim"
 
 
@@ -200,7 +206,7 @@ def test_display_name_divergence_keeps_the_surname(built):
 def test_validate_accepts_a_freshly_built_corpus(gen, built):
     assert gen.validate(
         built["customers"], built["plan"], built["gt_cases"],
-        built["noise_ids"], built["records"],
+        built["noise_ids"], built["records"], built["documents"],
     )
 
 
@@ -208,4 +214,58 @@ def test_validate_rejects_a_corpus_with_colliding_surnames(gen, built):
     broken = [dict(c) for c in built["customers"]]
     broken[1]["last"] = broken[0]["last"]
     with pytest.raises(gen.InvariantError, match="surnames must be unique"):
-        gen.validate(broken, built["plan"], built["gt_cases"], built["noise_ids"], built["records"])
+        gen.validate(broken, built["plan"], built["gt_cases"], built["noise_ids"],
+                     built["records"], built["documents"])
+
+
+# --------------------------------------------------------------------------------------
+# The fifth modality: PDF escalation forms read back with Cortex PARSE_DOCUMENT.
+# --------------------------------------------------------------------------------------
+
+def test_documents_are_produced_and_mostly_keyless(built):
+    docs = built["documents"]
+    assert docs, "no PDF documents generated; the fifth modality is missing"
+
+    tier_by_case = {c["case_id"]: c["tier"] for c in built["gt_cases"]}
+    case_of = {r: c["case_id"] for c in built["gt_cases"] for r in c["record_ids"]}
+    tiers = Counter(tier_by_case[case_of[d["record_id"]]] for d in docs)
+    assert tiers["B"] > tiers["A"], (
+        "documents should sit mostly in the keyless tier, where linking them requires "
+        "understanding rather than a shared identifier"
+    )
+
+
+def test_every_document_belongs_to_a_case(built):
+    planted = {r for c in built["gt_cases"] for r in c["record_ids"]}
+    for doc in built["documents"]:
+        assert doc["record_id"] in planted
+
+
+def test_written_pdfs_are_valid_and_deterministic(gen, built, tmp_path):
+    doc = built["documents"][0]
+    first, second = tmp_path / "a.pdf", tmp_path / "b.pdf"
+    gen.write_pdf(first, doc["lines"])
+    gen.write_pdf(second, doc["lines"])
+
+    data = first.read_bytes()
+    assert data.startswith(b"%PDF-1.4"), "not a PDF"
+    assert data.rstrip().endswith(b"%%EOF"), "PDF is truncated"
+    assert b"/Type /Catalog" in data and b"xref" in data
+    assert data == second.read_bytes(), "PDF writer is not byte-deterministic"
+
+
+def test_escalation_form_states_the_date_stage_1_relies_on(gen, built):
+    """stg_documents parses `Date raised:` deterministically rather than trusting the LLM
+    for the timestamp Stage 2's link window depends on."""
+    doc = built["documents"][0]
+    dated = [line for line in doc["lines"] if line.startswith("Date raised:")]
+    assert len(dated) == 1
+    assert re.search(r"\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}", dated[0])
+
+
+def test_pdf_text_is_latin1_representable(gen, built):
+    """The base-14 Helvetica font cannot encode typographic punctuation; the writer must
+    transliterate it rather than raise or silently corrupt the page."""
+    for doc in built["documents"]:
+        for line in doc["lines"]:
+            gen._pdf_escape(line).encode("latin-1")

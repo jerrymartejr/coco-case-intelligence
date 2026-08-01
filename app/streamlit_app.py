@@ -56,13 +56,19 @@ def get_session():
         return Session.builder.config("connection_name", named).create()
 
     # 3. Otherwise the same key pair dbt authenticates with.
-    key_path = os.environ.get(
-        "SNOWFLAKE_PRIVATE_KEY_PATH", "~/.snowflake/keys/coco_trial_rsa_key.p8"
-    )
+    missing = [
+        v for v in ("SNOWFLAKE_ACCOUNT", "SNOWFLAKE_USER", "SNOWFLAKE_PRIVATE_KEY_PATH")
+        if not os.environ.get(v)
+    ]
+    if missing:
+        raise RuntimeError(
+            f"Missing required environment variables: {', '.join(missing)}. "
+            "Copy .env.example to .env, fill it in, and `source .env`. See docs/SETUP.md."
+        )
     return Session.builder.configs({
-        "account": os.environ.get("SNOWFLAKE_ACCOUNT", "KBGKENW-MB74068"),
-        "user": os.environ.get("SNOWFLAKE_USER", "JERRYMARTEJR"),
-        "private_key": _private_key_der(key_path),
+        "account": os.environ["SNOWFLAKE_ACCOUNT"],
+        "user": os.environ["SNOWFLAKE_USER"],
+        "private_key": _private_key_der(os.environ["SNOWFLAKE_PRIVATE_KEY_PATH"]),
         "role": os.environ.get("SNOWFLAKE_ROLE", "ACCOUNTADMIN"),
         "database": os.environ.get("SNOWFLAKE_DATABASE", "CASE_INTEL"),
         "schema": os.environ.get("SNOWFLAKE_SCHEMA", "ANALYTICS"),

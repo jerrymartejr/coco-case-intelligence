@@ -47,6 +47,7 @@ import os
 import random
 import re
 from datetime import datetime, timedelta
+from pathlib import Path
 
 SEED = 42
 BASE_DATE = datetime(2026, 5, 4, 8, 0, 0)  # a Monday, fixed for reproducibility
@@ -54,11 +55,17 @@ HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 UNSTRUCT_DIR = os.path.join(HERE, "data", "synthetic", "unstructured")
 SEEDS_DIR = os.path.join(HERE, "seeds")
 GROUND_TRUTH = os.path.join(HERE, "data", "synthetic", "ground_truth.json")
+DOCUMENTS_DIR = os.path.join(HERE, "data", "synthetic", "documents")
 
 # Demo scale. Stage 1 is one AI_COMPLETE per record and Stage 2 is an O(N^2) pair scan,
 # so this is sized for a demo that rebuilds in minutes, not for volume.
 TARGET_CASES = 170
 NOISE_RECORDS = 55
+
+# Share of cases that also produce a PDF escalation form. Weighted toward the keyless
+# tier on purpose: a document that can only be linked by surname, meaning and time is a
+# far better demonstration of multi-modal understanding than one carrying an order ref.
+DOCUMENT_RATE = 0.18
 
 # Must exceed int_case_assignments.TIME_WINDOW_HOURS (72) with margin: it is what keeps
 # a customer's separate cases from merging through the deterministic email/customer pass.
@@ -169,6 +176,8 @@ ISSUES = {
     "order_not_received": {
         "area": "delivery",
         "subject": "Parcel marked delivered but never arrived",
+        "escalation": "Customer states the consignment was recorded as delivered but was never received at the property. Carrier tracking shows a completed handover that the customer disputes. No goods are in the customer's possession and the order value remains unrecovered.",
+        "escalation_action": "Open a formal carrier trace and authorise a replacement dispatch if the trace does not resolve within the service window.",
         "root_cause": "Carrier marked delivered but parcel never arrived (lost in transit).",
         "resolution": "Reshipped with express tracking; refunded shipping.",
         "chat": "hey my order still hasnt shown up, tracking says delivered but nothing here",
@@ -180,6 +189,8 @@ ISSUES = {
     "double_charge": {
         "area": "billing",
         "subject": "Duplicate debit on a single order",
+        "escalation": "A single order produced two settled debits against the customer's card. The second debit has not been reversed and continues to hold funds. The customer has asked for written confirmation that only one payment will stand.",
+        "escalation_action": "Authorise reversal of the duplicate settlement and issue written confirmation of the final amount charged.",
         "root_cause": "Payment retry fired twice after a gateway timeout.",
         "resolution": "Reversed the duplicate charge; confirmed single settlement.",
         "chat": "i got billed twice for the same thing?? theres two charges on my card",
@@ -191,6 +202,8 @@ ISSUES = {
     "login_locked": {
         "area": "account_access",
         "subject": "Account locked after verification",
+        "escalation": "Customer is unable to authenticate. An automated lock was applied after repeated verification attempts and has not lifted. The account is entirely inaccessible while the lock remains in force.",
+        "escalation_action": "Complete identity verification to the approved standard and release the account lock.",
         "root_cause": "Account auto-locked after failed MFA sync on a new device.",
         "resolution": "Reset MFA and unlocked the account.",
         "chat": "cant get into my account, keeps saying locked after i put the code in",
@@ -202,6 +215,8 @@ ISSUES = {
     "mfa_device_change": {
         "area": "account_access",
         "subject": "Verification codes going to my old handset",
+        "escalation": "One-time verification codes continue to be delivered to a handset the customer no longer possesses. The trusted-device record was not migrated when the device changed, leaving the customer unable to complete step-up authentication.",
+        "escalation_action": "Re-run identity verification and rebind the trusted device to the customer's current handset.",
         "root_cause": "Trusted-device binding never migrated after the handset swap.",
         "resolution": "Re-ran identity verification and rebound the trusted device.",
         "chat": "changed phones and now the codes go to the old handset, i cant receive anything",
@@ -213,6 +228,8 @@ ISSUES = {
     "wrong_item": {
         "area": "returns",
         "subject": "Incorrect product shipped",
+        "escalation": "The goods delivered do not correspond to the goods ordered. A different product was picked against this order. The customer retains items they cannot use and has not received what was paid for.",
+        "escalation_action": "Authorise a replacement dispatch and issue a prepaid return label for the incorrect goods.",
         "root_cause": "Warehouse pick error: adjacent SKU shipped.",
         "resolution": "Sent correct item; provided prepaid return label.",
         "chat": "you sent me the wrong item, this isnt what i ordered at all",
@@ -224,6 +241,8 @@ ISSUES = {
     "return_policy_exception": {
         "area": "returns",
         "subject": "Partial return request for damaged units",
+        "escalation": "Part of a multi-unit consignment arrived damaged while the remainder is already deployed on site. Standard returns handling would require the whole order back, removing equipment that is functioning correctly.",
+        "escalation_action": "Grant a partial-replacement exception outside standard returns policy and issue a case reference to the customer.",
         "root_cause": "Multi-unit order arrived part-damaged; policy only handles whole-order returns.",
         "resolution": "Granted a partial replacement exception and issued a case number.",
         "chat": "two of the units came in damaged but the rest are already installed, i cant send it all back",
@@ -235,6 +254,8 @@ ISSUES = {
     "refund_delay": {
         "area": "refunds",
         "subject": "Refund still outstanding past the stated window",
+        "escalation": "A refund authorised for this customer has not reached their account and is now materially beyond the published turnaround. The customer is without both the goods, which were returned, and the money.",
+        "escalation_action": "Escalate to finance for same-day release and confirm the settlement date directly with the customer.",
         "root_cause": "Refund stuck in manual review queue past SLA.",
         "resolution": "Escalated and released the refund same day.",
         "chat": "wheres my refund, its been like 2 weeks and nothing",
@@ -246,6 +267,8 @@ ISSUES = {
     "payment_auth_mismatch": {
         "area": "payments",
         "subject": "Card charged but order shows payment failed",
+        "escalation": "The payment processor recorded a successful authorisation while the order service recorded a failure. The customer has been charged and has no order. The two systems remain in disagreement on this transaction.",
+        "escalation_action": "Establish the authoritative transaction state, then either release the held funds or complete the order at the original price.",
         "root_cause": "Authorisation captured while the order service recorded a failure.",
         "resolution": "Released the stale hold and re-placed the order at the original price.",
         "chat": "card got charged but the site says payment failed, so which is it",
@@ -257,6 +280,8 @@ ISSUES = {
     "address_update_failed": {
         "area": "delivery",
         "subject": "Delivery address change not applied",
+        "escalation": "A delivery address amended by the customer at checkout did not propagate to the open order, which is still routed to a superseded address. Dispatch is imminent and would deliver to a property the customer has left.",
+        "escalation_action": "Place an immediate hold on dispatch and correct the delivery address on the open order before release.",
         "root_cause": "Address edit saved to the profile but not propagated to the open order.",
         "resolution": "Intercepted the shipment and corrected the delivery address before dispatch.",
         "chat": "i changed my address at checkout but the confirmation still shows the old one",
@@ -268,6 +293,8 @@ ISSUES = {
     "app_sync_fail": {
         "area": "mobile_app",
         "subject": "Application no longer synchronising",
+        "escalation": "The customer's application has stopped synchronising and is presenting stale information without surfacing any error. The customer has been acting on out-of-date figures without knowing they were out of date.",
+        "escalation_action": "Force a session refresh, confirm the data has reconciled, and advise the customer once current.",
         "root_cause": "Sync token expired; client failed to refresh silently.",
         "resolution": "Forced token refresh; data reconciled.",
         "chat": "the app isnt syncing, my stuff is all out of date on my phone",
@@ -279,6 +306,8 @@ ISSUES = {
     "app_crash_order_history": {
         "area": "mobile_app",
         "subject": "App closes when opening order history",
+        "escalation": "The application terminates whenever the order-history view is opened. The fault is reproducible and began after the most recent release. The customer cannot retrieve any record of past purchases in the app.",
+        "escalation_action": "Raise a defect with engineering against the order-history view and supply the customer's history by email in the interim.",
         "root_cause": "Regression in the order-history view introduced by the latest release.",
         "resolution": "Logged a defect with engineering; supplied history by email in the interim.",
         "chat": "app dies every time i open order history since the update",
@@ -290,6 +319,8 @@ ISSUES = {
     "handoff_repetition": {
         "area": "technical_support",
         "subject": "Repeating the same history after every transfer",
+        "escalation": "The customer has restated the same diagnostic history at each transfer because prior notes did not travel with the case. Effort has been duplicated repeatedly and the underlying matter has not advanced.",
+        "escalation_action": "Consolidate the case history onto a single record and continue from the existing engineering notes without further transfer.",
         "root_cause": "Prior troubleshooting notes not carried across the transfer.",
         "resolution": "Consolidated the history onto one case and continued from existing logs.",
         "chat": "ive explained this three times now to three different people",
@@ -301,6 +332,8 @@ ISSUES = {
     "warranty_misstatement": {
         "area": "warranty",
         "subject": "Conflicting warranty terms quoted",
+        "escalation": "The customer has been given conflicting warranty terms for the same accessory across separate contacts. The recorded coverage period on file is inconsistent with guidance given verbally, creating a repair-or-replace decision the customer cannot make.",
+        "escalation_action": "Verify the correct warranty term against policy, correct the customer record, and confirm the position in writing.",
         "root_cause": "Conflicting coverage guidance given on the accessory warranty period.",
         "resolution": "Verified the correct term and corrected the case note.",
         "chat": "one of your people said 12 months and another said 24, which is right",
@@ -312,6 +345,8 @@ ISSUES = {
     "cancellation_not_confirmed": {
         "area": "subscription",
         "subject": "No confirmation received for my cancellation",
+        "escalation": "A subscription cancellation was processed but no confirmation was ever issued to the customer. Without written confirmation the customer has no assurance that the next billing cycle will not proceed.",
+        "escalation_action": "Confirm the cancellation status on the account and reissue written confirmation before the next renewal date.",
         "root_cause": "Cancellation processed but the confirmation email never generated.",
         "resolution": "Confirmed the cancellation status and resent written confirmation.",
         "chat": "i cancelled but never got anything confirming it, is it actually cancelled",
@@ -324,12 +359,118 @@ ISSUES = {
 
 ISSUE_KEYS = list(ISSUES.keys())
 
-_counter = {"chat": 0, "email": 0, "qa": 0, "csat": 0}
+_counter = {"chat": 0, "email": 0, "qa": 0, "csat": 0, "esc": 0}
 
 
 def rid(kind):
     _counter[kind] += 1
     return f"{kind}_{_counter[kind]:04d}"
+
+
+# --------------------------------------------------------------------------------------
+# PDF escalation forms — the fifth modality.
+#
+# The other four channels are text or JSON that dbt can seed directly. A real support
+# estate also contains documents: forms, letters, scanned attachments. These are written
+# as actual PDFs, uploaded to a Snowflake stage, and read back with Cortex PARSE_DOCUMENT,
+# so the pipeline genuinely spans a binary format rather than claiming to.
+#
+# Written by hand rather than with a PDF library: text-only single-page documents are a
+# small, well-specified subset of the format, and the alternative is a heavyweight
+# dependency for something the generator uses in one place. Output is byte-deterministic,
+# which the reproducibility check in CI depends on.
+# --------------------------------------------------------------------------------------
+
+# The base-14 Helvetica font used below is Latin-1. Map the typographic characters that
+# realistic prose picks up to their ASCII equivalents, then encode strictly, so anything
+# genuinely unrepresentable fails loudly instead of silently corrupting the document.
+_PDF_TRANSLITERATE = str.maketrans({
+    "\u2014": "-", "\u2013": "-", "\u2018": "'", "\u2019": "'",
+    "\u201c": '"', "\u201d": '"', "\u2026": "...", "\u00a0": " ",
+})
+
+
+def _pdf_escape(text):
+    text = text.translate(_PDF_TRANSLITERATE)
+    return text.replace("\\", r"\\").replace("(", r"\(").replace(")", r"\)")
+
+
+def write_pdf(path, lines):
+    """Write a single-page, text-only PDF. `lines` are laid out top-down."""
+    content = "BT /F1 11 Tf 54 760 Td 15 TL\n"
+    for line in lines:
+        content += f"({_pdf_escape(line)}) Tj T*\n"
+    content += "ET"
+
+    objects = [
+        "<< /Type /Catalog /Pages 2 0 R >>",
+        "<< /Type /Pages /Kids [3 0 R] /Count 1 >>",
+        "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] "
+        "/Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>",
+        "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>",
+        f"<< /Length {len(content)} >>\nstream\n{content}\nendstream",
+    ]
+
+    out = "%PDF-1.4\n"
+    offsets = []
+    for i, obj in enumerate(objects, 1):
+        offsets.append(len(out))
+        out += f"{i} 0 obj\n{obj}\nendobj\n"
+    xref_at = len(out)
+    out += f"xref\n0 {len(objects) + 1}\n0000000000 65535 f \n"
+    for off in offsets:
+        out += f"{off:010d} 00000 n \n"
+    out += f"trailer\n<< /Size {len(objects) + 1} /Root 1 0 R >>\nstartxref\n{xref_at}\n%%EOF\n"
+
+    with open(path, "wb") as fh:
+        fh.write(out.encode("latin-1"))  # strict: unrepresentable text must not slip through
+
+
+def escalation_form_lines(ref, occurred, name, issue, agent, order_ref, ticket):
+    """An internal escalation form: field-and-value register, unlike any other channel.
+
+    `Date raised` is parsed deterministically downstream, so a case's document lands in
+    the same time window as its other records without depending on the LLM for a date.
+    """
+    lines = [
+        "CUSTOMER ESCALATION FORM",
+        "Support Operations - internal use only",
+        "",
+        f"Reference: {ref}",
+        f"Date raised: {occurred}",
+        f"Raised by: {agent['agent_id']} ({agent['team']}, {agent['site']})",
+        "",
+        f"Customer name: {name}",
+        f"Product area: {issue['area']}",
+    ]
+    if order_ref:
+        lines.append(f"Order reference: {order_ref}")
+    if ticket:
+        lines.append(f"Related ticket: {ticket}")
+    lines += [
+        "",
+        "Summary of complaint",
+        "--------------------",
+    ]
+    # Wrap the prose so the page reads like a form rather than one long line.
+    words, line = issue["escalation"].split(), ""
+    for word in words:
+        if len(line) + len(word) + 1 > 78:
+            lines.append(line)
+            line = word
+        else:
+            line = f"{line} {word}".strip()
+    if line:
+        lines.append(line)
+    lines += [
+        "",
+        "Requested action",
+        "----------------",
+        issue["escalation_action"],
+        "",
+        "Authorised by: Support Operations Lead",
+    ]
+    return lines
 
 
 def ts(offset_hours):
@@ -497,6 +638,7 @@ def build():
     plan = build_case_plan(customers)
 
     records = {"chat": [], "email": [], "qa": [], "csat": []}
+    documents = []
     orders, csat_scores = [], []
     agent_load = {}
     gt_cases, noise_ids = [], []
@@ -651,6 +793,26 @@ def build():
             d = occurred.date().isoformat()
             agent_load[(agent["agent_id"], d)] = agent_load.get((agent["agent_id"], d), 0) + 1
 
+        # A PDF escalation form for a share of cases. It is a full member of the case:
+        # it must be linked like any other record, and it is scored the same way.
+        if RNG.random() < (DOCUMENT_RATE * (1.6 if tier == "B" else 0.6)):
+            r = rid("esc")
+            occurred = ts(case["start_h"] + RNG.uniform(2.0, 8.0))
+            name = RNG.choice(name_variants(cust))
+            documents.append({
+                "record_id": r,
+                "filename": f"{r}.pdf",
+                "received_ts": isofmt(occurred),
+                "lines": escalation_form_lines(
+                    r.upper().replace("ESC_", "ESC-"), isofmt(occurred), name, issue, agent,
+                    order_ref if expose_order else None, ticket,
+                ),
+            })
+            case_record_ids.append(r)
+            agent_load[(agent["agent_id"], occurred.date().isoformat())] = (
+                agent_load.get((agent["agent_id"], occurred.date().isoformat()), 0) + 1
+            )
+
         gt_cases.append({
             "case_id": case["case_id"], "tier": tier, "customer_id": cust["customer_id"],
             "issue": case["issue_key"], "root_cause": issue["root_cause"],
@@ -722,7 +884,8 @@ def build():
             "avg_csat": round(max(3.2, min(4.8, 4.6 - pressure * 1.1 + RNG.uniform(-0.15, 0.15))), 2),
         })
 
-    return records, orders, csat_scores, agent_metrics, gt_cases, noise_ids, customers, plan
+    return (records, documents, orders, csat_scores, agent_metrics, gt_cases,
+            noise_ids, customers, plan)
 
 
 # --------------------------------------------------------------------------------------
@@ -741,7 +904,7 @@ def _require(condition, message):
         raise InvariantError(message)
 
 
-def validate(customers, plan, gt_cases, noise_ids, records):
+def validate(customers, plan, gt_cases, noise_ids, records, documents=()):
     firsts = [c["first"] for c in customers]
     lasts = [c["last"] for c in customers]
     _require(len(set(firsts)) == len(firsts), "customer first names must be unique")
@@ -790,10 +953,11 @@ def validate(customers, plan, gt_cases, noise_ids, records):
 
     # Channel texts for one issue must be genuinely different from each other.
     for key, issue in ISSUES.items():
-        texts = [issue["chat"], issue["email"], issue["qa"], issue["csat"], issue["restate"]]
+        texts = [issue["chat"], issue["email"], issue["qa"], issue["csat"],
+                 issue["restate"], issue["escalation"]]
         _require(len(set(texts)) == len(texts), f"{key} reuses a channel text verbatim")
 
-    total = sum(len(v) for v in records.values())
+    total = sum(len(v) for v in records.values()) + len(documents)
     planted = sum(len(c["record_ids"]) for c in gt_cases)
     _require(planted + len(noise_ids) == total, "record accounting mismatch")
     return True
@@ -815,8 +979,22 @@ def write_csv(path, rows, fields):
 def main():
     os.makedirs(UNSTRUCT_DIR, exist_ok=True)
     os.makedirs(SEEDS_DIR, exist_ok=True)
-    records, orders, csat_scores, agent_metrics, gt_cases, noise_ids, customers, plan = build()
-    validate(customers, plan, gt_cases, noise_ids, records)
+    (records, documents, orders, csat_scores, agent_metrics, gt_cases,
+     noise_ids, customers, plan) = build()
+    validate(customers, plan, gt_cases, noise_ids, records, documents)
+
+    # PDFs are binary, so they are not seeds. They land in a Snowflake stage and are read
+    # back with Cortex PARSE_DOCUMENT: see scripts/upload_documents.py and stg_documents.
+    documents_dir = Path(DOCUMENTS_DIR)
+    documents_dir.mkdir(parents=True, exist_ok=True)
+    for stale in documents_dir.glob("*.pdf"):
+        stale.unlink()
+    for doc in documents:
+        write_pdf(os.path.join(DOCUMENTS_DIR, doc["filename"]), doc["lines"])
+    write_csv(os.path.join(DOCUMENTS_DIR, "manifest.csv"),
+              [{"record_id": d["record_id"], "filename": d["filename"],
+                "received_ts": d["received_ts"]} for d in documents],
+              ["record_id", "filename", "received_ts"])
 
     # NDJSON kept in data/ as a reference for the "raw files that land" story.
     write_ndjson(os.path.join(UNSTRUCT_DIR, "chat.ndjson"), records["chat"])
@@ -852,9 +1030,9 @@ def main():
     write_csv(os.path.join(SEEDS_DIR, "ground_truth_map.csv"), gt_map,
               ["record_id", "true_case_id", "tier", "is_noise"])
 
-    total = sum(len(v) for v in records.values())
+    total = sum(len(v) for v in records.values()) + len(documents)
     print(f"unstructured records: {total} (chat={len(records['chat'])}, email={len(records['email'])}, "
-          f"qa={len(records['qa'])}, csat={len(records['csat'])})")
+          f"qa={len(records['qa'])}, csat={len(records['csat'])}, pdf={len(documents)})")
     print(f"planted cases: {len(gt_cases)}  noise: {len(noise_ids)}  customers: {len(customers)}")
     print(f"orders: {len(orders)}  csat_scores: {len(csat_scores)}  agent_days: {len(agent_metrics)}")
     tiers = {}

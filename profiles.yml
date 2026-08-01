@@ -1,23 +1,20 @@
 # dbt profile for Case Intelligence.
 #
-# Everything is read from environment variables so this file works for anyone. The
-# defaults are the original author's trial account, which only he holds a key for, so
-# set at least SNOWFLAKE_ACCOUNT, SNOWFLAKE_USER and SNOWFLAKE_PRIVATE_KEY_PATH before
-# running. See docs/SETUP.md.
+# Every setting comes from an environment variable. The three that identify YOUR account
+# have no default on purpose: dbt fails with a clear message rather than silently trying
+# to reach somebody else's warehouse.
 #
-#   export SNOWFLAKE_ACCOUNT=ABCDEFG-XY12345
-#   export SNOWFLAKE_USER=YOURUSER
-#   export SNOWFLAKE_PRIVATE_KEY_PATH=~/.snowflake/keys/case_intel_rsa_key.p8
+#   cp .env.example .env && edit .env && source .env
 #
-# The private key itself never lives in this repo.
+# See docs/SETUP.md. The private key itself never lives in this repo.
 case_intelligence:
   target: dev
   outputs:
     dev:
       type: snowflake
-      account: "{{ env_var('SNOWFLAKE_ACCOUNT', 'KBGKENW-MB74068') }}"
-      user: "{{ env_var('SNOWFLAKE_USER', 'JERRYMARTEJR') }}"
-      private_key_path: "{{ env_var('SNOWFLAKE_PRIVATE_KEY_PATH', '/Users/jerrymartejr/.snowflake/keys/coco_trial_rsa_key.p8') }}"
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+      user: "{{ env_var('SNOWFLAKE_USER') }}"
+      private_key_path: "{{ env_var('SNOWFLAKE_PRIVATE_KEY_PATH') }}"
       role: "{{ env_var('SNOWFLAKE_ROLE', 'ACCOUNTADMIN') }}"
       database: "{{ env_var('SNOWFLAKE_DATABASE', 'CASE_INTEL') }}"
       warehouse: "{{ env_var('SNOWFLAKE_WAREHOUSE', 'COMPUTE_WH') }}"

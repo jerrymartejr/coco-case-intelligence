@@ -8,8 +8,8 @@ acts on top of it.
 
 ## The idea
 
-Support interactions for one problem arrive across channels (chat, email, QA notes, CSAT)
-in different words, with **different or missing identifiers**. The hard, valuable part is
+Support interactions for one problem arrive across channels (chat, email, QA notes, CSAT,
+and PDF escalation forms) in different words, with **different or missing identifiers**. The hard, valuable part is
 linking them into a single *case* without a shared key. That is the product here, not a
 glorified join.
 
@@ -21,7 +21,7 @@ glorified join.
 
 | Stage | Model(s) | What it does | Cortex |
 |-------|----------|--------------|--------|
-| 1 normalize | `stg_chat/email/qa_notes/csat` -> `stg_records` | every format -> one common schema | AI_COMPLETE |
+| 1 normalize | `stg_chat/email/qa_notes/csat/documents` -> `stg_records` | every format, text and binary, -> one common schema | PARSE_DOCUMENT, AI_COMPLETE |
 | 2 resolve | `int_record_entities` -> `int_case_assignments` (Snowpark) -> `int_case_records` | link keyless records into a `case_id`: deterministic entity pass, then embedding similarity + Union-Find | EMBED_TEXT_768 |
 | 3 synthesize | `fct_case_fact` | collapse each case into one fact row (issue, timeline, resolved, root cause, sentiment) | AI_COMPLETE |
 | 4 enrich | `fct_case_enriched` | join structured metrics (revenue at risk, CSAT, FCR, AHT) | SQL |
@@ -29,13 +29,16 @@ glorified join.
 
 ## Measured result (on synthetic data with a ground-truth key)
 
-Stage 2 identity resolution over **518 records / 170 cases / 48 customers**, scored against
+Stage 2 identity resolution over **556 records / 170 cases / 48 customers**, scored against
 `data/synthetic/ground_truth.json`:
 
 - **170/170** planted cases fully linked — Tier A 53/53, Tier B 103/103 (the keyless hero
   tier), Tier C 14/14
 - **0** false merges (perfect precision)
 - **55/55** noise records correctly isolated
+- **31 of the 38 PDF escalation forms are in the keyless tier and were linked semantically** —
+  a binary document tied to a chat and an email by nothing but a surname, the meaning of the
+  complaint, and proximity in time
 
 These are enforced as dbt tests: `assert_cases_fully_linked` (recall) and
 `assert_no_case_contamination` (precision). `dbt build` fails if either regresses.
@@ -44,12 +47,17 @@ These are enforced as dbt tests: `assert_cases_fully_linked` (recall) and
 
 We generate both halves of the data so the pipeline runs end to end today; real data swaps
 in later at the same schemas (see below). `scripts/generate_synthetic_data.py` is
-deterministic and produces **518 records across 170 cases and 48 customers** in three
-difficulty tiers:
+deterministic and produces **556 records across 170 cases and 48 customers** in five
+formats and three difficulty tiers:
 
 - **Tier A** entity overlap (shared email / order ref)
 - **Tier B** semantic-only, the hero: no shared key, linkable by fuzzy name + issue semantics + time
 - **Tier C** trivial (shared ticket id), plus noise that must not merge
+
+The five formats are chat JSON, email with headers, free-text QA notes, CSAT JSON, and
+**real PDF escalation forms**. The PDFs are written by the generator, uploaded to a
+Snowflake stage, and read back with Cortex `PARSE_DOCUMENT`, so the pipeline genuinely
+spans a binary modality rather than four flavours of text.
 
 ## Run it
 
@@ -60,10 +68,11 @@ key-pair auth, the environment variables, and the regional Cortex caveat. About 
 Once set up:
 
 ```bash
-source .venv/bin/activate
+source .venv/bin/activate && source .env          # credentials, see docs/SETUP.md
 dbt deps --profiles-dir .
-dbt build --profiles-dir .                         # seed -> run -> test, one command
-streamlit run app/streamlit_app.py                 # the demo UI (optional)
+python3 scripts/upload_documents.py               # PDFs -> Snowflake stage (once)
+dbt build --profiles-dir .                        # seed -> run -> test, one command
+streamlit run app/streamlit_app.py                # the demo UI (optional)
 ```
 
 The data is committed, so you only need the generator if you want to regenerate it (it is

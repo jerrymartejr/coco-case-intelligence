@@ -53,6 +53,9 @@ ignore = [
 # actual injection surface. Suppressed at file scope because the diagnostic lands on the
 # opening line of a multi-line f-string, where an inline noqa would become SQL text.
 "app/streamlit_app.py" = ["S608"]
+# The uploader's only interface is what it reports to the operator, and the stage name is
+# a module constant, not user input.
+"scripts/upload_documents.py" = ["T201", "S608"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

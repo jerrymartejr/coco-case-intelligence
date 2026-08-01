@@ -7,7 +7,7 @@ Synthetic data only. Grain: one row per **case**. Output must be **actionable**.
 ## Thesis (do not dilute)
 
 The product is **linking records that share no key** into a single case. Records arrive
-across channels (chat, email, QA note, CSAT) describing the same issue for the same customer
+across channels (chat, email, QA note, CSAT, PDF escalation form) describing the same issue for the same customer
 in different words, with **different or missing identifiers**. Resolving them into one case
 is the value. We do NOT plant shared case keys as a crutch. See the difficulty tiers below.
 
@@ -54,6 +54,10 @@ Raw tables loaded into schema `RAW`. Each row is one raw record; the model reads
 - `RAW_EMAIL`     (record_id STRING, raw_content STRING, received_ts TIMESTAMP) — email text w/ headers
 - `RAW_QA_NOTES`  (record_id STRING, raw_content STRING, received_ts TIMESTAMP) — free-text QA note
 - `RAW_CSAT`      (record_id STRING, raw_content STRING, received_ts TIMESTAMP) — CSAT survey JSON
+- **PDF documents** — real binary files in the Snowflake stage `RAW.DOCUMENTS`, not seeds.
+  Read back with `SNOWFLAKE.CORTEX.PARSE_DOCUMENT` in `stg_documents`, which derives
+  `record_id` from the filename and parses `Date raised:` for the timestamp, then feeds the
+  same extraction as every other channel. Upload with `scripts/upload_documents.py`.
 
 Staging extracts a common schema from each via Cortex AI:
 `record_id, source_type, customer_name, customer_email, order_ref, occurred_ts, channel, agent_id, issue_text, resolution_text, sentiment`.

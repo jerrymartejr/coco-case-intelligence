@@ -1,0 +1,55 @@
+name: CI
+
+# Everything here runs without Snowflake credentials, so CI is meaningful on a fork and
+# on every push. The parts that genuinely need a warehouse (the Cortex stages and the two
+# linkage asserts) run in `dbt build` against your own account -- see docs/SETUP.md.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    name: Lint, tests, dbt parse
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt -r requirements-dev.txt
+
+      - name: Lint
+        run: ruff check .
+
+      - name: Unit tests
+        run: pytest
+
+      - name: Regenerate the corpus and check it is reproducible
+        # The ground-truth key is only trustworthy if the generator is deterministic.
+        # Regenerating must leave the committed seeds byte-identical.
+        run: |
+          python scripts/generate_synthetic_data.py
+          git diff --exit-code --stat seeds/ data/ \
+            || (echo "::error::Committed data is out of sync with the generator" && exit 1)
+
+      - name: dbt parse
+        # Compiles every model and resolves the DAG. No warehouse connection is opened,
+        # so dummy credentials are enough to prove the project is structurally valid.
+        env:
+          SNOWFLAKE_ACCOUNT: CI-DUMMY
+          SNOWFLAKE_USER: CI
+          SNOWFLAKE_PRIVATE_KEY_PATH: /dev/null
+        run: |
+          dbt deps
+          dbt parse --profiles-dir . --no-partial-parse

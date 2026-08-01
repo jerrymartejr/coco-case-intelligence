@@ -19,10 +19,11 @@ dataset is small, so the O(N^2) pair scan is trivial; embeddings are computed on
 Deterministic: components are labeled by their smallest record_id, so case ids are stable.
 """
 
-import re
 import json
+import re
+
 from snowflake.snowpark.functions import call_function, col, lit
-from snowflake.snowpark.types import StructType, StructField, StringType
+from snowflake.snowpark.types import StringType, StructField, StructType
 
 # Similarity FLOOR, not a separator. Measured on the current corpus (518 records,
 # 170 planted cases), embedding the extracted issue_text:
@@ -45,27 +46,29 @@ EMBED_MODEL = "snowflake-arctic-embed-m-v1.5"
 def _tokens(name):
     if not name:
         return set()
-    return {t for t in re.findall(r"[a-z]{3,}", str(name).lower())}
+    return set(re.findall(r"[a-z]{3,}", str(name).lower()))
 
 
 def _to_vec(v):
     if v is None:
         return None
+    # Cortex returns the vector as a JSON string or an array depending on context, and a
+    # malformed embedding must degrade to "no vector" rather than fail the whole build.
     if isinstance(v, str):
         try:
             return [float(x) for x in json.loads(v)]
-        except Exception:
+        except (ValueError, TypeError):
             return None
     try:
         return [float(x) for x in v]
-    except Exception:
+    except (ValueError, TypeError):
         return None
 
 
 def _cosine(a, b):
     if not a or not b:
         return 0.0
-    dot = sum(x * y for x, y in zip(a, b))
+    dot = sum(x * y for x, y in zip(a, b, strict=False))
     na = sum(x * x for x in a) ** 0.5
     nb = sum(x * x for x in b) ** 0.5
     return dot / ((na * nb) + 1e-9)
@@ -142,12 +145,11 @@ def model(dbt, session):
             a, b = ids[i], ids[j]
             if not _within_window(a, b):
                 continue
-            if email[a] and email[a] == email[b]:
-                uf.union(a, b); continue
-            if oref[a] and oref[a] == oref[b]:
-                uf.union(a, b); continue
-            if key_cid[a] and key_cid[a] == key_cid[b]:
-                uf.union(a, b); continue
+            same_email = email[a] and email[a] == email[b]
+            same_order = oref[a] and oref[a] == oref[b]
+            same_customer = key_cid[a] and key_cid[a] == key_cid[b]
+            if same_email or same_order or same_customer:
+                uf.union(a, b)
 
     # 2. semantic edges: keyless linking. All three signals are required together, which
     # is what AGENTS.md's Tier B describes: a fuzzy name token, temporal proximity, and
@@ -161,10 +163,8 @@ def model(dbt, session):
                 continue
             if not (tok[a] & tok[b]):
                 continue
-            ta, tb = ts[a], ts[b]
-            if ta is not None and tb is not None:
-                if abs((ta - tb).total_seconds()) > TIME_WINDOW_HOURS * 3600:
-                    continue
+            if not _within_window(a, b):
+                continue
             if _cosine(emb[a], emb[b]) >= SIM_FLOOR:
                 uf.union(a, b)
 

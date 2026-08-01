@@ -13,17 +13,23 @@ Snowpark will try to start its own browser flow and fail on a missing client_id.
 """
 
 import os
+import re
+from pathlib import Path
 
 import streamlit as st
 
+# The schema is an SQL identifier, which cannot be passed as a bind parameter, so it is
+# validated against a strict pattern instead. Values always go through bind parameters.
 DB = os.environ.get("CASE_INTEL_SCHEMA", "CASE_INTEL.ANALYTICS")
+if not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*(\.[A-Za-z_][A-Za-z0-9_]*)*", DB):
+    raise ValueError(f"CASE_INTEL_SCHEMA is not a valid Snowflake identifier: {DB!r}")
 
 
 def _private_key_der(path):
     """Snowpark wants the key as DER bytes, not a PEM path."""
     from cryptography.hazmat.primitives import serialization
 
-    with open(os.path.expanduser(path), "rb") as fh:
+    with Path(path).expanduser().open("rb") as fh:
         key = serialization.load_pem_private_key(fh.read(), password=None)
     return key.private_bytes(
         encoding=serialization.Encoding.DER,
@@ -34,14 +40,15 @@ def _private_key_der(path):
 
 @st.cache_resource
 def get_session():
+    from snowflake.snowpark import Session
+    from snowflake.snowpark.exceptions import SnowparkSessionException
+
     # 1. Running inside Snowflake: the session already exists.
     try:
         from snowflake.snowpark.context import get_active_session
         return get_active_session()
-    except Exception:
-        pass
-
-    from snowflake.snowpark import Session
+    except SnowparkSessionException:
+        pass  # not running in Snowflake, fall through to a local session
 
     # 2. An explicitly named connection, if the user asked for one.
     named = os.environ.get("SNOWFLAKE_CONNECTION")
@@ -67,8 +74,10 @@ session = get_session()
 
 
 @st.cache_data(ttl=300)
-def q(sql):
-    return session.sql(sql).to_pandas()
+def q(sql, params=None):
+    """Run a query. Values are always passed as bind parameters, never interpolated:
+    only the schema identifier is templated in, and it is pattern-validated at import."""
+    return session.sql(sql, params=params).to_pandas()
 
 
 st.set_page_config(page_title="Case Intelligence", page_icon="🧩", layout="wide")
@@ -103,7 +112,7 @@ if not drivers.empty:
 # --- Recommended action (agentic, inline) ---
 st.subheader("🎯 Recommended action")
 if not drivers.empty:
-    top = drivers.iloc[0]["ROOT_CAUSE"].replace("'", "''")
+    top = drivers.iloc[0]["ROOT_CAUSE"]
     # Compute the impact figures in SQL and pass them explicitly, so the model states
     # them rather than inventing its own arithmetic.
     rec = q(f"""
@@ -116,7 +125,7 @@ if not drivers.empty:
                 round(avg(csat_score), 1)                       as avg_csat,
                 listagg(case_id, ', ')                          as case_ids
             from {DB}.fct_case_enriched
-            where root_cause_category = '{top}'
+            where root_cause_category = ?
             group by root_cause_category
         )
         select snowflake.cortex.ai_complete('mistral-large2',
@@ -131,7 +140,7 @@ if not drivers.empty:
             || 'Affected case ids: ' || case_ids
         ) as recommendation
         from d
-    """)
+    """, params=[top])
     st.info(rec.iloc[0]["RECOMMENDATION"])
 
 # --- Case explorer ---

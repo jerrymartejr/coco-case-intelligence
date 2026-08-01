@@ -16,3 +16,7 @@ profiles.local.yml
 
 # OS
 .DS_Store
+
+# Tooling caches
+.ruff_cache/
+.pytest_cache/

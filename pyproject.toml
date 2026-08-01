@@ -1,0 +1,60 @@
+[project]
+name = "case-intelligence"
+version = "1.0.0"
+description = "Link keyless customer-support records into cases, then fuse them with structured metrics."
+requires-python = ">=3.12,<3.13"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 120
+extend-exclude = ["target", "dbt_packages", "logs", ".venv"]
+
+[tool.ruff.lint]
+select = [
+    "E", "W",    # pycodestyle
+    "F",         # pyflakes
+    "I",         # import sorting
+    "B",         # bugbear
+    "C4",        # comprehensions
+    "SIM",       # simplify
+    "UP",        # pyupgrade
+    "RUF",       # ruff-specific
+    "S",         # bandit security
+    "DTZ",       # naive datetime misuse
+    "BLE",       # blind except
+    "PTH",       # prefer pathlib
+    "T20",       # stray print/pprint
+]
+ignore = [
+    # The generator is deliberately reproducible: a fixed naive BASE_DATE and a seeded
+    # PRNG are what make the ground-truth key stable across runs. Neither is a security
+    # or correctness concern here.
+    "S311",  # non-cryptographic random - synthetic data generation, not crypto
+    "DTZ001",  # naive datetime - synthetic timestamps are deliberately tz-free
+    # os.path is used consistently across the generator; migrating to pathlib is churn
+    # with no behavioural benefit this close to a release.
+    "PTH118", "PTH120", "PTH100", "PTH103", "PTH110", "PTH123",
+]
+
+[tool.ruff.lint.per-file-ignores]
+# The generator prints a summary of what it wrote (that is its interface), and it holds
+# the issue catalogue as long prose literals. Wrapping support emails and QA notes at 120
+# columns would make the corpus harder to read and edit, which is the opposite of useful.
+"scripts/generate_synthetic_data.py" = ["T201", "E501"]
+# dbt Python models are called by dbt with an injected `dbt` object; the module-level
+# entrypoint signature is fixed by dbt, not by us.
+"models/**/*.py" = ["ARG001"]
+# Tests assert on internals by design.
+"tests/**/*.py" = ["S101"]
+# S608 flags the f-string that templates the schema name into each query. Snowflake cannot
+# bind an identifier as a parameter, so the schema is instead validated against a strict
+# identifier pattern at import and the process refuses to start if it does not match.
+# Every *value* in these queries is passed through `params=` bind parameters, which is the
+# actual injection surface. Suppressed at file scope because the diagnostic lands on the
+# opening line of a multi-line f-string, where an inline noqa would become SQL text.
+"app/streamlit_app.py" = ["S608"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-q"

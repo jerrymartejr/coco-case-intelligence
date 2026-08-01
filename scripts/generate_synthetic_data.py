@@ -41,6 +41,7 @@ When real data arrives it replaces these outputs at the same schemas. No model c
 """
 
 import csv
+import itertools
 import json
 import os
 import random
@@ -560,10 +561,7 @@ def build():
 
             if ch == "chat":
                 r = rid("chat")
-                if recontact:
-                    lines = [opener.lower(), issue["restate"].lower()]
-                else:
-                    lines = [issue["chat"]]
+                lines = [opener.lower(), issue["restate"].lower()] if recontact else [issue["chat"]]
                 transcript = [{"role": "customer", "text": lines[0]}]
                 transcript.append({"role": "agent",
                                    "text": "Thanks for reaching out, let me take a look into this for you."})
@@ -732,25 +730,36 @@ def build():
 # are checked here rather than discovered later in a failing dbt test.
 # --------------------------------------------------------------------------------------
 
+class InvariantError(ValueError):
+    """A generated corpus violated a property Stage 2's measured accuracy depends on."""
+
+
+def _require(condition, message):
+    """Raise rather than assert: these guards must hold even under `python -O`, where
+    assert statements are stripped out entirely."""
+    if not condition:
+        raise InvariantError(message)
+
+
 def validate(customers, plan, gt_cases, noise_ids, records):
     firsts = [c["first"] for c in customers]
     lasts = [c["last"] for c in customers]
-    assert len(set(firsts)) == len(firsts), "customer first names must be unique"
-    assert len(set(lasts)) == len(lasts), "customer surnames must be unique"
+    _require(len(set(firsts)) == len(firsts), "customer first names must be unique")
+    _require(len(set(lasts)) == len(lasts), "customer surnames must be unique")
 
     noise_lasts = [n[1] for n in NOISE_NAMES[:NOISE_RECORDS]]
-    assert len(set(noise_lasts)) == len(noise_lasts), "noise surnames must be unique"
-    assert not (set(noise_lasts) & set(lasts)), "noise surnames must not collide with customers"
+    _require(len(set(noise_lasts)) == len(noise_lasts), "noise surnames must be unique")
+    _require(not (set(noise_lasts) & set(lasts)), "noise surnames must not collide with customers")
 
     alias_firsts = {c["alias"] for c in customers if c["alias"]}
-    assert not (alias_firsts & set(firsts)), "aliases must not collide with real first names"
+    _require(not (alias_firsts & set(firsts)), "aliases must not collide with real first names")
 
     # Stage 2's semantic pass gates on shared name tokens of 3+ characters, so token
     # overlap between pools is what would let a noise record drift into a real case, or
     # two unrelated noise records merge with each other. Check at the token level, not
     # just the surname level: an alias colliding with somebody's noise surname is enough.
     def toks(s):
-        return {t for t in re.findall(r"[a-z]{3,}", s.lower())}
+        return set(re.findall(r"[a-z]{3,}", s.lower()))
 
     customer_tokens = set()
     for c in customers:
@@ -761,11 +770,13 @@ def validate(customers, plan, gt_cases, noise_ids, records):
     for first, last in NOISE_NAMES[:NOISE_RECORDS]:
         these = toks(first) | toks(last)
         for t in these:
-            assert t not in seen_noise, f"noise name token '{t}' reused by two noise records"
+            _require(t not in seen_noise, f"noise name token '{t}' reused by two noise records")
             seen_noise[t] = True
         noise_tokens |= these
-    assert not (noise_tokens & customer_tokens), \
-        f"noise names share tokens with customers: {sorted(noise_tokens & customer_tokens)}"
+    _require(
+        not (noise_tokens & customer_tokens),
+        f"noise names share tokens with customers: {sorted(noise_tokens & customer_tokens)}",
+    )
 
     # A customer's separate cases must clear Stage 2's link window by a wide margin,
     # otherwise the deterministic email pass would fuse them into one predicted case.
@@ -774,17 +785,17 @@ def validate(customers, plan, gt_cases, noise_ids, records):
         by_customer.setdefault(c["customer"]["customer_id"], []).append(c["start_h"])
     for cid, starts in by_customer.items():
         starts = sorted(starts)
-        for a, b in zip(starts, starts[1:]):
-            assert b - a >= MIN_SAME_CUSTOMER_GAP_H, f"{cid} has two cases {b - a:.1f}h apart"
+        for a, b in itertools.pairwise(starts):
+            _require(b - a >= MIN_SAME_CUSTOMER_GAP_H, f"{cid} has two cases {b - a:.1f}h apart")
 
     # Channel texts for one issue must be genuinely different from each other.
     for key, issue in ISSUES.items():
         texts = [issue["chat"], issue["email"], issue["qa"], issue["csat"], issue["restate"]]
-        assert len(set(texts)) == len(texts), f"{key} reuses a channel text verbatim"
+        _require(len(set(texts)) == len(texts), f"{key} reuses a channel text verbatim")
 
     total = sum(len(v) for v in records.values())
     planted = sum(len(c["record_ids"]) for c in gt_cases)
-    assert planted + len(noise_ids) == total, "record accounting mismatch"
+    _require(planted + len(noise_ids) == total, "record accounting mismatch")
     return True
 
 

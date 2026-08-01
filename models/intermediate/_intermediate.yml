@@ -9,8 +9,9 @@ models:
           - unique
           - not_null
           - relationships:
-              to: ref('int_record_entities')
-              field: record_id
+              arguments:
+                to: ref('int_record_entities')
+                field: record_id
       - name: case_id
         tests:
           - not_null

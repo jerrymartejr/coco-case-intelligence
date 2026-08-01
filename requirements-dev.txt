@@ -1,0 +1,4 @@
+# Development and CI tooling. Not needed to run the pipeline.
+#   pip install -r requirements.txt -r requirements-dev.txt
+ruff==0.16.1
+pytest>=8.0

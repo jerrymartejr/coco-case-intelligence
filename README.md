@@ -112,6 +112,18 @@ real data, replace the generator's outputs at the **same schemas**:
 
 Then `dbt build`. No model changes.
 
+## Development
+
+```bash
+pip install -r requirements.txt -r requirements-dev.txt
+ruff check .        # lint, including the bandit security rules
+pytest              # 16 unit tests, no Snowflake connection needed
+```
+
+CI runs the same three steps plus a `dbt parse` on every push, and re-runs the generator to
+prove the committed corpus is still reproducible from it. Nothing in CI needs credentials.
+The accuracy tests that do need a warehouse run inside `dbt build`.
+
 ## Known limitations
 
 Full-refresh only (no incremental). LLM output can be malformed and is guarded with

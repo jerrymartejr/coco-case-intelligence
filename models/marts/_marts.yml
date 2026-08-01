@@ -21,8 +21,9 @@ models:
           - unique
           - not_null
           - relationships:
-              to: ref('fct_case_fact')
-              field: case_id
+              arguments:
+                to: ref('fct_case_fact')
+                field: case_id
 
   - name: agg_root_cause_daily
     description: "Stage 5 rollup: root-cause category x day. Grouped on the controlled
@@ -36,10 +37,11 @@ models:
         tests:
           - not_null
           - accepted_values:
-              values: ['Delivery failure', 'Fulfilment error', 'Billing error', 'Refund delay',
-                       'Payment processing failure', 'Account access', 'Product defect',
-                       'Returns or warranty policy', 'Subscription management',
-                       'Customer record error', 'Service handling', 'Other']
+              arguments:
+                values: ['Delivery failure', 'Fulfilment error', 'Billing error', 'Refund delay',
+                         'Payment processing failure', 'Account access', 'Product defect',
+                         'Returns or warranty policy', 'Subscription management',
+                         'Customer record error', 'Service handling', 'Other']
 
   - name: agg_agent_performance
     description: "Stage 5 rollup: per agent."

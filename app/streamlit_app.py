@@ -18,6 +18,7 @@ The CLI holds that token, and Snowpark will try to start its own browser flow an
 a missing client_id.
 """
 
+import json
 import os
 import re
 from pathlib import Path
@@ -375,7 +376,18 @@ if drivers is not None and not drivers.empty:
                                 "running warehouse and a Cortex call, so it is the first thing "
                                 "to fail if either is unavailable."))
     if rec is not None and not rec.empty:
-        st.info(rec.iloc[0]["RECOMMENDATION"])
+        text = rec.iloc[0]["RECOMMENDATION"]
+        # ai_complete can arrive JSON-encoded — a quoted string with \n escape
+        # sequences — depending on the driver's type mapping, and those escapes
+        # would otherwise render literally on the page.
+        if isinstance(text, str):
+            stripped = text.strip()
+            if stripped.startswith('"') and stripped.endswith('"'):
+                try:
+                    text = json.loads(stripped)
+                except ValueError:
+                    text = stripped
+        st.info(text)
 
 # --- Case explorer -----------------------------------------------------------------------
 st.header("Every case")

@@ -50,3 +50,49 @@ models:
         tests:
           - unique
           - not_null
+
+  - name: eval_case_linkage
+    description: "Measurement only. Stage 2's predictions joined to the ground-truth key.
+      Never read upstream: the answer key enters as a seed and is used nowhere in the
+      pipeline, which is the only reason the accuracy numbers mean anything."
+    columns:
+      - name: record_id
+        tests:
+          - unique
+          - not_null
+      - name: tier
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['A', 'B', 'C', 'D', 'noise']
+
+  - name: agg_linkage_accuracy
+    description: "Stage 5: the linkage scoreboard, per tier and adversarial shape. Tiers
+      A-C are a regression floor generated under the resolver's own assumptions; tier D
+      breaks those assumptions on purpose and is the honest result."
+    columns:
+      - name: tier
+        tests:
+          - not_null
+      - name: fully_linked
+        description: "True cases whose records all landed in one predicted case. On the
+          noise row this counts records that stayed isolated instead."
+        tests:
+          - not_null
+      - name: false_merges
+        description: "Predicted cases holding records from more than one true case."
+        tests:
+          - not_null
+
+  - name: search_corpus
+    description: "Stage 5 retrieval, at RECORD grain. Backs the CASE_RECORD_SEARCH Cortex
+      Search service; every hit carries its resolved case and that case's derived
+      attributes, so retrieval and analysis join in one step."
+    columns:
+      - name: record_id
+        tests:
+          - unique
+          - not_null
+      - name: case_id
+        tests:
+          - not_null

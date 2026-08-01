@@ -75,6 +75,23 @@ Staging extracts a common schema from each via Cortex AI:
 - **Tier B — semantic only (HERO):** no shared entity at all. Linkable only by same-issue
   paraphrase + fuzzy customer name + temporal proximity. These prove the thesis.
 - **Tier C — trivial:** a shared ticket id. Kept minimal; we do not rely on it.
+- **Tier D — adversarial:** the tier that exists so the result is not self-fulfilling.
+  Tiers A-C are generated under invariants the resolver happens to need (unique surnames,
+  a customer's cases far apart in time), so a perfect score on them measures the
+  generator. Tier D breaks those invariants deliberately, at rates taken from the
+  reference data in `docs/realism-report.md`, in three shapes:
+  - *collision_with_identity* — two different customers with the SAME surname contact
+    support in the same window about the SAME issue. Nothing in the text separates them;
+    only the structured side does, which is where orders stop being enrichment and start
+    being evidence. On half of these the address on one record is corrupted so the email
+    bridge misses it.
+  - *collision_keyless* — the same collision with no identifier anywhere and different
+    issues, leaving the cosine floor alone against a shared surname.
+  - *same_customer_in_window* — one customer, two separate problems opened close
+    together, testing whether a shared email fuses two episodes.
+  Tier D is **scored separately and expected to be imperfect**. Tiers A-C stay at 100% as
+  a regression floor. Tier D names are disjoint from the main pool at the token level, so
+  it can only contaminate itself; that containment is a stated limitation.
 - Plus **noise**: unrelated records that must NOT merge.
 
 ## Ground truth
@@ -91,16 +108,40 @@ keyless linking worked. It is evidence for the demo, never an input the pipeline
    (email/order_ref/resolved customer), then `EMBED_TEXT_768` for the keyless tier, then
    Union-Find connected components. **Precompute embeddings once.** Cortex Search is NOT
    used here (it is a runtime retrieval service) — it belongs in Stage 5 NL Q&A.
-   Two properties of the link rule matter, both measured on the current corpus:
+   Embeddings are persisted in their own model (`int_record_embeddings`) so they are paid
+   for once and read by both the linker and anything that later explains a link. The
+   resolver returns the **whole graph** — assignments AND the edges behind them — in one
+   relation, projected apart by `int_case_assignments` and `int_case_edges`; a dbt Python
+   model can only return one relation, and the edges are the evidence the thesis rests on.
+   Candidate pairs come from inverted indexes on the gate keys rather than a full pairwise
+   scan: roughly 3,000 candidates against the 188,191 pairs a full scan over 614 records
+   would visit, and the same link set by construction.
+   Five properties of the link rule matter, all measured on the current corpus:
    - **The deterministic pass is time-gated** (`TIME_WINDOW_HOURS = 72`). A case is a bounded
      episode, so a shared email or a shared resolved customer only links records inside the
      same window. Without the gate a returning customer's separate cases fuse into one.
+   - **A case is also bounded by silence** (`MAX_EPISODE_GAP_HOURS = 24`). The window bounds
+     one edge; it does not bound a component, because Union-Find chains transitively. A
+     component is cut wherever consecutive records fall silent for longer than a working
+     day. This is a stated assumption, not a fitted number: Tier D plants repeat episodes
+     on both sides of it to measure what it costs.
+   - **Components refuse to merge when they disagree about the customer.** Identity is
+     tracked on the component, not the record, so a case resolving to CUST_012 can never
+     absorb one resolving to CUST_047 however similar the text. This is the only thing that
+     separates two people who share a surname and complain about the same thing in the same
+     hour, and it is why the structured side is evidence rather than enrichment.
+   - **A surname the orders table shows belongs to two customers is not identifying.** A
+     pair whose only shared name token is ambiguous needs a second signal to link. Measured:
+     no change to Tier A/B/C/noise, and Tier D's corrupted-identity precision 0.33 → 1.00.
    - **`SIM_FLOOR = 0.62` is a relevance floor, not a separator.** Within-case pairs and
      different-issue pairs overlap in cosine (within-case min 0.651; different-issue p95
      0.808), so no cutoff separates them. The **surname token plus the 72h window do the
      separating**; the floor only rejects plainly unrelated content. Identity and time are
      the primary signals, not semantic similarity — and the name token is never dropped,
      since same-issue pairs from different customers sit at a median cosine of 0.897.
+   Rejected on measurement: refusing a link when two records carry conflicting given names.
+   It separates colliding surnames, but display-name divergence means a customer's own
+   records conflict too — Tier B recall fell from 1.000 to 0.893 and Tier C to 0.786.
 3. Stage 3 synthesize: one `AI_COMPLETE` per case returning **structured JSON** (wrap in
    `TRY_PARSE_JSON`), not `AI_AGG`. Keep one `AI_AGG` for a Stage 5 rollup summary where it fits.
    Cause is emitted twice on purpose: `root_cause` free text for reading one case, and

@@ -15,7 +15,7 @@ case_intelligence:
       account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
       user: "{{ env_var('SNOWFLAKE_USER') }}"
       private_key_path: "{{ env_var('SNOWFLAKE_PRIVATE_KEY_PATH') }}"
-      role: "{{ env_var('SNOWFLAKE_ROLE', 'ACCOUNTADMIN') }}"
+      role: "{{ env_var('SNOWFLAKE_ROLE', 'CASE_INTEL_ROLE') }}"
       database: "{{ env_var('SNOWFLAKE_DATABASE', 'CASE_INTEL') }}"
       warehouse: "{{ env_var('SNOWFLAKE_WAREHOUSE', 'COMPUTE_WH') }}"
       schema: "{{ env_var('SNOWFLAKE_SCHEMA', 'ANALYTICS') }}"

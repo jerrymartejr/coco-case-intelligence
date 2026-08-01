@@ -13,13 +13,13 @@ inside the models. You need your own Snowflake account because the build spends 
 | Requirement | Notes |
 |---|---|
 | Snowflake account with Cortex | A free trial works. Pick a region where Cortex is available (see step 2). |
-| `ACCOUNTADMIN` on that account | Needed for the setup SQL and to register your key. |
+| `ACCOUNTADMIN` on that account | Needed for the one-time setup SQL and to register your key. Nothing after step 3 runs as `ACCOUNTADMIN`. |
 | Python **3.12** | 3.13 is not supported by dbt-snowflake 1.12. |
 | `git` | To clone. |
 
-**Cost warning.** One full `dbt build` makes roughly **1,370 Cortex calls** at the current
-data scale (556 records through Stage 1, 556 embeddings in Stage 2, 225 case syntheses in
-Stage 3, plus 38 `PARSE_DOCUMENT` calls). That is small but not free, and it re-runs every
+**Cost warning.** One full `dbt build` makes roughly **1,500 Cortex calls** at the current
+data scale (614 records through Stage 1, 614 embeddings in Stage 2, 244 case syntheses in
+Stage 3, plus 41 `PARSE_DOCUMENT` calls). That is small but not free, and it re-runs every
 time. Do not put it in a loop. Parsing the PDFs is the slow part, roughly four minutes.
 The build also creates a Cortex Search service with a one-day target lag, which refreshes
 on its own schedule and costs a little compute; drop it with
@@ -61,9 +61,32 @@ build cannot work without them.
 
 ---
 
-## 3. Accept the Anaconda terms
+## 3. Create the roles
 
-Stage 2 (`models/intermediate/int_case_assignments.py`) is a dbt **Python** model, which
+Still as `ACCOUNTADMIN`, run [`sql/01_least_privilege.sql`](../sql/01_least_privilege.sql).
+It creates two roles and one service user, and it is the last thing you run as account
+admin:
+
+| principal | what it is for | what it can do |
+|---|---|---|
+| `CASE_INTEL_ROLE` | the build: dbt, the PDF uploader, CoCo | create and replace objects in the two schemas, call Cortex |
+| `CASE_INTEL_APP_ROLE` | the deployed Streamlit app | `SELECT` on `ANALYTICS` and one Cortex function. No writes, no `RAW` |
+| `CASE_INTEL_APP_SVC` | the app's service user, key-pair only | holds `CASE_INTEL_APP_ROLE` and nothing else |
+
+Two lines in that file are commented out because they need your values: granting
+`CASE_INTEL_ROLE` to your own user, and registering the service user's public key. Do the
+first now; the second only matters if you deploy the app.
+
+Running the pipeline as account admin works, and it is what a hurry would do. The reason
+not to is that `dbt build` and a public web app then share the single credential that can
+delete everything in the account — and one of those two is pasted into a hosting
+provider's secret store.
+
+---
+
+## 4. Accept the Anaconda terms
+
+Stage 2 (`models/intermediate/int_linkage_graph.py`) is a dbt **Python** model, which
 Snowflake runs as a Snowpark stored procedure. Snowpark pulls its packages from
 Snowflake's Anaconda channel, and an `ORGADMIN` has to accept those terms once per
 account before any Python model will run.
@@ -76,7 +99,7 @@ you can hit this quite far into the build.
 
 ---
 
-## 4. Generate a key pair and register it
+## 5. Generate a key pair and register it
 
 dbt authenticates headlessly with a key pair, so there is no browser prompt mid-build.
 
@@ -102,9 +125,14 @@ alter user <YOUR_USER> set rsa_public_key='<PASTE_THE_ONE_LINE_KEY>';
 
 Keep the private key outside the repo. It is not gitignored by name, only by location.
 
+`-nocrypt` writes the key unencrypted, which is what lets dbt read it mid-build without
+stopping for a passphrase. That is a local-development trade-off: anyone who can read the
+file can authenticate as you. To harden it, drop `-nocrypt`, and set
+`SNOWFLAKE_PRIVATE_KEY_PASSPHRASE` alongside `SNOWFLAKE_PRIVATE_KEY_PATH`.
+
 ---
 
-## 5. Point the project at your account
+## 6. Point the project at your account
 
 `profiles.yml` reads everything from environment variables and has **no defaults** for the
 three that identify your account, so a missing variable fails loudly instead of quietly
@@ -116,8 +144,9 @@ cp .env.example .env
 source .env
 ```
 
-Optional overrides, only if you changed them in step 2: `SNOWFLAKE_ROLE`,
-`SNOWFLAKE_DATABASE`, `SNOWFLAKE_WAREHOUSE`, `SNOWFLAKE_SCHEMA`.
+`SNOWFLAKE_ROLE` defaults to `CASE_INTEL_ROLE` from step 3. The other optional overrides
+(`SNOWFLAKE_DATABASE`, `SNOWFLAKE_WAREHOUSE`, `SNOWFLAKE_SCHEMA`) only matter if you
+changed them in step 2.
 
 `.env` is gitignored. Re-`source` it in each new terminal, or add it to your shell profile.
 Then confirm:
@@ -130,7 +159,7 @@ You want `Connection test: [OK connection ok]`. Do not continue until you get it
 
 ---
 
-## 6. Build it
+## 7. Build it
 
 ```bash
 source .env                                 # the variables from step 5
@@ -156,31 +185,24 @@ dbt build --profiles-dir . --full-refresh   # --full-refresh whenever seed colum
 ### What a correct run looks like
 
 ```
-Done. PASS=45 WARN=0 ERROR=0 SKIP=0 TOTAL=45
+Done. PASS=89 WARN=0 ERROR=0 SKIP=0 TOTAL=89
 ```
 
-The two tests that matter are `assert_cases_fully_linked` (recall) and
-`assert_no_case_contamination` (precision). They score Stage 2 against the hidden
-ground-truth key on every build. Current measured result:
+Four of those tests score Stage 2 against the hidden ground-truth key on every build:
+`assert_cases_fully_linked` (recall), `assert_no_case_contamination` (precision),
+`assert_noise_stays_isolated`, and `assert_tier_d_precision_holds` for the adversarial
+tier. Tiers A-C hold at 100% as a regression floor; tier D is measured, not assumed, and
+currently scores recall 0.955 / precision 0.789.
 
-- **170/170** cases fully linked — Tier A 53/53, Tier B 103/103, Tier C 14/14
-- **0** false merges
-- **55/55** noise records correctly isolated
-
-To see it yourself:
+To see the whole scoreboard yourself, per tier and per adversarial shape:
 
 ```sql
-select tier, count(distinct true_case_id) as cases,
-       count(distinct case when n > 1 then true_case_id end) as split
-from (select true_case_id, tier,
-             count(distinct pred_case_id) over (partition by true_case_id) as n
-      from case_intel.analytics.eval_case_linkage where is_noise = 'false')
-group by tier order by tier;
+select * from case_intel.analytics.agg_linkage_accuracy;
 ```
 
 ---
 
-## 7. The Streamlit demo (optional)
+## 8. The Streamlit demo (optional)
 
 ```bash
 pip install -r app/requirements.txt
@@ -189,9 +211,9 @@ streamlit run app/streamlit_app.py
 
 ---
 
-## 8. CoCo Agent Skills (optional)
+## 9. CoCo Agent Skills (optional)
 
-The five skills in `coco/skills/` turn CoCo into a natural-language front door over the
+The six skills in `coco/skills/` turn CoCo into a natural-language front door over the
 finished tables. One of them, `search_case_records`, retrieves the underlying records with
 the Cortex Search service that `dbt build` creates, so questions can be answered from what
 customers actually wrote rather than only from aggregates. They need the Cortex CLI installed and a named connection.
@@ -211,8 +233,14 @@ authenticator = "externalbrowser"   # opens a browser once; or use a PAT instead
 database = "CASE_INTEL"
 schema = "ANALYTICS"
 warehouse = "COMPUTE_WH"
-role = "ACCOUNTADMIN"
+role = "CASE_INTEL_ROLE"
 ```
+
+**Use browser or PAT auth here, not a key pair.** dbt and the Streamlit app authenticate
+with the key pair from step 5, but CoCo's SQL tool could not authenticate with one in
+testing: the skills fire and write correct SQL, then fail to execute it. Browser auth
+works. Run `cortex -c case_intel` once and complete the login before you need it in front
+of an audience.
 
 **Register the skills** (machine-local, so everyone does this once):
 
@@ -224,7 +252,8 @@ cortex -c case_intel
 Then ask in plain English, for example *"How many cases are unresolved and what is the
 total revenue at risk?"* or *"What is the biggest driver of revenue at risk, and why?"*
 
-> The README examples use a connection named `coco_trial`. Use whatever you named yours.
+> If you already have a connection under a different name, use that name instead — the
+> README and this file both assume `case_intel`.
 
 ---
 
@@ -236,12 +265,12 @@ total revenue at risk?"* or *"What is the biggest driver of revenue at risk, and
 | `PARSE_DOCUMENT` errors on the stage | The stage must use server-side encryption (`SNOWFLAKE_SSE`). The uploader creates it correctly; if you made it by hand, recreate it. |
 | `250001 Could not connect` / JWT or token errors | The public key never got registered, or `SNOWFLAKE_USER` does not match the user you ran `alter user` on. Redo step 4. |
 | `Object 'CASE_INTEL.RAW.X' does not exist` | Setup SQL was not run, or you are pointed at a different database. Redo step 2, check `SNOWFLAKE_DATABASE`. |
-| Python model `int_case_assignments` fails, SQL models are fine | Anaconda terms not accepted. Step 3. |
-| `unknown model` / `not available in region` from Cortex | The model is not enabled where your account lives. Either recreate the trial in a supported region, or substitute: swap `mistral-large2` in `macros/extract_common_fields.sql` (try `llama3.1-70b` or `snowflake-arctic`) and `snowflake-arctic-embed-m-v1.5` in `models/intermediate/int_case_assignments.py` (try `e5-base-v2`, but note it is 768-dim too, which the code assumes). Rebuild fully afterwards. |
+| Python model `int_linkage_graph` fails, SQL models are fine | Anaconda terms not accepted. Step 4. |
+| `unknown model` / `not available in region` from Cortex | The model is not enabled where your account lives. Either recreate the trial in a supported region, or substitute with one variable: `dbt build --profiles-dir . --vars '{cortex_text_model: llama3.1-70b}'` (also try `snowflake-arctic`). The embedding model is `cortex_embed_model` (try `e5-base-v2`, but note the code assumes 768 dimensions). Both default in `dbt_project.yml`. Export `CASE_INTEL_TEXT_MODEL` so the Streamlit app matches. Rebuild fully afterwards. |
 | `invalid identifier` right after changing a seed | Seed column sets changed. Use `dbt build --full-refresh`. |
-| `assert_cases_fully_linked` fails | Stage 2 linked fewer records than the ground truth says it should. Usually means a Cortex model substitution changed the embedding behaviour. See the `SIM_FLOOR` note in `models/intermediate/int_case_assignments.py`, which documents the measured similarity distributions and why the floor sits at 0.62. |
+| `assert_cases_fully_linked` fails | Stage 2 linked fewer records than the ground truth says it should. Usually means a Cortex model substitution changed the embedding behaviour. See the `SIM_FLOOR` note in `models/intermediate/int_linkage_graph.py`, which documents the measured similarity distributions and why the floor sits at 0.62. |
 | `ModuleNotFoundError: pandas` inside a Python model | The Snowpark sandbox has no pandas. Use `.collect()`, not `.to_pandas()`. Already handled in this repo; only relevant if you add a Python model. |
-| Build is slow or credits drop fast | Expected: about 1,270 Cortex calls per full build. Use `--select` to build a subset while developing. |
+| Build is slow or credits drop fast | Expected: about 1,500 Cortex calls per full build. Use `--select` to build a subset while developing. |
 
 ---
 
@@ -250,5 +279,6 @@ total revenue at risk?"* or *"What is the biggest driver of revenue at risk, and
 - [`AGENTS.md`](../AGENTS.md) — the contract: case-fact schema, source schemas, difficulty
   tiers, and the Stage-by-Stage decisions with their rationale
 - [`README.md`](../README.md) — what the project is and the measured results
+- [`docs/demo-script.md`](demo-script.md) — the four-minute demo, prompt by prompt
 - [`docs/realism-report.md`](realism-report.md) — the analysis of the teammate reference
   datasets and which patterns were harvested into the generator

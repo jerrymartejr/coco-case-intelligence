@@ -1,6 +1,38 @@
 version: 2
 
 models:
+  - name: int_record_entities
+    description: "Stage 2 input. The per-record identity signals (name, email, order ref,
+      time) that identity resolution matches on, cleaned out of the Stage 1 output."
+    columns:
+      - name: record_id
+        tests:
+          - unique
+          - not_null
+
+  - name: int_record_embeddings
+    description: "Stage 2. One 768-dimension embedding per record over its normalized
+      issue text. The only Cortex spend in Stage 2, computed once and read by everything
+      that needs to link or explain a link."
+    columns:
+      - name: record_id
+        tests:
+          - unique
+          - not_null
+
+  - name: int_linkage_graph
+    description: "Stage 2 identity resolution, in full. Returns both the record -> case
+      assignments and the edges that produced them, tagged by row_type, because a dbt
+      Python model can only return one relation. Read through int_case_assignments and
+      int_case_edges rather than directly."
+    columns:
+      - name: row_type
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['assignment', 'edge']
+
   - name: int_case_assignments
     description: "Stage 2 identity resolution. Record -> case_id map with customer resolution."
     columns:
@@ -15,8 +47,43 @@ models:
       - name: case_id
         tests:
           - not_null
+      - name: match_method
+        description: "What linked this record, read off its surviving edges."
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['entity', 'semantic', 'entity+semantic', 'singleton']
+
+  - name: int_case_edges
+    description: "Stage 2 evidence: one row per link the resolver made, naming both
+      records, the signal behind it, and how far apart they were. This is the relationship
+      graph that makes a linked case explainable rather than asserted."
+    columns:
+      - name: record_a
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('int_case_assignments')
+                field: record_id
+      - name: record_b
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('int_case_assignments')
+                field: record_id
+      - name: edge_type
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['email', 'order_ref', 'resolved_customer', 'semantic']
 
   - name: int_case_records
+    description: "Stage 2 output joined back to the normalized records, ready for Stage 3
+      to collapse into one row per case."
     columns:
       - name: record_id
         tests:

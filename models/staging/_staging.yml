@@ -1,0 +1,88 @@
+version: 2
+
+# Stage 1 is where an LLM turns five unrelated formats into one schema, which makes it the
+# layer with the quietest failure modes in the project. TRY_PARSE_JSON returning NULL does
+# not raise: it nulls every extracted field on that row, and the record survives into
+# Stage 2 carrying no name, no email and no issue text, where it simply fails to link.
+# These tests exist to make that loud.
+
+models:
+  - name: stg_chat
+    description: "Stage 1 normalize: chat session JSON -> the common schema, via Cortex AI_COMPLETE."
+  - name: stg_email
+    description: "Stage 1 normalize: raw email text with headers -> the common schema."
+  - name: stg_qa_notes
+    description: "Stage 1 normalize: free-text QA review notes -> the common schema."
+  - name: stg_csat
+    description: "Stage 1 normalize: CSAT survey JSON -> the common schema."
+
+  - name: stg_documents
+    description: "Stage 1 normalize, fifth modality: real PDF escalation forms read out of
+      the RAW.DOCUMENTS stage with Cortex PARSE_DOCUMENT, then put through the same
+      extraction as every other channel. record_id comes from the filename."
+    columns:
+      - name: record_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_records
+    description: "Stage 1 output: every source in one common schema, one row per raw
+      record. Format-agnostic from here down."
+    columns:
+      - name: record_id
+        description: "Unique across all five sources. A PDF filename colliding with a seed
+          record id would silently duplicate a record, so it is tested rather than assumed."
+        tests:
+          - unique
+          - not_null
+      - name: occurred_ts
+        description: "When the record happened, falling back to when it arrived. Stage 2's
+          link window and episode bound both read this, and a null would make a record
+          bridge anything it shared an address with, at any distance."
+        tests:
+          - not_null
+      - name: source_type
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['chat', 'email', 'qa_note', 'csat', 'document']
+      - name: sentiment
+        description: "Free output from the model, constrained by prompt rather than by SQL.
+          A warning rather than an error: an off-vocabulary sentiment is worth knowing
+          about but is not worth failing a build over, since nothing downstream branches
+          on it."
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['negative', 'neutral', 'positive']
+              config:
+                severity: warn
+
+  - name: stg_orders
+    description: "Structured: clean orders. Also the email <-> order bridge Stage 2 uses to
+      resolve, and to refuse, a customer identity."
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        tests:
+          - not_null
+
+  - name: stg_csat_scores
+    description: "Structured: CSAT survey scores, keyed to order and customer."
+    columns:
+      - name: survey_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_agent_daily
+    description: "Structured: per-agent daily operational metrics (AHT, FCR, occupancy, CSAT)."
+    columns:
+      - name: agent_id
+        tests:
+          - not_null

@@ -26,8 +26,8 @@ source records and answers from what they actually say.
 
 ## The service
 
-`CASE_INTEL.ANALYTICS.CASE_RECORD_SEARCH` indexes **one row per raw record**, 556 of them,
-across all five source formats. Every hit carries the case it belongs to and what the
+`CASE_INTEL.ANALYTICS.CASE_RECORD_SEARCH` indexes **one row per raw record**, every record
+in the corpus, across all five source formats. Every hit carries the case it belongs to and what the
 pipeline concluded about that case, so retrieval and analysis join up in one step.
 
 Searchable text: the record's channel, customer name, extracted issue, and the **verbatim

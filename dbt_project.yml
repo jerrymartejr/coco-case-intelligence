@@ -14,6 +14,28 @@ clean-targets:
   - "target"
   - "dbt_packages"
 
+# The Cortex models the pipeline runs on, named once. Cortex model availability is
+# regional, so substituting one has to be a single change rather than an edit spread
+# across a macro, a mart and an app:
+#
+#   dbt build --profiles-dir . --vars '{cortex_text_model: llama3.1-70b}'
+#
+# The Streamlit app reads CASE_INTEL_TEXT_MODEL for the same reason, and sql/00_setup.sql
+# preflights both names before a build is ever attempted. See docs/SETUP.md.
+vars:
+  cortex_text_model: mistral-large2
+  cortex_embed_model: snowflake-arctic-embed-m-v1.5
+
+  # The floor assert_tier_d_precision_holds guards. Tier D is adversarial by construction
+  # and is not expected to be perfect; this is the measured result held as a regression
+  # floor, never a target the data was shaped to hit. The same number is in the README.
+  tier_d_precision_floor: 0.70
+
+  # Share of records Stage 1 may fail to extract before assert_extraction_stayed_healthy
+  # fails the build. A tripwire for a model or prompt change that stops returning
+  # parseable JSON, not a quality gate on the model's judgement.
+  max_unextracted_rate: 0.05
+
 models:
   case_intelligence:
     staging:

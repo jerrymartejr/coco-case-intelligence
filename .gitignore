@@ -17,6 +17,9 @@ profiles.local.yml
 # OS
 .DS_Store
 
+# Session handoff files (orchestration between Claude sessions; never part of the submission)
+handoff/
+
 # Tooling caches
 .ruff_cache/
 .pytest_cache/

@@ -7,8 +7,9 @@ its final PASS wall. Every prompt is written out; type them verbatim.
 The order is deliberate: input → processing → output, which is what the submission form
 asks the video to show, with the inference demonstrated before anything else is claimed.
 
-Cutaway slides come from the deck (`handoff/deck.html`, full-screened in a browser tab —
-arrow keys to advance). A slide introduces each segment in one idea; the screen right
+Cutaway slides come from the deck, full-screened in a browser tab (arrow keys to
+advance, F for fullscreen). Open `handoff/deck.html` locally, or use its published copy
+if you have the link. A slide introduces each segment in one idea; the screen right
 after it proves the idea for real. Slides explain, the screen proves.
 
 **Before you record**
@@ -20,7 +21,7 @@ after it proves the idea for real. Slides explain, the screen proves.
 - [ ] Two terminals ready: **T1** in the demo clone (`.env` sourced, for the build),
       **T2** with CoCo open — `cortex -c case_intel`, already logged in (verified: it
       answered 115). Font readable at 1080p in both.
-- [ ] The deck full-screened in one browser tab; the live app loaded in another
+- [ ] The deck full-screened in one browser tab (press F); the live app loaded in another
       (https://coco-case-intelligence.streamlit.app — recording the deployed URL is a
       judge-visible touch; load it now so the cold start is behind you).
 - [ ] Cursor open with the four raw files as tabs (see Shot 2), word wrap on, font

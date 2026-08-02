@@ -37,11 +37,16 @@ wall.)
 
 ---
 
-## Shot 1 · SLIDE 1 — The problem (~10s)
+## Shot 1 · SLIDE 1 — Hello + the problem (~25s)
 
 **Show:** deck slide 1.
 
-**Say:** "One customer with one problem contacts support five times, in five different
+**Say first:** "Hello. This is our submission for the Snowflake CoCo CLI Hackathon,
+Track 2, Unstructured Data Intelligence. Our project is called Case Intelligence. It
+takes messy customer support records and turns them into clear, connected cases. Here
+is the problem it solves."
+
+**Then:** "One customer with one problem contacts support five times, in five different
 systems. Together, those five records are one *case*: the full story of that problem.
 But nothing in the data connects them, so every number a support leader sees is wrong."
 

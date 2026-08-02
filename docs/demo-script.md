@@ -168,14 +168,15 @@ Why are the records in CASE_G007 one case? Show me the evidence for each link, a
 channels inside a ~17-hour window, all ten edges semantic, cosines from 0.712 to 0.877,
 and states the case is fully keyless.
 
-**Say:** "Ten links, every one of them made without an identifier. A binary PDF tied to
-a chat message by a surname, the meaning of the complaint, and thirteen hours. And it is
-not asserting that — those edges are a table. The system kept its own reasoning."
+**Say:** "Look at this. Ten links, and not one of them used an ID. It connected a PDF
+form, a chat, an email, a survey, and a QA note, because they name the same person,
+happened around the same time, and describe the same problem. And it can show its work.
+Every link is saved in a table, with the reason behind it."
 
 **Then switch to the app tab** — it opens on CASE_G007 by default.
 
-**Say:** "Same case, same evidence, drawn out. Five formats down the left, and each edge
-labelled with what justified it."
+**Say:** "Here is the same case in the app. The five records on the left. Every link on
+the right, with the reason it was made."
 
 ---
 
@@ -202,9 +203,9 @@ Recommend a concrete action for that driver, and draft the message to send the o
 formatted, ready-to-send message rather than posting it, because no Slack or ticketing
 MCP target is configured.** Say so plainly — do not discover it live:
 
-**Say:** "No delivery integration is wired up here, so it hands back the message ready
-to send. That fallback is deliberate: the skill checks for a target and degrades to
-drafting rather than failing."
+**Say:** "Nothing is connected to Slack or a ticketing tool here. So instead of posting
+the message, it hands it back, ready to send. That is on purpose. If a delivery target
+exists, it posts. If not, it drafts."
 
 ---
 

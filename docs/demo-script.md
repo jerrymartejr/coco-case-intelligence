@@ -94,9 +94,9 @@ them, linking them into cases. I'll fast-forward."
 final wall: `Done. PASS=… ERROR=0`.
 
 **Say (over the PASS wall):** "Done. Every model built, and all four accuracy gates
-passed — every case fully linked, no contamination, noise isolated, and the adversarial
-floor held. From here on, everything you see is queries over what this build just
-proved."
+passed, scored against a hidden answer key that includes an adversarial tier built to
+make the method fail. The full measurement is in the repo and the app. From here on,
+everything you see is queries over what this build just proved."
 
 > If the build errors on camera: stop the take, check `handoff/demo-build-runbook.md`
 > §recovery, re-run. Two full builds are budgeted for takes.
@@ -179,32 +179,7 @@ labelled with what justified it."
 
 ---
 
-## Shot 9 · SLIDE 5 — Honest measurement (~10s)
-
-**Show:** deck slide 5.
-
-**Say:** "How do we know it's right? We score it against a hidden answer key — including
-a tier built to make the method fail."
-
----
-
-## Shot 10 · The scoreboard (~35s)
-
-**Show:** the app, scrolled to *How do we know the linking is right?*
-
-**Say:** "Tiers A, B and C are at 100% — but I wouldn't lead with that: those tiers are
-generated under exactly the conditions the resolver needs, so a perfect score there
-measures my generator, not my method. Tier D is the real number. It breaks those
-conditions on purpose, at collision rates taken from real-shaped data where 82% of
-customers share a surname. Look at the two extremes: same surname, same hours, same
-issue, *with* identity evidence — precision 1.000; the order proves they're two people,
-nothing in the text could. No identifier at all — precision **zero**. That's the honest
-limit of keyless linking, and it's the reason the structured side is in this system at
-all."
-
----
-
-## Shot 11 · What it costs, and what to do (~50s)
+## Shot 9 · What it costs, and what to do (~50s)
 
 **Show:** T2, CoCo. Two prompts, in order.
 
@@ -233,9 +208,9 @@ drafting rather than failing."
 
 ---
 
-## Shot 12 · SLIDE 6 — Close (~20s)
+## Shot 10 · SLIDE 5 — Close (~20s)
 
-**Show:** deck slide 6 (the two links, big). Read them out.
+**Show:** deck slide 5 (the two links, big). Read them out.
 
 **Say:** "Five formats including a binary one, linked into cases with no shared key,
 fused with the structured order and CSAT data, measured against ground truth including
@@ -254,7 +229,7 @@ Live app: **https://coco-case-intelligence.streamlit.app** · Repo:
   hold ≥3s on the PASS wall.
 - Trim dead air between shots; keep the CoCo answers readable — pause on each quoted
   record for a beat.
-- Edited target: 4:30-5:00. If over, shorten shots 10 and 11 first; never shot 4 or 8.
+- Edited target: 4:30-5:00. If over, shorten shot 9 first; never shot 4 or 8.
 
 ## If something goes wrong
 

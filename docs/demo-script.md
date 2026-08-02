@@ -103,13 +103,26 @@ proved."
 
 ---
 
-## Shot 5 · Ask one question — OUTPUT begins (~45s)
+## Shot 5 · SLIDE 3 — The six skills (~25s)
+
+**Show:** deck slide 3.
+
+**Say:** "Before I open the CLI: the repo registers six agent skills with CoCo. Search
+finds the actual records and quotes what customers wrote. Ask answers counts and totals.
+Explain shows the evidence for why records were grouped into one case. Diagnose ranks
+what is hurting most. Recommend turns the top driver into a concrete action. And deliver
+routes it to the owning team, or drafts the message when no integration is wired. You
+will see five of them fire in the next two minutes."
+
+---
+
+## Shot 6 · Ask one question — OUTPUT begins (~45s)
 
 **Show:** T2, CoCo.
 
-**Say first, before typing:** "Now the output side. This is CoCo, Snowflake's Cortex
-Code CLI, connected to the same account, with six agent skills registered from the repo.
-I'll ask it the kind of question a support leader actually asks, in plain English."
+**Say first, before typing:** "Here is CoCo, Snowflake's Cortex Code CLI, connected to
+the same account, with those six skills registered. First question, in plain English,
+the kind a support leader actually asks."
 
 **Type:**
 
@@ -131,9 +144,9 @@ the source data. It was inferred."
 
 ---
 
-## Shot 6 · SLIDE 3 — How linking works (~10s)
+## Shot 7 · SLIDE 4 — How linking works (~10s)
 
-**Show:** deck slide 3.
+**Show:** deck slide 4.
 
 **Say:** "Three signals have to agree — who the record names, when it arrived, and what
 it means. And the links aren't thrown away after linking: every edge is kept as
@@ -141,7 +154,7 @@ evidence."
 
 ---
 
-## Shot 7 · "Why are these one case?" — the heart (~60s)
+## Shot 8 · "Why are these one case?" — the heart (~60s)
 
 **Show:** T2, CoCo.
 
@@ -166,16 +179,16 @@ labelled with what justified it."
 
 ---
 
-## Shot 8 · SLIDE 4 — Honest measurement (~10s)
+## Shot 9 · SLIDE 5 — Honest measurement (~10s)
 
-**Show:** deck slide 4.
+**Show:** deck slide 5.
 
 **Say:** "How do we know it's right? We score it against a hidden answer key — including
 a tier built to make the method fail."
 
 ---
 
-## Shot 9 · The scoreboard (~35s)
+## Shot 10 · The scoreboard (~35s)
 
 **Show:** the app, scrolled to *How do we know the linking is right?*
 
@@ -191,7 +204,7 @@ all."
 
 ---
 
-## Shot 10 · What it costs, and what to do (~50s)
+## Shot 11 · What it costs, and what to do (~50s)
 
 **Show:** T2, CoCo. Two prompts, in order.
 
@@ -220,9 +233,9 @@ drafting rather than failing."
 
 ---
 
-## Shot 11 · SLIDE 5 — Close (~20s)
+## Shot 12 · SLIDE 6 — Close (~20s)
 
-**Show:** deck slide 5 (the two links, big). Read them out.
+**Show:** deck slide 6 (the two links, big). Read them out.
 
 **Say:** "Five formats including a binary one, linked into cases with no shared key,
 fused with the structured order and CSAT data, measured against ground truth including
@@ -241,7 +254,7 @@ Live app: **https://coco-case-intelligence.streamlit.app** · Repo:
   hold ≥3s on the PASS wall.
 - Trim dead air between shots; keep the CoCo answers readable — pause on each quoted
   record for a beat.
-- Edited target: 4:30-5:00. If over, shorten shots 9 and 10 first; never shot 4 or 7.
+- Edited target: 4:30-5:00. If over, shorten shots 10 and 11 first; never shot 4 or 8.
 
 ## If something goes wrong
 

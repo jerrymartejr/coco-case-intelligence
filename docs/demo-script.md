@@ -17,7 +17,8 @@ after it proves the idea for real. Slides explain, the screen proves.
 - [ ] The **pinned** database is never touched on camera: no `dbt` commands in the main
       repo. The live build happens in the demo clone (`~/personal-dev/
       coco-case-intelligence-demo`), which targets the throwaway `CASE_INTEL_DEMO`
-      database — see `handoff/demo-build-runbook.md`.
+      database: a scratch clone of this repo whose `.env` sets
+      `SNOWFLAKE_DATABASE=CASE_INTEL_DEMO`.
 - [ ] Two terminals ready: **T1** in the demo clone (`.env` sourced, for the build),
       **T2** with CoCo open — `cortex -c case_intel`, already logged in (verified: it
       answered 115). Font readable at 1080p in both.
@@ -120,8 +121,8 @@ passed. Those tests score the linking against a hidden answer key, and that key
 includes cases designed to break the system. The full results are in the repo and the
 app. Everything you see from here runs on what this build just produced."
 
-> If the build errors on camera: stop the take, check `handoff/demo-build-runbook.md`
-> §recovery, re-run. Two full builds are budgeted for takes.
+> If the build errors on camera: stop the take and re-run it. The demo database is
+> disposable and the build is repeatable.
 
 ---
 
@@ -260,6 +261,6 @@ Live app: **https://coco-case-intelligence.streamlit.app** · Repo:
 |---|---|
 | CoCo picks the wrong skill | Re-ask using the words in the skill's trigger list, e.g. "show me the evidence" for linkage. |
 | Retrieval slow | Keep talking; it lands in seconds once warm. |
-| Build fails in the clone | `handoff/demo-build-runbook.md` §recovery; two full builds are budgeted. |
+| Build fails in the clone | Re-run it. The demo database is disposable and the build is repeatable. |
 | App tab asleep | Reload; it re-wakes. That's why the pre-flight loads it first. |
 | Anything worse | Stop, breathe, redo the shot. Nobody is judging the number of takes. |

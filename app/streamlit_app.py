@@ -121,6 +121,10 @@ def get_session():
         "database": _secret("SNOWFLAKE_DATABASE") or "CASE_INTEL",
         "schema": _secret("SNOWFLAKE_SCHEMA") or "ANALYTICS",
         "warehouse": _secret("SNOWFLAKE_WAREHOUSE") or "COMPUTE_WH",
+        # The session is cached for the life of the process; without a heartbeat its
+        # token expires after a few idle hours and every query starts failing with
+        # 390114 until the process restarts.
+        "client_session_keep_alive": True,
     }).create()
 
 
@@ -160,8 +164,19 @@ def try_q(sql, params=None, *, failure):
     page still renders.
     """
     try:
-        return q(sql, params)
+        result = q(sql, params)
+        st.session_state.pop("_reauth_attempted", None)
+        return result
     except Exception as exc:  # noqa: BLE001 - anything here is a page-level message, not a crash
+        # 390114: the cached session outlived its token (long-idle container). The
+        # session is rebuildable, so rebuild it once and rerun instead of erroring.
+        # The guard flag stops a retry loop when rebuilding does not help; it resets
+        # on the next successful query so a later expiry can recover the same way.
+        if "390114" in str(exc) and not st.session_state.get("_reauth_attempted"):
+            st.session_state["_reauth_attempted"] = True
+            get_session.clear()
+            st.cache_data.clear()
+            st.rerun()
         st.error(failure)
         st.caption(f"{type(exc).__name__}: {exc}")
         return None

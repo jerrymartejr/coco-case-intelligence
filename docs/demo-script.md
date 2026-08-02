@@ -63,7 +63,22 @@ There is no case ID anywhere in this data."
 
 ---
 
-## Shot 3 · SLIDE 2 — One command (~15s)
+## Shot 3 · The project and the tools (~30s)
+
+**Show:** Cursor, with the repo's file tree visible. Point at folders as you name them:
+`models/` for the pipeline, `coco/skills/` for the skills, `app/` for the web app.
+
+**Say:** "Here is the project. Everything runs inside Snowflake. That is the data
+platform. It holds the raw records, and it also runs the AI, so the data never leaves.
+The pipeline is written in dbt. That is the tool that turns raw data into finished
+tables, step by step, with tests. The AI is Snowflake Cortex. It reads the PDFs, pulls
+out the fields, and compares meanings. And there are two ways in. A Streamlit web app
+for the visuals. And CoCo, the Cortex Code CLI, where you just ask questions. You will
+see all of these in the next few minutes."
+
+---
+
+## Shot 4 · SLIDE 2 — One command (~15s)
 
 **Show:** deck slide 2.
 
@@ -75,7 +90,7 @@ gets worse, the build fails."
 
 ---
 
-## Shot 4 · `dbt build`, live — PROCESSING (~40s edited; ~6 min raw)
+## Shot 5 · `dbt build`, live — PROCESSING (~40s edited; ~6 min raw)
 
 **Show:** T1, in the demo clone.
 
@@ -102,7 +117,7 @@ app. Everything you see from here runs on what this build just produced."
 
 ---
 
-## Shot 5 · SLIDE 3 — The six skills (~25s)
+## Shot 6 · SLIDE 3 — The six skills (~25s)
 
 **Show:** deck slide 3.
 
@@ -115,7 +130,7 @@ will see five of these in the next two minutes."
 
 ---
 
-## Shot 6 · Ask one question — OUTPUT begins (~45s)
+## Shot 7 · Ask one question — OUTPUT begins (~45s)
 
 **Show:** T2, CoCo.
 
@@ -143,7 +158,7 @@ grouping does not exist in the source data. The system figured it out."
 
 ---
 
-## Shot 7 · SLIDE 4 — How linking works (~10s)
+## Shot 8 · SLIDE 4 — How linking works (~10s)
 
 **Show:** deck slide 4.
 
@@ -153,7 +168,7 @@ as evidence."
 
 ---
 
-## Shot 8 · "Why are these one case?" — the heart (~60s)
+## Shot 9 · "Why are these one case?" — the heart (~60s)
 
 **Show:** T2, CoCo.
 
@@ -179,7 +194,7 @@ the right, with the reason it was made."
 
 ---
 
-## Shot 9 · What it costs, and what to do (~50s)
+## Shot 10 · What it costs, and what to do (~50s)
 
 **Show:** T2, CoCo. Two prompts, in order.
 
@@ -208,7 +223,7 @@ exists, it posts. If not, it drafts."
 
 ---
 
-## Shot 10 · SLIDE 5 — Close (~20s)
+## Shot 11 · SLIDE 5 — Close (~20s)
 
 **Show:** deck slide 5 (the two links, big). Read them out.
 
@@ -229,7 +244,7 @@ Live app: **https://coco-case-intelligence.streamlit.app** · Repo:
   hold ≥3s on the PASS wall.
 - Trim dead air between shots; keep the CoCo answers readable — pause on each quoted
   record for a beat.
-- Edited target: 4:30-5:00. If over, shorten shot 9 first; never shot 4 or 8.
+- Edited target: 4:30-5:00. If over, shorten shots 3 and 10 first; never shot 5 or 9.
 
 ## If something goes wrong
 

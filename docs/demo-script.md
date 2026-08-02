@@ -103,9 +103,13 @@ proved."
 
 ---
 
-## Shot 5 · Ask one question — OUTPUT begins (~40s)
+## Shot 5 · Ask one question — OUTPUT begins (~45s)
 
 **Show:** T2, CoCo.
+
+**Say first, before typing:** "Now the output side. This is CoCo, Snowflake's Cortex
+Code CLI, connected to the same account, with six agent skills registered from the repo.
+I'll ask it the kind of question a support leader actually asks, in plain English."
 
 **Type:**
 

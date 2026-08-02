@@ -56,11 +56,10 @@ Click through a tab as you name each format, then bring up the PDF:
 - `data/synthetic/unstructured/qa_notes.ndjson`
 - `data/synthetic/unstructured/csat.ndjson`
 
-**Say:** "Five formats. A chat transcript, an email with headers, a QA note, a CSAT
-survey, and this — a real PDF escalation form, sitting in a Snowflake stage as a binary
-file. Same customer, same problem, five different systems. And not one of these records
-carries an identifier that any of the others share. There is no case id in this data
-anywhere."
+**Say:** "Five formats. A chat transcript. An email. A QA note. A CSAT survey. And this
+one is a real PDF escalation form. It lives in Snowflake as a binary file. Same
+customer, same problem, five different systems. And none of these records share an ID.
+There is no case ID anywhere in this data."
 
 ---
 
@@ -68,11 +67,11 @@ anywhere."
 
 **Show:** deck slide 2.
 
-**Say:** "Everything you're about to see is built by one command. Six stages: parse the
-PDFs, normalize all five formats with AI_COMPLETE, embed and link the records,
-synthesize each case, fuse the structured data, index everything for retrieval — about
-fifteen hundred Cortex calls — and four accuracy gates at the end that fail the build if
-the linking regresses."
+**Say:** "Everything you are about to see is built by one command. It parses the PDFs.
+It normalizes all five formats. It links the records into cases. It summarizes each
+case. It joins the business data. And it indexes everything for search. That is about
+fifteen hundred Cortex AI calls. At the end, four accuracy tests run. If the linking
+gets worse, the build fails."
 
 ---
 
@@ -87,16 +86,16 @@ dbt build --profiles-dir .
 ```
 
 **Say (over the first seconds, as models start streaming):** "This is running for real,
-right now — parsing the 41 PDFs out of the stage, normalizing 614 records, embedding
-them, linking them into cases. I'll fast-forward."
+right now. It is reading the 41 PDFs, normalizing 614 records, and linking them into
+cases. I will fast-forward."
 
 **Then:** let it run to the end. In Filmora, speed-ramp the middle; land and HOLD on the
 final wall: `Done. PASS=… ERROR=0`.
 
-**Say (over the PASS wall):** "Done. Every model built, and all four accuracy gates
-passed, scored against a hidden answer key that includes an adversarial tier built to
-make the method fail. The full measurement is in the repo and the app. From here on,
-everything you see is queries over what this build just proved."
+**Say (over the PASS wall):** "Done. Everything built, and all four accuracy tests
+passed. Those tests score the linking against a hidden answer key, and that key
+includes cases designed to break the system. The full results are in the repo and the
+app. Everything you see from here runs on what this build just produced."
 
 > If the build errors on camera: stop the take, check `handoff/demo-build-runbook.md`
 > §recovery, re-run. Two full builds are budgeted for takes.
@@ -107,12 +106,12 @@ everything you see is queries over what this build just proved."
 
 **Show:** deck slide 3.
 
-**Say:** "Before I open the CLI: the repo registers six agent skills with CoCo. Search
-finds the actual records and quotes what customers wrote. Ask answers counts and totals.
-Explain shows the evidence for why records were grouped into one case. Diagnose ranks
-what is hurting most. Recommend turns the top driver into a concrete action. And deliver
-routes it to the owning team, or drafts the message when no integration is wired. You
-will see five of them fire in the next two minutes."
+**Say:** "Before I open the CLI, here are the six skills this repo gives CoCo. Search
+finds the actual records and quotes what customers wrote. Ask answers counts and
+totals. Explain shows why records were grouped into one case. Diagnose ranks what is
+hurting the business most. Recommend turns the top problem into a concrete action. And
+deliver sends it to the right team, or drafts the message if nothing is connected. You
+will see five of these in the next two minutes."
 
 ---
 
@@ -120,9 +119,9 @@ will see five of them fire in the next two minutes."
 
 **Show:** T2, CoCo.
 
-**Say first, before typing:** "Here is CoCo, Snowflake's Cortex Code CLI, connected to
-the same account, with those six skills registered. First question, in plain English,
-the kind a support leader actually asks."
+**Say first, before typing:** "This is CoCo, Snowflake's Cortex Code CLI. It is
+connected to the same account, with those six skills loaded. First question. Plain
+English. The kind a support leader actually asks."
 
 **Type:**
 
@@ -135,9 +134,9 @@ service, and answers by quoting real records — PDF escalation forms, customer 
 QA notes, each named by `record_id`, grouped into about five distinct cases, with
 revenue at risk attached to the unresolved ones.
 
-**Say:** "One question. The answer is quoting a PDF, an email and a QA note, and it
-knows which *case* each belongs to and what that case is worth. That grouping is not in
-the source data. It was inferred."
+**Say:** "One question. The answer quotes a PDF, an email, and a QA note. It knows
+which case each record belongs to, and how much money that case puts at risk. That
+grouping does not exist in the source data. The system figured it out."
 
 > If retrieval is slow, keep talking — it answers in seconds once warm; you warmed it in
 > the checklist.
@@ -148,9 +147,9 @@ the source data. It was inferred."
 
 **Show:** deck slide 4.
 
-**Say:** "Three signals have to agree — who the record names, when it arrived, and what
-it means. And the links aren't thrown away after linking: every edge is kept as
-evidence."
+**Say:** "To link two records, three signals have to agree. Who the record names. When
+it arrived. And what it is about. And the links are not thrown away. Every one is kept
+as evidence."
 
 ---
 
@@ -213,11 +212,11 @@ exists, it posts. If not, it drafts."
 
 **Show:** deck slide 5 (the two links, big). Read them out.
 
-**Say:** "Five formats including a binary one, linked into cases with no shared key,
-fused with the structured order and CSAT data, measured against ground truth including
-where it breaks — and all of it queryable in plain English through CoCo. The whole
-pipeline is one `dbt build`, and accuracy is a build gate — if the linking regresses,
-the build fails."
+**Say:** "So that is Case Intelligence. Five formats, including a real binary PDF.
+Linked into cases with no shared key. Joined with the order and survey data. Measured
+honestly, including where it fails. And all of it works through plain English in CoCo.
+The whole pipeline is one command, and accuracy is a build gate. If the linking gets
+worse, the build fails."
 
 Live app: **https://coco-case-intelligence.streamlit.app** · Repo:
 **https://github.com/jerrymartejr/coco-case-intelligence**

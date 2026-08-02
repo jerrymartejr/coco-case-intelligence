@@ -48,7 +48,9 @@ is the problem it solves."
 
 **Then:** "One customer with one problem contacts support five times, in five different
 systems. Together, those five records are one *case*: the full story of that problem.
-But nothing in the data connects them, so every number a support leader sees is wrong."
+But these records never share a ticket number or a customer ID. So the tools count them
+as five separate complaints from five different people. The reports are wrong, and
+nobody sees the real case."
 
 ---
 
